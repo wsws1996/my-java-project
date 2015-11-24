@@ -1,0 +1,9 @@
+package cn.wang.utils;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class WebUtils {
+	public static Object request2Bean(HttpServletRequest request,Class bean) {
+		return null;
+	}
+}

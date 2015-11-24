@@ -1,0 +1,20 @@
+package test;
+
+import javax.swing.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame jframe = new JFrame("第一个窗口");
+		JFrame jframe2 = new JFrame("第二个窗口");
+		//设置窗口在屏幕上的位置及大小
+		jframe.setBounds(60,100,500,500);
+		jframe2.setBounds(260,100,500,500);
+		jframe.setVisible(true);
+		jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		jframe2.setVisible(true);
+		jframe2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

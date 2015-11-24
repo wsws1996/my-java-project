@@ -1,0 +1,13 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shop shop1=new Shop();
+		Goods s1[]={new Goods("TV"),new Goods("PC")};
+	}
+}

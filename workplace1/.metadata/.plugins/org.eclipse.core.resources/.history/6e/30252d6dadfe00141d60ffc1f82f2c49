@@ -1,0 +1,16 @@
+package test;
+
+import java.io.Serializable;
+
+public class Goods implements Serializable {
+	String name=null;
+	Goods(String name){
+		this.name=name;
+	}
+	public void setName(String name) {
+		this.name=name;
+	}
+	public String getName() {
+		return name;
+	}
+}

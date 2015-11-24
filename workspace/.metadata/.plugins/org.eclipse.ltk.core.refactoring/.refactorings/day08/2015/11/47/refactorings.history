@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;public static void test() throws MalformedURLException, IOException &apos; from &apos;cn.wang.Demo.main()&apos; to &apos;cn.wang.Demo&apos;&#x0A;- Original project: &apos;day08&apos;&#x0A;- Method name: &apos;test&apos;&#x0A;- Destination type: &apos;cn.wang.Demo&apos;&#x0A;- Declared visibility: &apos;public&apos;" comments="false" description="Extract method &apos;test&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;cn.wang{Demo.java" name="test" replace="false" selection="356 470" stamp="1447576922147" version="1.0" visibility="1"/>
+</session>

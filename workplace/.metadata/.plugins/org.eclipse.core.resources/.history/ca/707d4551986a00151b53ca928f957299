@@ -1,0 +1,17 @@
+package com.wang.service;
+
+import java.util.ArrayList;
+
+public class UsersService {	
+		/*
+		 * @author 王爽
+		 * @param keys : 表示用户输入的所有关键字
+		 */
+	public ArrayList<E> searchNews(String keys) {
+		
+		String sql ="select newsid,newstitle,newsdate from news where";
+		
+		return null;
+		
+	}
+}

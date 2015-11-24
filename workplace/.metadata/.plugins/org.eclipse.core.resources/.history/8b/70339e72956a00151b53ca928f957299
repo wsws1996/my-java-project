@@ -1,0 +1,5 @@
+package com.wang.domain;
+
+public class News {
+
+}

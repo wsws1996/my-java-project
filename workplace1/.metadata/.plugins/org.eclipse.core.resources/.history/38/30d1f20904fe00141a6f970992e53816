@@ -1,0 +1,29 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RandomAccessFile in=null;
+		try {
+			File file = new File("j:/","cost.txt");
+			in=new RandomAccessFile(file, "rw");
+			long length=in.length();
+			long position=0;
+			in.seek(0);
+			while (position<length) {
+				String str=in.readLine();
+				byte b[]=str.getBytes("iso-8859-1");
+				str=new String(b);
+				position=in.getFilePointer();
+				System.out.println(str);
+			}
+		} catch (IOException e) {
+			System.out.println(e);
+			// TODO: handle exception
+		}
+	}
+}

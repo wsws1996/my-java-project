@@ -1,0 +1,10 @@
+package com.wang.service;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.wang.dao.SqlHelper;
+
+public class UsersService {	
+		
+}

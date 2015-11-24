@@ -1,0 +1,20 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner inputAnswer = new Scanner(System.in);
+		int score = 0;
+		StringBuffer answer=new StringBuffer();//存放用户的答案
+		String result="ABCD";
+		try {
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+}

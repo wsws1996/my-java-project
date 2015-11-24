@@ -1,0 +1,16 @@
+package cn.wang.dao.impl;
+
+import cn.wang.domain.User;
+
+public class UserDaoXmlImpl {
+
+	public User find(String username, String password) {
+		return null;
+	}
+	public void add(User user) {
+		
+	}
+	public User find(String username) {
+		
+	}
+}

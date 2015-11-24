@@ -1,0 +1,9 @@
+package cn.wang.domain;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Cart {
+	private Map<String, CartItem> map = new LinkedHashMap();
+	private double price;
+}

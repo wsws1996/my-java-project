@@ -1,0 +1,16 @@
+package com.wang.service;
+
+import java.util.ArrayList;
+
+public class UsersService {
+	public ArrayList<E> searchNews(String keys) {
+		
+		/*
+		 * @author 王爽
+		 * @param keys : 表示用户输入的所有关键字
+		 */
+		
+		return null;
+		
+	}
+}

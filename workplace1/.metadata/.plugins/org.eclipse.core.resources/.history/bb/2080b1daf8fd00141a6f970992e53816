@@ -1,0 +1,28 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Goods TV1=new Goods("HaierTV", 3468);
+	try {
+		File file = new File("J:/","test.txt");
+		FileOutputStream fileOut=new FileOutputStream(file,false);
+		ObjectOutputStream objectOut=new ObjectOutputStream(fileOut);
+		objectOut.writeObject(TV1);
+		FileInputStream fileIn=new FileInputStream(file);
+		ObjectInputStream objectIn=new ObjectInputStream(fileIn);
+		Goods TV2=(Goods)objectIn.readObject();
+		/*TV2.setName("GreatWall");
+		TV2.setUnitPrice(8888);
+		*/System.out.println("TV1:"+TV1.name+" "+TV1.unitPrice);
+		System.out.println("TV2:"+TV2.name+" "+TV2.unitPrice);
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println(e);
+	}
+	}
+}

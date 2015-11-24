@@ -1,0 +1,29 @@
+package test;
+
+import java.io.Serializable;
+
+public class Goods implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String name=null;
+	double unitPrice;
+	public Goods(String name,double unitPrice) {
+		// TODO Auto-generated constructor stub
+		this.name=name;
+		this.unitPrice=unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice=unitPrice;
+	}
+	public void setName(String name) {
+		this.name=name;
+	}
+	public String getName() {
+		return name;	
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+}

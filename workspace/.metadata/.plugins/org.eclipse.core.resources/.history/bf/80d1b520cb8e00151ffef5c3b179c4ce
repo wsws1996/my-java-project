@@ -1,0 +1,16 @@
+package cn.wang.utils;
+
+import javax.servlet.http.HttpServletRequest;
+
+import cn.wang.web.formbean.RegisterFormBean;
+
+public class WebUtils {
+	public static <T> T request2Bean(HttpServletRequest request, Class<T> clazz) {
+		try {
+			T bean = clazz.newInstance();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+}

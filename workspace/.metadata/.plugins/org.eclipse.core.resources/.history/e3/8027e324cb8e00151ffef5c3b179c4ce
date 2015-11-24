@@ -1,0 +1,19 @@
+package cn.wang.utils;
+
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
+
+import cn.wang.web.formbean.RegisterFormBean;
+
+public class WebUtils {
+	public static <T> T request2Bean(HttpServletRequest request, Class<T> clazz) {
+		try {
+			T bean = clazz.newInstance();
+			Enumeration enumeration= request.getParameterNames();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+}

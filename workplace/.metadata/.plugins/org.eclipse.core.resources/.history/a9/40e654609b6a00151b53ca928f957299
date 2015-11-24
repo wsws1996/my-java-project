@@ -1,0 +1,10 @@
+package com.wang.view;
+
+public class NewsSystemFrame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

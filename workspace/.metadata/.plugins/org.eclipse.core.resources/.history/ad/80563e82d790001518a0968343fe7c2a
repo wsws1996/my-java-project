@@ -1,0 +1,10 @@
+package cn.wang.service;
+
+import cn.wang.dao.BookDao;
+
+public class BusinessService {
+	BookDao dao=new BookDao();
+	public Map getAllBook() {
+		
+	}
+}

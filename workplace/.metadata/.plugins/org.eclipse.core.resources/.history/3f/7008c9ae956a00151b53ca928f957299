@@ -1,0 +1,9 @@
+package com.wang.domain;
+
+import java.sql.Date;
+
+public class News {
+	private int newsid;
+	private String newsTitle;
+	private Date newsDate;
+}

@@ -1,0 +1,24 @@
+package cn.wang.dao.impl;
+
+import org.dom4j.Document;
+
+import cn.wang.domain.User;
+import cn.wang.utils.XmlUtils;
+
+public class UserDaoXmlImpl {
+
+	public User find(String username, String password) {
+		
+	 	Document document= XmlUtils.getDocument();
+		
+		return null;
+	}
+
+	public void add(User user) {
+
+	}
+
+	public User find(String username) {
+		return null;
+	}
+}

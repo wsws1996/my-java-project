@@ -1,0 +1,11 @@
+package cn.wang.service.impl;
+
+import cn.wang.domain.User;
+
+public class BusinessServiceImpl {
+	public void registerUser(User user) {
+		
+		
+		
+	}
+}

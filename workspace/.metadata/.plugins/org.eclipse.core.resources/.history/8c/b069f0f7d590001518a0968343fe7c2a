@@ -1,0 +1,10 @@
+package cn.wang.db;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import cn.wang.domain.Book;
+
+public class MyDb {
+	private static Map<String, Book> map = new LinkedHashMap();
+}

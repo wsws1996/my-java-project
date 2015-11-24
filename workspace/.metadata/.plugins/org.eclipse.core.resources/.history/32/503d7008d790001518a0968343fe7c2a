@@ -1,0 +1,9 @@
+package cn.wang.dao;
+
+import cn.wang.db.MyDb;
+
+public class BookDao {
+	public Map getAll() {
+		return MyDb.getAll();
+	}
+}

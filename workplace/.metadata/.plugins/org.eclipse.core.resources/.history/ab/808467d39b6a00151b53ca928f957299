@@ -1,0 +1,13 @@
+package com.wang.view;
+
+import java.io.InputStreamReader;
+
+public class NewsSystemFrame {
+	//这是我们的新闻管理界面
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InputStreamReader isr=new InputStreamReader(System.in);
+		
+	}
+
+}

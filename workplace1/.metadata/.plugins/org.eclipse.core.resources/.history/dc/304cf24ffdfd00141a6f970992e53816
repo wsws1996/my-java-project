@@ -1,0 +1,35 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shop shop1=new Shop();
+		Goods s1[]={new Goods("TV"),new Goods("PC")};
+		shop1.setGoods(s1);
+		try {
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			ObjectOutputStream objectOut = new ObjectOutputStream(out);
+			objectOut.writeObject(shop1);
+			ByteArrayInputStream in=new ByteArrayInputStream(out.toByteArray());
+			ObjectInputStream objectIn=new ObjectInputStream(in);
+			Shop shop2=(Shop)objectIn.readObject();
+			Goods good1[]=shop1.getGoods();
+			Goods good2[]=shop2.getGoods();
+			System.out.println("shop1:");
+			for(int i=0;i<good1.length;++i)
+				System.out.println(good1[i].getName());
+			System.out.println("shop2:");
+			for(int i=0;i<good2.length;++i)
+				System.out.println(good2[i].getName());
+			Goods s2[]={new Goods("ÃÞ»¨"),new Goods("Î÷·þ"),new Goods("ÀºÇò")};
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}
+}

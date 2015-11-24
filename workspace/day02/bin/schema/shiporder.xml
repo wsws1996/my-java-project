@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shiporder orderid="1111" xmlns="http://www.wang.com.cn"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:SchemaLocation="http://www.wang.com.cn book.xsd">
+	<orderperson>xxx</orderperson>
+	<shipto>
+		<name>xxx</name>
+		<address>xxx</address>
+		<city>xxx</city>
+		<country>xxx</country>
+	</shipto>
+	<item>
+		<title>xxx</title>
+		<note>xxx</note>
+		<quantity>2</quantity>
+		<price>0.39</price>
+	</item>
+</shiporder>

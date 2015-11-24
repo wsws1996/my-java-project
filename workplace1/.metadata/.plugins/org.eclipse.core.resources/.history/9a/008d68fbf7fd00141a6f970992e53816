@@ -1,0 +1,17 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Goods TV1=new Goods("HaierTV", 3468);
+	try {
+		File file = new File("J:/","test.txt");
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}
+}

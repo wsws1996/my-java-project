@@ -1,0 +1,22 @@
+package test;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class FirstWindow extends JFrame {
+	JMenuBar menubar;
+	JMenu menu;
+	JMenuItem item1,item2;
+	public FirstWindow(String s) {
+		// TODO Auto-generated constructor stub
+		setTitle(s);
+		setSize(160,170);
+		setLocation(120, 120);
+		setVisible(true);
+		menubar=new JMenuBar();
+		menu=new JMenu("文件");
+		item1=new JMenuItem("打开",)
+	}
+}

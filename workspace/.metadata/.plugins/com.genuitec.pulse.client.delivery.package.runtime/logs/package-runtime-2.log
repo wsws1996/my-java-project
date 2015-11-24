@@ -1,0 +1,14 @@
+十一月 05, 2015 5:05:33 下午 com.genuitec.pulse.client.deliverypackage.runtime.internal.Activator initializeLoggers
+信息: Package starting up at Thu Nov 05 17:05:33 CST 2015
+十一月 05, 2015 5:06:59 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: I/O exception (java.net.SocketException) caught when connecting to the target host: Socket closed
+十一月 05, 2015 5:06:59 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: Retrying connect
+十一月 05, 2015 5:07:08 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: I/O exception (java.net.SocketException) caught when connecting to the target host: Socket closed
+十一月 05, 2015 5:07:08 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: Retrying connect
+十一月 05, 2015 5:08:01 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: I/O exception (java.net.SocketException) caught when connecting to the target host: Socket closed
+十一月 05, 2015 5:08:01 下午 org.apache.http.impl.client.DefaultRequestDirector tryConnect
+信息: Retrying connect

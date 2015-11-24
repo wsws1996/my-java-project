@@ -1,0 +1,12 @@
+package junit.test;
+
+import org.junit.Test;
+
+import cn.wang.domain.User;
+
+public class UserDaoTest {
+	@Test
+	public void testAdd() {
+		User user=new User();
+	}
+}

@@ -1,0 +1,28 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner inputAnswer = new Scanner(System.in);
+		int score = 0;
+		StringBuffer answer=new StringBuffer();//存放用户的答案
+		String result="ABCD";
+		File file=new File("j/","test.txt");
+		try {
+			FileReader inOne=new FileReader(file);
+			BufferedReader inTwo=new BufferedReader(inOne);
+			String s=null;
+			while ((s=inTwo.readLine())!=null) {
+				if(!(s.startsWith("*"))
+						System.out.println(s);
+				else {
+					System.out.println("输入选择的答案（A,B,C,D）");
+				}
+			}
+		} catch (IOException e) {}
+	}
+}

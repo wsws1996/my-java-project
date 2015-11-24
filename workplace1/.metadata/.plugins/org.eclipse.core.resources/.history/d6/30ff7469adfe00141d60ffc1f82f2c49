@@ -1,0 +1,13 @@
+package test;
+
+import java.io.Serializable;
+
+public class Shop implements Serializable {
+	Goods goods[];
+	public void setGoods(Goods s[]) {
+		goods=s;
+	}
+	public Goods[] getGoods() {
+		return goods;
+	}
+}

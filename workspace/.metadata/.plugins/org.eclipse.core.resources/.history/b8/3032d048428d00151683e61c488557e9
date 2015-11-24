@@ -1,0 +1,8 @@
+package junit.test;
+
+public class UserDaoTest {
+	@Test
+	public void testAdd() {
+		
+	}
+}

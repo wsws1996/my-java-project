@@ -1,0 +1,29 @@
+package cn.wang.dao;
+
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import cn.wang.domain.Student;
+import cn.wang.utils.XmlUtils;
+
+public class StudentDao {
+	public void add(Student student) {
+		try {
+			Document document = XmlUtils.getDocument();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+	public void delete(String name) {
+		
+	}
+	public Student find(String examid) {
+		return null;
+	}
+}

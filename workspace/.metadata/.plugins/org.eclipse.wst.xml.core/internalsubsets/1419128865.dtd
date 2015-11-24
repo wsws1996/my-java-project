@@ -1,0 +1,6 @@
+
+	<!ELEMENT 联系人列表 ANY>
+	<!ELEMENT 联系人 (姓名,EMAIL)>
+	<!ELEMENT 姓名 (#PCDATA)>
+	<!ELEMENT EMAIL (#PCDATA)>
+	<!ATTLIST 联系人 编号 ID #REQUIRED>

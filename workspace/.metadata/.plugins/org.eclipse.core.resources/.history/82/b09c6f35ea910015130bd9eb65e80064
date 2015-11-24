@@ -1,0 +1,20 @@
+package cn.wang.service;
+
+import java.util.Map;
+
+import cn.wang.dao.BookDao;
+import cn.wang.domain.Cart;
+
+public class BusinessService {
+	BookDao dao = new BookDao();
+
+	public Map getAllBook() {
+		return dao.getAll();
+	}
+
+	public void buybook(String bookid, Cart cart) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

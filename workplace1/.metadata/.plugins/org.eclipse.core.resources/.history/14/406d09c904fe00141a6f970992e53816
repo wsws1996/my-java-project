@@ -1,0 +1,31 @@
+package test;
+
+import java.io.*;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file=new File("J:\\","cost.txt");
+		Scanner sc=null;
+		int sum=0;
+		try {
+			sc=new Scanner(file);
+			while (sc.hasNext()) {
+				try {
+					int price=sc.nextInt();
+					sum+=price;
+					System.out.println(price);
+				} catch (InputMismatchException e) {
+					// TODO: handle exception
+					String t=sc.next();
+				}
+			}
+			System.out.println("Total:"+sum+"dollar");
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+package com.wang.service;
+
+public class NewsService {
+	public return_type searchNews() {
+		
+	}
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<head>
+		<title>example</title>
+	</head>
+	
+	<body>
+		<p>content1</p>
+		<p>content2</p>
+	</body>
+	<foot>
+		<author name="lisi"/>
+	</foot>
+</root>

@@ -1,0 +1,21 @@
+package cn.wang.service.impl;
+
+import cn.wang.dao.UserDao;
+import cn.wang.dao.impl.UserDaoXmlImpl;
+import cn.wang.domain.User;
+import cn.wang.exception.UserExistException;
+
+public class BusinessServiceImpl {
+	UserDao dao = new UserDaoXmlImpl();
+
+	public void registerUser(User user) throws UserExistException {
+
+		if (dao.find(user.getUsername())!=null) {
+			throw new UserExistException("注册的用户名已存在！！！");
+		}
+		dao.add(user);
+	}
+	public User loginUser(String username,String password) {
+		dao.find(username, password);
+	}
+}

@@ -1,0 +1,15 @@
+package cn.wang.service.impl;
+
+import cn.wang.dao.UserDao;
+import cn.wang.dao.impl.UserDaoXmlImpl;
+import cn.wang.domain.User;
+
+public class BusinessServiceImpl {
+	UserDao dao = new UserDaoXmlImpl();
+
+	public void registerUser(User user) {
+		
+		
+		dao.
+	}
+}

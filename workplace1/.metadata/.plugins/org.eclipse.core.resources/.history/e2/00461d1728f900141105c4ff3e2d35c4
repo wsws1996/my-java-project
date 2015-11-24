@@ -1,0 +1,38 @@
+package test;
+
+import java.io.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File readFile = new File("j:/", "Student.txt");
+		File writeFile = new File("j:/", "Hello.txt");
+		try {
+			FileReader inOne = new FileReader(readFile);
+			BufferedReader inTwo = new BufferedReader(inOne);
+			FileWriter tofile = new FileWriter(writeFile, false);
+			BufferedWriter out = new BufferedWriter(tofile);
+			String s = null;
+			int i = 0;
+			while ((s = inTwo.readLine()) != null) {
+				i++;
+				out.write(i + " " + s);
+				out.newLine();
+			}
+			out.flush();
+			out.close();
+			tofile.close();
+			inOne = new FileReader(writeFile);
+			inTwo = new BufferedReader(inOne);
+			while ((s = inTwo.readLine()) != null) {
+				System.out.println(s);
+			}
+			inOne.close();
+			inTwo.close();
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package cn.wang.utils;
+
+import org.dom4j.Document;
+
+public class XmlUtils {
+	private static String filename = "users.xml";
+
+	public static Document getDocument() {
+		XmlUtils.class.getClassLoader().getResource(filename);
+
+		return null;
+	}
+}

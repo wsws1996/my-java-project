@@ -1,0 +1,6 @@
+package cn.wang.domain;
+
+public class CartItem {
+	private Book book;
+	
+}

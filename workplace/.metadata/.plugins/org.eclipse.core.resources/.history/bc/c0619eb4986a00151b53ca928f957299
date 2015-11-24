@@ -1,0 +1,33 @@
+package com.wang.service;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.wang.dao.SqlHelper;
+
+public class UsersService {	
+		/*
+		 * @author 王爽
+		 * @param keys : 表示用户输入的所有关键字
+		 */
+	public ArrayList<E> searchNews(String keys) {
+		String keyArr[]=keys.split(" ");
+		String sql ="select newsid,newstitle,newsdate from news where";
+		for (int i = 0; i < keyArr.length; i++) {
+			if (i==keyArr.length-1) {
+				sql+=" (newstitle like '%"+keyArr[i]+
+						"%' or newscontent like '%"+keyArr[i]+"%')";
+			} else {
+				sql+=" (newstitle like '%"+keyArr[i]+
+						"%' or newscontent like '%"+keyArr[i]+"%') and ";
+			}
+		}
+		
+		//完成查询
+		
+		ResultSet rs = SqlHelper.executeQuery(sql, null);
+		
+		return null;
+		
+	}
+}

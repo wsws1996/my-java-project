@@ -1,0 +1,18 @@
+package cn.wang.utils;
+
+import java.net.URL;
+
+import org.dom4j.Document;
+import org.dom4j.io.SAXReader;
+
+public class XmlUtils {
+	private static String filename = "users.xml";
+
+	public static Document getDocument() {
+		URL url = XmlUtils.class.getClassLoader().getResource(filename);
+		
+		SAXReader reader=new SAXReader();
+		
+		return null;
+	}
+}
