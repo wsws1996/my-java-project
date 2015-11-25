@@ -1,0 +1,11 @@
+package cn.wang.web.tag;
+
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class TagDemo2 extends TagSupport {
+
+	public TagDemo2() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
