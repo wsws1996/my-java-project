@@ -1,0 +1,35 @@
+package cn.wang.web.tag;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class RefererTag extends SimpleTagSupport {
+
+	private String site;
+	private String page;
+
+	public void setSite(String site) {
+		this.site = site;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		// TODO Auto-generated method stub
+		PageContext pageContext = (PageContext) this.getJspContext();
+		HttpServletRequest request=pageContext.getRequest();
+		
+	}
+
+	public RefererTag() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

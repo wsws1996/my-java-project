@@ -1,0 +1,21 @@
+package cn.wang.web.tag;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class ChooseTag extends SimpleTagSupport {
+
+	private boolean isOk;
+
+	public boolean isOk() {
+		return isOk;
+	}
+
+	public void setOk(boolean isOk) {
+		this.isOk = isOk;
+	}
+
+	public ChooseTag() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

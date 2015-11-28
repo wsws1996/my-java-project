@@ -1,0 +1,11 @@
+package cn.wang.web.tag;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class WhenTag extends SimpleTagSupport {
+
+	public WhenTag() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

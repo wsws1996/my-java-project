@@ -29,3 +29,5 @@ Sat Nov 28 20:54:22 CST 2015   [info] Velocimacro : initialization complete.
 Sat Nov 28 20:54:22 CST 2015   [info] Velocity successfully started.
 Sat Nov 28 20:54:22 CST 2015   [info] ResourceManager : found templates/jsp/Jsp.vtl with loader com.genuitec.eclipse.templates.internal.PluginResourceLoader
 Sat Nov 28 21:05:05 CST 2015   [info] ResourceManager : found /templates/velocity/welcome/Jsp.vtl with loader com.genuitec.eclipse.templates.internal.PluginResourceLoader
+Sat Nov 28 21:11:38 CST 2015   [info] ResourceManager : found templates/jsp/Jsp.vtl with loader com.genuitec.eclipse.templates.internal.PluginResourceLoader
+Sat Nov 28 22:32:30 CST 2015   [info] ResourceManager : found templates/jsp/Jsp.vtl with loader com.genuitec.eclipse.templates.internal.PluginResourceLoader
