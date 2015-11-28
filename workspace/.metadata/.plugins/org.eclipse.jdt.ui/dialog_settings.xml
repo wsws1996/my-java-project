@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="true" key="Replace"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="true" key="Comments"/>
-	<item value="/usr/java/jdk1.8.0_65/jre/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="false" key="InstanceOf"/>
-	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="/usr/java/jdk1.8.0_65/jre/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
-	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="true" key="Annotations"/>
-	<item value="true" key="Public"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<item value="true" key="Abstract"/>
+	<item value="true" key="Public"/>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
-	</section>
-	<section name="OverrideMethodDialog">
-		<item value="true" key="showtypes"/>
 	</section>
 	<section name="NewXmlCreationWizardPage">
 		<item value="Default XML template" key="templatezh_CN"/>
 		<item value="/day09_user_login/src" key="filePath"/>
 	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
+	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>
-	</section>
-	<section name="DialogBounds_SuperInterfaceSelectionDialog">
-		<item value="373" key="DIALOG_WIDTH"/>
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="597" key="DIALOG_HEIGHT"/>
-		<item value="100" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="JavaSearchPage">
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
 		<item value="0" key="HISTORY_SIZE"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item value="473" key="DIALOG_WIDTH"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="114" key="DIALOG_X_ORIGIN"/>
+		<item value="707" key="DIALOG_HEIGHT"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="9" key="index"/>
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="FinalModifier"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item value="false" key="expanded4"/>
@@ -46,20 +55,11 @@
 		<item value="false" key="expanded5"/>
 		<item value="true" key="expanded0"/>
 	</section>
-	<section name="SourceActionDialog.methods">
-		<item value="false" key="Comments"/>
-		<item value="1" key="VisibilityModifier"/>
-		<item value="false" key="SynchronizedModifier"/>
-		<item value="false" key="FinalModifier"/>
-	</section>
-	<section name="ClasspathContainerSelectionPage">
-		<item value="9" key="index"/>
-	</section>
 	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="707" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
@@ -71,13 +71,13 @@
 	</section>
 	<section name="NewServletCreationWizardPage">
 		<item value="1] Default template for Servlet" key="template"/>
-		<item value="false" key="create_dodelete"/>
 		<item value="false" key="create_constructor"/>
-		<item value="false" key="create_servletinfo"/>
+		<item value="false" key="create_dodelete"/>
 		<item value="true" key="create_doget"/>
+		<item value="false" key="create_servletinfo"/>
 		<item value="true" key="create_doinitdestroy"/>
-		<item value="true" key="create_main"/>
 		<item value="false" key="create_unimplemented"/>
+		<item value="true" key="create_main"/>
 		<item value="true" key="create_dopost"/>
 		<item value="false" key="create_doput"/>
 	</section>
@@ -89,8 +89,8 @@
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
 		<item value="2" key="DIALOG_Y_ORIGIN"/>
-		<item value="703" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="703" key="DIALOG_HEIGHT"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
@@ -107,8 +107,8 @@
 	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="707" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="WorkingSetModelAwareSelectionDialog">
@@ -116,20 +116,20 @@
 	</section>
 	<section name="NewWebXmlLinkCreationWizardPage">
 		<item value="This is the display name of my J2EE component" key="display_name"/>
-		<item value="This is the description of my J2EE component" key="description"/>
 		<item value="/day10/WebRoot/WEB-INF" key="filePath"/>
+		<item value="This is the description of my J2EE component" key="description"/>
 		<item value="true" key="do_mapping"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="627" key="DIALOG_WIDTH"/>
-		<item value="21" key="DIALOG_Y_ORIGIN"/>
+		<item value="19" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="668" key="DIALOG_HEIGHT"/>
-		<item value="367" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
-		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
@@ -157,8 +157,8 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="18" key="DIALOG_Y_ORIGIN"/>
-			<item value="516" key="DIALOG_HEIGHT"/>
 			<item value="-5" key="DIALOG_X_ORIGIN"/>
+			<item value="516" key="DIALOG_HEIGHT"/>
 			<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
@@ -171,29 +171,29 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="103" key="DIALOG_Y_ORIGIN"/>
-			<item value="500" key="DIALOG_HEIGHT"/>
 			<item value="50" key="DIALOG_X_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
 			<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		</section>
-	</section>
-	<section name="completion_proposal_size">
 	</section>
 	<section name="ExtractMethodWizard">
 		<item value="false" key="ThrowRuntimeExceptions"/>
 		<item value="false" key="GenerateJavadoc"/>
 		<item value="1" key="AccessModifier"/>
 	</section>
-	<section name="NewClassWizardPage">
-		<item value="true" key="create_constructor"/>
-		<item value="true" key="create_unimplemented"/>
+	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="false" key="renameSubpackages"/>
-		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="false" key="renameSubpackages"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 		<item value="false" key="updateTextualMatches"/>
 		<item value="false" key="updateSimilarElements"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="true" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
 	</section>
 	<section name="NewHtmlCreationWizardPage">
 		<item value="Default HTML template" key="templatezh_CN"/>
@@ -202,6 +202,6 @@
 	</section>
 	<section name="NewJspCreationWizardPage">
 		<item value="Default JSP template" key="templatezh_CN"/>
-		<item value="/day10/WebRoot/WEB-INF" key="filePath"/>
+		<item value="/day11/WebRoot/simpletag" key="filePath"/>
 	</section>
 </section>

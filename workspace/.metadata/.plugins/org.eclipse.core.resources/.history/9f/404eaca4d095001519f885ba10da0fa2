@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="day11_example">
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <property name="context-root" value="day11_example"/>
+        <property name="java-output-path" value="/day11_example/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

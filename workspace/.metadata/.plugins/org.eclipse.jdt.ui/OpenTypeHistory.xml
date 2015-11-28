@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=day10/\/home\/wang\/MyEclipse Professional 2014\/binary\/com.sun.java.jdk7.linux.x86_64_1.7.0.u45\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1381916174000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/plugins\/com.genuitec.eclipse.j2eedt.core_11.5.0.me201311281640\/data\/libraryset\/EE_6\/javax.servlet.jsp.jar&lt;javax.servlet.jsp.tagext(Tag.class[Tag" modifiers="1537" timestamp="1385705074000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/binary\/com.sun.java.jdk7.linux.x86_64_1.7.0.u45\/jre\/lib\/rt.jar&lt;java.lang(Object.class[Object" modifiers="33" timestamp="1381916174000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/plugins\/com.genuitec.eclipse.j2eedt.core_11.5.0.me201311281640\/data\/libraryset\/EE_6\/javax.servlet.jsp.jar&lt;javax.servlet.jsp.tagext(IterationTag.class[IterationTag" modifiers="1537" timestamp="1385705074000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/plugins\/com.genuitec.eclipse.j2eedt.core_11.5.0.me201311281640\/data\/libraryset\/EE_6\/javax.servlet.jsp.jar&lt;javax.servlet.jsp.tagext(BodyTagSupport.class[BodyTagSupport" modifiers="33" timestamp="1385705074000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/plugins\/com.genuitec.eclipse.j2eedt.core_11.5.0.me201311281640\/data\/libraryset\/EE_6\/javax.servlet.jsp.jar&lt;javax.servlet.jsp.tagext(TagSupport.class[TagSupport" modifiers="33" timestamp="1385705074000"/>
+<typeInfo handle="=day11/\/home\/wang\/MyEclipse Professional 2014\/plugins\/com.genuitec.eclipse.j2eedt.core_11.5.0.me201311281640\/data\/libraryset\/EE_6\/javax.servlet.jsp.jar&lt;javax.servlet.jsp.tagext(SimpleTagSupport.class[SimpleTagSupport" modifiers="33" timestamp="1385705074000"/>
 </typeInfoHistroy>

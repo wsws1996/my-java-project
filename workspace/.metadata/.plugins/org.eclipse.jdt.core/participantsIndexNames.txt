@@ -5,6 +5,8 @@ INDEX VERSION 1.126
 /day07/src
 /E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4059362458.index
 /day10/src
+/E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1706985104.index
+/day11/src
 /F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1831659054.index
 /day06/src
 /E/myproject/java/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1919370541.index
@@ -47,9 +49,13 @@ INDEX VERSION 1.126
 /day09_user/src
 /E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1474102210.index
 /day10/src
+/E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/20308908.index
+/day11_example/src
 /E/myproject/java/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2586615047.index
 /day09_user/src
 /F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2626664603.index
 /day08/src
 /E/myproject/java/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/482670665.index
 /day09_user/src
+/E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/571599775.index
+/day11/src

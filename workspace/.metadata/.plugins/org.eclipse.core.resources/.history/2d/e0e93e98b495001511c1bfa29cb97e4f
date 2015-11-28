@@ -1,0 +1,13 @@
+package cn.wang.web.simpletag;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class SimpleTagDemo5 extends SimpleTagSupport {
+
+	private int count;
+	
+	public SimpleTagDemo5() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

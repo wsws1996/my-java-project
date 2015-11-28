@@ -1,7 +1,0 @@
-package junit.test;
-
-public class UserDaoTest {
-	public void testAdd() {
-		
-	}
-}
