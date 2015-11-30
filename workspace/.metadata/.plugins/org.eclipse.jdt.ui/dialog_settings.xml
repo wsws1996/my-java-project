@@ -21,6 +21,29 @@
 	<section name="OverrideMethodDialog">
 		<item value="true" key="showtypes"/>
 	</section>
+	<section name="JarPackageWizard">
+		<item value="false" key="JarPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
+		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
+		<item value="false" key="JarManifestWizardPage.REUSE_MANIFEST"/>
+		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_WARNINGS"/>
+		<item value="false" key="JarManifestWizardPage.SEAL_JAR"/>
+		<item value="" key="JarManifestWizardPage.MANIFEST_LOCATION"/>
+		<item value="false" key="JarPackageWizardPage.OVERWRITE"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
+		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
+		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_JAVA_FILES"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
+		<item value="true" key="JarPackageWizardPage.COMPRESS"/>
+		<item value="true" key="jarOptionsWizardPage.BUILD_IF_NEEDED"/>
+		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
+		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
+		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/wang/桌面/bb.jar"/>
+		</list>
+	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>
 	</section>
@@ -89,7 +112,7 @@
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
 		<item value="2" key="DIALOG_Y_ORIGIN"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="-39" key="DIALOG_X_ORIGIN"/>
 		<item value="703" key="DIALOG_HEIGHT"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -116,14 +139,14 @@
 	</section>
 	<section name="NewWebXmlLinkCreationWizardPage">
 		<item value="This is the display name of my J2EE component" key="display_name"/>
-		<item value="/day10/WebRoot/WEB-INF" key="filePath"/>
+		<item value="/day11_example/WebRoot/WEB-INF" key="filePath"/>
 		<item value="This is the description of my J2EE component" key="description"/>
 		<item value="true" key="do_mapping"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="627" key="DIALOG_WIDTH"/>
 		<item value="19" key="DIALOG_Y_ORIGIN"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="-39" key="DIALOG_X_ORIGIN"/>
 		<item value="668" key="DIALOG_HEIGHT"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -202,6 +225,6 @@
 	</section>
 	<section name="NewJspCreationWizardPage">
 		<item value="Default JSP template" key="templatezh_CN"/>
-		<item value="/day11/WebRoot/simpletag" key="filePath"/>
+		<item value="/aa/WebRoot" key="filePath"/>
 	</section>
 </section>

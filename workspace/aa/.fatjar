@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Nov 30 16:00:23 CST 2015
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=/E/myproject/my-java-project/workspace/aa/aa_fat.jar
+manifest.mergeall=true
+manifest.mainclass=aa.Demo
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

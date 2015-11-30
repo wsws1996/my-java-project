@@ -1,0 +1,9 @@
+package cn.wang.web.tag;
+
+public class ForEachTag {
+
+	public ForEachTag() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

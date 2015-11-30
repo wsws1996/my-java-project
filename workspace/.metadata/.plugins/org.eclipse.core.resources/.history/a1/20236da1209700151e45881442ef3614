@@ -1,0 +1,13 @@
+package cn.wang.web.tag;
+
+import java.util.List;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class ForEachTag extends SimpleTagSupport {
+	private List items;
+	public ForEachTag() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

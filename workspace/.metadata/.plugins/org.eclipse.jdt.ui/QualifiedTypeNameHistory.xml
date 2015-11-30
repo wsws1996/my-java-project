@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cn.wang.Address"/>
-<fullyQualifiedTypeName name="org.dom4j.io.SAXReader"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.dom4j.io.OutputFormat"/>
 <fullyQualifiedTypeName name="javax.sql.rowset.spi.XmlWriter"/>
 <fullyQualifiedTypeName name="org.dom4j.io.XMLWriter"/>
@@ -17,7 +14,6 @@
 <fullyQualifiedTypeName name="cn.wang.dao.impl.UserDaoXmlImpl"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="T"/>
@@ -25,7 +21,6 @@
 <fullyQualifiedTypeName name="cn.wang.web.formbean.RegisterFormBean"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.ConvertUtils"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.locale.converters.DateLocaleConverter"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.apache.commons.collections.FastHashMap"/>
@@ -47,7 +42,6 @@
 <fullyQualifiedTypeName name="cn.wang.service.BusinessService"/>
 <fullyQualifiedTypeName name="cn.wang.domain.Cart"/>
 <fullyQualifiedTypeName name="cn.wang.domain.CartItem"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.JspWriter"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.tagext.Tag"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.tagext.IterationTag"/>
@@ -57,7 +51,13 @@
 <fullyQualifiedTypeName name="javax.servlet.jsp.tagext.JspFragment"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.StringWriter"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.SkipPageException"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="cn.wang.web.tag.ChooseTag"/>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
 </qualifiedTypeNameHistroy>
