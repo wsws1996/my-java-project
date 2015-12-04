@@ -1992,3 +1992,5 @@ Caused by: java.nio.channels.UnresolvedAddressException: null
 2015-11-30 13:01:32,793 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
 2015-11-30 15:15:45,772 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
 2015-11-30 15:57:42,479 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2015-12-03 13:09:56,633 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2015-12-04 14:45:27,676 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started

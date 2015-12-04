@@ -14,6 +14,8 @@
 			<item value="/home/wang/桌面/perfince.epf"/>
 		</list>
 	</section>
+	<section name="FileSystemImportWizard">
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="847" key="dialogWidth"/>
 		<item value="474" key="dialogHeight"/>

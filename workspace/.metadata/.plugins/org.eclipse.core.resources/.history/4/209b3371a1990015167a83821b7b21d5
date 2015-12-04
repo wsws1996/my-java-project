@@ -1,0 +1,9 @@
+package cn.wang;
+
+public class HtmlFilter {
+
+	public HtmlFilter() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
