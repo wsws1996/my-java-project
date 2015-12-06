@@ -1,0 +1,12 @@
+package cn.wang.i18n;
+
+public class Demo4 {
+
+	public Demo4() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		String pattern="On {0}, a hurricance destoryed {1} houses and caused {2} of demages"; 
+	}
+}

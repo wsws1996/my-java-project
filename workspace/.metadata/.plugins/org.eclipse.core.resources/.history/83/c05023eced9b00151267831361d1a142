@@ -1,0 +1,14 @@
+package cn.wang.i18n;
+
+public class Demo3 {
+
+	public Demo3() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		int price=89;
+		
+	}
+
+}

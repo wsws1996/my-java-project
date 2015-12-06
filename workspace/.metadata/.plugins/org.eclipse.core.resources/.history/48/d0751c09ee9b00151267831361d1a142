@@ -1,0 +1,17 @@
+package cn.wang.i18n;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Demo3 {
+
+	public Demo3() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		int price = 89;
+		NumberFormat.getCurrencyInstance(Locale.CHINA);
+	}
+
+}

@@ -1,0 +1,13 @@
+package cn.wang.i18n;
+
+public class Demo5 {
+
+	public Demo5() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

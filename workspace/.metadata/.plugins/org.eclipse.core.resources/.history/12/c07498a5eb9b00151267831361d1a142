@@ -1,0 +1,20 @@
+package cn.wang.i18n;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class Demo2 {
+
+	public Demo2() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Date date = new Date();
+		DateFormat dateFormat= DateFormat.getDateInstance(DateFormat.FULL, Locale.JAPAN);
+		String result= dateFormat.format(date);
+		System.out.println(result);
+	}
+
+}

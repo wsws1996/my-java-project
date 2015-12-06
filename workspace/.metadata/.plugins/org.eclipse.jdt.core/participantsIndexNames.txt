@@ -7,6 +7,8 @@ INDEX VERSION 1.126
 /day12_myself/src
 /E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4059362458.index
 /day10/src
+/E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2336427088.index
+/day12_upload/src
 /E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1706985104.index
 /day11/src
 /F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1831659054.index

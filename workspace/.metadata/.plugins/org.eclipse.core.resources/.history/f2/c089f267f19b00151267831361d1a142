@@ -1,0 +1,12 @@
+package cn.wang.i18n;
+
+public class Demo5 {
+
+	public Demo5() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		String pattern="At {0,time,short} on {0,date}"
+	}
+}
