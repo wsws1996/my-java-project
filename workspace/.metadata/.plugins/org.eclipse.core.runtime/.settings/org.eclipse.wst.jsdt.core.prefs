@@ -1,0 +1,4 @@
+JS_CODE_ANALYSIS_MODE=0
+eclipse.preferences.version=1
+org.eclipse.wst.jsdt.core.codeComplete.forbiddenReferenceCheck=disabled
+org.eclipse.wst.jsdt.core.timeoutForParameterNameFromAttachedJavadoc=0

@@ -1,0 +1,13 @@
+package cn.wang.utils;
+
+public class DaoFactory {
+
+	private DaoFactory() {
+	}
+
+	private static final DaoFactory instance =new DaoFactory();
+	public static DaoFactory getInstance() {
+		return instance;
+	}
+
+}

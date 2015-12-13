@@ -1,0 +1,9 @@
+package cn.wang.service.impl;
+
+import cn.wang.domain.Customer;
+
+public class BussinessService {
+	public void addCustomer(Customer customer) {
+		
+	}
+}

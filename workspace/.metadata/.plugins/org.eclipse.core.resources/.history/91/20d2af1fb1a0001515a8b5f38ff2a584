@@ -1,0 +1,10 @@
+function makeYear() {
+	var year = document.getElementById("year");
+	for (var i = 0; i <= new Date().getYear(); i++) {
+		var option = document.creatElement("option");
+		option.value = i;
+		option.innerText = i;
+		
+		year.appendChild(option);
+	}
+}

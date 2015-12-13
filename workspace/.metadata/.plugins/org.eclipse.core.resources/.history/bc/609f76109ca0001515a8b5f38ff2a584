@@ -1,0 +1,9 @@
+package cn.wang.dao.impl;
+
+public class CustomerDao {
+
+	public CustomerDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

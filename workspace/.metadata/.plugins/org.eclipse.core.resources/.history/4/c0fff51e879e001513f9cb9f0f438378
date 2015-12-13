@@ -1,0 +1,14 @@
+package cn.wang.util;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JdbcUtils {
+	public static Connection getConnection() {
+		return null;
+	}
+	public static void release(Connection  connection,Statement statement,ResultSet resultSet) {
+		return null;
+	}
+}

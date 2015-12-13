@@ -1,0 +1,7 @@
+package cn.wang.utils;
+
+public class WebUtils {
+	public static <T> T request2Bean() {
+
+	}
+}

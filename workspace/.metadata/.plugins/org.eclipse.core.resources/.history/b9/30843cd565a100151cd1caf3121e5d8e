@@ -1,0 +1,47 @@
+function pageInit() {
+	makeYear();
+	makeMonth();
+	makeDay();
+}
+function makeYear() {
+	var year = document.getElementById("year");
+	for (var i = 1901; i <= new Date().getFullYear(); i++) {
+		var option = document.createElement("option");
+		option.value = i;
+		option.textContent = i;
+		year.appendChild(option);
+	}
+}
+function makeMonth() {
+	var month = document.getElementById("month");
+	for (var i = 2; i <= 12; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			option.value = '0' + i;
+			option.textContent = '0' + i;
+		}else {
+			option.value = i;
+			option.textContent = i;
+		}
+		month.appendChild(option);
+	}
+}
+function makeDay() {
+	var month = document.getElementById("month");
+	for (var i = 2; i <= 31; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			option.value = '0' + i;
+			option.textContent = '0' + i;
+		}else {
+			option.value = i;
+			option.textContent = i;
+		}
+		day.appendChild(option);
+	}
+}
+function dosubmit() {
+	makeBirthday();
+	makePreference();
+	return true;
+}

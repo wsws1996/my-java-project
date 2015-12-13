@@ -1,0 +1,6 @@
+package cn.wang.utils;
+
+public class Globals {
+	private static String preference[] = { "唱歌", "跳舞","看图","桑拿","保健"};
+
+}

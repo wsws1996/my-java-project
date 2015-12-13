@@ -1,0 +1,33 @@
+package cn.wang.utils;
+
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+
+public class JdbcUtils {
+
+	private static String url = null;
+
+	static {
+		try {
+			InputStream inputStream = JdbcUtils.class.getClassLoader()
+					.getResourceAsStream("db.properties");
+			Properties properties = new Properties();
+			properties.load(inputStream);
+			properties.getProperty("driver");
+		} catch (Exception e) {
+			throw new ExceptionInInitializerError(e);
+		}
+	}
+
+	public static Connection getConnection() {
+		return null;
+	}
+
+	public static void release(Connection connection, Statement statement,
+			ResultSet resultSet) {
+
+	}
+}

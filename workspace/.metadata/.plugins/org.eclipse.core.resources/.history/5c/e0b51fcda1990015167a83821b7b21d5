@@ -1,9 +1,0 @@
-package cn.wang;
-
-public class HtmlFilter {
-
-	public HtmlFilter() {
-		
-	}
-
-}

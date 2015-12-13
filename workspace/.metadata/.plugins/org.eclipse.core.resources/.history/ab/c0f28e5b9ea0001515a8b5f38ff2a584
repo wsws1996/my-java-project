@@ -1,0 +1,30 @@
+package cn.wang.dao.impl;
+
+import java.sql.Connection;
+import java.util.List;
+
+import cn.wang.domain.Customer;
+
+public class CustomerDaoImpl {
+
+	public void add(Customer customer) {
+		Connection connection = null;
+		
+	}
+
+	public void update(Customer customer) {
+
+	}
+
+	public void delete(String id) {
+
+	}
+
+	public Customer find(String id) {
+		return null;
+	}
+
+	public List<Customer> getAll() {
+		return null;
+	}
+}

@@ -1,0 +1,6 @@
+package cn.wang.utils;
+
+public class Globals {
+	private static String preference;
+	
+}

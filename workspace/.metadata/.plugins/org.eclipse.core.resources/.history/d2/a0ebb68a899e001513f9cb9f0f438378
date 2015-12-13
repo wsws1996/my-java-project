@@ -1,0 +1,21 @@
+package cn.wang.demo;
+
+public class Demo4 {
+
+	public void insert() {
+
+	}
+
+	public void delete() {
+
+	}
+
+	public void update() {
+
+	}
+
+	public void find() {
+
+	}
+
+}

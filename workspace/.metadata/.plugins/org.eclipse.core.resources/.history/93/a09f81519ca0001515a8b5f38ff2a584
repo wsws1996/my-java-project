@@ -1,0 +1,15 @@
+package cn.wang.dao.impl;
+
+import cn.wang.domain.Customer;
+
+public class CustomerDaoImpl {
+	
+	public void add(Customer customer) {
+		
+	}
+	
+	public void update(Customer customer) {
+		
+	}
+	
+}

@@ -1,0 +1,34 @@
+package cn.wang.demo;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import cn.wang.util.JdbcUtils;
+
+public class Demo4 {
+
+	public void insert() {
+		Connection connection = null;
+		Statement statement = null;
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			JdbcUtils.release(connection, statement, resultSet);
+		}
+	}
+
+	public void delete() {
+
+	}
+
+	public void update() {
+
+	}
+
+	public void find() {
+
+	}
+
+}

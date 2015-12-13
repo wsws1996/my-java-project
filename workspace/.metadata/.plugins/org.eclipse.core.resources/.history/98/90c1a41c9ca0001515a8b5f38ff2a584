@@ -1,0 +1,6 @@
+package cn.wang.dao.impl;
+
+public class CustomerDaoImpl {
+	
+	
+}
