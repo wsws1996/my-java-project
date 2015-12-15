@@ -7,8 +7,8 @@
 	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
 		<item value="500" key="SashWeightDetails"/>
 		<item value="500" key="SashWeightTree"/>
-		<item value="242" key="HEIGHT"/>
-		<item value="784" key="WIDTH"/>
+		<item value="238" key="HEIGHT"/>
+		<item value="780" key="WIDTH"/>
 	</section>
 	<section name="conditionHistory">
 	</section>

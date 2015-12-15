@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cn.wang.domain.Cart"/>
-<fullyQualifiedTypeName name="cn.wang.domain.CartItem"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.JspWriter"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.Tag"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.IterationTag"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.BodyTag"/>
-<fullyQualifiedTypeName name="cn.wang.web.tag.TagDemo1"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.JspFragment"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="java.io.StringWriter"/>
-<fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.SkipPageException"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="cn.wang.web.tag.ChooseTag"/>
 <fullyQualifiedTypeName name="java.awt.Frame"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
@@ -31,7 +17,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.FileItem"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -40,11 +25,8 @@
 <fullyQualifiedTypeName name="java.security.interfaces.RSAKey"/>
 <fullyQualifiedTypeName name="cn.wang.domain.User"/>
 <fullyQualifiedTypeName name="cn.wang.dao.impl.UserDaoJdbcImpl"/>
-<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="cn.wang.dao.UserDao"/>
 <fullyQualifiedTypeName name="cn.wang.utils.DaoFactory"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="java.lang.ExceptionInInitializerError"/>
@@ -54,10 +36,28 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="cn.wang.exception.DaoException"/>
-<fullyQualifiedTypeName name="cn.wang.utils.JdbcUtils"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.swing.JApplet"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="cn.wang.domain.Customer"/>
 <fullyQualifiedTypeName name="cn.wang.dao.impl.CustomerDaoImpl"/>
+<fullyQualifiedTypeName name="cn.wang.utils.Globals"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="T"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+<fullyQualifiedTypeName name="org.apache.commons.beanutils.ConvertUtils"/>
+<fullyQualifiedTypeName name="org.apache.commons.beanutils.locale.converters.DateLocaleConverter"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="cn.wang.utils.WebUtils"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="cn.wang.service.impl.BussinessService"/>
+<fullyQualifiedTypeName name="cn.wang.utils.JdbcUtils"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="cn.wang.domain.Customer"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="cn.wang.domain.Page"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

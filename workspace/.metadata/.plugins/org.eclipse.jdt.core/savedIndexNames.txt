@@ -1,14 +1,8 @@
 INDEX VERSION 1.126+/E/myproject/my-java-project/workspace/.metadata/.plugins/org.eclipse.jdt.core
-1437235711.index
-833191194.index
-284320889.index
-2614580097.index
-1940871219.index
-1092402497.index
-3079780332.index
-895823665.index
-882446012.index
-889273828.index
-752430929.index
-1191299723.index
-1023180052.index
+3668395023.index
+2427089515.index
+1991333270.index
+3207167193.index
+3759310248.index
+4148671628.index
+4003510597.index

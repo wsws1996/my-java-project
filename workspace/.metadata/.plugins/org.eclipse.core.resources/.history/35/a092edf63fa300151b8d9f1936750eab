@@ -1,0 +1,9 @@
+package cn.wang.dao;
+
+import java.util.List;
+
+public class StudentDao {
+	public List getPageData() {
+		
+	}
+}

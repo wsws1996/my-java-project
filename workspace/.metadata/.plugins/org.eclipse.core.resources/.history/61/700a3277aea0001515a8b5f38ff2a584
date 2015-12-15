@@ -1,6 +1,0 @@
-function makeYear() {
-	var year = document.getElementById("year");
-	for (var i = 0; i <= new Date().getYear(); i++) {
-
-	}
-}

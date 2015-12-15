@@ -1,0 +1,5 @@
+INTEGRATION_DIRECTORY=/integration
+RUNTIME_ROOT_DIRECTORY=/
+SERVER_DIRECTORY=/server
+STARTUP_DIR=/
+eclipse.preferences.version=1

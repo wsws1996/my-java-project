@@ -1,0 +1,21 @@
+package cn.wang.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import cn.wang.utils.JdbcUtils;
+
+public class StudentDao {
+	public List getPageData(int startindex, int pagesize) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtils.getConnection();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

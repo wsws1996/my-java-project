@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <master-details-editor-page-state>
     <content-outline>
-        <ratio>0.2981220657276995</ratio>
+        <ratio>0.29772191673212883</ratio>
         <root>
             <node>
                 <label>General Settings</label>
                 <expanded>true</expanded>
-            </node>
-            <node>
-                <label>Welcome File List</label>
                 <selected>true</selected>
             </node>
         </root>

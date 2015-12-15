@@ -1,4 +1,0 @@
-function makeYear() {
-	var year = document.getElementById("year");
-
-}

@@ -1,0 +1,10 @@
+package cn.wang.service;
+
+import cn.wang.domain.Page;
+
+public class BusinessService {
+	
+	public Page getStudentPageData() {
+		return;
+	}
+}

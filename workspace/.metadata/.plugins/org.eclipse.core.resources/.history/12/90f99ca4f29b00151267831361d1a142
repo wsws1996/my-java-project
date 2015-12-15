@@ -1,4 +1,0 @@
-username=\u7528\u6237\u540D
-password=\u5BC6\u7801
-submit=\u63D0\u4EA4
-message=At {0,time,short} on {0,date},a destroyed {1} houses and caused{2,number,currency} of damage

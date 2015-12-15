@@ -2,13 +2,11 @@
 <section name="Workbench">
 	<section name="PreferencesImportWizard">
 		<item value="/home/wang/桌面/perfince.epf" key=""/>
-		<item value="/home/wang/桌面/perfince.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="/home/wang/桌面/perfince.epf"/>
 		</list>
 	</section>
 	<section name="PreferencesExportWizard">
-		<item value="/home/wang/桌面/perfince.epf" key=""/>
 		<item value="/home/wang/桌面/perfince.epf" key=""/>
 		<item value="false" key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
 		<item value="true" key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID"/>
@@ -32,7 +30,7 @@
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="319" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.cdt.ui.wizards.NewCWizard1" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
