@@ -1,0 +1,19 @@
+package cn.wang.demo;
+
+public class Demo2 {
+
+	/
+	
+	create table testblob
+	(
+			
+	)
+	
+	
+	 */
+	
+	public static void main(String[] args) {
+
+	}
+
+}

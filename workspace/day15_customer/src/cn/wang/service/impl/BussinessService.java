@@ -5,7 +5,6 @@ import java.util.List;
 import cn.wang.dao.impl.CustomerDaoImpl;
 import cn.wang.domain.Customer;
 import cn.wang.domain.Page;
-import cn.wang.exception.DaoException;
 
 public class BussinessService {
 	CustomerDaoImpl customerDaoImpl = new CustomerDaoImpl();
@@ -44,5 +43,9 @@ public class BussinessService {
 
 	public void updateCustomer(Customer customer) {
 		customerDaoImpl.update(customer);
+	}
+
+	public void deleteCustomer(String id) {
+		customerDaoImpl.delete(id);
 	}
 }

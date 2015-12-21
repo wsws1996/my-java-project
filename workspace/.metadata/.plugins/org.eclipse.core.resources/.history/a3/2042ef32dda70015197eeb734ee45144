@@ -1,0 +1,37 @@
+package cn.wang.demo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import cn.wang.utils.JdbcUtils;
+
+public class Demo3 {
+
+	/*
+	 * 
+	 * create table testbench ( id int primary key, name varchar(20) )
+	 */
+
+	public void testbench1() {
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = JdbcUtils.getConnection();
+			String sql1 = "insert into testbench (id,name) values(1,'aaa')";
+			String sql2 = "insert into testbench (id,name) values(2,'bbb')";
+			String sql3 = "delete from testbench where id=1";
+			
+			statement= connection.createStatement();
+			statement.addBatch(sql1);
+			statement.addBatch(sql2);
+			statement.addBatch(sql3);
+			statement.executeBatch();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JdbcUtils.release(connection, statement, null);
+		}
+	}
+
+}

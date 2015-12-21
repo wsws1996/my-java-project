@@ -5,15 +5,42 @@
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
-<mruHistory/>
+<mruHistory>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5copy&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo4 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1 (8)&quot;/&gt;&#10;"/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
-<mruHistory/>
+<mruHistory>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5copy&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo4 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo3.testbench2&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo3.testbench1&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo2.read&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo2.add&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1.add (1)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1.read&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1 (8)&quot;/&gt;&#10;"/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
-<mruHistory/>
+<mruHistory>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo5copy&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo4 (3)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo3.testbench2&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo3.testbench1&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo2.read&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo2.add&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1.add (1)&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1.read&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Demo1 (8)&quot;/&gt;&#10;"/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 </launchHistory>

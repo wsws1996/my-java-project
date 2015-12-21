@@ -26,11 +26,13 @@ public class UpdateCustomerServlet extends HttpServlet {
 			BussinessService service = new BussinessService();
 			service.updateCustomer(customer);
 			request.setAttribute("message", "更新成功");
-			request.getRequestDispatcher("/message.jsp").forward(request,response);
+			request.getRequestDispatcher("/message.jsp").forward(request,
+					response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("message", "更新失败");
-			request.getRequestDispatcher("/message.jsp").forward(request,response);
+			request.getRequestDispatcher("/message.jsp").forward(request,
+					response);
 
 		}
 	}

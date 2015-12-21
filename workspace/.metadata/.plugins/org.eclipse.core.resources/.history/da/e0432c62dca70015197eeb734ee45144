@@ -1,0 +1,19 @@
+package cn.wang.demo;
+
+public class Demo3 {
+
+	/*
+	 
+	 create table testbench
+	 (
+	 	id int primary key,
+	 	name varchar(20)
+	 )
+	 
+	 */
+	
+	public void testbench1() {
+		
+	}
+
+}

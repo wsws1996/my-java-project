@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@taglib uri="/wang"  prefix="wang"%>
+<%@taglib uri="/wang" prefix="wang"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -32,54 +32,18 @@
 						<td align="center"><c:out value="${c.birthday}"></c:out></td>
 						<td align="center"><c:out value="${c.cellphone }"></c:out></td>
 						<td align="center"><c:out value="${c.email }"></c:out></td>
-						<td align="center"><c:out value="${wang:subString(c.preference,10)}"></c:out></td>
+						<td align="center"><c:out
+								value="${wang:subString(c.preference,10)}"></c:out></td>
 						<td align="center"><c:out value="${c.type }"></c:out></td>
 						<td align="center"><c:out
 								value="${wang:subString(c.description,10)}"></c:out></td>
-						<td align="center"><a href="${pageContext.request.contextPath}/servlet/UpdateCustomerUIServlet?id=${c.id}">修改</a> <a href="#">删除</a></td>
+						<td align="center"><a
+							href="${pageContext.request.contextPath}/servlet/UpdateCustomerUIServlet?id=${c.id}">修改</a>
+							<a href="javascript:dodelete('${c.id}')">删除</a></td>
 					</tr>
 				</c:forEach>
 			</table>
-			<%--当前第[${page.pagenum}]页&nbsp;&nbsp;&nbsp;&nbsp;
-			<c:if test="${page.pagenum>1 }">
-				<a
-					href="${pageContext.request.contextPath }/servlet/ListCustomerServlet?pagenum=${page.pagenum-1}">上一页</a>
-			</c:if>
-			<c:forEach var="pagenum" begin="${page.startPage }"
-				end="${page.endPage}">[
-				<a
-					href="${pageContext.request.contextPath }/servlet/ListCustomerServlet?pagenum=${pagenum}">${pagenum}</a>]
-			</c:forEach>
-			<c:if test="${page.pagenum<page.totalpage }">
-				<a
-					href="${pageContext.request.contextPath }/servlet/ListCustomerServlet?pagenum=${page.pagenum+1}">下一页</a>
-			</c:if>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			共[${page.totalpage}]页，[${page.totalrecord}]条记录
-			<input type="text" style=" width: 30px;" id="pagenum">
-			<input type="button" value="GO"
-				onclick="goWitch(document.getElementById('pagenum'))">
-			<script type="text/javascript">
-				function goWitch(input) {
-					var pagenum = input.value;
-					if (pagenum == null || pagenum == "") {
-						alert("请输入页码！");
-						return;
-					}
-					if (!pagenum.match("\\d+")) {
-						alert("请输入数字！");
-						input.value="";
-						return;
-					}
-					if (pagenum<1||pagenum>${page.totalpage}) {
-						alert("无效的页码！");
-						input.value="";
-						return;
-					}
-					window.location.href = "${pageContext.request.contextPath }/servlet/ListCustomerServlet?pagenum="
-							+ pagenum;
-				}
-			</script> --%>
+
 			<%@include file="/public/page.jsp"%>
 		</c:when>
 		<c:otherwise>
@@ -87,4 +51,13 @@
 		</c:otherwise>
 	</c:choose>
 </body>
+<script type="text/javascript">
+	function dodelete(id) {
+		var b = confirm("您确认删除吗？");
+		if (b) {
+			window.location.href = "${pageContext.request.contextPath}/servlet/DeleteCustomerServlet?id="
+					+ id;
+		}
+	}
+</script>
 </html>

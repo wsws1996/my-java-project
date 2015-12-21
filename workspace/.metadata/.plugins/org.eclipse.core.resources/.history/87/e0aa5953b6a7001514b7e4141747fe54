@@ -1,0 +1,19 @@
+package cn.wang.demo;
+
+public class Demo2 {
+
+	/*
+	
+	create table testblob
+	(
+			id int primary key auto_increment,
+			image blob
+	);
+	
+	 */
+	
+	public static void main(String[] args) {
+
+	}
+
+}

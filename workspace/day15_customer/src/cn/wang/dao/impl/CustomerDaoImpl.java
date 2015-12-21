@@ -66,7 +66,20 @@ public class CustomerDaoImpl {
 	}
 
 	public void delete(String id) {
-
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtils.getConnection();
+			String sql = "delete from customer where id=?";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
+			preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			throw new DaoException(e);
+		} finally {
+			JdbcUtils.release(connection, preparedStatement, resultSet);
+		}
 	}
 
 	public Customer find(String id) {
