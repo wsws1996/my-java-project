@@ -1,0 +1,7 @@
+package cn.wang.web.el;
+
+public class ElUtils {
+	public static String subString() {
+		
+	}
+}

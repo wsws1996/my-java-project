@@ -19,6 +19,20 @@
     <servlet-name>ListCustomerServlet</servlet-name>
     <servlet-class>cn.wang.web.controller.ListCustomerServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateCustomerUIServlet</servlet-name>
+    <servlet-class>cn.wang.web.UI.UpdateCustomerUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateCustomerServlet</servlet-name>
+    <servlet-class>cn.wang.web.controller.UpdateCustomerServlet</servlet-class>
+  </servlet>
+
+
   <servlet-mapping>
     <servlet-name>AddCustomerUIServlet</servlet-name>
     <url-pattern>/servlet/AddCustomerUIServlet</url-pattern>
@@ -30,6 +44,14 @@
   <servlet-mapping>
     <servlet-name>ListCustomerServlet</servlet-name>
     <url-pattern>/servlet/ListCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomerUIServlet</servlet-name>
+        <url-pattern>/servlet/UpdateCustomerUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomerServlet</servlet-name>
+    <url-pattern>/servlet/UpdateCustomerServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

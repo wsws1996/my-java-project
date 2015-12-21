@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 当前第[${page.pagenum}]页&nbsp;&nbsp;&nbsp;&nbsp;
 <c:if test="${page.pagenum>1 }">
 	<a

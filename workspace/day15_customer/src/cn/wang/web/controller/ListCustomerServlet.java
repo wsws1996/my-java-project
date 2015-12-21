@@ -1,14 +1,12 @@
 package cn.wang.web.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.wang.domain.Customer;
 import cn.wang.domain.Page;
 import cn.wang.service.impl.BussinessService;
 

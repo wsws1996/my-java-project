@@ -16,7 +16,7 @@
 		target="body">添加客户</a>
 	<a
 		href="${pageContext.request.contextPath }/servlet/ListCustomerServlet"
-		target="body"">查看客户</a>
+		target="body">查看客户</a>
 
 </body>
 </html>

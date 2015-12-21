@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/wang"  prefix="wang"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -31,10 +32,11 @@
 						<td align="center"><c:out value="${c.birthday}"></c:out></td>
 						<td align="center"><c:out value="${c.cellphone }"></c:out></td>
 						<td align="center"><c:out value="${c.email }"></c:out></td>
-						<td align="center"><c:out value="${c.preference }"></c:out></td>
+						<td align="center"><c:out value="${wang:subString(c.preference,10)}"></c:out></td>
 						<td align="center"><c:out value="${c.type }"></c:out></td>
-						<td align="center"><c:out value="${c.description}"></c:out></td>
-						<td align="center"><a href="#">修改</a> <a href="#">删除</a></td>
+						<td align="center"><c:out
+								value="${wang:subString(c.description,10)}"></c:out></td>
+						<td align="center"><a href="${pageContext.request.contextPath}/servlet/UpdateCustomerUIServlet?id=${c.id}">修改</a> <a href="#">删除</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -78,7 +80,7 @@
 							+ pagenum;
 				}
 			</script> --%>
-			<%@include file="/public/page.jsp" %>
+			<%@include file="/public/page.jsp"%>
 		</c:when>
 		<c:otherwise>
 			对不起，系统还没有任何客户信息！！！

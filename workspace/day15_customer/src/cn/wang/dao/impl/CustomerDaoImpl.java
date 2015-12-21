@@ -40,7 +40,29 @@ public class CustomerDaoImpl {
 	}
 
 	public void update(Customer customer) {
-
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtils.getConnection();
+			String sql = "update customer set name=?,gender=?,birthday=?,cellphone=?,email=?,preference=?,type=?,description=? where id=?";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, customer.getName());
+			preparedStatement.setString(2, customer.getGender());
+			preparedStatement.setDate(3, new java.sql.Date(customer
+					.getBirthday().getTime()));
+			preparedStatement.setString(4, customer.getCellphone());
+			preparedStatement.setString(5, customer.getEmail());
+			preparedStatement.setString(6, customer.getPreference());
+			preparedStatement.setString(7, customer.getType());
+			preparedStatement.setString(8, customer.getDescription());
+			preparedStatement.setString(9, customer.getId());
+			preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			throw new DaoException(e);
+		} finally {
+			JdbcUtils.release(connection, preparedStatement, resultSet);
+		}
 	}
 
 	public void delete(String id) {
@@ -48,7 +70,34 @@ public class CustomerDaoImpl {
 	}
 
 	public Customer find(String id) {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtils.getConnection();
+			String sql = "select * from customer where id=?";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				Customer customer = new Customer();
+				customer.setBirthday(resultSet.getDate("birthday"));
+				customer.setCellphone(resultSet.getString("cellphone"));
+				customer.setDescription(resultSet.getString("description"));
+				customer.setEmail(resultSet.getString("email"));
+				customer.setGender(resultSet.getString("gender"));
+				customer.setId(resultSet.getString("id"));
+				customer.setName(resultSet.getString("name"));
+				customer.setPreference(resultSet.getString("preference"));
+				customer.setType(resultSet.getString("type"));
+				return customer;
+			}
+			return null;
+		} catch (Exception e) {
+			throw new DaoException(e);
+		} finally {
+			JdbcUtils.release(connection, preparedStatement, resultSet);
+		}
 	}
 
 	public List<Customer> getAll() {
@@ -121,9 +170,9 @@ public class CustomerDaoImpl {
 		ResultSet resultSet = null;
 		try {
 			connection = JdbcUtils.getConnection();
-			String sql="select count(*) from customer";
-			preparedStatement= connection.prepareStatement(sql);
-			resultSet= preparedStatement.executeQuery();
+			String sql = "select count(*) from customer";
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 			if (resultSet.next()) {
 				return resultSet.getInt(1);
 			}

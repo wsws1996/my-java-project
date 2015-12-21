@@ -25,6 +25,7 @@ public class StudentDao {
 			while (resultSet.next()) {
 				Student student = new Student();
 				student.setName(resultSet.getString("name"));
+				student.setId(resultSet.getInt("id"));
 				list.add(student);
 			}
 			return list;
@@ -34,6 +35,26 @@ public class StudentDao {
 			JdbcUtils.release(connection, preparedStatement, resultSet);
 		}
 		return null;
+	}
+	public int getTotalrecord() {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtils.getConnection();
+			String sql="select count(*) from student";
+			preparedStatement=connection.prepareStatement(sql);
+			resultSet=preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				return resultSet.getInt(1);
+			}
+			return 0;
+		} catch (Exception e) {
+			new RuntimeException(e.getMessage());
+		} finally {
+			JdbcUtils.release(connection, preparedStatement, resultSet);
+		}
+		return 0;
 	}
 	/* 
 	 * Connection connection = null;

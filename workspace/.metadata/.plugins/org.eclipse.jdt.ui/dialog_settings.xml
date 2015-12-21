@@ -125,7 +125,7 @@
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
-		<item value="-28" key="DIALOG_Y_ORIGIN"/>
+		<item value="-8" key="DIALOG_Y_ORIGIN"/>
 		<item value="703" key="DIALOG_HEIGHT"/>
 		<item value="-33" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
@@ -162,7 +162,7 @@
 	<section name="NewWebXmlLinkCreationWizardPage">
 		<item value="This is the display name of my J2EE component" key="display_name"/>
 		<item value="This is the description of my J2EE component" key="description"/>
-		<item value="/day14_customer/WebRoot/WEB-INF" key="filePath"/>
+		<item value="/day15_customer/WebRoot/WEB-INF" key="filePath"/>
 		<item value="true" key="do_mapping"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
@@ -247,6 +247,6 @@
 	</section>
 	<section name="NewJspCreationWizardPage">
 		<item value="Default JSP template" key="templatezh_CN"/>
-		<item value="/day15_customer/WebRoot/public" key="filePath"/>
+		<item value="/day15_customer/WebRoot/WEB-INF/jsp" key="filePath"/>
 	</section>
 </section>

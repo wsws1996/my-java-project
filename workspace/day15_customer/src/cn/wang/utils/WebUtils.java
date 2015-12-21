@@ -1,5 +1,6 @@
 package cn.wang.utils;
 
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.UUID;
 
@@ -15,7 +16,7 @@ public class WebUtils {
 		try {
 			t = clazz.newInstance();
 			ConvertUtils.register(new DateLocaleConverter(),
-					DateLocaleConverter.class);
+					Date.class);
 			@SuppressWarnings("rawtypes")
 			Enumeration e = request.getParameterNames();
 			while (e.hasMoreElements()) {

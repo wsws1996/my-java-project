@@ -1,0 +1,10 @@
+package cn.wang.web.el;
+
+public class ElUtils {
+	public static String subString(String sourse, int length) {
+		if (sourse.length() > length) {
+			return sourse.substring(0, length) + "......";
+		}
+		return null;
+	}
+}

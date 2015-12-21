@@ -5,6 +5,7 @@ import java.util.List;
 import cn.wang.dao.impl.CustomerDaoImpl;
 import cn.wang.domain.Customer;
 import cn.wang.domain.Page;
+import cn.wang.exception.DaoException;
 
 public class BussinessService {
 	CustomerDaoImpl customerDaoImpl = new CustomerDaoImpl();
@@ -34,5 +35,14 @@ public class BussinessService {
 			page.setUrl(url);
 			return page;
 		}
+	}
+
+	public Customer findCustomer(String id) {
+		Customer customer= customerDaoImpl.find(id);
+		return customer;
+	}
+
+	public void updateCustomer(Customer customer) {
+		customerDaoImpl.update(customer);
 	}
 }
