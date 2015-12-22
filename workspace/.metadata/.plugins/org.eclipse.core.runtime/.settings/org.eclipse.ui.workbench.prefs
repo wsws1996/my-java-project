@@ -5,6 +5,7 @@ PLUGINS_NOT_ACTIVATED_ON_STARTUP=com.genuitec.eclipse.easie.geronimo1;com.genuit
 UIActivities.com.genuitec.eclipse.capability.emfetc=true
 UIActivities.com.genuitec.eclipse.capability.pro.screencapture=false
 UIActivities.com.genuitec.eclipse.maven.m2eclipse=true
+UIActivities.com.genuitec.eclipse.wtp=true
 UIActivities.secure.delivery.manage.p2.sites=true
 UIActivities.secure.delivery.manage.p2.sites.page=true
 eclipse.preferences.version=1

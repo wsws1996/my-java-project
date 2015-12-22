@@ -50,6 +50,20 @@
         <url>jdbc:hsqldb:.</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>com.mysql.fabric.jdbc.FabricMySQLDriver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>565833c8:151c8837b84:-7f2a</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>/home/wang/mysql-connector-java-5.1.38-bin.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MySQL Connector/J01</name>
+        <url>jdbc:mysql://localhost:3306/day15</url>
+    </Bean>
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>org.apache.derby.jdbc.ClientDriver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
             <string>-29</string>
@@ -98,6 +112,20 @@
         <jarFileNames Indexed="true"/>
         <name>Firebird (JayBird JCA/JDBC driver)</name>
         <url>jdbc:firebirdsql:[//host[:port]/]&lt;database&gt;</url>
+    </Bean>
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>565833c8:151c8837b84:-7f29</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>/home/wang/mysql-connector-java-5.1.38-bin.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MySQL Connector/J012</name>
+        <url>jdbc:mysql://localhost:3306/day15</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>com.sunopsis.jdbc.driver.xml.SnpsXmlDriver</driverClassName>
@@ -342,6 +370,20 @@
         <jarFileNames Indexed="true"/>
         <name>PostgreSQL</name>
         <url>jdbc:postgresql:[&lt;//host&gt;[:&lt;5432&gt;/]]&lt;database&gt;</url>
+    </Bean>
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>com.mysql.fabric.jdbc.FabricMySQLDriver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>565833c8:151c8837b84:-7f71</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>/E/&#x5f00;&#x53d1;&#x5de5;&#x5177;&#x5305;/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MySQL Connector/J0</name>
+        <url>jdbc:mysql://localhost:3306/day15</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>com.sybase.jdbc2.jdbc.SybDriver</driverClassName>
