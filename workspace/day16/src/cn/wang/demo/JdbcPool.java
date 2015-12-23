@@ -51,6 +51,7 @@ public class JdbcPool implements DataSource {
 				Connection connection = DriverManager.getConnection(url,
 						username, password);
 				linkedList.add(connection);
+				System.out.println("获取到了连接" + connection);
 			}
 		} catch (Exception e) {
 			throw new ExceptionInInitializerError(e);
@@ -61,16 +62,27 @@ public class JdbcPool implements DataSource {
 	@Override
 	public Connection getConnection() throws SQLException {
 		if (linkedList.size() > 0) {
-			Connection connection = linkedList.removeFirst();
-			return (Connection) Proxy
-			.newProxyInstance(JdbcPool.class.getClassLoader(), connection.getClass().getInterfaces(), new InvocationHandler() {
-				
-				@Override
-				public Object invoke(Object proxy, Method method, Object[] args)
-						throws Throwable {
-					return null;
-				}
-			});
+			System.out.println("取出前池的大小是：" + linkedList.size());
+			final Connection connection = linkedList.removeFirst();
+			System.out.println("取出后池的大小是：" + linkedList.size());
+			return (Connection) Proxy.newProxyInstance(JdbcPool.class
+					.getClassLoader(), connection.getClass().getInterfaces(),
+					new InvocationHandler() {
+
+						@Override
+						public Object invoke(Object proxy, Method method,
+								Object[] args) throws Throwable {
+							if (!method.getName().equals("close")) {
+								return method.invoke(connection, args);
+
+							} else {
+								linkedList.add(connection);
+								System.out.println(connection + "被返还到池中");
+								System.out.println("返还后池的大小是：" + linkedList.size());
+								return null;
+							}
+						}
+					});
 		} else {
 			throw new RuntimeException("对不起，数据库忙！！！");
 		}
@@ -180,7 +192,7 @@ class Myconnection implements Connection {
 	@Override
 	public void setAutoCommit(boolean autoCommit) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -192,13 +204,13 @@ class Myconnection implements Connection {
 	@Override
 	public void commit() throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void rollback() throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -216,7 +228,7 @@ class Myconnection implements Connection {
 	@Override
 	public void setReadOnly(boolean readOnly) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -228,7 +240,7 @@ class Myconnection implements Connection {
 	@Override
 	public void setCatalog(String catalog) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -240,7 +252,7 @@ class Myconnection implements Connection {
 	@Override
 	public void setTransactionIsolation(int level) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -290,13 +302,13 @@ class Myconnection implements Connection {
 	@Override
 	public void setTypeMap(Map<String, Class<?>> map) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setHoldability(int holdability) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -320,13 +332,13 @@ class Myconnection implements Connection {
 	@Override
 	public void rollback(Savepoint savepoint) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void releaseSavepoint(Savepoint savepoint) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -408,14 +420,14 @@ class Myconnection implements Connection {
 	public void setClientInfo(String name, String value)
 			throws SQLClientInfoException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setClientInfo(Properties properties)
 			throws SQLClientInfoException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -447,7 +459,7 @@ class Myconnection implements Connection {
 	@Override
 	public void setSchema(String schema) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -459,14 +471,14 @@ class Myconnection implements Connection {
 	@Override
 	public void abort(Executor executor) throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setNetworkTimeout(Executor executor, int milliseconds)
 			throws SQLException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

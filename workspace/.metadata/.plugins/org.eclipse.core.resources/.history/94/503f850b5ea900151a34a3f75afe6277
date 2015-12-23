@@ -1,0 +1,1 @@
+该版本的dbcp可能依赖commons-loggingjar包，否则可能出现java.lang.NoClassDefFoundError错误

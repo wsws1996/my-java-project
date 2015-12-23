@@ -1,59 +1,49 @@
 package cn.wang.utils;
 
-import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
+
+import cn.wang.demo.JdbcPool;
 
 public class JdbcUtils {
 
-	private static String url = null;
-	private static String username = null;
-	private static String password = null;
-
-	static {
-		try {
-			InputStream inputStream = JdbcUtils.class.getClassLoader()
-					.getResourceAsStream("db.properties");
-			Properties properties = new Properties();
-			properties.load(inputStream);
-			String driver = properties.getProperty("driver");
-			url = properties.getProperty("url");
-			username=properties.getProperty("username");
-			password=properties.getProperty("password");
-			Class.forName(driver);
-		} catch (Exception e) {
-			throw new ExceptionInInitializerError(e);
-		}
-	}
+	private static JdbcPool pool = new JdbcPool();
 
 	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection(url,username,password);
+		return pool.getConnection();
 	}
 
 	public static void release(Connection connection, Statement statement,
 			ResultSet resultSet) {
+		/*
+		 * if (resultSet != null) { try { resultSet.close(); } catch (Exception
+		 * e) { } finally { if (statement != null) { try { statement.close(); }
+		 * catch (Exception e) { } finally { if (connection != null) { try {
+		 * connection.close(); } catch (Exception e) { } } } } } }
+		 */
 		if (resultSet != null) {
 			try {
 				resultSet.close();
 			} catch (Exception e) {
-			} finally {
-				if (statement != null) {
-					try {
-						statement.close();
-					} catch (Exception e) {
-					} finally {
-						if (connection != null) {
-							try {
-								connection.close();
-							} catch (Exception e) {
-							}
-						}
-					}
-				}
+				e.printStackTrace();
+			}
+			resultSet = null;
+
+		}
+		if (statement != null) {
+			try {
+				statement.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (connection != null) {
+			try {
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}
