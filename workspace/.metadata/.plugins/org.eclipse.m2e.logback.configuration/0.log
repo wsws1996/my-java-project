@@ -2018,3 +2018,5 @@ Caused by: java.nio.channels.UnresolvedAddressException: null
 2015-12-21 19:58:17,767 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
 2015-12-22 15:06:50,804 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
 2015-12-23 16:43:59,667 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2015-12-24 12:26:31,891 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2015-12-24 13:30:28,518 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started

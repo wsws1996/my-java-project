@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import cn.wang.utils.JdbcUtils_C3P0;
 import cn.wang.utils.JdbcUtils_DBCP;
 
 public class Demo1 {
@@ -14,7 +15,7 @@ public class Demo1 {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = JdbcUtils_DBCP.getConnection();
+			connection = JdbcUtils_C3P0.getConnection();
 			connection.setAutoCommit(false);
 
 			String sql1 = "update account set money =money-100 where name='aaa'";
@@ -34,7 +35,7 @@ public class Demo1 {
 			}
 			e.printStackTrace();
 		} finally {
-			JdbcUtils_DBCP.release(connection, preparedStatement, resultSet);
+			JdbcUtils_C3P0.release(connection, preparedStatement, resultSet);
 		}
 	}
 }
