@@ -12,15 +12,7 @@ public class JdbcUtils_C3P0 {
 	private static ComboPooledDataSource dataSource = null;
 	static {
 		try {
-			/*
-			 * dataSource=new ComboPooledDataSource();
-			 * dataSource.setDriverClass("com.mysql.jdbc.Driver");
-			 * dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/day16");
-			 * dataSource.setUser("root"); dataSource.setPassword("root");
-			 * dataSource.setInitialPoolSize(10); dataSource.setMaxPoolSize(20);
-			 * dataSource.setMinPoolSize(5);
-			 */
-			dataSource = new ComboPooledDataSource("wang");
+			dataSource = new ComboPooledDataSource();
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ExceptionInInitializerError(e);

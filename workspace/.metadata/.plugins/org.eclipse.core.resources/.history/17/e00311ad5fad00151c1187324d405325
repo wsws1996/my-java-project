@@ -1,0 +1,14 @@
+package cn.wang.demo;
+
+import java.sql.Connection;
+
+import cn.wang.utils.JdbcUtils_C3P0;
+
+public class Demo5 {
+
+	public static void main(String[] args) {
+		Connection connection=JdbcUtils_C3P0.getConnection();
+		
+	}
+
+}

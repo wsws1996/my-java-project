@@ -1,0 +1,9 @@
+<Context>
+	<Resource 
+	name="jdbc/EmployeeDB"
+	auth="Container"
+	type="javax.sql.DataSource"
+	username="root"
+	password="root" driverClassName="org.hsql.jdbcDriver"
+		url="jdbc:HypersonicSQL:database" maxTotal="8" maxIdle="4" />
+</Context>

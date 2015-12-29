@@ -1,0 +1,12 @@
+package cn.wang.demo;
+
+import cn.wang.dao.AccountDao;
+
+public class Demo7 {
+
+	public static void main(String[] args) {
+		AccountDao dao=new AccountDao();
+		System.out.println(dao.find(10));
+	}
+
+}

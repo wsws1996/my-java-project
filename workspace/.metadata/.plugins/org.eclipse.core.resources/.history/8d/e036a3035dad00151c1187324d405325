@@ -1,0 +1,32 @@
+package cn.wang.web.servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+public class ServletDemo1 extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5449407490867518176L;
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}
