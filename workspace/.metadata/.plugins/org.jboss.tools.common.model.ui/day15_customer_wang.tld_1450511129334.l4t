@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Layout resource="/day15_customer/WebRoot/WEB-INF/wang.tld">
- <TreeFormPage>
-  <Memento type="">
-   <Memento collapsed="false" type="Properties Editor"/>
-  </Memento>
- </TreeFormPage>
-</Layout>

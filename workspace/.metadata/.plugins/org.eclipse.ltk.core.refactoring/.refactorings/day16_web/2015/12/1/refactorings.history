@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;day16_web/WebRoot/META-INF/content.xml&apos; to &apos;context.xml&apos;" description="Rename resource &apos;content.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebRoot/META-INF/content.xml" name="context.xml" stamp="1451301997228" updateReferences="true"/>
-</session>

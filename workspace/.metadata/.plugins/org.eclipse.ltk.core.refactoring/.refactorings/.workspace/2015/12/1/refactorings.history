@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;Copy of day15_customer&apos; to &apos;day15_customer_use_my_database_frame&apos;&#x0A;- Original element: &apos;Copy of day15_customer&apos;&#x0A;- Renamed element: &apos;Copy of day15_customer&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Copy of day15_customer&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Copy of day15_customer" name="day15_customer_use_my_database_frame" references="true" stamp="1451388471768" version="1.0"/>
-</session>

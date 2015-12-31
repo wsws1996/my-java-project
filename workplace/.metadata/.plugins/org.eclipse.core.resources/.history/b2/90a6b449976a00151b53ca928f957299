@@ -1,7 +1,0 @@
-package com.wang.service;
-
-public class UsersService {
-	public return_type searchNews(String keys) {
-		
-	}
-}

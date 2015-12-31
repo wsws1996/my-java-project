@@ -1,7 +1,0 @@
-package cn.wang.dao;
-
-public class BaseDao {
-	public void add() {
-		
-	}
-}

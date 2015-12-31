@@ -1,6 +1,0 @@
-package com.wang.domain;
-
-public class Users {
-	
-	private int userid;
-}

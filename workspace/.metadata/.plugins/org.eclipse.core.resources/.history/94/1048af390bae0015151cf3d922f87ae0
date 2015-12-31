@@ -1,6 +1,0 @@
-import java.sql.ResultSet;
-
-
-interface ResultSetHandler {
-	public Object handler(ResultSet resultSet);
-}
