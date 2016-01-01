@@ -24,8 +24,6 @@ public class AccountService {
 
 			dao.update(source);
 
-			int x = 1 / 0;
-
 			dao.update(target);
 
 			JdbcUtil.commit();
