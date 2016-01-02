@@ -3,6 +3,7 @@ package cn.wang.service;
 import java.sql.SQLException;
 
 import cn.wang.dao.AccountDao;
+import cn.wang.dao.impl.AccountDaoImpl;
 import cn.wang.domain.Account;
 import cn.wang.utils.JdbcUtil;
 
@@ -14,7 +15,7 @@ public class AccountService {
 		try {
 			JdbcUtil.startTransaction();
 
-			AccountDao dao = new AccountDao();
+			AccountDao dao = new AccountDaoImpl();
 
 			Account source = dao.find(sourceid);
 			Account target = dao.find(targetid);

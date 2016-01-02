@@ -5,16 +5,24 @@ import java.sql.SQLException;
 import org.junit.Test;
 
 import cn.wang.dao.DepartmentDao;
+import cn.wang.dao.PersonDao;
 import cn.wang.dao.TeacherDao;
 import cn.wang.domain.Department;
 import cn.wang.domain.Employee;
+import cn.wang.domain.Idcard;
+import cn.wang.domain.Person;
 import cn.wang.domain.Student;
 import cn.wang.domain.Teacher;
+import cn.wang.utils.DaoFactory;
 
 public class BussinessService {
 
-	DepartmentDao departmentDao = new DepartmentDao();
-	TeacherDao teacherDao = new TeacherDao();
+	DepartmentDao departmentDao = DaoFactory.getInstance().createDao(
+			"cn.wang.dao.impl.DepartmentDaoImpl", DepartmentDao.class);
+	TeacherDao teacherDao = DaoFactory.getInstance().createDao(
+			"cn.wang.dao.impl.TeacherDaoImpl", TeacherDao.class);
+	PersonDao personDao = DaoFactory.getInstance().createDao(
+			"cn.wang.dao.impl.PersonDaoImpl", PersonDao.class);
 
 	@Test
 	public void addDepartment() throws SQLException {
@@ -70,10 +78,26 @@ public class BussinessService {
 
 	@Test
 	public void findTeacher() throws SQLException {
-		Teacher teacher= teacherDao.find("1");
+		Teacher teacher = teacherDao.find("1");
 		System.out.println(teacher.getId());
 		System.out.println(teacher.getName());
 		System.out.println(teacher.getSalary());
 		System.out.println(teacher.getStudents().size());
+	}
+
+	@Test
+	public void addPerson() throws SQLException {
+		Person person = new Person();
+		person.setId("1");
+		person.setName("aaa");
+
+		Idcard idcard = new Idcard();
+		idcard.setId("1");
+		idcard.setAddress("hn");
+		idcard.setPerson(person);
+
+		person.setIdcard(idcard);
+
+		personDao.add(person);
 	}
 }
