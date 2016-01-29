@@ -1,0 +1,27 @@
+package junit.test;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PersonTest3 {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		System.out.println("Before");
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		System.out.println("After");
+	}
+	@Test
+	public void test1() {
+		System.out.println("Proccessing1...");
+	}
+	@Test
+	public void test() {
+		System.out.println("Proccessing...");
+	}
+
+}

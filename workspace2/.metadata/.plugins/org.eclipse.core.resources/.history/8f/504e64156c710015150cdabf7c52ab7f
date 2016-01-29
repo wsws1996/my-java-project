@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE 书架 SYSTEM "book.dtd">
+<书架>
+	<书>
+		<书名>Java就业培训</书名>
+		<作者>张孝祥</作者>
+		<售价>39.00元</售价>
+	</书>
+</书架>

@@ -1,0 +1,15 @@
+package cn.wang.dao;
+
+import cn.wang.domain.Student;
+
+public class StudentDao {
+	public void add(Student student) {
+		
+	}
+	public void delete(String name) {
+		
+	}
+	public Student find(String examid) {
+		return null;
+	}
+}

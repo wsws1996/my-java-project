@@ -1,0 +1,11 @@
+<html>
+	<body>
+	<script >
+		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.validateOnParse=true;
+		xmlDoc.load("book.xml");
+		document.write("¥ÌŒÛ‘≠“Ú£∫"+xmlDoc.parseError.reason+"<br/>");
+		document.write("¥ÌŒÛ––∫≈£∫"+xmlDoc.parseError.line+"<br/>");
+	</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+package cn.wang.dao;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import cn.wang.domain.Student;
+import cn.wang.utils.XmlUtils;
+
+public class StudentDao {
+	public void add(Student student) {
+		try {
+			Document document = XmlUtils.getDocument();
+			Element e = document.createElement("student");
+			e.setAttribute("examid",student.getExamid());
+			e.setAttribute("idcard",student.getIdcard());
+			Element name=document.createElement("name");
+			name.setTextContent(student.getName());
+			Element location=document.createElement("location");
+			name.setTextContent(student.getLocation());
+			Element grade=document.createElement("grade");
+			grade.setTextContent(student.getGrade()+"");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new RuntimeException(e);
+		}
+	}
+	public void delete(String name) {
+		
+	}
+	public Student find(String examid) {
+		return null;
+	}
+}

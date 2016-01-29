@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<deployments>
+  <deployment alt-context-root="" context-root="/day07" deployment-path="/E/开发工具包/apache-tomcat-8.0.28/webapps/day07" project-name="day07" server-id="tomcat8Server" state="ERROR" status="Project modules hierarchy is inconsistent with deployment" type="WEB"/>
+  <deployment alt-context-root="" context-root="/day08" deployment-path="/E/开发工具包/apache-tomcat-8.0.28/webapps/day08" project-name="day08" server-id="tomcat8Server" state="ERROR" status="Project modules hierarchy is inconsistent with deployment" type="WEB"/>
+  <deployment alt-context-root="" context-root="/day09" deployment-path="/E/开发工具包/apache-tomcat-8.0.28/webapps/day09" project-name="day09" server-id="tomcat8Server" state="DEPLOYED" type="WEB"/>
+</deployments>

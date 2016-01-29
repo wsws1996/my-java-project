@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE 书架 SYSTEM "book.dtd">
+<书架> 
+	<书>
+		<作者>张孝祥</作者>
+		<书名>&booknae;</书名>
+		<售价>39.00元</售价>
+	</书>
+</书架>

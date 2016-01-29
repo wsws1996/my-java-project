@@ -1,0 +1,8 @@
+ENDORSED_DIRS="/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/common/endorsed"
+JDK_HOME=/home/wang/MyEclipse Professional 2014/binary/com.sun.java.jdk7.linux.x86_64_1.7.0.u45
+LIBRARY_PATH="/home/wang/MyEclipse Professional 2014/binary/com.sun.java.jdk7.linux.x86_64_1.7.0.u45/bin\:/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/bin"
+SERVER_ENABLEMENT=true
+TOMCAT_BASE=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28
+TOMCAT_HOME=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28
+TOMCAT_TEMP=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/temp
+eclipse.preferences.version=1
