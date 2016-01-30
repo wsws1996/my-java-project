@@ -9,33 +9,24 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class CharacterEncodingFilter implements Filter {
-
-	private FilterConfig filterConfig = null;
-	private String defaultCharset = "UTF-8";
+public class FilterDemo4 implements Filter {
 
 	@Override
 	public void destroy() {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		String charset = filterConfig.getInitParameter("charset");
-		if (charset == null) {
-			charset = defaultCharset;
-		}
-		request.setCharacterEncoding(charset);
-		response.setCharacterEncoding(charset);
-		response.setContentType("text/html;charset=" + charset);
-
-		chain.doFilter(request, response);
+		System.out.println("哈哈");
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		this.filterConfig = filterConfig;
+		// TODO Auto-generated method stub
+
 	}
 
 }

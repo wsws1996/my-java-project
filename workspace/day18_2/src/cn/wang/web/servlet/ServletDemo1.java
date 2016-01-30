@@ -12,12 +12,19 @@ public class ServletDemo1 extends HttpServlet {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5449407490867518176L;
+	private static final long serialVersionUID = 3958321845315141473L;
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("ServletDemo1");
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		System.out.println(request.getParameter("username"));
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

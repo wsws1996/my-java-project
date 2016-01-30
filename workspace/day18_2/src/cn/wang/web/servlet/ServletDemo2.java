@@ -7,17 +7,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletDemo1 extends HttpServlet {
+public class ServletDemo2 extends HttpServlet {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5449407490867518176L;
+	private static final long serialVersionUID = 2317314787565440154L;
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("ServletDemo1");
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		String message = request.getParameter("message");
+		response.getWriter().write("您上次的留言是：<br/>" + message);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

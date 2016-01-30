@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="post">
+	<form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="get">
 		用户名：<input type="text" name="username"><br>
 		密码：<input type="password" name="password"><br>
 		有效期：

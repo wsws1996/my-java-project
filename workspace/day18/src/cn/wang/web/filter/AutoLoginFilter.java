@@ -29,7 +29,12 @@ public class AutoLoginFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-
+		
+		if(request.getSession().getAttribute("user")!=null){
+			chain.doFilter(request, response);
+			return;
+		}
+		
 		String value = null;
 		Cookie cookies[] = request.getCookies();
 		for (int i = 0; cookies != null && i < cookies.length; i++) {
