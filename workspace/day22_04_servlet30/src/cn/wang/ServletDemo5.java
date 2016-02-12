@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletDemo5 extends HttpServlet {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6313646418169417335L;
+
+	/**
 	 * Destruction of the servlet. <br>
 	 */
 	public void destroy() {
