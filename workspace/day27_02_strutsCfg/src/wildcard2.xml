@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="p3" extends="struts-default">
+		<!-- <action name="act1" class="cn.wang.action.Demo4Action" method="m1"> 
+			</action> <action name="*" class="cn.wang.action.Demo4Action" method="m2"> 
+			</action> <action name="act*" class="cn.wang.action.Demo4Action" method="m3"> 
+			</action> -->
+		<action name="demo4" class="cn.wang.action.Demo4Action">
+			
+		</action>
+	</package>
+</struts>

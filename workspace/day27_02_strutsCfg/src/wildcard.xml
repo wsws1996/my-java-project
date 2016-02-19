@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="p2" extends="struts-default">
+		<!-- <action name="addCustomer" class="cn.wang.action.CustomerAction" method="add"> 
+			<result name="success">/customer/addCustomer.jsp</result> </action> <action 
+			name="editCustomer" class="cn.wang.action.CustomerAction" method="edit"> 
+			<result name="success">/customer/editCustomer.jsp</result> </action> <action 
+			name="deleteCustomer" class="cn.wang.action.CustomerAction" method="delete"> 
+			<result name="success">/customer/deleteCustomer.jsp</result> </action> <action 
+			name="findCustomer" class="cn.wang.action.CustomerAction" method="find"> 
+			<result name="success">/customer/findCustomer.jsp</result> </action> -->
+		<!-- <action name="*Customer" class="cn.wang.action.CustomerAction" method="{1}"> 
+			<result name="success">/customer/{1}Customer.jsp</result> </action> -->
+			<action name="*_*" class="cn.wang.action.{2}Action" method="{1}">
+			<result name="success">/customer/{1}{2}.jsp</result>
+			</action>
+	</package>
+</struts>

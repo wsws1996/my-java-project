@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- <package name="default" extends="struts-default" abstract="true"> -->
+	<!-- <global-results> -->
+	<!-- <result name="success">/demo1.jsp</result> -->
+	<!-- </global-results> -->
+	<!-- </package> -->
+	<!-- <package name="p1" extends="default"> -->
+
+	<!-- <action name="demo1" class="cn.wang.action.Demo1Action"> -->
+	<!-- <result name="success" type="dispatcher">/demo1.jsp</result> -->
+	<!-- <result>/demo1.jsp</result> -->
+	<!-- </action> -->
+	<!-- <action name="demo2"> -->
+
+	<!-- </action> -->
+	<!-- </package> -->
+	<package name="p1" extends="struts-default" namespace="/n1">
+		<action name="demo1" class="cn.wang.action.Demo1Action" method="execute">
+			<result name="success" type="chain">
+				<param name="namespace">/n2</param>
+				<param name="actionName">demo2</param>
+			</result>
+		</action>
+
+	</package>
+	<package name="p2" extends="struts-default" namespace="/n2">
+		<action name="demo2" class="cn.wang.action.Demo1Action" method="execute">
+<!-- 			<result name="success" type="dispatcher">/demo1.jsp</result> -->
+<result name="success" type="plainText">
+	<param name="location">/demo1.jsp</param>
+</result>
+		</action>
+	</package>
+	<package name="p3" extends="struts-default">
+	<result-types>
+		<result-type name="captcha" class="cn.wang.action.CaptchaResult">
+		</result-type>
+	</result-types>
+		<action name="captcha">
+			<result name="success" type="captcha">
+				<param name="width">200</param>
+			</result>
+		</action>
+	</package>
+	<package name="p4">
+		<action name="demo3" class="cn.wang.action.Demo3Action" method="doSomething">
+		</action>
+	</package>
+</struts>

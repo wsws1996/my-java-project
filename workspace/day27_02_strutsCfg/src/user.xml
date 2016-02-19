@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="p1" extends="struts-default" namespace="/user">
+		<!-- class="cn.wang.action.HelloWroldAction" method="sayHello" -->
+		<default-class-ref class="cn.wang.action.HelloWroldAction"></default-class-ref>
+		<action name="helloworld" method="sayHello">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="add" class="cn.wang.action.Demo3Action" method="addUI">
+			<result name="success">/add.jsp</result>
+		</action>
+		<action name="edit" class="cn.wang.action.Demo3Action" method="editUI">
+			<result name="success">/edit.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="student" location="250,97" size="301,256">
+    <action name="register" location="118,91" size="150,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="register.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="customer" location="50,500" size="171,91">
+    <action name="register" location="15,23" size="150,62">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="register1.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="1" target="success.jsp">
+          <bendpoint dim1="113,0" dim2="102,521" />
+          <bendpoint dim1="113,-536" dim2="102,-15" />
+        </resourceEdge>
+      </result>
+    </action>
+  </package>
+  <webResource name="success.jsp" path="/success.jsp" location="77,30" size="150,55" />
+  <webResource name="success.jsp" path="/success.jsp" location="77,30" size="150,55" />
+  <webResource name="error.jsp" path="/error.jsp" location="351,15" size="150,55" />
+  <webResource name="register.jsp" path="/register.jsp" location="610,377" size="150,55" />
+  <webResource name="register1.jsp" path="/register1.jsp" location="342,615" size="150,55" />
+  <package name="student1" location="820,356" size="165,97">
+    <action name="register" location="5,25" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="register2.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="register2.jsp" path="/register2.jsp" location="894,207" size="150,55" />
+</Struts2Diagram>
+

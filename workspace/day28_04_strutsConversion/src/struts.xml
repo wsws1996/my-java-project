@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="student" namespace="/student" extends="struts-default">
+		<action name="register" class="cn.wang.action.StudentAction"
+			method="register">
+			<result name="success" type="dispatcher">/success.jsp</result>
+			<result name="error" type="dispatcher">/error.jsp</result>
+			<result name="input" type="dispatcher">/register.jsp</result>
+		</action>
+	</package>
+	<package name="customer" namespace="/customer" extends="struts-default">
+		<action name="register" class="cn.wang.action.CustomerAction" method="register">
+		<result name="input" type="dispatcher">/register1.jsp</result></action>
+	</package>
+</struts>    

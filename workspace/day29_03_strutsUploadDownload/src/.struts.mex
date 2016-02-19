@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="p1" location="151,58" size="238,120">
+    <action name="uploadSingleFile" location="81,51" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="success.jsp" path="/success.jsp" location="744,216" size="150,55" />
+</Struts2Diagram>
+

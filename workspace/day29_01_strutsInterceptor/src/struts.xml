@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="mydefaultpackage" extends="struts-default">
+		<interceptors>
+			<interceptor name="demo1Interceptor" class="cn.wang.interceptors.Demo1Interceptor"></interceptor>
+			<interceptor name="LoginCheckInterceptor"
+				class="cn.wang.interceptors.LoginCheckInterceptor"></interceptor>
+			<interceptor name="LoginCheck1Interceptor"
+				class="cn.wang.interceptors.LoginCheck1Interceptor"></interceptor>
+			<interceptor name="CostTimeInterceptor"
+				class="cn.wang.interceptors.CostTimeInterceptor"></interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack">
+				</interceptor-ref>
+				<interceptor-ref name="CostTimeInterceptor">
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+	</package>
+	<package name="p1" extends="mydefaultpackage">
+		<action name="demo1" class="cn.wang.action.Demo1Action" method="execute">
+			<interceptor-ref name="demo1Interceptor"></interceptor-ref>
+			<result name="success" type="dispatcher">/1.jsp</result>
+		</action>
+		<action name="*" class="cn.wang.action.Demo2Action" method="{1}">
+			<!-- <interceptor-ref name="mydefault"> -->
+			<!-- </interceptor-ref> -->
+			<!-- <interceptor-ref name="LoginCheck1Interceptor"> -->
+			<!-- <param name="excludeMethods">query</param> -->
+			<!-- </interceptor-ref> -->
+			<result name="login">/login.jsp</result>
+		</action>
+	</package>
+</struts>
