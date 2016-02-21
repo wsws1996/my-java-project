@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="p1" location="151,58" size="238,120">
-    <action name="uploadSingleFile" location="81,51" size="150,40">
+  <package name="p1" location="936,180" size="238,120">
+    <action name="uploadSingleFile" location="31,38" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="success.jsp" />
       </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="1.jsp" />
+      </result>
     </action>
   </package>
-  <webResource name="success.jsp" path="/success.jsp" location="744,216" size="150,55" />
+  <package name="p2" location="873,59" size="190,103">
+    <action name="uploadFiles" location="34,35" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="2.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="p3" location="99,85" size="170,149">
+    <action name="download" location="11,36" size="150,40">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="success.jsp" path="/success.jsp" location="646,194" size="150,55" />
+  <webResource name="1.jsp" path="/1.jsp" location="1318,185" size="150,55" />
+  <webResource name="2.jsp" path="/2.jsp" location="820,250" size="150,55" />
 </Struts2Diagram>
 

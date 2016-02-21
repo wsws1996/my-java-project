@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="p1" location="115,10" size="213,434">
+    <action name="demo1" location="31,39" size="150,41">
+      <result name="none" />
+    </action>
+    <action name="demo2" location="19,95" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="2.jsp" />
+      </result>
+    </action>
+    <action name="demo3" location="16,146" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="3.jsp" />
+      </result>
+    </action>
+    <action name="demo4" location="26,191" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="4.jsp" />
+      </result>
+    </action>
+    <action name="demo5" location="28,383" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="5.jsp" />
+      </result>
+    </action>
+    <action name="demo6" location="53,316" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="6.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="2.jsp" path="/2.jsp" location="988,377" size="150,55" />
+  <webResource name="3.jsp" path="/3.jsp" location="500,211" size="150,55" />
+  <webResource name="4.jsp" path="/4.jsp" location="299,273" size="150,55" />
+  <webResource name="5.jsp" path="/5.jsp" location="665,447" size="150,55" />
+  <webResource name="6.jsp" path="/6.jsp" location="10,211" size="150,55" />
+</Struts2Diagram>
+

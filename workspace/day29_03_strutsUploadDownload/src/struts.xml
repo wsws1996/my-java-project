@@ -3,19 +3,31 @@
 <struts>
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.multipart.maxSize" value="10485760"></constant>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
 	<constant name="struts.custom.i18n.resources" value="fileupload"></constant>
 	<package name="p1" extends="struts-default">
 		<action name="uploadSingleFile" class="cn.wang.action.Upload1Action"
 			method="upload">
 			<interceptor-ref name="defaultStack">
-				<param name="fileUpload.allowedExtensions">.jpg,.bmp,.png
-				</param>
+				<param name="fileUpload.allowedExtensions">.jpg,.bmp,.png </param>
 			</interceptor-ref>
-			<result name="success" type="dispatcher">
-				/success.jsp
-			</result>
-			<result name="input" type="dispatcher">
-				/1.jsp
+			<result name="success" type="dispatcher"> /success.jsp </result>
+			<result name="input" type="dispatcher"> /1.jsp </result>
+		</action>
+	</package>
+	<package name="p2" extends="struts-default">
+		<action name="uploadFiles" class="cn.wang.action.Upload2Action">
+			<result name="success" type="dispatcher"> /success.jsp </result>
+			<result name="input" type="dispatcher">/2.jsp</result>
+		</action>
+	</package>
+	<package name="p3" extends="struts-default">
+		<action name="download" class="cn.wang.action.Download1Action">
+			<result name="success" type="stream">
+
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename=${@java.net.URLEncoder@encode(fileName,'UTF-8')}</param>
+				<param name="contentType">application/octet-stream</param>
 			</result>
 		</action>
 	</package>

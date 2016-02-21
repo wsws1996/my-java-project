@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<package name="p1" extends="struts-default">
+		<action name="demo1" class="cn.wang.action.Demo1Action">
+			<result name="none"></result>
+		</action>
+		<action name="demo2" class="cn.wang.action.Demo2Action">
+			<result name="success" type="dispatcher">/2.jsp</result>
+		</action>
+		<action name="demo3" class="cn.wang.action.Demo3Acion">
+
+			<result name="success" type="dispatcher">/3.jsp</result>
+		</action>
+		<action name="demo4" class="cn.wang.action.Demo4Acion">
+			<result name="success" type="dispatcher">/4.jsp</result></action>
+		<action name="demo5" class="cn.wang.action.Demo5Action">
+			<result name="success" type="dispatcher">/5.jsp</result>
+		</action>
+		<action name="demo6" class="cn.wang.action.Demo6Action">
+			<result name="success" type="dispatcher">/6.jsp</result></action></package>
+</struts>
