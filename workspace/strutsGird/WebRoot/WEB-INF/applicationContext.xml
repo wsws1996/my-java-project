@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- prototype:每次都创建新实例 -->
+	<bean name="businessService" class="com.itheima.service.impl.BusinessServiceImpl">
+		<!-- 装配 -->
+		<property name="dao" ref="userDao"></property>
+	</bean>
+	<bean name="userDao" class="com.itheima.dao.impl.UserDaoMySQLImpl"></bean>
+</beans>
