@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="user" location="225,107" size="525,560">
+    <action name="login" location="310,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="home.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="list" location="310,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+    </action>
+    <action name="search" location="310,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+    </action>
+    <action name="add" location="65,257" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list" namespace="/user" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="add.jsp" />
+      </result>
+    </action>
+    <action name="del" location="310,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list" namespace="/user" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="add.jsp" />
+      </result>
+    </action>
+    <action name="view" location="310,477" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="view.jsp" />
+      </result>
+    </action>
+    <action name="download" location="74,353" size="150,40" />
+  </package>
+  <webResource name="home.jsp" path="/login/home.jsp" location="535,9" size="150,55" />
+  <webResource name="login.jsp" path="/login/login.jsp" location="10,149" size="150,55" />
+  <webResource name="list.jsp" path="/user/list.jsp" location="815,359" size="150,55" />
+  <webResource name="add.jsp" path="/user/add.jsp" location="10,254" size="150,55" />
+  <webResource name="view.jsp" path="/user/view.jsp" location="815,569" size="150,55" />
+</Struts2Diagram>
+
