@@ -9,7 +9,7 @@
 		</id>
 		<property name="description" length="50"></property>
 		<property name="name" length="20"></property>
-		<set name="students" cascade="save-update">
+		<set name="students" cascade="save-update" lazy="extra">
 		<cache usage="read-write"/>
 			<key>
 				<column name="cid"></column>
