@@ -11,3 +11,4 @@ public class HibernateUtils {
 		sessionFactory = configuration.buildSessionFactory();
 	}
 }
+ 
