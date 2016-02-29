@@ -18,7 +18,7 @@ public class HTest {
 	public void test() throws InterruptedException {
 		Session session = HibernateUtils.sessionFactory.openSession();
 		List classes=session.createQuery("select cid, name from Classes").list();
-		System.out.println("test git hub");
+		System.out.println("test git hhhhhhub");
 		session.close();
 	}
 }
