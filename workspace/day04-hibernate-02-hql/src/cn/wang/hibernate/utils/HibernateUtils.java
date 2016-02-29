@@ -9,6 +9,6 @@ public class HibernateUtils {
 		Configuration configuration = new Configuration();
 		configuration.configure();
 		sessionFactory = configuration.buildSessionFactory();
+		String bString = null;//此行代码仅用于github测试，可放心删除
 	}
 }
- 
