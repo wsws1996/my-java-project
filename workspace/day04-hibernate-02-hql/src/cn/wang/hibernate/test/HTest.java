@@ -17,14 +17,8 @@ public class HTest {
 	@Test
 	public void test() throws InterruptedException {
 		Session session = HibernateUtils.sessionFactory.openSession();
-		List<Classes> classes=(List<Classes>) session.createQuery("from Classes").list();
-		for (Classes classes2 : classes) {
-			System.out.println(classes2.getName());
-			Set<Student> students=classes2.getStudents();
-			for (Student student : students) {
-				System.out.println(student.getName());
-			}
-		}
+		List classes=session.createQuery("select cid, name from Classes").list();
+		
 		session.close();
 	}
 }
