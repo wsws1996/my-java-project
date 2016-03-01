@@ -34,5 +34,6 @@
 	<property name="format_sql">true</property>
 	<mapping resource="cn/wang/hibernate/domain/Course.hbm.xml" />
 	<mapping resource="cn/wang/hibernate/domain/Student.hbm.xml" />
+	<mapping resource="cn/wang/hibernate/domain/Classes.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

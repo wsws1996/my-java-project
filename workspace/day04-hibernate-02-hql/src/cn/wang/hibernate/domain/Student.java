@@ -11,6 +11,15 @@ public class Student implements Serializable {
 	private String name;
 	private String description;
 
+	private Classes classes;
+	
+	
+	public Classes getClasses() {
+		return classes;
+	}
+	public void setClasses(Classes classes) {
+		this.classes = classes;
+	}
 	private Set<Course> courses;
 	
 	public Set<Course> getCourses() {
