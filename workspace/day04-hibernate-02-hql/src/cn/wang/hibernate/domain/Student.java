@@ -1,17 +1,23 @@
 package cn.wang.hibernate.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class Student implements Serializable {
+	/**
+	 * 
+	 */
 	private Long sid;
 	private String name;
 	private String description;
-	private Classes classes;
-	public Classes getClasses() {
-		return classes;
+
+	private Set<Course> courses;
+	
+	public Set<Course> getCourses() {
+		return courses;
 	}
-	public void setClasses(Classes classes) {
-		this.classes = classes;
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
 	}
 	public Long getSid() {
 		return sid;

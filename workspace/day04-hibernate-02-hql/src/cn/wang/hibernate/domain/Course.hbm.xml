@@ -2,19 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="cn.wang.hibernate.domain.Classes">
-	<cache usage="read-write"/>
+	<class name="cn.wang.hibernate.domain.Course">
 		<id name="cid" length="5">
 			<generator class="increment"></generator>
 		</id>
 		<property name="description" length="50"></property>
 		<property name="name" length="20"></property>
-		<set name="students" cascade="save-update" lazy="extra" fetch="subselect">
-		<cache usage="read-write"/>
+		<set name="students" table="student_course">
 			<key>
 				<column name="cid"></column>
 			</key>
-			<one-to-many class="cn.wang.hibernate.domain.Student"/>
+			<many-to-many class="cn.wang.hibernate.domain.Student" column="sid"></many-to-many>
 		</set>
 	</class>
 </hibernate-mapping>

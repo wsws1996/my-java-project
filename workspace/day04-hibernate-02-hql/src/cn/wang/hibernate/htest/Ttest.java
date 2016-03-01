@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.junit.Test;
 
-import cn.wang.hibernate.domain.Classes;
+import cn.wang.hibernate.domain.Course;
 import cn.wang.hibernate.utils.HibernateUtils;
 
 public class Ttest {
@@ -14,12 +14,8 @@ public class Ttest {
 	public void test() {
 		Session session = HibernateUtils.sessionFactory.openSession();
 
-		Query query = session
-				.createQuery("from Classes where cid=:cid and name=:name");
-		query.setParameter("cid", 2L);
-		query.setParameter("name", "sd");
-		Classes classes = (Classes) query.uniqueResult();
-		System.out.println(classes.getName());
+		List<Course> courses= session.createQuery("from Course c left outer join fetch c.students s").list();
+		
 		session.close();
 	}
 }

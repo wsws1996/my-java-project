@@ -18,19 +18,21 @@
 	<property name="hbm2ddl.auto">update</property>
 	<property name="show_sql">true</property>
 	<property name="current_session_context_class">thread</property>
-	
+
 	<!-- 开启二级缓存 -->
-	<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+	<property name="cache.provider_class">
+		org.hibernate.cache.EhCacheProvider
+	</property>
 	<property name="cache.use_second_level_cache">true</property>
-	
-	
-	
-	
+
+
+
+
 	<property name="generate_statistics">true</property>
 
 	<property name="cache.use_query_cache">true</property>
 	<property name="format_sql">true</property>
-	<mapping resource="cn/wang/hibernate/domain/Classes.hbm.xml" />
+	<mapping resource="cn/wang/hibernate/domain/Course.hbm.xml" />
 	<mapping resource="cn/wang/hibernate/domain/Student.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

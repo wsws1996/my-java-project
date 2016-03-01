@@ -8,6 +8,11 @@
 		</id>
 		<property name="description" length="50"></property>
 		<property name="name" length="20"></property>
-		<many-to-one  name="classes" column="cid" class="cn.wang.hibernate.domain.Classes" cascade="save-update"></many-to-one>
+		<set name="courses" table="student_course" cascade="save-update">
+			<key>
+				<column name="sid"></column>
+			</key>
+			<many-to-many class="cn.wang.hibernate.domain.Course" column="cid"></many-to-many>
+		</set>
 	</class>
 </hibernate-mapping>
