@@ -3,15 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	<bean id="personDao" class="cn.wang.spring.dao.impl.PersonDaoImpl"></bean>
-	<bean id="personService" class="cn.wang.spring.service.impl.PersonServiceImpl">
-		<property name="personDao">
-			<ref bean="personDao" />
-		</property>
+
+
+
+	<bean id="person" class="cn.wang.spring.extend.Person">
+		<property name="name" value="aaa"></property>
 	</bean>
-	<bean id="personAction" class="cn.wang.spring.action.PersonAction">
-		<property name="personService">
-			<ref bean="personService" />
-		</property>
+	<bean id="student" class="cn.wang.spring.extend.Student">
+	<property name="name" value="sdf"></property>
 	</bean>
 </beans>
