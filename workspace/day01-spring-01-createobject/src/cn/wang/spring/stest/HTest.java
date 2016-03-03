@@ -14,7 +14,6 @@ public class HTest {
 	public void test() {
 		 ApplicationContext context = new ClassPathXmlApplicationContext(
 		 "applicationContext.xml");
-		 PersonAction personAction=(PersonAction) context.getBean("personAction");
-		 personAction.savePerson();
+		 
 	}
 }
