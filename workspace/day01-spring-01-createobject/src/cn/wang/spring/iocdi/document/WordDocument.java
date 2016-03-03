@@ -1,5 +1,8 @@
 package cn.wang.spring.iocdi.document;
 
+import org.springframework.stereotype.Component;
+
+@Component("wordDocument")
 public class WordDocument implements Document {
 
 	@Override

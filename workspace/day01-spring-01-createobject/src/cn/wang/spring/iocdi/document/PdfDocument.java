@@ -1,5 +1,8 @@
 package cn.wang.spring.iocdi.document;
 
+import org.springframework.stereotype.Component;
+
+@Component("pdfDocument")
 public class PdfDocument implements Document {
 
 	@Override
