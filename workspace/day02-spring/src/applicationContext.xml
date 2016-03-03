@@ -5,5 +5,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-
+	<bean id="personDao" class="cn.wang.spring.xml.transaction.PersonDaoImpl"></bean>
+	<bean id="transaction" class="cn.wang.spring.xml.transaction.Transaction"></bean>
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.wang.spring.xml.transaction.PersonDaoImpl.*(..))" id="perform"/>
+		<aop:aspect ref="transaction">
+			<aop:before method="beginTransaction" pointcut-ref="perform"/>
+			<aop:after-returning method="commit" pointcut-ref="perform"/>
+		</aop:aspect>
+	</aop:config>
 </beans>

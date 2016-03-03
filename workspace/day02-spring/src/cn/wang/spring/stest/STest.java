@@ -1,28 +1,20 @@
 package cn.wang.spring.stest;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.wang.proxy.salary.Logger;
-import cn.wang.proxy.salary.MyInterceptor;
-import cn.wang.proxy.salary.Privilege;
-import cn.wang.proxy.salary.SalaryManager;
-import cn.wang.proxy.salary.SalaryManagerImpl;
-import cn.wang.proxy.salary.Security;
+import cn.wang.spring.xml.transaction.PersonDao;
+import cn.wang.spring.xml.transaction.PersonDaoImpl;
 
 public class STest {
 	@Test
 	public void STest() {
-		SalaryManager target = new SalaryManagerImpl();
-		Logger logger = new Logger();
-		Security security = new Security();
-		Privilege privilege = new Privilege();
-		privilege.setAccess("db");
-		MyInterceptor myInterceptor = new MyInterceptor(target, logger,
-				security, privilege);
-		SalaryManager salaryManager= (SalaryManager) Proxy.newProxyInstance(target.getClass().getClassLoader(), target
-				.getClass().getInterfaces(), myInterceptor);
-		salaryManager.showSalary();
+		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+		PersonDao personDao=(PersonDao) context.getBean("personDao");
+		personDao.savePerson();
 	}
 }
