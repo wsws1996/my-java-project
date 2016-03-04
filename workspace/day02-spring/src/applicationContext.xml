@@ -10,8 +10,11 @@
 	<aop:config>
 		<aop:pointcut expression="execution(* cn.wang.spring.xml.transaction.PersonDaoImpl.*(..))" id="perform"/>
 		<aop:aspect ref="transaction">
-			<aop:before method="beginTransaction" pointcut-ref="perform"/>
-			<aop:after-returning method="commit" pointcut-ref="perform"/>
+<!-- 			<aop:before method="beginTransaction" pointcut-ref="perform"/> -->
+<!-- 			<aop:after-returning method="commit" pointcut-ref="perform" returning="val"/> -->
+			<aop:after method="finallyMethod" pointcut-ref="perform"/>
+			<aop:after-throwing method="throwingMethod" pointcut-ref="perform" throwing="throwable"/>
+			<aop:around method="aroundMethod" pointcut-ref="perform"/>
 		</aop:aspect>
 	</aop:config>
 </beans>
