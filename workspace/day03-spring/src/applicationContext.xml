@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<value>classpath:shujuku.properties</value>
 		</property>
 	</bean>
-    
-  	<bean id="dataSource" destroy-method="close"
+
+	<bean id="dataSource" destroy-method="close"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
-	<bean id="studentDao" class="cn.wang.spring.jdbc.dao.StudentDao">
-		<property name="dataSource">
-			<ref bean="dataSource"/>
+
+	<bean id="sessionFactory1"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
 		</property>
 	</bean>
+
+	<bean id="sessionFactory2"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 映射文件所在的路径 -->
+		<property name="mappingDirectoryLocations">
+			<list>
+				<!-- spring容器会去该包及子包下搜索所有的映射文件 -->
+				<value>cn/wang/spring/hibernate/transaction/domain</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="personDao"
+		class="cn.wang.spring.hibernate.transaction.dao.impl.PersonDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory2" />
+		</property>
+	</bean>
+
+	<bean id="personService"
+		class="cn.wang.spring.hibernate.transaction.service.impl.PersonServiceImpl">
+		<property name="personDao">
+			<ref bean="personDao" />
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory2"/>
+		</property>
+	</bean>
+	
+	<tx:advice id="tx" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.wang.spring.hibernate.transaction.service.impl.*.*(..))" id="perform"/>
+		<aop:advisor advice-ref="tx" pointcut-ref="perform"/>
+	</aop:config>	
 </beans>
