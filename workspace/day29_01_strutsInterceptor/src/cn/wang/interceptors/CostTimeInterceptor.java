@@ -9,7 +9,6 @@ public class CostTimeInterceptor extends AbstractInterceptor {
 	 * 
 	 */
 	private static final long serialVersionUID = -5810543134898898042L;
-
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
 		long time = System.nanoTime();

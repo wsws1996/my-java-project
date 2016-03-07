@@ -2,6 +2,9 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.devMode" value="true"></constant>
+	<bean type="com.opensymphony.xwork2.ObjectFactory" name="wang"
+		class="cn.wang.action.CreateAction" />
+		<constant name="struts.objectFactory" value="wang"></constant>
 	<package name="mydefaultpackage" extends="struts-default">
 		<interceptors>
 			<interceptor name="demo1Interceptor" class="cn.wang.interceptors.Demo1Interceptor"></interceptor>
@@ -26,11 +29,11 @@
 			<result name="success" type="dispatcher">/1.jsp</result>
 		</action>
 		<action name="*" class="cn.wang.action.Demo2Action" method="{1}">
-			<!-- <interceptor-ref name="mydefault"> -->
-			<!-- </interceptor-ref> -->
-			<!-- <interceptor-ref name="LoginCheck1Interceptor"> -->
-			<!-- <param name="excludeMethods">query</param> -->
-			<!-- </interceptor-ref> -->
+			<interceptor-ref name="mydefault">
+			</interceptor-ref>
+			<interceptor-ref name="LoginCheck1Interceptor">
+				<param name="excludeMethods">query</param>
+			</interceptor-ref>
 			<result name="login">/login.jsp</result>
 		</action>
 	</package>
