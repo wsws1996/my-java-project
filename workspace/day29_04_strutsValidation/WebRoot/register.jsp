@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<s:debug></s:debug>
 	<s:fielderror></s:fielderror>
 	<s:form action="register" namespace="/student">
 		<s:textfield name="username" label="用户名" required="true"
