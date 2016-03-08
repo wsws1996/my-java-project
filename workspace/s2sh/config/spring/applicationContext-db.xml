@@ -39,4 +39,20 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<tx:advice transaction-manager="transactionManager" id="tx">
+		<tx:attributes>
+			<tx:method name="save*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.wang.s2sh.service.impl.*.*(..))"
+			id="perform" />
+		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
+	</aop:config>
 </beans>
