@@ -28,7 +28,7 @@
 		<property name="mappingDirectoryLocations">
 			<list>
 				<!-- spring容器会去该包及子包下搜索所有的映射文件 -->
-				<value>cn/wang/s2sh/domain</value>
+				<value>classpath:cn/wang/s2sh/domain</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
