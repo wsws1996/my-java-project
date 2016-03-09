@@ -4,4 +4,19 @@
 	<constant name="struts.ui.theme" value="simple"></constant>
 	<constant name="struts.devMode" value="true"></constant>
 	<include file="struts/struts-person.xml"></include>
+	<package name="struts-global" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="errHandler" />
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="cn.wang.s2sh.error.ErrorProcessor">
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
 </struts>

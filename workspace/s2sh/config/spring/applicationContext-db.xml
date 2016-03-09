@@ -48,6 +48,9 @@
 	<tx:advice transaction-manager="transactionManager" id="tx">
 		<tx:attributes>
 			<tx:method name="save*" read-only="false" />
+			<tx:method name="update*" read-only="false" />
+			<tx:method name="delete*" read-only="false" />
+			<tx:method name="*" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
