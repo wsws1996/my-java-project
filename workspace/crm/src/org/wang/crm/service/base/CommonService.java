@@ -3,7 +3,6 @@ package org.wang.crm.service.base;
 import java.io.Serializable;
 import java.util.List;
 
-import org.wang.crm.dao.base.CommonDao;
 
 public interface CommonService<T> {
 

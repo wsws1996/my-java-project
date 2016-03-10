@@ -44,7 +44,7 @@
 	  <tr class="tabtd2">
 	    <td align="center"><s:property value="name"/></td>
 	    <td align="center"><s:property value="description"/></td>
-	  	<td width="7%" align="center"><a href="#"><img src="images/button/modify.gif" class="img"></a></td>
+	  	<td width="7%" align="center"><a href="departmentAction_updateUI.action?did=${did}"><img src="images/button/modify.gif" class="img"></a></td>
 	  </tr>
   </s:iterator>
   <%-- <s:iterator value="#map">

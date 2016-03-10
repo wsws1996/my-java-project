@@ -6,6 +6,7 @@
 			<result name="list">/WEB-INF/jsp/department/list.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/department/add.jsp</result>
 			<result name="action2action" type="redirectAction">departmentAction_showDepartment.action</result>
+			<result name="updateUI">/WEB-INF/jsp/department/edit.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -3,6 +3,10 @@ package org.wang.crm.domain;
 import java.io.Serializable;
 
 public class Department implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5402851256879077376L;
 	private Long did;
 	private String name;
 	private String description;

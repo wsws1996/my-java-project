@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.aspectj.org.eclipse.jdt.core.dom.ThisExpression;
 import org.springframework.beans.BeanUtils;
 import org.wang.crm.domain.Department;
 import org.wang.crm.service.DepartmentService;
@@ -16,6 +15,10 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class DepartmentAction extends ActionSupport implements
 		ModelDriven<Department> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 405159187105240473L;
 	private DepartmentService departmentService;
 	private Department model = new Department();
 
@@ -112,6 +115,17 @@ public class DepartmentAction extends ActionSupport implements
 	}
 	public String deleteByOrder() {
 		this.departmentService.deleteByOrder();
+		return "action2action";
+	}
+	public String updateUI() {
+		Department department=this.departmentService.getEntryByID(this.getModel().getDid());
+		ActionContext.getContext().getValueStack().push(department);
+		return "updateUI";
+	}
+	public String update() {
+		Department department= this.departmentService.getEntryByID(this.getModel().getDid());
+		BeanUtils.copyProperties(this.getModel(), department);
+		this.departmentService.updateEntry(department);
 		return "action2action";
 	}
 }

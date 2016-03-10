@@ -6,12 +6,13 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.wang.crm.dao.base.CommonDao;
-import org.wang.crm.domain.Department;
 
 public class CommonDaoImpl<T> implements CommonDao<T> {
 
+	@SuppressWarnings("rawtypes")
 	private Class classt;
 
+	@SuppressWarnings("rawtypes")
 	public CommonDaoImpl() {
 		ParameterizedType type = (ParameterizedType) this.getClass()
 				.getGenericSuperclass();
@@ -28,6 +29,7 @@ public class CommonDaoImpl<T> implements CommonDao<T> {
 		this.hibernateTemplate = hibernateTemplate;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> findAllEntry() {
 
@@ -47,12 +49,14 @@ public class CommonDaoImpl<T> implements CommonDao<T> {
 
 	@Override
 	public void deleteEntry(Serializable id) {
+		@SuppressWarnings("unchecked")
 		T t = (T) this.hibernateTemplate.get(this.classt.getClass(), id);
 		if (t!=null) {
 			this.hibernateTemplate.delete(t);
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T getEntryByID(Serializable id) {
 
