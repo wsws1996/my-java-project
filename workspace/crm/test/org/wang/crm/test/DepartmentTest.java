@@ -15,4 +15,10 @@ public class DepartmentTest {
 		department.setName("技术部");
 		departmentService.saveEntry(department);
 	}
+	@Test
+	public void testQueryDepartment(){
+		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext.xml");
+		DepartmentService departmentService =(DepartmentService) applicationContext.getBean("departmentService");
+		System.out.println(departmentService.getEntryByID(2L));
+	}
 }

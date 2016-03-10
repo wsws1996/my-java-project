@@ -59,7 +59,7 @@
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut expression="execution(* org.wang.crm.service.impl.*.*(..))"
+		<aop:pointcut expression="execution(* org.wang.crm.service..impl.*.*(..))"
 			id="perform" />
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>

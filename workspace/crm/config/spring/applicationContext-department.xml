@@ -6,14 +6,31 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-	<bean name="departmentDao" class="org.wang.crm.dao.impl.DepartmentDaoImpl">
+
+	<bean id="commonDao" class="org.wang.crm.dao.base.impl.CommonDaoImpl"
+		abstract="true">
 		<property name="hibernateTemplate">
 			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	<bean id="departmentService" class="org.wang.crm.service.impl.DepartmentServiceImpl">
-		<property name="commonDao">
+
+	<bean id="commonService" class="org.wang.crm.service.base.impl.CommonServiceImpl"
+		abstract="true"></bean>
+
+	<bean name="departmentDao" class="org.wang.crm.dao.impl.DepartmentDaoImpl"
+		parent="commonDao">
+	</bean>
+
+	<bean id="departmentService" class="org.wang.crm.service.impl.DepartmentServiceImpl"
+		parent="commonService">
+		<property name="departmentDao">
 			<ref bean="departmentDao" />
+		</property>
+	</bean>
+	<bean id="departmentAction" class="org.wang.crm.action.DepartmentAction"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="departmentService" />
 		</property>
 	</bean>
 </beans>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="person" location="263,147" size="170,70">
+    <action name="personAction" location="122,27" size="150,40" />
+  </package>
+</Struts2Diagram>
+

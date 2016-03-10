@@ -6,42 +6,34 @@ import java.util.List;
 import org.wang.crm.dao.base.CommonDao;
 import org.wang.crm.service.base.CommonService;
 
-public class CommonServiceImpl<T> implements CommonService<T> {
+public abstract class CommonServiceImpl<T> implements CommonService<T> {
 
-	private CommonDao commonDao;
-
-	public CommonDao getCommonDao() {
-		return commonDao;
-	}
-
-	public void setCommonDao(CommonDao commonDao) {
-		this.commonDao = commonDao;
-	}
+	public abstract CommonDao<T> getCommonDao();
 
 	@Override
 	public List<T> findAllEntry() {
-		return this.commonDao.findAllEntry();
+		return this.getCommonDao().findAllEntry();
 	}
 
 	@Override
 	public void saveEntry(T t) {
-		this.commonDao.saveEntry(t);
+		this.getCommonDao().saveEntry(t);
 
 	}
 
 	@Override
 	public void updateEntry(T t) {
-		this.commonDao.updateEntry(t);
+		this.getCommonDao().updateEntry(t);
 	}
 
 	@Override
 	public void deleteEntry(Serializable id) {
-		this.commonDao.deleteEntry(id);
+		this.getCommonDao().deleteEntry(id);
 	}
 
 	@Override
 	public T getEntryByID(Serializable id) {
-		return (T) this.commonDao.getEntryByID(id);
+		return (T) this.getCommonDao().getEntryByID(id);
 	}
 
 }

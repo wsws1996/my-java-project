@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.wang.crm.dao.base.CommonDao;
+import org.wang.crm.domain.Department;
 
 public class CommonDaoImpl<T> implements CommonDao<T> {
 
@@ -46,12 +47,15 @@ public class CommonDaoImpl<T> implements CommonDao<T> {
 
 	@Override
 	public void deleteEntry(Serializable id) {
-		T t = (T) this.hibernateTemplate.get(this.classt, id);
-		this.hibernateTemplate.delete(t);
+		T t = (T) this.hibernateTemplate.get(this.classt.getClass(), id);
+		if (t!=null) {
+			this.hibernateTemplate.delete(t);
+		}
 	}
 
 	@Override
 	public T getEntryByID(Serializable id) {
+
 		return (T) this.hibernateTemplate.get(this.classt, id);
 	}
 }
