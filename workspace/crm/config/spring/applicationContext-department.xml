@@ -5,20 +5,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
-	
-	<bean id="personDao" class="cn.wang.s2sh.dao.impl.PersonDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+
+	<bean name="departmentDao" class="org.wang.crm.dao.impl.DepartmentDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
 		</property>
 	</bean>
-	<bean id="personService" class="cn.wang.s2sh.service.impl.PersonServiceImpl">
-		<property name="personDao">
-			<ref bean="personDao"/>
-		</property>
-	</bean>
-	<bean id="personAction" class="cn.wang.s2sh.action.PersonAction" scope="prototype">
-		<property name="personService">
-			<ref bean="personService"/>
+	<bean id="departmentService" class="org.wang.crm.service.impl.DepartmentServiceImpl">
+		<property name="commonDao">
+			<ref bean="departmentDao" />
 		</property>
 	</bean>
 </beans>

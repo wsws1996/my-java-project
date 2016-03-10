@@ -1,0 +1,19 @@
+package org.wang.crm.service.base;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.wang.crm.dao.base.CommonDao;
+
+public interface CommonService<T> {
+
+	public List<T> findAllEntry();
+
+	public void saveEntry(T t);
+
+	public void updateEntry(T t);
+
+	public void deleteEntry(Serializable id);
+
+	public T getEntryByID(Serializable id);
+}
