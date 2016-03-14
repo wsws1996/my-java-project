@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>domjquery.html</title>
+        <meta name="keywords" content="keyword1,keyword2,keyword3">
+        <meta name="description" content="this is my page">
+        <meta name="content-type" content="text/html; charset=UTF-8">
+        <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    </head>
+    <script src="../js/jquery-2.2.1.js">
+    </script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var domObj = document.getElementById("username");
+            var jQueryObj = $(domObj);
+            alert(jQueryObj.attr("value"));
+        }
+    </script>
+    <body>
+        <input type="text" value="fdhd" name="username" id="username">
+    </body>
+</html>
