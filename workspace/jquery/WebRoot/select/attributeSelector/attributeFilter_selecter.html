@@ -42,7 +42,9 @@
 		 <input type="button" value=" 属性title值 以est结束 的div元素.."  id="b5"/>
 		 <input type="button" value="属性title值 含有es的div元素."  id="b6"/>
 		 <input type="button" value="选取有属性id的div元素，然后在结果中选取属性title值含有“es”的 div 元素"  id="b7"/>
+
 		 <input type="button" value="选择隐藏域,含有title的属性的div,id为one,class为one的元素"  id="b8"/>
+
 		 
 		 <!--文本隐藏域-->
          <input type="hidden" value="hidden_1">
@@ -134,6 +136,18 @@
 	
 	$("#b6").click(function(){
 		$("div[title*='es']").css("background","red");
+	});
+	/**
+	 * 		 <input type="button" value="选取有属性id的div元素，然后在结果中选取属性title值含有“es”的 div 元素"  id="b7"/>
+	 */
+	$("#b7").click(function(){
+		$("div[id][title*='es']").css("background","red");
+	});
+	/**
+	 * 		 <input type="button" value="选择隐藏域,含有title的属性的div,id为one,class为one的元素"  id="b8"/>
+	 */
+	$("#b8").click(function(){
+		$("input[type='hidden'],div[title],#one,.one").css("background","red");
 	});
 </script>
    
