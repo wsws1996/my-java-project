@@ -72,22 +72,7 @@
 		
 	</body>
 	<script language="JavaScript">
-		$("#b1").click(function(){
-			$("div:contains('di')").css("background","red");
-		});
-		$("#b2").click(function(){
-			$("div:empty").css("background","red");
-		});
-
-		$("#b3").click(function(){
-			$("div:has(.mini)").css("background","red");
-		});
-		$("#b4").click(function(){
-			$("div:parent").css("background","red");
-		});
-		$("#b5").click(function(){
-			$("div:not(:contains('di'))").css("background","red");
-		});
+		
 	</script>	
 </html>
 
