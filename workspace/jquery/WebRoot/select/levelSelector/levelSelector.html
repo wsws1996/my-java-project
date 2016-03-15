@@ -25,7 +25,6 @@
 			    font-family:Roman;
 			}
 	 </style>
-	 <!--引入jquery的js库-->
     
 	</head>
 	 
@@ -73,9 +72,25 @@
 		</span>
 		
 	</body>
-<script language="JavaScript">
-	$("b1").click(function(){
+<script language="JavaScript" type="text/javascript">
+	$("#b1").click(function(){
 		$("body div").css("background","red");
+	});
+	$("#b2").click(function(){
+		$("body>div").css("background","red");
+	});
+	$("#b3").click(function(){
+		$("#one+div").css("background","red");
+	});
+	$("#b4").click(function(){
+		$("#two~div").css("background","red");
+	});
+	$("#b5").click(function(){
+		$("#two").siblings("div").css("background","red");
+		$("#two").css("background","red");
+	});
+	$("#b6").click(function(){
+		$("#two").siblings("div").css("background","red");
 	});
 </script>
 </html>
