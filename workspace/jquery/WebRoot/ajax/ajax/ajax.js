@@ -1,0 +1,12 @@
+$().ready(function(){
+	$.ajax({
+		url:'../../AjaxAjaxServlet',
+		success:function(){
+			alert("aaaa");
+		},
+		error:function(){
+			alert("bbbb");
+		},
+		type:'POST'
+	});
+});
