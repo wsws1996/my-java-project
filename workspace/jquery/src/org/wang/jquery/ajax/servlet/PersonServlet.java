@@ -1,7 +1,6 @@
 package org.wang.jquery.ajax.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -51,30 +50,95 @@ public class PersonServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		this.query(request, response);
+		if (request.getParameter("method").equals("query")) {
+			this.query(request, response);
+		} else if (request.getParameter("method").equals("deleteById")) {
+			this.deletePersonById(request, response);
+		} else if (request.getParameter("method").equals("deleteByIds")) {
+			deletePersonByIds(request, response);
+		} else if (request.getParameter("method").equals("add")) {
+			add(request, response);
+		}else {
+			update(request, response);
+		}
+
+	}
+
+	private void deletePersonById(HttpServletRequest request,
+			HttpServletResponse response) {
+		Long pid = Long.parseLong(request.getParameter("pid"));
+		@SuppressWarnings("unchecked")
+		List<Person> persons = (List<Person>) request.getServletContext()
+				.getAttribute("persons");
+
+		for (int i = 0; i < persons.size(); i++) {
+			Person person = persons.get(i);
+			if (person.getPid().longValue() == pid.longValue()) {
+				persons.remove(person);
+			}
+		}
+
+	}
+
+	private void add(HttpServletRequest request, HttpServletResponse response) {
+		Long pid = Long.parseLong(request.getParameter("id"));
+		String name = request.getParameter("name");
+		String description = request.getParameter("description");
+		Person person = new Person();
+		person.setPid(pid);
+		person.setName(name);
+		person.setDescription(description);
+
+		@SuppressWarnings("unchecked")
+		List<Person> persons = (List<Person>) this.getServletContext()
+				.getAttribute("persons");
+		persons.add(person);
+
+	}
+
+	private void update(HttpServletRequest request, HttpServletResponse response) {
+		Long pid = Long.parseLong(request.getParameter("id"));
+		String name = request.getParameter("name");
+		String description = request.getParameter("description");
+		@SuppressWarnings("unchecked")
+		List<Person> persons = (List<Person>) request.getServletContext()
+				.getAttribute("persons");
+
+		for (int i = 0; i < persons.size(); i++) {
+			Person person = persons.get(i);
+			if (person.getPid().longValue() == pid.longValue()) {
+				person.setName(name);
+				person.setDescription(description);
+				break;
+			}
+		}
+	}
+
+	private void deletePersonByIds(HttpServletRequest request,
+			HttpServletResponse response) {
+		String ids[] = request.getParameter("ids").split(",");
+		@SuppressWarnings("unchecked")
+		List<Person> persons = (List<Person>) request.getServletContext()
+				.getAttribute("persons");
+
+		for (int i = 0; i < persons.size(); i++) {
+			// Person person = persons.get(i);
+			// String pid=""+person.getPid().longValue();
+			for (int j = 0; j < ids.length; j++) {
+				String pid = "" + persons.get(i).getPid().longValue();// pid必须实时更新，上面被注释的代码不可用
+				if (pid.equals(ids[j])) {
+					persons.remove(i);
+				}
+			}
+		}
 
 	}
 
 	private void query(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
-		List<Person> persons = new ArrayList<>();
-		Person person1 = new Person();
-		person1.setPid(1L);
-		person1.setName("person1");
-		person1.setDescription("person1des");
-		Person person2 = new Person();
-
-		person2.setPid(2L);
-		person2.setName("person2");
-		person2.setDescription("person2des");
-
-		Person person3 = new Person();
-		person3.setPid(3L);
-		person3.setName("person3");
-		person3.setDescription("person3des");
-		persons.add(person1);
-		persons.add(person2);
-		persons.add(person3);
+		@SuppressWarnings("unchecked")
+		List<Person> persons = (List<Person>) request.getServletContext()
+				.getAttribute("persons");
 
 		String jsonStr = JSONArray.fromObject(persons).toString();
 		response.getWriter().println(jsonStr);
