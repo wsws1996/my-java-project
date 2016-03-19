@@ -30,8 +30,12 @@
 					}
 				}
 			}
-			xhr.open("GET",
-					"${pageContext.request.contextPath}/servlet/ServletDemo5");
+			/* xhr.open("GET",
+					"${pageContext.request.contextPath}/servlet/ServletDemo5"); */
+					/* xhr.open("GET",
+					"/day21_00_ajax/servlet/ServletDemo5"); */
+					xhr.open("GET",
+					"servlet/ServletDemo5");
 			xhr.send(null);
 		}
 	}
