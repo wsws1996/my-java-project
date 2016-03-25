@@ -13,18 +13,21 @@ import com.opensymphony.xwork2.ModelDriven;
 @SuppressWarnings("serial")
 @Controller("elecTextAction")
 @Scope(value = "prototype")
-public class ElecTextAction extends ActionSupport implements
-		ModelDriven<ElecText> {
+public class ElecTextAction extends BaseAction<ElecText> {
 
-	ElecText elecText = new ElecText();
+	ElecText elecText = this.getModel();
 
-	@Override
-	public ElecText getModel() {
-		return elecText;
-	}
-	@Resource(name=IElecTextService.SERVICE_NAME)
+	@Resource(name = IElecTextService.SERVICE_NAME)
 	IElecTextService elecTextService;
-	
+	/**
+	 * @name:save
+	 * @description:保存
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-03-25
+	 * @param: 无
+	 * @return String 跳转到textAdd.jsp
+	 */
 	public String save() {
 		elecTextService.saveElecText(elecText);
 		return "save";
