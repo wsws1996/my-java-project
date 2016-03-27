@@ -9,6 +9,8 @@
 <script language="javascript" src="${pageContext.request.contextPath }/script/function.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath }/script/limitedTextarea.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath }/script/showText.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath }/ckeditor/ckeditor.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath }/ckfinder/ckfinder.js"></script>
   <script language="javascript"> 
   function checkchar(){
   
@@ -40,7 +42,7 @@
         devRun.draw();	
   }
   window.onload=function(){
-		checkTextAreaLen();
+		//checkTextAreaLen();
   }
   
   </script>
@@ -112,6 +114,9 @@
 			<td class="ta_01" align="center" bgcolor="#f5fafe" width="15%">站点运行情况：</td>
 			<td class="ta_01" bgcolor="#ffffff" style="word-break: break-all">
 				<s:textarea name="stationRun" cssStyle="width: 500px; height: 160px; padding: 1;FONT-FAMILY: 宋体; FONT-SIZE: 9pt" onkeydown="if(event.keyCode==13)addEnter('stationRun');"></s:textarea>
+				<script type="text/javascript">
+					CKEDITOR.replace("stationRun",{ height: 200, width: 820 });
+				</script>
 			</td>
 			
 		</tr>
@@ -119,6 +124,9 @@
 			<td class="ta_01" align="center" bgcolor="#f5fafe" width="15%">设备运行情况：</td>
 			<td class="ta_01" bgcolor="#ffffff" style="word-break: break-all">
 				<s:textarea name="devRun" cssStyle="width: 500px; height: 160px; padding: 1;FONT-FAMILY: 宋体; FONT-SIZE: 9pt" onkeydown="if(event.keyCode==13)addEnter('devRun');"></s:textarea>
+ 				<script type="text/javascript">
+					CKEDITOR.replace("devRun",{ height: 200, width: 820 });
+				</script>
  			</td>
 			
 		</tr>
