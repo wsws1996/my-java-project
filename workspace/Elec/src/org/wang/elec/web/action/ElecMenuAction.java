@@ -63,9 +63,17 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	}
 
 	/**
-	 * 功能区域显示页面
+	 * @name:loading
+	 * @description:功能页面的显示
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-03-28
+	 * @param: 无
+	 * @return String 跳转到menu/loading.jsp
 	 */
 	public String loading() {
+		ElecCommonMsg commonMsg=elecCommonMsgService.findCommonMsg();
+		ValueUtils.putValueStack(commonMsg);
 		return "loading";
 	}
 

@@ -27,6 +27,10 @@
 			<result name="save" type="redirectAction">
 				<param name="actionName">elecCommonMsgAction_home.do</param>
 			</result>
+			<result name="actingView">/WEB-INF/page/system/actingView.jsp</result>
+		</action>
+		<action name="elecSystemDDLAction_*" class="elecSystemDDLAction" method="{1}">
+			<result name="home">/WEB-INF/page/system/dictionaryIndex.jsp</result>
 		</action>
 	</package>
 

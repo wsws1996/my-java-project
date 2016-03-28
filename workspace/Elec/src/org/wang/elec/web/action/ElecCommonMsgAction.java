@@ -50,4 +50,21 @@ public class ElecCommonMsgAction extends BaseAction<ElecCommonMsg> {
 		elecCommonMsgService.saveCommonMsg(elecCommonMsg);
 		return "save";
 	}
+	
+	/**
+	 * @name:actingView
+	 * @description:使用highsliderjs完成查询设备运行情况的详细信息
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-03-28
+	 * @param: 无
+	 * @return String 跳转到system/actingView.jsp
+	 */
+	
+	public String actingView() {
+		
+		ElecCommonMsg commonMsg = elecCommonMsgService.findCommonMsg();
+		ValueUtils.putValueStack(commonMsg);
+		return "actingView";
+	}
 }
