@@ -31,6 +31,7 @@
 		</action>
 		<action name="elecSystemDDLAction_*" class="elecSystemDDLAction" method="{1}">
 			<result name="home">/WEB-INF/page/system/dictionaryIndex.jsp</result>
+			<result name="edit">/WEB-INF/page/system/dictionaryEdit.jsp</result>
 		</action>
 	</package>
 

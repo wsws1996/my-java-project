@@ -36,4 +36,20 @@ public class ElecSystemDDLAction extends BaseAction<ElecSystemDDL> {
 		request.setAttribute("list", list);
 		return "home";
 	}
+	
+	/**
+	 * @name:edit
+	 * @description:跳转到编辑数据字典的页面
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-03-29
+	 * @param: 无
+	 * @return String 跳转到system/dictionaryEdit.jsp
+	 */
+	
+	public String edit() {
+		String keyword=elecSystemDDL.getKeyword();
+		System.out.println("keyword:"+keyword);
+		return "edit";
+	}
 }

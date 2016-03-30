@@ -22,7 +22,7 @@
 		     document.getElementById("newddlText").innerHTML=textStr;
 		     
 		     
-		     Pub.submitActionWithForm('Form2','${pageContext.request.contextPath }/system/dictionaryEdit.jsp','Form1');
+		     Pub.submitActionWithForm('Form2','${pageContext.request.contextPath }/system/elecSystemDDLAction_edit.do','Form1');
 		    
 		  }else{
 		    
@@ -30,7 +30,7 @@
 		    document.getElementById("newtypename").innerHTML="";
 		    document.getElementById("newddlText").innerHTML=textStr;
 		     
-		    Pub.submitActionWithForm('Form2','${pageContext.request.contextPath }/system/dictionaryEdit.jsp','Form1');
+		    Pub.submitActionWithForm('Form2','${pageContext.request.contextPath }/system/elecSystemDDLAction_edit.do','Form1');
 		  }  
 	   }
 	   
@@ -194,7 +194,8 @@ function delTableRow(rowNum){
 					<td class="ta_01" align="right" width="35%" >类型列表：</td>
 					<td class="ta_01" align="left"  width="30%" >
 					
-					<s:select list="#request.list" id="keyword" cssClass="bg" listKey="keyword" listValue="keyword" headerKey="jerrynew" headerValue="" cssStyle="width:180px" onchange="changetype()"></s:select>
+					<s:select list="#request.list" id="keyword" name="keyword" cssClass="bg" listKey="keyword" listValue="keyword" headerKey="jerrynew" headerValue="" cssStyle="width:180px" onchange="changetype()">
+					</s:select>
 					</td>
 						
 					 <td class="ta_01"  align="right" width="35%" >					 	    
