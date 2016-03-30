@@ -82,7 +82,7 @@
 		        }	
 		    }
 		  }
-	      document.Form2.action="savedict.do";
+	      document.Form2.action="${pageContext.request.contextPath }/system/elecSystemDDLAction_save.do";
 	      document.Form2.submit();     
 	}    
   

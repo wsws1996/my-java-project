@@ -83,5 +83,4 @@ public class ElecSystemDDL implements java.io.Serializable {
 		this.itemname = itemname;
 	}
 	
-	
 }

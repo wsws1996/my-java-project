@@ -9,4 +9,9 @@ public interface IElecSystemDDLService {
 
 	List<ElecSystemDDL> findSystemDDLByDistinct();
 
+	List<ElecSystemDDL> findSystemDDLByKeyword(String keyword);
+
+	void saveSystemDDL(ElecSystemDDL elecSystemDDL);
+
+
 }

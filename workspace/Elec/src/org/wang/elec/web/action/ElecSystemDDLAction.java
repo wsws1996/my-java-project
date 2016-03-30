@@ -49,7 +49,23 @@ public class ElecSystemDDLAction extends BaseAction<ElecSystemDDL> {
 	
 	public String edit() {
 		String keyword=elecSystemDDL.getKeyword();
-		System.out.println("keyword:"+keyword);
+		List<ElecSystemDDL> list=elecSystemDDLService.findSystemDDLByKeyword(keyword);
+		request.setAttribute("list", list);
 		return "edit";
+	}
+	
+	
+	/**
+	 * @name:save
+	 * @description:保存数据字典
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-03-30
+	 * @param: 无
+	 * @return String 重定向到system/dictionaryEdit.jsp
+	 */
+	public String save() {
+		elecSystemDDLService.saveSystemDDL(elecSystemDDL);
+		return "save";
 	}
 }
