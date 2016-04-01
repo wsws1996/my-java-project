@@ -97,4 +97,36 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 		ValueUtils.putValueStack(list);
 		return "findJctUnit";
 	}
+
+	/**
+	 * @name:checkUser
+	 * @description:使用jquery的ajax完成登录名的后台校验
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-01
+	 * @param: 无
+	 * @return 使用struts2的json插件包
+	 */ 
+	public String checkUser() {
+		String logonName = elecUser.getLogonName();
+		String message = elecUserService.checkUser(logonName);
+		elecUser.setMessage(message);
+//		ValueUtils.putValueStack(message);
+		return "checkUser";
+	}
+	
+	/**
+	 * @name:save
+	 * @description:保存用户
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-01
+	 * @param: 无
+	 * @return 跳转到close.jsp
+	 */ 
+	
+	public String save() {
+		elecUserService.saveUser(elecUser);
+		return "close";
+	}
 }

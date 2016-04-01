@@ -8,6 +8,10 @@
 	<constant name="struts.ui.theme" value="simple"></constant>
 
 	<package name="system" namespace="/system" extends="json-default">
+		<!-- 全局转发 -->
+		<global-results>
+			<result name="close">/close.jsp</result>
+		</global-results>
 		<action name="elecTextAction_*" class="elecTextAction" method="{1}">
 			<result name="save">/system/textAdd.jsp</result>
 		</action>
@@ -44,6 +48,10 @@
 			<result name="add">/WEB-INF/page/system/userAdd.jsp</result>
 			<result name="findJctUnit" type="json">
 				<param name="includeProperties">\[\d+\]\.ddlCode,\[\d+\]\.ddlName</param>
+			</result>
+			<result name="checkUser" type="json">
+			<param name="root">message</param>
+			<param name="includeProperties">message</param>
 			</result>
 		</action>
 	</package>

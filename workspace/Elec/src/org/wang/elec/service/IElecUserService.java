@@ -10,4 +10,8 @@ public interface IElecUserService {
 
 	List<ElecUser> findUserListByCondition(ElecUser elecUser);
 
+	String checkUser(String logonName);
+
+	void saveUser(ElecUser elecUser);
+
 }
