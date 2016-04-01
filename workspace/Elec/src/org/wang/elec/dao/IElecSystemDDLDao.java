@@ -10,6 +10,8 @@ public interface IElecSystemDDLDao extends ICommonDao<ElecSystemDDL> {
 
 	List<ElecSystemDDL> findSystemDDLByDistinct();
 
+	String findDdlNameByKeywordAndDdlCode(String keyword, String ddlCode);
+
 
 
 }

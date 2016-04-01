@@ -49,7 +49,7 @@
   window.onload=function(){
 		//checkTextAreaLen();
   }
-  /**添加不带百分比的进度条*/
+  /**添加不带百分比的进度条
 	var len = 500 ;
 	var add = 0 ;
 	function openContenFrame(){
@@ -76,7 +76,75 @@
 	    document.getElementById("opperate1").style.display="none";
 	    document.getElementById("opperate2").style.display="none";
 	    openContenFrame();
+	}*/
+	/**添加带百分比的进度条*/
+	var xmlHttp;
+	//创建ajax引擎
+	function createXMLHttpRequest() {
+    	if (window.XMLHttpRequest) {
+    		xmlHttp = new XMLHttpRequest();
+  		} else if (window.ActiveXObject) {
+    		try {
+      			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+    		} catch (e1) {
+      			try {
+        			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      			} catch (e2) {
+      			}
+    		}
+  		}
 	}
+	
+	function loading() {
+		createXMLHttpRequest();
+		clearLoad();
+		var url = "${pageContext.request.contextPath }/system/elecCommonMsgAction_progressBar.do";
+		xmlHttp.open("GET", url, true);
+		xmlHttp.onreadystatechange = createCallback;
+		xmlHttp.send(null);
+	}
+	
+	function createCallback() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				//每隔1秒钟执行一次percentServer()方法，直到当前访问结束
+				setTimeout("percentServer()", 1000);
+			}
+		}
+	}
+	
+	function percentServer() {
+		createXMLHttpRequest();
+		var url = "elecCommonMsgAction_progressBar.do";
+		xmlHttp.open("GET", url, true);
+		xmlHttp.onreadystatechange = updateCallback;
+		xmlHttp.send(null);
+	}
+	
+	function updateCallback() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				//获取XML数据中的percent存放的百分比的值
+				var percent_complete = xmlHttp.responseXML.getElementsByTagName("percent")[0].firstChild.data;
+				var tdOne = document.getElementById("tdOne");
+				var progressPersent = document.getElementById("progressPersent");
+				//改变蓝色区域的宽度
+				tdOne.width = percent_complete + "%";
+				//将百分比的数值显示到页面上
+				progressPersent.innerHTML = percent_complete + "%";
+				//如果计算获取的百分比的数值没有达到100，则继续调用方法，直到操作结束为止
+				if (percent_complete < 100) {
+					setTimeout("percentServer()", 1000);
+				}
+			}
+		}
+	} 
+	function clearLoad() {
+		document.getElementById("load").style.display="";
+		document.getElementById("opperate1").style.display="none";
+	    document.getElementById("opperate2").style.display="none";
+	}
+
   </script>
 
   <script type="text/javascript">    
