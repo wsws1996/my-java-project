@@ -1,6 +1,7 @@
 package org.wang.elec.domain;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -196,7 +197,49 @@ public class ElecUser implements java.io.Serializable {
 	private String[] uploadsFileName;
 	// 上传的文件类型
 	private String[] uploadsContentType;
-	
+
+	// 文件ID
+	private String fileID;
+
+	private InputStream inputStream;
+
+	private String viewflag;
+
+	//用来判断是否对密码进行加密，存放修改用户之前的密码
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getViewflag() {
+		return viewflag;
+	}
+
+	public void setViewflag(String viewflag) {
+		this.viewflag = viewflag;
+	}
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	public String getFileID() {
+		return fileID;
+	}
+
+	public void setFileID(String fileID) {
+		this.fileID = fileID;
+	}
+
 	public File[] getUploads() {
 		return uploads;
 	}

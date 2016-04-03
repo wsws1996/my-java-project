@@ -3,6 +3,7 @@ package org.wang.elec.service;
 import java.util.List;
 
 import org.wang.elec.domain.ElecUser;
+import org.wang.elec.domain.ElecUserFile;
 
 
 public interface IElecUserService {
@@ -13,5 +14,11 @@ public interface IElecUserService {
 	String checkUser(String logonName);
 
 	void saveUser(ElecUser elecUser);
+
+	ElecUser findUserByID(String userID);
+
+	ElecUserFile findUserFileByID(String fileID);
+
+	void deleteUserByID(ElecUser elecUser);
 
 }

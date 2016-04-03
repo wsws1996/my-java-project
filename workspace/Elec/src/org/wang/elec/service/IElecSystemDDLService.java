@@ -13,5 +13,7 @@ public interface IElecSystemDDLService {
 
 	void saveSystemDDL(ElecSystemDDL elecSystemDDL);
 
+	String findDdlNameByKeywordAndDdlCode(String string, String ddlCode);
+
 
 }

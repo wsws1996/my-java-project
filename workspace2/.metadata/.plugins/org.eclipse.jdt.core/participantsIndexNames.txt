@@ -1,25 +1,3 @@
 INDEX VERSION 1.126
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2783854012.index
-/day08/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1419893483.index
-/day05/src
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2607465883.index
-/day08/src
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2996120063.index
+/E/myproject/my-java-project/workspace2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2996120063.index
 /day09/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1831659054.index
-/day06/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3760169722.index
-/mydayo6/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3398694358.index
-/day05-myself/src
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1831659054.index
-/day06/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2818604863.index
-/myday06/src
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2052584045.index
-/day07/src
-/mnt/hgfs/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2052584045.index
-/day07/src
-/F/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2626664603.index
-/day08/src

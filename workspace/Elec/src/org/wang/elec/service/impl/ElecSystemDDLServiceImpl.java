@@ -83,7 +83,7 @@ public class ElecSystemDDLServiceImpl implements IElecSystemDDLService {
 		String typeflag = elecSystemDDL.getTypeflag();
 		String itemnames[] = elecSystemDDL.getItemname();
 
-		if (typeflag!=null&&typeflag.equals("new")) {
+		if (typeflag != null && typeflag.equals("new")) {
 			this.saveDDL(keyword, itemnames);
 		} else {
 			List<ElecSystemDDL> list = this.findSystemDDLByKeyword(keyword);
@@ -103,5 +103,23 @@ public class ElecSystemDDLServiceImpl implements IElecSystemDDLService {
 				elecSystemDDLDao.save(systemDDL);
 			}
 		}
+	}
+
+	/**
+	 * @name:findDdlNameByKeywordAndDdlCode
+	 * @description:使用数据类型和数据项的编号，获取数据项的值
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-02
+	 * @param String
+	 *            keyword,数据类型 String ddlCode,数据项的编号
+	 * @return 数据项的值
+	 */
+
+	@Override
+	public String findDdlNameByKeywordAndDdlCode(String keyword, String ddlCode) {
+
+		return elecSystemDDLDao
+				.findDdlNameByKeywordAndDdlCode(keyword, ddlCode);
 	}
 }
