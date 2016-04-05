@@ -31,13 +31,13 @@
 			</key>
 			<one-to-many class="org.wang.elec.domain.ElecUserFile"/>
 		</set> 
-		
-		<!-- <set name="elecRoles" table="elec_user_role" inverse="true">
+		<!-- inverse="true" 由角色一端控制关联关系 -->
+		<set name="elecRoles" table="elec_user_role" inverse="true">
 			<key>
 				<column name="userID"></column>
 			</key>
-			<many-to-many class="cn.itcast.elec.domain.ElecRole" column="roleID"/>
-		</set>  -->
+			<many-to-many class="org.wang.elec.domain.ElecRole" column="roleID"/>
+		</set> 
 		
 		
 	</class>

@@ -37,14 +37,14 @@ public class ElecUser implements java.io.Serializable {
 		this.elecUserFiles = elecUserFiles;
 	}
 
-	// private Set<ElecRole> elecRoles = new HashSet<ElecRole>();
-	//
-	// public Set<ElecRole> getElecRoles() {
-	// return elecRoles;
-	// }
-	// public void setElecRoles(Set<ElecRole> elecRoles) {
-	// this.elecRoles = elecRoles;
-	// }
+	 private Set<ElecRole> elecRoles = new HashSet<ElecRole>();
+	
+	 public Set<ElecRole> getElecRoles() {
+	 return elecRoles;
+	 }
+	 public void setElecRoles(Set<ElecRole> elecRoles) {
+	 this.elecRoles = elecRoles;
+	 }
 
 	public String getUserID() {
 		return userID;
