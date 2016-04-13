@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.wang.elec.domain.ElecPopedom;
 import org.wang.elec.domain.ElecRole;
+import org.wang.elec.domain.ElecUser;
 
 
 
@@ -15,6 +16,10 @@ public interface IElecRoleService {
 	List<ElecPopedom> findAllPopedomList();
 
 	List<ElecPopedom> findAllPopedomListByRoleID(String roleID);
+
+	List<ElecUser> findAllUserListByRoleID(String roleID);
+
+	void saveRole(ElecPopedom elecPopedom);
 
 	
 }

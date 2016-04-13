@@ -208,6 +208,16 @@ public class ElecUser implements java.io.Serializable {
 	//用来判断是否对密码进行加密，存放修改用户之前的密码
 	private String password;
 
+	private String flag;
+	
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
 	public String getPassword() {
 		return password;
 	}

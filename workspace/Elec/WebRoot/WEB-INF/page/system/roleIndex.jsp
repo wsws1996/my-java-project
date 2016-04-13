@@ -31,9 +31,9 @@ td div {
 <script language="javascript">
 	function saveRole() {
 
-		document.Form2.roleID.value = document.Form1.roleID.value;
-		document.Form2.action = "saveRole.do";
-		document.Form2.submit();
+		$("input[name='roleID']").val($("select[name='roleID']").val());
+		$("#Form2").attr("action","${pageContext.request.contextPath }/system/elecRoleAction_save.do");
+		$("#Form2").submit();
 	}
 
 	function selectRole() {

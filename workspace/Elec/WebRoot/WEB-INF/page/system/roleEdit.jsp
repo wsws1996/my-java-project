@@ -24,10 +24,10 @@
 													<td class="ta_01" align="left" width="18%" height="22"
 														background="../images/tablehead.jpg">
 														<s:if test="flag=='1'.toString()">
-															<input type="checkbox" name="selectoper" id='<s:property value="mid"/>_<s:property value="mid"/>' value="" onClick='goSelect(this.id)' checked="checked"> 
+															<input type="checkbox" name="selectoper" id='<s:property value="mid"/>_<s:property value="mid"/>' value='<s:property value="pid"/>_<s:property value="mid"/>' onClick='goSelect(this.id)' checked="checked"> 
 														</s:if>
 														<s:else>
-															<input type="checkbox" name="selectoper" id='<s:property value="mid"/>_<s:property value="mid"/>' value="" onClick='goSelect(this.id)'> 
+															<input type="checkbox" name="selectoper" id='<s:property value="mid"/>_<s:property value="mid"/>' value='<s:property value="pid"/>_<s:property value="mid"/>' onClick='goSelect(this.id)'> 
 														</s:else>
 														<s:property value="name" /></td>
 													<td class="ta_01" align="left" width="82%" height="22">
@@ -36,11 +36,11 @@
 																<div>
 																	<s:if test="flag=='1'.toString()">
 																		<input type="checkbox" name="selectoper" id="<s:property value="pid"/>_<s:property value="mid"/>"
-																		value="" onClick='goSelect(this.id)' checked="checked">
+																		value="<s:property value="pid"/>_<s:property value="mid"/>" onClick='goSelect(this.id)' checked="checked">
 																	</s:if>
 																	<s:else>
 																		<input type="checkbox" name="selectoper" id="<s:property value="pid"/>_<s:property value="mid"/>"
-																		value="" onClick='goSelect(this.id)'>
+																		value="<s:property value="pid"/>_<s:property value="mid"/>" onClick='goSelect(this.id)'>
 																	</s:else>
 																	<s:property value="name" />
 																</div>
@@ -55,7 +55,7 @@
 				        
 				 </td>
 			  </tr>						
-				 <input type="hidden" name="roleID" >						
+				 <input type="hidden" name="roleID">						
 		 </table>	
         </fieldset>
 	  </td>
@@ -79,30 +79,27 @@
 				   <td class="ta_01"  align="center" width="40%" height=22 background="../images/tablehead.jpg">登录名</td>
 				   <td class="ta_01"  align="center" width="40%" height=22 background="../images/tablehead.jpg">用户姓名</td>
 				</tr>
-				 <tr onmouseover="this.style.backgroundColor = 'white'"
+				<s:if test="#request.userList!=null && #request.userList.size()>0">
+					<s:iterator value="#request.userList">
+						<tr onmouseover="this.style.backgroundColor = 'white'"
 					onmouseout="this.style.backgroundColor = '#F5FAFE';">
 					<td style="HEIGHT: 22px" class="ta_01" align="center" width="20%">
-						<input type="checkbox" name="selectuser" value="123456789" checked>
+						<s:if test="flag==1">
+						<input type="checkbox" name="selectuser" value=""  checked="checked">
+						</s:if>
+						<s:else>
+							<input type="checkbox" name="selectuser" value="">
+						</s:else>
 					</td>
 					<td style="HEIGHT: 22px" class="ta_01" align="center" width="40%">
-						zhangsan
+						<s:property value="logonName" />
 					</td>
 					<td style="HEIGHT: 22px" class="ta_01" align="center" width="40%">
-						张三
+						<s:property value="userName"/>
 					</td>
 				</tr>
-				<tr onmouseover="this.style.backgroundColor = 'white'"
-					onmouseout="this.style.backgroundColor = '#F5FAFE';">
-					<td style="HEIGHT: 22px" class="ta_01" align="center" width="20%">
-						<input type="checkbox" name="selectuser" value="123456789">
-					</td>
-					<td style="HEIGHT: 22px" class="ta_01" align="center" width="40%">
-						lisi
-					</td>
-					<td style="HEIGHT: 22px" class="ta_01" align="center" width="40%">
-						李四
-					</td>
-				</tr>
+					</s:iterator>
+				</s:if>
 		</table>
     </fieldset>
 	 </td>
