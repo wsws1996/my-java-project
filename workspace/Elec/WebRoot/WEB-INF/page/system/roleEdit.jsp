@@ -85,10 +85,10 @@
 					onmouseout="this.style.backgroundColor = '#F5FAFE';">
 					<td style="HEIGHT: 22px" class="ta_01" align="center" width="20%">
 						<s:if test="flag==1">
-						<input type="checkbox" name="selectuser" value=""  checked="checked">
+						<input type="checkbox" name="selectuser" value='<s:property value="userID"/>'  checked="checked">
 						</s:if>
 						<s:else>
-							<input type="checkbox" name="selectuser" value="">
+							<input type="checkbox" name="selectuser" value='<s:property value="userID"/>'>
 						</s:else>
 					</td>
 					<td style="HEIGHT: 22px" class="ta_01" align="center" width="40%">

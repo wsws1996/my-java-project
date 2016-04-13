@@ -19,6 +19,7 @@
 		</action>
 		<!-- 系统登录 -->
 		<action name="elecMenuAction_*" class="elecMenuAction" method="{1}">
+			
 			<result name="menuHome">/WEB-INF/page/menu/home.jsp</result>
 			<result name="title">/WEB-INF/page/menu/title.jsp</result>
 			<result name="left">/WEB-INF/page/menu/left.jsp</result>
@@ -27,6 +28,7 @@
 			<result name="logout" type="redirect">/index.jsp</result>
 			<result name="alermStation">/WEB-INF/page/menu/alermStation.jsp</result>
 			<result name="alermDevice">/WEB-INF/page/menu/alermDevice.jsp</result>
+			<result name="logonError">/WEB-INF/page/menu/index.jsp</result>
 		</action>
 		<!-- 运行监控 -->
 		<action name="elecCommonMsgAction_*" class="elecCommonMsgAction"

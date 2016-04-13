@@ -25,6 +25,7 @@ public class ElecSystemDDLDaoImpl extends CommonDaoImpl<ElecSystemDDL>
 	 * @param: 无
 	 * @return List<ElecSystemDDL> 存放数据类型的集合
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<ElecSystemDDL> findSystemDDLByDistinct() {
 		List<ElecSystemDDL> systemList = new ArrayList<ElecSystemDDL>();
@@ -58,6 +59,7 @@ public class ElecSystemDDLDaoImpl extends CommonDaoImpl<ElecSystemDDL>
 	public String findDdlNameByKeywordAndDdlCode(final String keyword,
 			final String ddlCode) {
 		final String hql = "select o.ddlName from ElecSystemDDL o where o.keyword=? and o.ddlCode=?";
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<Object> list = this.getHibernateTemplate().execute(
 				new HibernateCallback() {
 

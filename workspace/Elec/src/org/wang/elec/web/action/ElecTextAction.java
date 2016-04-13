@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.wang.elec.domain.ElecText;
 import org.wang.elec.service.IElecTextService;
 
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
 @SuppressWarnings("serial")
 @Controller("elecTextAction")

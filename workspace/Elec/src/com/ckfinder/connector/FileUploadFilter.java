@@ -51,7 +51,8 @@ public class FileUploadFilter implements Filter {
 				HttpServletRequest httpRequest = (HttpServletRequest) request;
 				String contentLength = httpRequest.getHeader(CONTENT_LENGTH);
 				if ((contentLength != null && Integer.parseInt(contentLength) == 0)) {
-					HttpServletResponse httpResponse = (HttpServletResponse) response;
+					
+//					HttpServletResponse httpResponse = (HttpServletResponse) response;
 					setSessionCookie((HttpServletResponse) response,
 							httpRequest);
 					return;
@@ -64,7 +65,6 @@ public class FileUploadFilter implements Filter {
 	/*
 	 * write all cookies back to the flex test response
 	 */
-	@SuppressWarnings("unchecked")
 	private void setSessionCookie(HttpServletResponse httpResponse,
 			HttpServletRequest httpRequest) {
 

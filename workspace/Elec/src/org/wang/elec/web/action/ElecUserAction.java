@@ -2,10 +2,7 @@ package org.wang.elec.web.action;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URLEncoder;
 import java.util.List;
 
 import javax.annotation.Resource;

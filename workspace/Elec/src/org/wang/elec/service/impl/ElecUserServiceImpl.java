@@ -1,6 +1,7 @@
 package org.wang.elec.service.impl;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -16,10 +17,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.jsf.FacesContextUtils;
 import org.wang.elec.dao.IElecSystemDDLDao;
 import org.wang.elec.dao.IElecUserDao;
 import org.wang.elec.dao.IElecUserFileDao;
+import org.wang.elec.domain.ElecRole;
 import org.wang.elec.domain.ElecUser;
 import org.wang.elec.domain.ElecUserFile;
 import org.wang.elec.service.IElecUserService;
@@ -184,7 +185,7 @@ public class ElecUserServiceImpl implements IElecUserService {
 		Date progressTime = new Date();
 		File[] uploads = elecUser.getUploads();
 		String[] fileNames = elecUser.getUploadsFileName();
-		String[] contentTypes = elecUser.getUploadsContentType();
+		// String[] contentTypes = elecUser.getUploadsContentType();
 
 		if (uploads != null && uploads.length > 0) {
 			for (int i = 0; i < uploads.length; i++) {
@@ -260,10 +261,47 @@ public class ElecUserServiceImpl implements IElecUserService {
 						// elecUserFileDao.deleteObjectByIds(elecUserFile.getFileID());
 					}
 				}
+				/* 2016年04月13日15:56:45添加，同时删除用户角色关联的数据begin */
+				// user.getElecRoles().clear();
+				// 因为user没有控制中间表的权限（inverse=true），所以此方法不可行
+				Set<ElecRole> elecRoles = user.getElecRoles();
+				if (elecRoles != null && elecRoles.size() > 0) {
+					for (ElecRole elecRole : elecRoles) {
+						elecRole.getElecUsers().remove(user);
+					}
+				}
+				/* 2016年04月13日15:56:45添加，同时删除用户角色关联的数据end */
 			}
 		}
 		// 删除用户表的信息，并级联删除用户文件表信息，基于cascade="delete"
-		elecUserDao.deleteObjectByIds(userIDs);
+		elecUserDao.deleteObjectByIds((Serializable[]) userIDs);
+	}
+
+	/**
+	 * @name:findUserByLogonName
+	 * @description:使用登录名作为查询条件，查询登录名对应的登录信息
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-13
+	 * @param: String：登录名
+	 * @return: ElecUser:用户对象
+	 */
+	@Override
+	public ElecUser findUserByLogonName(String name) {
+		String condition = "";
+		List<Object> paramsList = new ArrayList<Object>();
+		if (StringUtils.isNotBlank(name)) {
+			condition += " and  o.logonName=?";
+			paramsList.add(name);
+		}
+		Object[] params = paramsList.toArray();
+		List<ElecUser> list = elecUserDao.findCollectionByConditionNoPage(
+				condition, params, null);
+		ElecUser elecUser = null;
+		if (list != null && list.size() > 0) {
+			elecUser = list.get(0);
+		}
+		return elecUser;
 	}
 
 }

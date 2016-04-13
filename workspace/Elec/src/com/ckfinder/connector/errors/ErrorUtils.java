@@ -126,6 +126,7 @@ public final class ErrorUtils {
 				// remove "file:" and all chars after !
 				String jarPath = dirURL.getPath().substring(5, dirURL.getPath().indexOf("!"));
 				// changes from "%20" to " "
+				@SuppressWarnings("resource")
 				JarFile jarFile = new JarFile(URLDecoder.decode(jarPath, "UTF-8"));
 				Enumeration<JarEntry> entries = jarFile.entries();
 				while (entries.hasMoreElements()) {

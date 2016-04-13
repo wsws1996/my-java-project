@@ -13,12 +13,19 @@ import com.opensymphony.xwork2.ModelDriven;
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>,
 		ServletRequestAware, ServletResponseAware {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2129342010506217638L;
+
 	T entity;
 
 	protected HttpServletRequest request;
 	protected HttpServletResponse response;
 
+	@SuppressWarnings("unchecked")
 	public BaseAction() {
+		@SuppressWarnings("rawtypes")
 		Class entityClass = TUtils.getActualType(this.getClass());
 		try {
 			entity = (T) entityClass.newInstance();

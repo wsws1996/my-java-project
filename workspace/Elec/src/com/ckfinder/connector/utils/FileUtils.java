@@ -37,6 +37,7 @@ import com.ckfinder.connector.ServletContextFactory;
 import com.ckfinder.connector.configuration.Constants;
 import com.ckfinder.connector.configuration.IConfiguration;
 import com.ckfinder.connector.data.ResourceType;
+
 import java.io.FileFilter;
 import java.net.URLEncoder;
 import java.util.Collections;
@@ -268,6 +269,7 @@ public class FileUtils {
 			return false;
 		}
 		String dir = PathUtils.removeSlashFromEnd(PathUtils.escape(dirName));
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(dir).useDelimiter("/");
 		while (sc.hasNext()) {
 			boolean check = Pattern.compile(getHiddenFileOrFolderRegex(
@@ -387,12 +389,14 @@ public class FileUtils {
 	 */
 	private static boolean checkSingleExtension(final String fileExt,
 									 final ResourceType type) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(type.getDeniedExtensions()).useDelimiter(",");
 		while (scanner.hasNext()) {
 			if (scanner.next().equalsIgnoreCase(fileExt)) {
 				return false;
 			}
 		}
+		@SuppressWarnings("resource")
 		Scanner scanner1 = new Scanner(type.getAllowedExtensions()).useDelimiter(",");
 		while (scanner1.hasNext()) {
 			if (scanner1.next().equalsIgnoreCase(fileExt)) {

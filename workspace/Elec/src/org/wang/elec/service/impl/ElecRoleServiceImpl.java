@@ -1,9 +1,12 @@
 package org.wang.elec.service.impl;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -162,8 +165,8 @@ public class ElecRoleServiceImpl implements IElecRoleService {
 				null, orderby);
 		ElecRole elecRole = elecRoleDao.findObjectByID(roleID);
 		Set<ElecUser> elecUsers = elecRole.getElecUsers();
-		List<String> idList = new ArrayList<String>();
 		// 方案一（性能较高）
+		// List<String> idList = new ArrayList<String>();
 		// if (elecUsers != null && elecUsers.size() > 0) {
 		// for (ElecUser elecUser : elecUsers) {
 		// String userID = elecUser.getUserID();
@@ -214,9 +217,37 @@ public class ElecRoleServiceImpl implements IElecRoleService {
 	public void saveRole(ElecPopedom elecPopedom) {
 		String roleID = elecPopedom.getRoleID();
 		String[] selectopers = elecPopedom.getSelectoper();
+		String[] selectusers = elecPopedom.getSelectuser();
 		this.saveRolePopedom(roleID, selectopers);
+		this.saveUserRole(roleID, selectusers);
 	}
 
+	// 操作用户角色关联表
+	private void saveUserRole(String roleID, String[] selectusers) {
+		ElecRole elecRole = elecRoleDao.findObjectByID(roleID);
+		/* 方案一 */
+		// Set<ElecUser> elecUsers = elecRole.getElecUsers();
+		// elecUsers.clear();
+		// if (selectusers != null && selectusers.length > 0) {
+		// for (String userID : selectusers) {
+		// ElecUser elecUser = new ElecUser();
+		// elecUser.setUserID(userID);
+		// elecUsers.add(elecUser);
+		// }
+		// }
+		/* 方案二 */
+		Set<ElecUser> elecUsers = new HashSet<ElecUser>();
+		if (selectusers != null && selectusers.length > 0) {
+			for (String userID : selectusers) {
+				ElecUser elecUser = new ElecUser();
+				elecUser.setUserID(userID);
+				elecUsers.add(elecUser);
+			}
+		}
+		elecRole.setElecUsers(elecUsers);
+	}
+
+	// 操作角色权限关联表
 	private void saveRolePopedom(String roleID, String[] selectopers) {
 		String condition = " and o.roleID=?";
 		Object[] params = { roleID };
@@ -233,5 +264,41 @@ public class ElecRoleServiceImpl implements IElecRoleService {
 				elecRolePopedomDao.save(elecRolePopedom);
 			}
 		}
+	}
+
+	/**
+	 * @name:findPopedomByRoleIDs
+	 * @description:使用角色ID的HashTable的集合，获取角色对应的权限并集
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-13
+	 * @param: HashTable：角色ID的集合
+	 * @return String：表示权限的字符串（格式为aa@bb@cc）
+	 */
+
+	@Override
+	public String findPopedomByRoleIDs(Hashtable<String, String> ht) {
+		StringBuffer buffercondition = new StringBuffer();
+		if (ht != null && ht.size() > 0) {
+			for (Iterator<Entry<String, String>> ite = ht.entrySet().iterator(); ite
+					.hasNext();) {
+				Entry<String, String> entry = (Entry<String, String>) ite
+						.next();
+				buffercondition.append("'").append(entry.getKey()).append("'")
+						.append(",");
+
+			}
+			buffercondition.deleteCharAt(buffercondition.length() - 1);
+		}
+		String condition=buffercondition.toString();
+		List<Object> list=elecRolePopedomDao.findPopedomByRoleIDs(condition);
+		StringBuffer buffer=new StringBuffer();
+		if (list!=null&&list.size()>0) {
+			for (Object o : list) {
+				buffer.append(o.toString()).append("@");
+			}
+			buffer.deleteCharAt(buffer.length()-1);
+		}
+		return buffer.toString();
 	}
 }

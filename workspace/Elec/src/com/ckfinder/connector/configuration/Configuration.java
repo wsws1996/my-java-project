@@ -226,6 +226,7 @@ public class Configuration implements IConfiguration {
 				}
 				if (childNode.getNodeName().equals("htmlExtensions")) {
 					String htmlExt = childNode.getTextContent();
+					@SuppressWarnings("resource")
 					Scanner scanner = new Scanner(htmlExt).useDelimiter(",");
 					while (scanner.hasNext()) {
 						String val = scanner.next();
@@ -248,6 +249,7 @@ public class Configuration implements IConfiguration {
 				}
 				if (childNode.getNodeName().equals("defaultResourceTypes")) {
 					String value = childNode.getTextContent().trim();
+					@SuppressWarnings("resource")
 					Scanner sc = new Scanner(value).useDelimiter(",");
 					while (sc.hasNext()) {
 						this.defaultResourceTypes.add(sc.next());

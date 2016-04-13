@@ -4,6 +4,7 @@ import java.lang.reflect.ParameterizedType;
 
 public class TUtils {
 
+	@SuppressWarnings("rawtypes")
 	public static Class getActualType(Class entity) {
 		ParameterizedType parameterizedType = (ParameterizedType) entity
 				.getGenericSuperclass();

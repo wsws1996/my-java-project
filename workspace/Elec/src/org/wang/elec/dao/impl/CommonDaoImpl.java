@@ -19,6 +19,7 @@ import org.wang.elec.utils.TUtils;
 public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 		ICommonDao<T> {
 
+	@SuppressWarnings("rawtypes")
 	Class entityClass = TUtils.getActualType(this.getClass());
 
 	@Resource(name = "sessionFactory")
@@ -36,6 +37,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 		this.getHibernateTemplate().update(entity);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T findObjectByID(Serializable id) {
 
@@ -80,6 +82,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 		//
 		// List<T> list = query.list();
 
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		final List<T> list = this.getHibernateTemplate().execute(
 				new HibernateCallback() {
 

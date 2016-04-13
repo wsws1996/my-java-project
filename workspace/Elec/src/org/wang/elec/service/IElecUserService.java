@@ -21,4 +21,6 @@ public interface IElecUserService {
 
 	void deleteUserByID(ElecUser elecUser);
 
+	ElecUser findUserByLogonName(String name);
+
 }
