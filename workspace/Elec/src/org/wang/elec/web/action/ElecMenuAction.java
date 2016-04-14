@@ -1,6 +1,7 @@
 package org.wang.elec.web.action;
 
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -9,11 +10,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.wang.elec.domain.ElecCommonMsg;
+import org.wang.elec.domain.ElecPopedom;
 import org.wang.elec.domain.ElecRole;
 import org.wang.elec.domain.ElecUser;
 import org.wang.elec.service.IElecCommonMsgService;
 import org.wang.elec.service.IElecRoleService;
 import org.wang.elec.service.IElecUserService;
+import org.wang.elec.utils.LogonUtils;
 import org.wang.elec.utils.MD5keyBean;
 import org.wang.elec.utils.ValueUtils;
 import org.wang.elec.web.form.MenuForm;
@@ -55,6 +58,14 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	public String menuHome() {
 		String name = menuForm.getName();
 		String password = menuForm.getPassword();
+		
+		boolean flag= LogonUtils.checkNumber(request);
+		
+		if (!flag) {
+			this.addActionError("验证码输入有误！");
+			return "logonError";
+		}
+		
 		ElecUser elecUser = elecUserService.findUserByLogonName(name);
 		if (elecUser == null) {
 			this.addActionError("用户名输入有误！");
@@ -91,6 +102,8 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 			this.addActionError("当前用户具有的角色没有分配权限，请与管理员联系！");
 			return "logonError";
 		}
+		LogonUtils.rememberMe(name,password,request,response);
+		
 		request.getSession().setAttribute("globle_user", elecUser);
 		request.getSession().setAttribute("globle_role", ht);
 		request.getSession().setAttribute("globle_popedom", popedom);
@@ -177,5 +190,21 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 		ElecCommonMsg commonMsg = elecCommonMsgService.findCommonMsg();
 		ValueUtils.putValueStack(commonMsg);
 		return "alermDevice";
+	}
+	
+	/**
+	 * @name:showMenu
+	 * @description:使用ajax动态加载左侧的树形菜单
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-14
+	 * @param: 无
+	 * @return String showMenu，使用struts2提供的json插件包
+	 */
+	public String showMenu() {
+		String popedom=(String) request.getSession().getAttribute("globle_popedom");
+		List<ElecPopedom> list=elecRoleService.findPopedomListByString(popedom);
+		ValueUtils.putValueStack(list);
+		return "showMenu";
 	}
 }

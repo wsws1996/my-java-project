@@ -3,7 +3,6 @@ package org.wang.elec.service;
 import java.util.Hashtable;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.wang.elec.domain.ElecPopedom;
 import org.wang.elec.domain.ElecRole;
 import org.wang.elec.domain.ElecUser;
@@ -24,6 +23,8 @@ public interface IElecRoleService {
 	void saveRole(ElecPopedom elecPopedom);
 
 	String findPopedomByRoleIDs(Hashtable<String, String> ht);
+
+	List<ElecPopedom> findPopedomListByString(String popedom);
 
 	
 }

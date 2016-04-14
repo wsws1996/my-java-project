@@ -29,6 +29,7 @@
 			<result name="alermStation">/WEB-INF/page/menu/alermStation.jsp</result>
 			<result name="alermDevice">/WEB-INF/page/menu/alermDevice.jsp</result>
 			<result name="logonError">/WEB-INF/page/menu/index.jsp</result>
+			<result name="showMenu" type="json"></result>
 		</action>
 		<!-- 运行监控 -->
 		<action name="elecCommonMsgAction_*" class="elecCommonMsgAction"

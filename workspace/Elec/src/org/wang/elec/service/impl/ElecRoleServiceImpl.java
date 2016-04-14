@@ -290,15 +290,38 @@ public class ElecRoleServiceImpl implements IElecRoleService {
 			}
 			buffercondition.deleteCharAt(buffercondition.length() - 1);
 		}
-		String condition=buffercondition.toString();
-		List<Object> list=elecRolePopedomDao.findPopedomByRoleIDs(condition);
-		StringBuffer buffer=new StringBuffer();
-		if (list!=null&&list.size()>0) {
+		String condition = buffercondition.toString();
+		List<Object> list = elecRolePopedomDao.findPopedomByRoleIDs(condition);
+		StringBuffer buffer = new StringBuffer();
+		if (list != null && list.size() > 0) {
 			for (Object o : list) {
 				buffer.append(o.toString()).append("@");
 			}
-			buffer.deleteCharAt(buffer.length()-1);
+			buffer.deleteCharAt(buffer.length() - 1);
 		}
 		return buffer.toString();
+	}
+
+	/**
+	 * @name:findPopedomListByString
+	 * @description:使用权限的字符串，查询当前权限（当前用户）对应的权限集合
+	 * @author wang
+	 * @version V1.0
+	 * @create Date: 2016-04-14
+	 * @param: String：表示权限的字符串（格式为aa@bb@cc）
+	 * @return List<ElecPopedom>：权限的集合 SELECT * FROM Elec_Popedom o WHERE 1 = 1
+	 *         AND o.isMenu = TRUE AND o.mid in('aa','ab','ac');
+	 */
+
+	@Override
+	public List<ElecPopedom> findPopedomListByString(String popedom) {
+		String condition = " and o.isMenu = ? and o.mid in ('"
+				+ popedom.replace("@", "','") + "')";
+		Object[] params = { true };
+		Map<String, String> orderby = new LinkedHashMap<String, String>();
+		orderby.put("o.mid", "asc");
+		List<ElecPopedom> list = elecPopedomDao
+				.findCollectionByConditionNoPage(condition, params, orderby);
+		return list;
 	}
 }
