@@ -52,6 +52,15 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 		List<ElecUser> userList = elecUserService
 				.findUserListByCondition(elecUser);
 		request.setAttribute("userList", userList);
+		
+		/*故意抛出异常，测试日志记录及异常处理，发布时应该删除*/
+//		try {
+//			int i =1/0;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw new RuntimeException("抛出运行时异常，在用户action中的home方法");
+//		}
+		
 		return "home";
 	}
 
@@ -132,6 +141,10 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 
 	public String save() {
 		elecUserService.saveUser(elecUser);
+		String roleflag=elecUser.getRoleflag();
+		if (roleflag!=null&&roleflag.equals("1")) {
+			return "redirectEdit";
+		}
 		return "close";
 	}
 
@@ -148,6 +161,7 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 		String userID = elecUser.getUserID();
 		ElecUser user = elecUserService.findUserByID(userID);
 		user.setViewflag(elecUser.getViewflag());
+		user.setRoleflag(elecUser.getRoleflag());
 		ValueUtils.putValueStack(user);
 		this.initSystemDDL();
 		String ddlCode = user.getJctID();
@@ -223,7 +237,7 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 		}
 		return "download";
 	}
-	
+
 	/**
 	 * @name:delete
 	 * @description:删除用户信息
@@ -233,7 +247,7 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 	 * @param: 无
 	 * @return 重定向到system/userIndex.jsp
 	 */
-	
+
 	public String delete() {
 		elecUserService.deleteUserByID(elecUser);
 		return "delete";

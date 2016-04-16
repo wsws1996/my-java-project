@@ -205,6 +205,16 @@ public class ElecUser implements java.io.Serializable {
 
 	private String viewflag;
 
+	private String roleflag;
+	
+	public String getRoleflag() {
+		return roleflag;
+	}
+
+	public void setRoleflag(String roleflag) {
+		this.roleflag = roleflag;
+	}
+
 	//用来判断是否对密码进行加密，存放修改用户之前的密码
 	private String password;
 

@@ -45,7 +45,7 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	 */
 	@Resource(name = IElecRoleService.SERVICE_NAME)
 	IElecRoleService elecRoleService;
-	
+
 	/**
 	 * @name:menuHome
 	 * @description:跳转到系统登录的首页
@@ -58,14 +58,14 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	public String menuHome() {
 		String name = menuForm.getName();
 		String password = menuForm.getPassword();
-		
-		boolean flag= LogonUtils.checkNumber(request);
-		
+
+		boolean flag = LogonUtils.checkNumber(request);
+
 		if (!flag) {
 			this.addActionError("验证码输入有误！");
 			return "logonError";
 		}
-		
+
 		ElecUser elecUser = elecUserService.findUserByLogonName(name);
 		if (elecUser == null) {
 			this.addActionError("用户名输入有误！");
@@ -96,18 +96,18 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 				ht.put(elecRole.getRoleID(), elecRole.getRoleName());
 			}
 		}
-		//判断用户对应的角色是否分配了权限，如果分配了权限，将权限的信息存放起来，存放为字符串（aa@bb@cc）
-		String popedom=elecRoleService.findPopedomByRoleIDs(ht);
+		// 判断用户对应的角色是否分配了权限，如果分配了权限，将权限的信息存放起来，存放为字符串（aa@bb@cc）
+		String popedom = elecRoleService.findPopedomByRoleIDs(ht);
 		if (StringUtils.isBlank(popedom)) {
 			this.addActionError("当前用户具有的角色没有分配权限，请与管理员联系！");
 			return "logonError";
 		}
-		LogonUtils.rememberMe(name,password,request,response);
-		
+		LogonUtils.rememberMe(name, password, request, response);
+
 		request.getSession().setAttribute("globle_user", elecUser);
 		request.getSession().setAttribute("globle_role", ht);
 		request.getSession().setAttribute("globle_popedom", popedom);
-		
+
 		return "menuHome";
 	}
 
@@ -191,7 +191,7 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 		ValueUtils.putValueStack(commonMsg);
 		return "alermDevice";
 	}
-	
+
 	/**
 	 * @name:showMenu
 	 * @description:使用ajax动态加载左侧的树形菜单
@@ -202,8 +202,27 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	 * @return String showMenu，使用struts2提供的json插件包
 	 */
 	public String showMenu() {
-		String popedom=(String) request.getSession().getAttribute("globle_popedom");
-		List<ElecPopedom> list=elecRoleService.findPopedomListByString(popedom);
+		Hashtable<String, String> ht = (Hashtable<String, String>) request
+				.getSession().getAttribute("globle_role");
+		ElecUser elecUser = (ElecUser) request.getSession().getAttribute(
+				"globle_user");
+		String popedom = (String) request.getSession().getAttribute(
+				"globle_popedom");
+		List<ElecPopedom> list = elecRoleService
+				.findPopedomListByString(popedom);
+		if (!ht.containsKey("1")) {
+			if (list != null && list.size() > 0) {
+				for (ElecPopedom elecPopedom : list) {
+					String mid = elecPopedom.getMid();
+					String pid = elecPopedom.getPid();
+					if ("an".equals(mid) && "am".equals(pid)) {
+						elecPopedom
+								.setUrl("../system/elecUserAction_edit.do?userID="
+										+ elecUser.getUserID()+"&roleflag=1");
+					}
+				}
+			}
+		}
 		ValueUtils.putValueStack(list);
 		return "showMenu";
 	}

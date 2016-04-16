@@ -10,16 +10,35 @@
 	<constant name="struts.multipart.maxSize" value="20097152"></constant>
 
 	<package name="system" namespace="/system" extends="json-default">
+		<!-- 自定义拦截器，实现异常处理，实现细颗粒权限控制 -->
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="errorAndLimitInterceptor"
+				class="org.wang.elec.utils.ErrorAndLimitInterceptor" />
+			<!-- 配置拦截器栈 -->
+			<interceptor-stack name="myErrorAndLimitInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="errorAndLimitInterceptor">
+					<!-- <param name="excludeMethods">menuHome,title,left,change,loading,logout,alermStation,alermDevice,showMenu</param> -->
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器栈 对包中的所有action都有效 -->
+		<default-interceptor-ref name="myErrorAndLimitInterceptor" />
 		<!-- 全局转发 -->
 		<global-results>
 			<result name="close">/close.jsp</result>
+			<result name="errorMsg">/errorMsg.jsp</result>
 		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errorMsg" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
 		<action name="elecTextAction_*" class="elecTextAction" method="{1}">
 			<result name="save">/system/textAdd.jsp</result>
 		</action>
 		<!-- 系统登录 -->
 		<action name="elecMenuAction_*" class="elecMenuAction" method="{1}">
-			
+
 			<result name="menuHome">/WEB-INF/page/menu/home.jsp</result>
 			<result name="title">/WEB-INF/page/menu/title.jsp</result>
 			<result name="left">/WEB-INF/page/menu/left.jsp</result>
@@ -71,14 +90,17 @@
 			<result name="delete" type="redirectAction">
 				<param name="actionName">elecUserAction_home.do</param>
 			</result>
+			<result name="redirectEdit" type="redirectAction">
+				<param name="actionName"><![CDATA[elecUserAction_edit.do?userID=${userID}&roleflag=${roleflag}]]></param>
+			</result>
 		</action>
-		
+
 		<!-- 角色管理 -->
 		<action name="elecRoleAction_*" class="elecRoleAction" method="{1}">
 			<result name="home">/WEB-INF/page/system/roleIndex.jsp</result>
 			<result name="edit">/WEB-INF/page/system/roleEdit.jsp</result>
 			<result name="save" type="redirectAction">
-			<param name="actionName">elecRoleAction_home.do</param>
+				<param name="actionName">elecRoleAction_home.do</param>
 			</result>
 		</action>
 	</package>

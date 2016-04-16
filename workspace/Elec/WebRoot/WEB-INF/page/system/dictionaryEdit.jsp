@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%@taglib uri="http://openhome.cc/jstl/fake" prefix="u" %>
 
    <table cellSpacing="1" cellPadding="0" width="90%" align="center" bgColor="#f5fafe" border="0" >
     <tr>
@@ -43,7 +44,9 @@
  <TR height=10><td colspan=3></td></TR>
   <tr>
      <td align="center" colspan=3>
+     	<u:if pattern="ec">
        <input type="button" name="saveitem" value="保存" style="font-size:12px; color:black; height=20;width=50" onClick="saveDict()">
+       </u:if>
 	 </td>
  </tr>
  

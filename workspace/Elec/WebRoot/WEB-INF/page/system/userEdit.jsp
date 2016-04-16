@@ -345,6 +345,7 @@
     <br>
     <s:hidden name="password" value="%{logonPwd}"></s:hidden>
     <s:hidden name="userID"></s:hidden>
+    <s:hidden name="roleflag"></s:hidden>
     <table cellSpacing="1" cellPadding="5" width="680" align="center" bgColor="#eeeeee" style="border:1px solid #8ba7e3" border="0">
 
 	 <tr>
@@ -512,7 +513,9 @@
 			<input type="button" id="BT_Submit" name="BT_Submit" value="保存"  style="font-size:12px; color:black; height=22;width=55"  onClick="check_null()">
 			</s:if>
 		    <FONT face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
-		    <input style="font-size:12px; color:black; height=22;width=55" type="button" value="关闭"  name="Reset1"  onClick="window.close()">
+		    <s:if test="roleflag==null">
+		    	<input style="font-size:12px; color:black; height=22;width=55" type="button" value="关闭"  name="Reset1"  onClick="window.close()">
+		    </s:if>
 	    </td>
 	</tr>
 </table>　
