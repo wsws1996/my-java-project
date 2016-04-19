@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.wang.elec.domain.ElecSystemDDL;
 import org.wang.elec.service.IElecSystemDDLService;
+import org.wang.elec.utils.AnnotationLimit;
 
 @SuppressWarnings("serial")
 @Controller("elecSystemDDLAction")
@@ -31,12 +32,14 @@ public class ElecSystemDDLAction extends BaseAction<ElecSystemDDL> {
 	 * @param: 无
 	 * @return String 跳转到system/dictionaryIndex.jsp
 	 */
+	@AnnotationLimit(mid = "aq", pid = "am")
 	public String home() {
-		List<ElecSystemDDL> list=elecSystemDDLService.findSystemDDLByDistinct();
+		List<ElecSystemDDL> list = elecSystemDDLService
+				.findSystemDDLByDistinct();
 		request.setAttribute("list", list);
 		return "home";
 	}
-	
+
 	/**
 	 * @name:edit
 	 * @description:跳转到编辑数据字典的页面
@@ -46,15 +49,15 @@ public class ElecSystemDDLAction extends BaseAction<ElecSystemDDL> {
 	 * @param: 无
 	 * @return String 跳转到system/dictionaryEdit.jsp
 	 */
-	
+	@AnnotationLimit(mid = "eb", pid = "ea")
 	public String edit() {
-		String keyword=elecSystemDDL.getKeyword();
-		List<ElecSystemDDL> list=elecSystemDDLService.findSystemDDLByKeyword(keyword);
+		String keyword = elecSystemDDL.getKeyword();
+		List<ElecSystemDDL> list = elecSystemDDLService
+				.findSystemDDLByKeyword(keyword);
 		request.setAttribute("list", list);
 		return "edit";
 	}
-	
-	
+
 	/**
 	 * @name:save
 	 * @description:保存数据字典
@@ -64,6 +67,7 @@ public class ElecSystemDDLAction extends BaseAction<ElecSystemDDL> {
 	 * @param: 无
 	 * @return String 重定向到system/dictionaryEdit.jsp
 	 */
+	@AnnotationLimit(mid = "ec", pid = "ea")
 	public String save() {
 		elecSystemDDLService.saveSystemDDL(elecSystemDDL);
 		return "save";
