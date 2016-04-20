@@ -114,4 +114,34 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 		}
 		return buffer.toString();
 	}
+
+	@Override
+	public List<T> findCollectionByConditionNoPageWithCache(String condition,
+			final Object[] params, Map<String, String> orderby) {
+		String hql = "from " + entityClass.getSimpleName() + " o where 1=1 ";
+
+		String orderbyCondiction = this.orderbyHql(orderby);
+
+		final String finalHql = hql + condition + orderbyCondiction;
+
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		final List<T> list = this.getHibernateTemplate().execute(
+				new HibernateCallback() {
+
+					@Override
+					public List<T> doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Query query = session.createQuery(finalHql);
+						if (params != null && params.length > 0) {
+							for (int i = 0; i < params.length; i++) {
+								query.setParameter(i, params[i]);
+							}
+						}
+						query.setCacheable(true);
+						return query.list();
+					}
+				});
+
+		return list;
+	}
 }

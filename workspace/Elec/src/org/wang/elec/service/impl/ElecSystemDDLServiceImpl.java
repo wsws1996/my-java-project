@@ -62,8 +62,9 @@ public class ElecSystemDDLServiceImpl implements IElecSystemDDLService {
 
 		Map<String, String> orderby = new LinkedHashMap<>();
 		orderby.put("o.ddlCode", "asc");
+		//启用二级缓存的查询缓存
 		List<ElecSystemDDL> list = elecSystemDDLDao
-				.findCollectionByConditionNoPage(condition, params, orderby);
+				.findCollectionByConditionNoPageWithCache(condition, params, orderby);
 		return list;
 	}
 

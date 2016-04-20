@@ -2,6 +2,7 @@ package org.wang.elec.dao;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.wang.elec.domain.ElecSystemDDL;
 
@@ -11,7 +12,6 @@ public interface IElecSystemDDLDao extends ICommonDao<ElecSystemDDL> {
 	List<ElecSystemDDL> findSystemDDLByDistinct();
 
 	String findDdlNameByKeywordAndDdlCode(String keyword, String ddlCode);
-
 
 
 }

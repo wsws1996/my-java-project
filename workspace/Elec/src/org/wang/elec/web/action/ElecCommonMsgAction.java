@@ -51,11 +51,11 @@ public class ElecCommonMsgAction extends BaseAction<ElecCommonMsg> {
 
 	public String save() {
 		// 模拟保存150次，方便计算百分比
-		for (int i = 1; i <= 150; i++) {
+//		for (int i = 1; i <= 150; i++) {
 			elecCommonMsgService.saveCommonMsg(elecCommonMsg);
 			request.getSession()
-					.setAttribute("percent", (double) i / 150 * 100);// 存放计算的百分比，此处使用session，因为session可以在一个会话中共享数据，使得在progressBar方法（线程）中可以获取percent的数据
-		}
+					.setAttribute("percent", (double) 150 / 150 * 100);// 存放计算的百分比，此处使用session，因为session可以在一个会话中共享数据，使得在progressBar方法（线程）中可以获取percent的数据
+//		}
 		// 线程结束时，清空当前session
 		request.getSession().removeAttribute("percent");
 		return "save";

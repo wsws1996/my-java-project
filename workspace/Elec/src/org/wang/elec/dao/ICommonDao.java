@@ -16,7 +16,10 @@ public interface ICommonDao<T> {
 
 	void deleteObjectByCollection(List<T> list);
 
-	List<T> findCollectionByConditionNoPage(String condition,
+	List<T> findCollectionByConditionNoPage(String condition, Object[] params,
+			Map<String, String> orderby);
+
+	List<T> findCollectionByConditionNoPageWithCache(String condition,
 			Object[] params, Map<String, String> orderby);
 
 }

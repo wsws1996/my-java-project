@@ -3,6 +3,7 @@ package org.wang.elec.dao.impl;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -67,15 +68,17 @@ public class ElecSystemDDLDaoImpl extends CommonDaoImpl<ElecSystemDDL>
 					public Object doInHibernate(Session session)
 							throws HibernateException, SQLException {
 						Query query = session.createQuery(hql);
+
 						query.setParameter(0, keyword);
 						query.setParameter(1, Integer.parseInt(ddlCode));
+						query.setCacheable(true);
 						return query.list();
 					}
 				});
 		String ddlName = "";
-		if (list!=null &&list.size()>0) {
-			Object object=list.get(0);
-			ddlName=object.toString();
+		if (list != null && list.size() > 0) {
+			Object object = list.get(0);
+			ddlName = object.toString();
 		}
 		return ddlName;
 	}

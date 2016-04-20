@@ -155,7 +155,9 @@
 						onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_add.do','900','700')">&nbsp;&nbsp;
 						<input style="font-size:12px; color:black; height=20;width=80"
 						id="BT_Delete" type="button" value="批量删除" name="BT_Delete"
-						onclick="return deleteAll()">&nbsp;&nbsp;</td>
+						onclick="return deleteAll()">&nbsp;&nbsp;
+						<input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出设置" name="BT_Export" 
+						 onclick="openWindow('${pageContext.request.contextPath }/system/elecExportFieldsAction_setExportFields.do?belongTo=5-1','700','400')">&nbsp;&nbsp;</td>
 				</tr>
 
 				<tr>

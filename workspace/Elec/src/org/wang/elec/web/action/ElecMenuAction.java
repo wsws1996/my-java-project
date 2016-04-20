@@ -202,6 +202,7 @@ public class ElecMenuAction extends BaseAction<MenuForm> {
 	 * @return String showMenu，使用struts2提供的json插件包
 	 */
 	public String showMenu() {
+		@SuppressWarnings("unchecked")
 		Hashtable<String, String> ht = (Hashtable<String, String>) request
 				.getSession().getAttribute("globle_role");
 		ElecUser elecUser = (ElecUser) request.getSession().getAttribute(

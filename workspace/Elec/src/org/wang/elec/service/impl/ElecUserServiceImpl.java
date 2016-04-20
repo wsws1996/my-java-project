@@ -87,10 +87,13 @@ public class ElecUserServiceImpl implements IElecUserService {
 
 		Map<String, String> orderby = new LinkedHashMap<String, String>();
 		orderby.put("o.onDutyDate", "asc");
-
+		/**方案一：查询用户表，再转换数据字典表*/
 		List<ElecUser> list = elecUserDao.findCollectionByConditionNoPage(
 				condition, params, orderby);
 		this.convertSystemDDL(list);
+		/**直接使用sql*/
+//		List<ElecUser> list = elecUserDao.findCollectionByConditionNoPageWithSql(
+//				condition, params, orderby);
 		return list;
 	}
 

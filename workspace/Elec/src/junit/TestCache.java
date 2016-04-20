@@ -2,6 +2,7 @@ package junit;
 
 import java.util.Date;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,7 +12,7 @@ import org.wang.elec.domain.ElecSystemDDL;
 
 public class TestCache {
 	@Test
-	public void save() {
+	public void testCache() {
 		Configuration configuration = new Configuration();
 		configuration.configure();
 		SessionFactory factory = configuration.buildSessionFactory();
@@ -35,5 +36,31 @@ public class TestCache {
 		transaction.commit();
 		session.close();
 
+	}
+	@Test
+	public void testQueryCache(){
+		Configuration configuration = new Configuration();
+		configuration.configure();
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+
+		Query query=session.createQuery("from ElecSystemDDL o where o.keyword='性别'");
+		query.setCacheable(true);
+		query.list();
+		
+		transaction.commit();
+		session.close();
+		
+		session=factory.openSession();
+		transaction=session.beginTransaction();
+		
+		Query query1=session.createQuery("from ElecSystemDDL o where o.keyword='性别'");
+		query1.setCacheable(true);
+		query1.list();
+				
+		
+		transaction.commit();
+		session.close();
 	}
 }
