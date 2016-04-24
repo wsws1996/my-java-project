@@ -17,12 +17,21 @@ public class FileUtils {
 	 *            :上传的文件名
 	 * @param model
 	 *            :模块名称
-	 * @return:文件路径
+	 * @return 文件路径
 	 */
 	public static String fileUploadReturnPath(File file, String fileName,
 			String model) {
+		// String basepath =
+		// ServletActionContext.getServletContext().getRealPath(
+		// File.separator + "upload");
 		String basepath = ServletActionContext.getServletContext().getRealPath(
-				File.separator + "upload");
+				File.separator)
+				+ ".."
+				+ File.separator
+				+ ".."
+				+ File.separator
+				+ "developerFiles" + File.separator + "upload";
+		// 改进基路径，保证重新部署不会丢失文件
 		String datepath = DateUtils.dateToStringByFile(new Date());
 		String filepath = basepath + datepath + model;
 		File dateFile = new File(filepath);
@@ -33,8 +42,9 @@ public class FileUtils {
 		String uuidFileName = UUID.randomUUID().toString() + prefix;
 		File destFile = new File(filepath + File.separator + uuidFileName);
 		file.renameTo(destFile);
-		return File.separator + "upload" + datepath + model
-				+ File.separator + uuidFileName;
+		return ".." + File.separator + ".." + File.separator + "developerFiles"
+				+ File.separator + "upload" + datepath + model + File.separator
+				+ uuidFileName;
 	}
 
 }

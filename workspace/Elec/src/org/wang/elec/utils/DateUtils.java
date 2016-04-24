@@ -13,4 +13,8 @@ public class DateUtils {
 		return sDate;
 	}
 
+	public static String dateToString(Date date) {
+		String sDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+		return sDate;
+	}
 }

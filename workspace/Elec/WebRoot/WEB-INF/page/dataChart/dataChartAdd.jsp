@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <HTML>
 	<HEAD>
 		<title>上传文件</title>
@@ -163,7 +164,7 @@
 		function changeList() {
 			var projId = document.getElementById("projId").value;
 			var belongTo = document.getElementById("belongTo").value;
-			var str = 'dataChartAddList.jsp?projId='+projId+'&belongTo='+belongTo;
+			var str = 'elecFileUploadAction_addList.do?projId='+projId+'&belongTo='+belongTo;
 			Pub.submitActionWithFormGet('Form2',str,'Form1');
 		}	
 </script>
@@ -191,13 +192,7 @@
 									</td>
 									<td class="ta_01">
 										
-										<select name="projId" id="projId" style="width:160px" onchange="changeList();">
-										    <option value="">全部</option>
-										    <option value="1">北京</option>
-										    <option value="2">上海</option>
-										    <option value="3">深圳</option>
-										</select>
- 
+		<s:select list="#request.jctList" name="projId" id="projId" listKey="ddlCode" listValue="ddlName" headerKey="0" headerValue="全部" cssStyle="width:160px" onchange="changeList();"></s:select>								
 									</td>
 									<td width="100" class="ta_01" align="center" bgcolor="#f5fafe"
 										height="22">
@@ -205,12 +200,7 @@
 									</td>
 									<td class="ta_01">
 										<font face="宋体" color="red"> 
-											
-											<select name="belongTo" id="belongTo" style="width:160px" onchange="changeList();">
-											    <option value="">全部</option>
-											    <option value="1">国内图书</option>
-											    <option value="2">国外图书</option>
-											</select>
+											<s:select list="#request.picList" name="belongTo" id="belongTo" listKey="ddlCode" listValue="ddlName" headerKey="0" headerValue="全部" cssStyle="width:160px" onchange="changeList();"></s:select>
  
 											</font>
  

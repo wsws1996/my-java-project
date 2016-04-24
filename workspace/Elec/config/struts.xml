@@ -84,7 +84,6 @@
 				<param name="inputName">inputStream</param>
 				<param name="contentDisposition">attachment;filename="${#request.filename}"</param>
 				<param name="bufferSize">1024</param>
-
 			</result>
 			<result name="input">/WEB-INF/page/system/error.jsp</result>
 			<result name="delete" type="redirectAction">
@@ -109,5 +108,25 @@
 			<result name="setExportFields">/WEB-INF/page/system/exportExcel.jsp</result>
 		</action>
 	</package>
-
+	
+	<!-- 资料图纸管理 -->
+	<package name="datachart" namespace="/datachart" extends="system">
+		<action name="elecFileUploadAction_*" class="elecFileUploadAction" method="{1}">
+			<result name="home">/WEB-INF/page/dataChart/dataChartIndex.jsp</result>
+			<result name="add">/WEB-INF/page/dataChart/dataChartAdd.jsp</result>
+			<result name="save" type="redirectAction">
+				<param name="actionName"><![CDATA[elecFileUploadAction_add.do?projId=${projId}&belongTo=${belongTo}]]></param>
+			</result>
+			<result name="addList">/WEB-INF/page/dataChart/dataChartAddList.jsp</result>
+			<result name="download" type="stream">
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${#request.filename}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="luceneHome">/WEB-INF/page/dataChart/dataChartIndex.jsp</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">elecFileUploadAction_home.do</param>
+			</result>
+		</action>
+	</package>
 </struts>
