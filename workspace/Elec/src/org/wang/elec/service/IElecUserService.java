@@ -1,5 +1,6 @@
 package org.wang.elec.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.wang.elec.domain.ElecUser;
@@ -22,5 +23,9 @@ public interface IElecUserService {
 	void deleteUserByID(ElecUser elecUser);
 
 	ElecUser findUserByLogonName(String name);
+
+	ArrayList<String> findFieldNameWithExcel();
+
+	ArrayList<ArrayList<String>> findFieldDataWithExcel(ElecUser elecUser);
 
 }

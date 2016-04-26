@@ -17,15 +17,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.wang.elec.dao.IElecExportFieldsDao;
 import org.wang.elec.dao.IElecSystemDDLDao;
 import org.wang.elec.dao.IElecUserDao;
 import org.wang.elec.dao.IElecUserFileDao;
+import org.wang.elec.domain.ElecExportFields;
 import org.wang.elec.domain.ElecRole;
 import org.wang.elec.domain.ElecUser;
 import org.wang.elec.domain.ElecUserFile;
 import org.wang.elec.service.IElecUserService;
 import org.wang.elec.utils.FileUtils;
+import org.wang.elec.utils.ListUtils;
 import org.wang.elec.utils.MD5keyBean;
+import org.wang.elec.utils.PageInfo;
 
 @Service(IElecUserService.SERVICE_NAME)
 @Transactional(readOnly = true)
@@ -39,6 +43,9 @@ public class ElecUserServiceImpl implements IElecUserService {
 
 	@Resource(name = IElecSystemDDLDao.SERVICE_NAME)
 	IElecSystemDDLDao elecSystemDDLDao;
+
+	@Resource(name = IElecExportFieldsDao.SERVICE_NAME)
+	IElecExportFieldsDao elecExportFieldDao;
 
 	/**
 	 * @name:findUserListByCondition
@@ -87,13 +94,21 @@ public class ElecUserServiceImpl implements IElecUserService {
 
 		Map<String, String> orderby = new LinkedHashMap<String, String>();
 		orderby.put("o.onDutyDate", "asc");
-		/**方案一：查询用户表，再转换数据字典表*/
-		List<ElecUser> list = elecUserDao.findCollectionByConditionNoPage(
-				condition, params, orderby);
+		/** 方案一：查询用户表，再转换数据字典表 */
+		// List<ElecUser> list = elecUserDao.findCollectionByConditionNoPage(
+		// condition, params, orderby);
+		/** 2016-04-25,添加分页 begin */
+		PageInfo pageInfo = new PageInfo(ServletActionContext.getRequest());
+		List<ElecUser> list = elecUserDao.findCollectionByConditionWithPage(
+				condition, params, orderby, pageInfo);
+		ServletActionContext.getRequest().setAttribute("page",
+				pageInfo.getPageBean());
+		/** 2016-04-25,添加分页 end */
 		this.convertSystemDDL(list);
-		/**直接使用sql*/
-//		List<ElecUser> list = elecUserDao.findCollectionByConditionNoPageWithSql(
-//				condition, params, orderby);
+		/** 直接使用sql */
+		// List<ElecUser> list =
+		// elecUserDao.findCollectionByConditionNoPageWithSql(
+		// condition, params, orderby);
 		return list;
 	}
 
@@ -305,6 +320,117 @@ public class ElecUserServiceImpl implements IElecUserService {
 			elecUser = list.get(0);
 		}
 		return elecUser;
+	}
+
+	@Override
+	/**
+	 * @name findFieldNameWithExcel
+	 * @description 获取excel上的标题字段，通过导出设置表（动态导出）
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月26日
+	 * @return ArrayList<String> excel上的标题
+	 */
+	public ArrayList<String> findFieldNameWithExcel() {
+		ElecExportFields elecExportFields = elecExportFieldDao
+				.findObjectByID("5-1");
+		String zName = elecExportFields.getExpNameList();
+		ArrayList<String> fieldName = (ArrayList<String>) ListUtils
+				.stringToList(zName, "#");
+		return fieldName;
+	}
+
+	@Override
+	/**
+	 * 
+	 * @name findFieldDataWithExcel
+	 * @description 获取excel的数据字段，通过导出设置表导出（动态导出）
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月26日
+	 * @param elecUser
+	 * @return ArrayList<ArrayList<String>> excel的内容
+	 */
+	public ArrayList<ArrayList<String>> findFieldDataWithExcel(ElecUser elecUser) {
+		ArrayList<ArrayList<String>> fieldData = new ArrayList<ArrayList<String>>();
+		// 组织投影查询的条件，（从导出设置表的英文字段获取）
+		ElecExportFields elecExportFields = elecExportFieldDao
+				.findObjectByID("5-1");
+		String zName = elecExportFields.getExpNameList();
+		List<String> zList = ListUtils.stringToList(zName, "#");
+		String eName = elecExportFields.getExpFieldName();
+		String selectCondition = eName.replace("#", ",");
+		/*******************************/
+		// 组织查询条件
+		String condition = "";
+		List<Object> paramsList = new ArrayList<Object>();
+		String userName = elecUser.getUserName();
+
+		if (StringUtils.isNotBlank(userName)) {
+			condition += "and o.userName like ?";
+			paramsList.add("%" + userName + "%");
+		}
+
+		String jctID = elecUser.getJctID();
+
+		if (StringUtils.isNotBlank(jctID)) {
+			condition += "and o.jctID = ?";
+			paramsList.add(jctID);
+		}
+
+		Date onDutyDateBegin = elecUser.getOnDutyDateBegin();
+
+		if (onDutyDateBegin != null) {
+			condition += "and o.onDutyDate >= ?";
+			paramsList.add(onDutyDateBegin);
+		}
+
+		Date onDutyDateEnd = elecUser.getOnDutyDateEnd();
+
+		if (onDutyDateEnd != null) {
+			condition += "and o.onDutyDate <= ?";
+			paramsList.add(onDutyDateEnd);
+		}
+
+		Object[] params = paramsList.toArray();
+
+		Map<String, String> orderby = new LinkedHashMap<String, String>();
+		orderby.put("o.onDutyDate", "asc");
+		// 查询数据结果
+		@SuppressWarnings("rawtypes")
+		List list = elecUserDao
+				.findCollectionByConditionNoPageWithSelectCondition(condition,
+						params, orderby, selectCondition);
+
+		if (list != null && list.size() > 0) {
+			for (int i = 0; i < list.size(); i++) {
+				Object[] arrays = null;
+				if (selectCondition.contains(",")) {
+					arrays = (Object[]) list.get(i);
+				} else {
+					arrays = new Object[1];
+					arrays[0] = list.get(i);
+				}
+				ArrayList<String> data = new ArrayList<String>();
+				if (arrays != null && arrays.length > 0) {
+					for (int j = 0; j < arrays.length; j++) {
+						Object o = arrays[j];
+						if (zList != null && zList.get(j).equals("性别")
+								|| zList.get(j).equals("所属单位")
+								|| zList.get(j).equals("是否在职")
+								|| zList.get(j).equals("职位")) {
+							data.add(o != null ? elecSystemDDLDao
+									.findDdlNameByKeywordAndDdlCode(
+											zList.get(j), o.toString()) : "");
+						} else {
+							data.add(o != null ? o.toString() : "");
+						}
+					}
+				}
+				fieldData.add(data);
+			}
+		}
+		return fieldData;
 	}
 
 }

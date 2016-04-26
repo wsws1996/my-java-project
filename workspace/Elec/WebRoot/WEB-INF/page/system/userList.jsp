@@ -1,146 +1,6 @@
 
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
-
-<script language="javascript">
-	//DOM对象
-	/*function deleteAll(){
-	 var selectuser = document.getElementsByName("userID");
-	 var flag = false;
-	    for(var i=0;i<selectuser.length;i++){
-	    	if(selectuser[i].checked){
-	    		flag = true;
-	    	} 
-	    }
-	    if(!flag){
-	    	alert("没有选择执行操作的用户！不能执行该操作");
-	    	return false;
-	    }
-	    else{
-	    	var confirmflag = window.confirm("你确定执行批量删除吗？");
-	    	if(!confirmflag){
-	    		return false;
-	    	}
-	    	else{
-	    		document.Form2.action = "elecUserAction_delete.do";
-	    		document.Form2.submit();
-	    		return true;
-	    	}
-	    }
-	  }
-	 */
-	//jquery对象
-	function deleteAll() {
-		var $selectuser = $("input[type=checkbox][name=userID]");
-		var flag = false;
-		$selectuser.each(function() {
-			if (this.checked) {
-				flag = true;
-				return false;//退出循环
-			}
-		})
-		if (!flag) {
-			alert("没有选择执行操作的用户！不能执行该操作");
-			return false;
-		} else {
-			var confirmflag = window.confirm("你确定执行批量删除吗？");
-			if (!confirmflag) {
-				return false;
-			} else {
-				$("#Form2").attr("action", "elecUserAction_delete.do");
-				$("#Form2").submit();
-				return true;
-			}
-		}
-	}
-	//用户:全部选中/全部不选中
-	//DOM对象
-	/*function checkAllUser(user){
-	  var selectuser = document.getElementsByName("userID");
-	   for(var i=0;i<selectuser.length;i++){
-	  	 selectuser[i].checked = user.checked;
-	   }
-	}*/
-	//jquery对象
-	function checkAllUser(user) {
-		$("input[type=checkbox][name=userID]").attr("checked",user.checked);
-	}
-	//添加导出
-	function excelExport() {
-		var userName=$("#userName").val();
-		var jctID=$("#jctID").val();
-		var onDutyDateBegin=$("#onDutyDateBegin").val();
-		var onDutyDateEnd=$("#onDutyDateEnd").val();
-		openWindow('${pageContext.request.contextPath }/system/elecUserAction_exportExcel.do?userName='+userName+'&jctID='+jctID+'&onDutyDateBegin='+onDutyDateBegin+'&onDutyDateEnd='+onDutyDateEnd,'700','400');
-	}
-</script>
-
-<HTML>
-<HEAD>
-<title>用户管理</title>
-<LINK href="${pageContext.request.contextPath }/css/Style.css"
-	type="text/css" rel="stylesheet">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/My97DatePicker/WdatePicker.js"></script>
-<script language="javascript"
-	src="${pageContext.request.contextPath }/script/function.js"></script>
-<script language="javascript"
-	src="${pageContext.request.contextPath }/script/jquery-1.4.2.js"></script>
-	
-	<script language="javascript"src="${pageContext.request.contextPath }/script/page.js"></script>
-	<script language="javascript"src="${pageContext.request.contextPath }/script/validate.js"></script>
-	<script language="javascript"src="${pageContext.request.contextPath }/script/pub.js"></script>
-</HEAD>
-
-<body>
-	<form id="Form1" name="Form1"
-		action="${pageContext.request.contextPath }/system/elecUserAction_home.do"
-		method="post" style="margin:0px;">
-		<s:hidden name="pageNO"></s:hidden>
-		<s:hidden name="initpage" value="1"></s:hidden>
-		<table cellspacing="1" cellpadding="0" width="90%" align="center"
-			bgcolor="#f5fafe" border="0">
-			<TR height=10>
-				<td></td>
-			</TR>
-			<tr>
-				<td class="ta_01" colspan="4" align="center"
-					background="../images/b-info.gif"><font face="宋体" size="2"><strong>用户信息管理</strong></font>
-				</td>
-
-			</tr>
-			<tr>
-				<td class="ta_01" align="center" bgcolor="#f5fafe" height="22">
-					姓名：</td>
-				<td class="ta_01"><s:textfield name="userName" size="21"
-						id="userName"></s:textfield></td>
-				<td class="ta_01" align="center" bgcolor="#f5fafe" height="22">
-					所属单位：</td>
-				<td class="ta_01"><s:select list="#request.jctList"
-						name="jctID" id="jctID" listKey="ddlCode" listValue="ddlName"
-						headerKey="" headerValue="请选择" cssStyle="width:155px"></s:select>
-				</td>
-			</tr>
-			<tr>
-				<td class="ta_01" align="center" bgcolor="#f5fafe" height="22">
-					入职时间：</td>
-				<td class="ta_01" colspan="3"><s:date name="onDutyDateBegin"
-						format="yyyy-MM-dd" var="begin" /> <s:textfield
-						name="onDutyDateBegin" value="%{#begin}" id="onDutyDateBegin"
-						maxlength="50" size="20" onclick="WdatePicker()"></s:textfield> ~
-					<s:date name="onDutyDateEnd" format="yyyy-MM-dd" var="end" /> <s:textfield
-						name="onDutyDateEnd" value="%{#end}" id="onDutyDateEnd"
-						maxlength="50" size="20" onclick="WdatePicker()"></s:textfield></td>
-			</tr>
-
-		</table>
-	</form>
-
-
-
-
-	<form id="Form2" name="Form2" action="/system/userAction_main.do"
-		method="post">
 		<table cellSpacing="1" cellPadding="0" width="90%" align="center"
 			bgColor="#f5fafe" border="0">
 			<TBODY>
@@ -172,9 +32,8 @@
 						onclick="return deleteAll()">&nbsp;&nbsp;
 						<input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出设置" name="BT_Export" 
 						 onclick="openWindow('${pageContext.request.contextPath }/system/elecExportFieldsAction_setExportFields.do?belongTo=5-1','700','400')">&nbsp;&nbsp;
-						 <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出" name="BT_Export" 
-						 onclick="excelExport()">&nbsp;&nbsp;
-						 </td>
+						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出" name="BT_Export" 
+						 onclick="excelExport()">&nbsp;&nbsp;</td>
 				</tr>
 
 				<tr>
@@ -259,10 +118,4 @@
 				<%@include file="/WEB-INF/page/pageUI.jsp" %>
 			</TBODY>
 		</table>
-	</form>
-
-
-
-
-</body>
-</HTML>
+	

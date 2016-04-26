@@ -86,7 +86,7 @@
      	 </url-pattern>
 	</filter-mapping>
 	<session-config>
-		<session-timeout>10</session-timeout>
+		<session-timeout>30</session-timeout>
 	</session-config>  
   	<!-- CKEditor+CKFinder文本编辑器，end -->
 	<!-- 添加webservice的axis2的框架begin -->

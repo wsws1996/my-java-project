@@ -14,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.wang.elec.dao.ICommonDao;
+import org.wang.elec.utils.PageInfo;
 import org.wang.elec.utils.TUtils;
 
 public class CommonDaoImpl<T> extends HibernateDaoSupport implements
@@ -63,7 +64,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 	public List<T> findCollectionByConditionNoPage(String condition,
 			final Object[] params, Map<String, String> orderby) {
 
-		String hql = "from " + entityClass.getSimpleName() + " o where 1=1 ";
+		String hql = " from " + entityClass.getSimpleName() + " o where 1=1 ";
 
 		String orderbyCondiction = this.orderbyHql(orderby);
 
@@ -118,7 +119,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 	@Override
 	public List<T> findCollectionByConditionNoPageWithCache(String condition,
 			final Object[] params, Map<String, String> orderby) {
-		String hql = "from " + entityClass.getSimpleName() + " o where 1=1 ";
+		String hql = " from " + entityClass.getSimpleName() + " o where 1=1 ";
 
 		String orderbyCondiction = this.orderbyHql(orderby);
 
@@ -138,6 +139,71 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 							}
 						}
 						query.setCacheable(true);
+						return query.list();
+					}
+				});
+
+		return list;
+	}
+
+	@Override
+	public List<T> findCollectionByConditionWithPage(String condition,
+			final Object[] params, Map<String, String> orderby, final PageInfo pageInfo) {
+		String hql = " from " + entityClass.getSimpleName() + " o where 1=1 ";
+
+		String orderbyCondiction = this.orderbyHql(orderby);
+
+		final String finalHql = hql + condition + orderbyCondiction;
+
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		final List<T> list = this.getHibernateTemplate().execute(
+				new HibernateCallback() {
+
+					@Override
+					public List<T> doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Query query = session.createQuery(finalHql);
+						if (params != null && params.length > 0) {
+							for (int i = 0; i < params.length; i++) {
+								query.setParameter(i, params[i]);
+							}
+						}
+						/**2016-04-25，添加分页begin*/
+						pageInfo.setTotalResult(query.list().size());
+						query.setFirstResult(pageInfo.getBeginResult());
+						query.setMaxResults(pageInfo.getPageSize());
+						/**2016-04-25，添加分页end*/
+						return query.list();
+					}
+				});
+
+		return list;
+	}
+
+	@Override
+	public List findCollectionByConditionNoPageWithSelectCondition(
+			String condition, final Object[] params, Map<String, String> orderby,
+			String selectCondition) {
+		String hql = "select " +selectCondition+ " from " + entityClass.getSimpleName() + " o where 1=1 ";
+
+		String orderbyCondiction = this.orderbyHql(orderby);
+
+		final String finalHql = hql + condition + orderbyCondiction;
+
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		final List list = this.getHibernateTemplate().execute(
+				new HibernateCallback() {
+
+					@Override
+					public List<T> doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Query query = session.createQuery(finalHql);
+						if (params != null && params.length > 0) {
+							for (int i = 0; i < params.length; i++) {
+								query.setParameter(i, params[i]);
+							}
+						}
+						
 						return query.list();
 					}
 				});

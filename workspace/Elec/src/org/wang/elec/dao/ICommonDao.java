@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import org.wang.elec.utils.PageInfo;
+
 
 public interface ICommonDao<T> {
 	void save(T entity);
@@ -22,4 +24,9 @@ public interface ICommonDao<T> {
 	List<T> findCollectionByConditionNoPageWithCache(String condition,
 			Object[] params, Map<String, String> orderby);
 
+	List<T> findCollectionByConditionWithPage(String condition,
+			Object[] params, Map<String, String> orderby, PageInfo pageInfo);
+
+	List findCollectionByConditionNoPageWithSelectCondition(String condition,
+			Object[] params, Map<String, String> orderby, String selectCondition);
 }

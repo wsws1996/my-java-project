@@ -3,6 +3,9 @@ package org.wang.elec.web.action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -15,6 +18,8 @@ import org.wang.elec.domain.ElecUser;
 import org.wang.elec.domain.ElecUserFile;
 import org.wang.elec.service.IElecSystemDDLService;
 import org.wang.elec.service.IElecUserService;
+import org.wang.elec.utils.DateUtils;
+import org.wang.elec.utils.ExcelFileGenerator;
 import org.wang.elec.utils.ValueUtils;
 
 @SuppressWarnings("serial")
@@ -52,15 +57,20 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 		List<ElecUser> userList = elecUserService
 				.findUserListByCondition(elecUser);
 		request.setAttribute("userList", userList);
-		
-		/*故意抛出异常，测试日志记录及异常处理，发布时应该删除*/
-//		try {
-//			int i =1/0;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			throw new RuntimeException("抛出运行时异常，在用户action中的home方法");
-//		}
-		
+		/** 2016-04-25,添加分页 begin */
+		String initpage = request.getParameter("initpage");
+		if (initpage != null && initpage.equals("1")) {
+			return "list";
+		}
+		/** 2016-04-25,添加分页 end */
+		/* 故意抛出异常，测试日志记录及异常处理，发布时应该删除 */
+		// try {
+		// int i =1/0;
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// throw new RuntimeException("抛出运行时异常，在用户action中的home方法");
+		// }
+
 		return "home";
 	}
 
@@ -141,8 +151,8 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 
 	public String save() {
 		elecUserService.saveUser(elecUser);
-		String roleflag=elecUser.getRoleflag();
-		if (roleflag!=null&&roleflag.equals("1")) {
+		String roleflag = elecUser.getRoleflag();
+		if (roleflag != null && roleflag.equals("1")) {
 			return "redirectEdit";
 		}
 		return "close";
@@ -250,6 +260,36 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 
 	public String delete() {
 		elecUserService.deleteUserByID(elecUser);
+		/** 添加执行删除后定向到当前页 */
+		request.setAttribute("pageNO", request.getParameter("pageNO"));
 		return "delete";
+	}
+
+	/**
+	 * @name exportExcel
+	 * @description 将数据通过查询条件，导出对应数据的excel报表
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月26日
+	 * @return 不使用struts2开发，导出
+	 * @throws Exception
+	 */
+	public String exportExcel() throws Exception {
+		ArrayList<String> fieldName = elecUserService.findFieldNameWithExcel();
+		ArrayList<ArrayList<String>> fieldData = elecUserService
+				.findFieldDataWithExcel(elecUser);
+		ExcelFileGenerator excelFileGenerator = new ExcelFileGenerator(
+				fieldName, fieldData);
+		String filename = "用户报表(" + DateUtils.dateToStringWithExcel(new Date())
+				+ ").xls";
+		//处理乱码
+		filename=new String(filename.getBytes("utf-8"), "iso8859-1");
+		response.setContentType("application/vnd.ms-excel");
+		response.setHeader("Content-disposition", "attachment;filename="
+				+ filename);
+		response.setBufferSize(1024);
+		OutputStream os = response.getOutputStream();
+		excelFileGenerator.expordExcel(os);
+		return null;
 	}
 }
