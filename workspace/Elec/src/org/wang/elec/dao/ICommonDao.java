@@ -29,4 +29,6 @@ public interface ICommonDao<T> {
 
 	List findCollectionByConditionNoPageWithSelectCondition(String condition,
 			Object[] params, Map<String, String> orderby, String selectCondition);
+
+	void saveList(List<T> list);
 }

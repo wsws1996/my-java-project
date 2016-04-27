@@ -123,4 +123,21 @@ public class ElecSystemDDLServiceImpl implements IElecSystemDDLService {
 		return elecSystemDDLDao
 				.findDdlNameByKeywordAndDdlCode(keyword, ddlCode);
 	}
+
+	@Override
+	/**
+	 * @name findDdlCodeByKeywordAndDdlName
+	 * @description 使用数据类型和数据项的值，获取数据项的编号
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月27日
+	 * @param keyword 数据类型
+	 * @param ddlName 数据项的值
+	 * @return 数据项的编号
+	 */
+	public String findDdlCodeByKeywordAndDdlName(String keyword, String ddlName) {
+		// TODO Auto-generated method stub
+		return elecSystemDDLDao
+				.findDdlCodeByKeywordAndDdlName(keyword, ddlName);
+	}
 }

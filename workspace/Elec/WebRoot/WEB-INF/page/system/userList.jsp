@@ -33,7 +33,9 @@
 						<input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出设置" name="BT_Export" 
 						 onclick="openWindow('${pageContext.request.contextPath }/system/elecExportFieldsAction_setExportFields.do?belongTo=5-1','700','400')">&nbsp;&nbsp;
 						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出" name="BT_Export" 
-						 onclick="excelExport()">&nbsp;&nbsp;</td>
+						 onclick="excelExport()">&nbsp;&nbsp;
+						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导入" name="BT_Export" 
+						 onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_importPage.do','700','400')">&nbsp;&nbsp;</td>
 				</tr>
 
 				<tr>

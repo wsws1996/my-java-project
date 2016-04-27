@@ -2,6 +2,8 @@ package org.wang.elec.service.impl;
 
 import java.io.File;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -365,7 +367,13 @@ public class ElecUserServiceImpl implements IElecUserService {
 		String condition = "";
 		List<Object> paramsList = new ArrayList<Object>();
 		String userName = elecUser.getUserName();
-
+		
+		try {
+			userName=URLDecoder.decode(userName,"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
 		if (StringUtils.isNotBlank(userName)) {
 			condition += "and o.userName like ?";
 			paramsList.add("%" + userName + "%");
@@ -431,6 +439,20 @@ public class ElecUserServiceImpl implements IElecUserService {
 			}
 		}
 		return fieldData;
+	}
+
+	@Override
+	/**
+	 * @name saveUserList
+	 * @description 保存一个用户的集合
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月27日
+	 * @param userList 用户集合
+	 */
+	@Transactional(isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED,readOnly=false)
+	public void saveUserList(List<ElecUser> userList) {
+		elecUserDao.saveList(userList);
 	}
 
 }

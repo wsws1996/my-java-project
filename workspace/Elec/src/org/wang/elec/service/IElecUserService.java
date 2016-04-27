@@ -28,4 +28,6 @@ public interface IElecUserService {
 
 	ArrayList<ArrayList<String>> findFieldDataWithExcel(ElecUser elecUser);
 
+	void saveUserList(List<ElecUser> userList);
+
 }

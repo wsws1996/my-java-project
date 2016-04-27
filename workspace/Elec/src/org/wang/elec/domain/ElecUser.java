@@ -207,6 +207,17 @@ public class ElecUser implements java.io.Serializable {
 
 	private String roleflag;
 	
+	//用于excel文件的导入
+	private File file;
+	
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
+	}
+
 	public String getRoleflag() {
 		return roleflag;
 	}

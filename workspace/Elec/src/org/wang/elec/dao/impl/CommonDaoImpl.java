@@ -210,4 +210,9 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 
 		return list;
 	}
+	//批量保存
+	@Override
+	public void saveList(List<T> list) {
+		this.getHibernateTemplate().saveOrUpdateAll(list);
+	}
 }

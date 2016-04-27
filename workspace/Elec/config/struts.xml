@@ -93,6 +93,13 @@
 				<param name="actionName"><![CDATA[elecUserAction_edit.do?userID=${userID}&roleflag=${roleflag}]]></param>
 			</result>
 			<result name="list">/WEB-INF/page/system/userList.jsp</result>
+			<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${#request.filename}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="importPage">/WEB-INF/page/system/userImport.jsp</result>
 		</action>
 
 		<!-- 角色管理 -->

@@ -12,7 +12,5 @@ public interface IElecUserDao extends ICommonDao<ElecUser> {
 	List<ElecUser> findCollectionByConditionNoPageWithSql(String condition,
 			Object[] params, Map<String, String> orderby);
 
-	
-
 
 }

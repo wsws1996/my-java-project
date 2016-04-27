@@ -83,4 +83,40 @@ public class ElecSystemDDLDaoImpl extends CommonDaoImpl<ElecSystemDDL>
 		return ddlName;
 	}
 
+	@Override
+	/**
+	 * @name findDdlCodeByKeywordAndDdlName
+	 * @description 使用数据类型和数据项的值，获取数据项的编号
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月27日
+	 * @param keyword 数据类型
+	 * @param ddlName 数据项的值
+	 * @return 数据项的编号
+	 */
+	public String findDdlCodeByKeywordAndDdlName(final String keyword, final String ddlName) {
+		final String hql = "select o.ddlCode from ElecSystemDDL o where o.keyword=? and o.ddlName=?";
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		List<Object> list = this.getHibernateTemplate().execute(
+				new HibernateCallback() {
+
+					@Override
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Query query = session.createQuery(hql);
+
+						query.setParameter(0, keyword);
+						query.setParameter(1, ddlName);
+						query.setCacheable(true);
+						return query.list();
+					}
+				});
+		String ddlCode = "";
+		if (list != null && list.size() > 0) {
+			Object object = list.get(0);
+			ddlCode = object.toString();
+		}
+		return ddlCode;
+	}
+
 }

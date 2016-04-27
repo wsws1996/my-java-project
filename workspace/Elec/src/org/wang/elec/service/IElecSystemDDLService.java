@@ -15,5 +15,7 @@ public interface IElecSystemDDLService {
 
 	String findDdlNameByKeywordAndDdlCode(String string, String ddlCode);
 
+	String findDdlCodeByKeywordAndDdlName(String keyword, String ddlName);
+
 
 }
