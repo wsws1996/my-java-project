@@ -455,4 +455,19 @@ public class ElecUserServiceImpl implements IElecUserService {
 		elecUserDao.saveList(userList);
 	}
 
+	@Override
+	/**
+	 * @name chartUser
+	 * @description 统计用户分配情况
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月28日
+	 * @param zName 传递的数据类型
+	 * @param eName 字段名称
+	 * @return List<Object[]> 数据集合
+	 */
+	public List<Object[]> chartUser(String zName, String eName) {
+		return elecUserDao.chartUser(zName,eName);
+	}
+
 }

@@ -21,6 +21,7 @@ import org.wang.elec.domain.ElecUser;
 import org.wang.elec.domain.ElecUserFile;
 import org.wang.elec.service.IElecSystemDDLService;
 import org.wang.elec.service.IElecUserService;
+import org.wang.elec.utils.ChartUtils;
 import org.wang.elec.utils.DateUtils;
 import org.wang.elec.utils.ExcelFileGenerator;
 import org.wang.elec.utils.GenerateSqlFromExcel;
@@ -458,5 +459,53 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 
 		}
 		return userList;
+	}
+	
+	/**
+	 * @name chartUser
+	 * @description 用户统计
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月28日
+	 * @return 跳转到system/userReport.jsp
+	 */
+	public String chartUser() {
+		
+		List<Object []> list =elecUserService.chartUser("所属单位","jctID");
+		String filename= ChartUtils.createBarChart(list);
+		request.setAttribute("filename", filename);
+		return "chartUser";
+	}
+	
+	/**
+	 * @name chartUserFCF
+	 * @description 用户统计（按照性别）技术（FCF报表）
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月28日
+	 * @return 跳转到system/userReportFCF.jsp
+	 */
+	public String chartUserFCF() {
+		//查询数据库，获取图形需要数据集合
+				List<Object[]> list = elecUserService.chartUser("性别","sexID");
+				//组织XML的数据
+				StringBuilder builder = new StringBuilder();
+				for (int i = 0; i < list.size(); i++) {
+						/**b.keyword,b.ddlName,COUNT(b.ddlCode)*/
+					 /* m   b.ddlName,b.keyword "COUNT(b.ddlCode)*/
+					
+						Object[] objects = (Object[])list.get(i);
+						if(i==0){//组织第一个值
+							String x = "男女比例统计";
+							String y = "unit";//存在FusionChart中的一个问题，Y轴的显示不支持中文，所以用英文代替
+							builder.append("<graph caption='用户统计报表("+objects[1].toString()+")' xAxisName='"+x+"' bgColor='FFFFDD' yAxisName='"+y+"' showValues='1'  decimals='0' baseFontSize='18'  maxColWidth='60' showNames='1' decimalPrecision='0'> ");
+						}
+						builder.append("<set name='"+objects[0].toString()+"' value='"+objects[2].toString()+"' color='AFD8F8'/>");
+					    if(i==list.size()-1){//组织最后一个值
+					    	builder.append("</graph>");
+					    }
+				} 
+				request.setAttribute("chart", builder);//request中存放XML格式的数据
+		return "chartUserFCF";
 	}
 }

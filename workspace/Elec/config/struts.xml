@@ -100,6 +100,8 @@
 				<param name="bufferSize">1024</param>
 			</result>
 			<result name="importPage">/WEB-INF/page/system/userImport.jsp</result>
+			<result name="chartUser">/WEB-INF/page/system/userReport.jsp</result>
+			<result name="chartUserFCF">/WEB-INF/page/system/userReportFCF.jsp</result>
 		</action>
 
 		<!-- 角色管理 -->

@@ -1,9 +1,13 @@
-package demo;
+package org.wang.elec.utils;
 
 import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.List;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.struts2.ServletActionContext;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
@@ -16,18 +20,16 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer3D;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class BarDemo {
+public class ChartUtils {
 
-	public static void main(String[] args) {
+	public static String createBarChart(List<Object[]> list) {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-		dataset.addValue(2, "中国", "北京");
-		dataset.addValue(6, "中国", "上海");
-		dataset.addValue(2, "中国", "深圳");
-		dataset.addValue(2, "美国", "华盛顿");
-		dataset.addValue(12, "美国", "西雅图");
-		dataset.addValue(4, "美国", "纽约");
-		dataset.addValue(4, "印度", "新德里");
-		JFreeChart chart = ChartFactory.createBarChart3D("用户统计报表（所属单位）",
+		if (list!=null&&list.size()>0) {
+			for (Object[] o : list) {
+				dataset.addValue(Double.parseDouble(o[2].toString()), o[1].toString(), o[0].toString());
+			}
+		}
+		JFreeChart chart = ChartFactory.createBarChart3D("用户统计报表",
 				"所属单位名称", "数量", dataset, PlotOrientation.VERTICAL, true, true,
 				true);
 		chart.getTitle().setFont(new Font("宋体", Font.BOLD, 18));
@@ -44,10 +46,9 @@ public class BarDemo {
 
 		numberAxis3D.setLabelFont(new Font("宋体", Font.BOLD, 18));
 
-		numberAxis3D.setAutoTickUnitSelection(false);
-
-		NumberTickUnit unit = new NumberTickUnit(1);
-		numberAxis3D.setTickUnit(unit);
+//		numberAxis3D.setAutoTickUnitSelection(false);
+//		NumberTickUnit unit=new NumberTickUnit(1);
+//		numberAxis3D.setTickUnit(unit);
 
 		BarRenderer3D barRenderer3D = (BarRenderer3D) categoryPlot
 				.getRenderer();
@@ -58,16 +59,15 @@ public class BarDemo {
 				.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
 		barRenderer3D.setBaseItemLabelsVisible(true);
 		barRenderer3D.setBaseItemLabelFont(new Font("宋体", Font.BOLD, 15));
-		File file=new File("/home/wang/桌面/chart.png");
+		String filename= DateFormatUtils.format(new Date(), "yyyyMMddHHmmss")+".png";
+		File file = new File(ServletActionContext.getServletContext().getRealPath("/chart")+"/"+filename);
 		try {
-			ChartUtilities.saveChartAsPNG(file, chart, 1000, 1000);
+			ChartUtilities.saveChartAsPNG(file, chart, 600, 500);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		// ChartFrame chartFrame = new ChartFrame("xyz", chart);
-		// chartFrame.setVisible(true);
-		// chartFrame.pack();
+
+		return filename;
 	}
 
 }

@@ -9,7 +9,8 @@
 				</TR>
 				<tr>
 					<td>
-						<TABLE style="WIDTH: 105px; HEIGHT: 20px" border="0">
+					<!-- WIDTH: 105px; -->
+						<TABLE style=" HEIGHT: 20px" border="0">
 							<TR>
 								<TD align="center"
 									background="${pageContext.request.contextPath }/images/cotNavGround.gif"><img
@@ -35,7 +36,11 @@
 						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导出" name="BT_Export" 
 						 onclick="excelExport()">&nbsp;&nbsp;
 						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="导入" name="BT_Export" 
-						 onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_importPage.do','700','400')">&nbsp;&nbsp;</td>
+						 onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_importPage.do','700','400')">&nbsp;&nbsp;
+						  <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="人员统计（按所属单位统计）" name="BT_Export" 
+						 onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_chartUser.do','700','400')">&nbsp;&nbsp;
+						 <input style="font-size:12px; color:black; height=20;width=80" id="BT_Export" type="button" value="人员统计（按性别统计）" name="BT_Export" 
+						 onclick="openWindow('${pageContext.request.contextPath }/system/elecUserAction_chartUserFCF.do','700','400')">&nbsp;&nbsp;</td>
 				</tr>
 
 				<tr>

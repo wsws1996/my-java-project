@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
@@ -39,14 +40,11 @@ public class ElecUserDaoImpl extends CommonDaoImpl<ElecUser> implements
 					public List<Object[]> doInHibernate(Session session)
 							throws HibernateException, SQLException {
 						Query query = session.createSQLQuery(finalSql)
-								.addScalar("o.userID")
-								.addScalar("o.logonName")
-								.addScalar("o.userName")
-								.addScalar("a.ddlName")
+								.addScalar("o.userID").addScalar("o.logonName")
+								.addScalar("o.userName").addScalar("a.ddlName")
 								.addScalar("o.contactTel")
 								.addScalar("o.onDutyDate")
-								.addScalar("b.ddlName")
-								;
+								.addScalar("b.ddlName");
 						if (params != null && params.length > 0) {
 							for (int i = 0; i < params.length; i++) {
 								query.setParameter(i, params[i]);
@@ -84,5 +82,38 @@ public class ElecUserDaoImpl extends CommonDaoImpl<ElecUser> implements
 
 		}
 		return buffer.toString();
+	}
+
+	/**
+	 * @name chartUser
+	 * @description 统计用户分配情况
+	 * @author wang
+	 * @version V1.00
+	 * @createDate 2016年4月28日
+	 * @param zName
+	 *            传递的数据类型
+	 * @param eName
+	 *            字段名称
+	 * @return List<Object[]> 数据集合
+	 */
+	@Override
+	public List<Object[]> chartUser(String zName, String eName) {
+		final String sql = "SELECT b.ddlName,b.keyword,"
+				+ "COUNT(b.ddlCode) FROM Elec_User a "
+				+ "INNER JOIN Elec_SystemDDL b " 
+				+ "on a."+eName+"=b.ddlCode and "
+				+ "b.keyword='"+zName+"' and a.isDuty='1' "
+				+ "GROUP BY b.ddlName,b.keyword "
+				+ "ORDER BY COUNT(b.ddlCode) desc";
+		List<Object []> list= this.getHibernateTemplate().execute(new HibernateCallback() {
+
+			@Override
+			public List<Object []> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				SQLQuery query= session.createSQLQuery(sql);
+				return query.list();
+			}
+		});
+		return list;
 	}
 }
