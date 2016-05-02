@@ -11,15 +11,15 @@ public class JunitTest {
 	private LuceneDao luceneDao=new LuceneDao();
 	@Test
 	public void addIndex() throws IOException {
-		for (int i = 30; i <= 30; i++) {
+		for (int i = 34; i <= 34; i++) {
 			Article article=new Article();
 			
 			article.setId(i);
 			
-			article.setTitle("故事故事故事故事故事故事故事故事故事故事故事");
+			article.setTitle("自由的旗帜");
 			
 			article.setContent("在大谷仓一头一个凸起的台子上，麦哲已经安稳地坐在草垫子上了，在他头顶上方的房梁上悬挂着一盏马灯。他已");
-			article.setAuthor("乔治·奥威尔");
+			article.setAuthor("自由的旗帜");
 			
 			article.setLink("www.wang.org");
 			luceneDao.addIndex(article);
