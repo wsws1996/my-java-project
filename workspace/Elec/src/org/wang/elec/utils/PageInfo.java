@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class PageInfo {
 	// HTTP请求
+	@SuppressWarnings("unused")
 	private HttpServletRequest req;
 	// 每页的记录数
 	private int pageSize = 10;

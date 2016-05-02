@@ -180,6 +180,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 		return list;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public List findCollectionByConditionNoPageWithSelectCondition(
 			String condition, final Object[] params, Map<String, String> orderby,
@@ -190,7 +191,7 @@ public class CommonDaoImpl<T> extends HibernateDaoSupport implements
 
 		final String finalHql = hql + condition + orderbyCondiction;
 
-		@SuppressWarnings({ "rawtypes", "unchecked" })
+		@SuppressWarnings({ "unchecked" })
 		final List list = this.getHibernateTemplate().execute(
 				new HibernateCallback() {
 

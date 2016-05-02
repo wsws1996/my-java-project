@@ -19,6 +19,11 @@ public class ElecSystemDDL implements org.apache.axis2.databinding.ADBBean {
 	 */
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8752573262805604851L;
+
+	/**
 	 * field for DdlCode
 	 */
 
@@ -158,6 +163,7 @@ public class ElecSystemDDL implements org.apache.axis2.databinding.ADBBean {
 		// update the setting tracker
 		localItemnameTracker = true;
 
+		@SuppressWarnings("rawtypes")
 		java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil
 				.toList(localItemname);
 		list.add(param);
@@ -806,10 +812,12 @@ public class ElecSystemDDL implements org.apache.axis2.databinding.ADBBean {
 				// Note all attributes that were handled. Used to differ normal
 				// attributes
 				// from anyAttributes.
+				@SuppressWarnings("rawtypes")
 				java.util.Vector handledAttributes = new java.util.Vector();
 
 				reader.next();
 
+				@SuppressWarnings("rawtypes")
 				java.util.ArrayList list3 = new java.util.ArrayList();
 
 				while (!reader.isStartElement() && !reader.isEndElement())

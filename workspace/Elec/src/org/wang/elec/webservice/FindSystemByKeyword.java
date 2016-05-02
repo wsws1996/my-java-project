@@ -13,12 +13,18 @@
             /**
             *  FindSystemByKeyword bean class
             */
-            @SuppressWarnings({"unchecked","unused"})
         
         public  class FindSystemByKeyword
         implements org.apache.axis2.databinding.ADBBean{
         
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                /**
+				 * 
+				 */
+				private static final long serialVersionUID = 8233033809471626648L;
+
+
+
+				public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://webservice.elec.wang.org",
                 "findSystemByKeyword",
                 "ns2");
@@ -193,7 +199,8 @@
         /**
          * Util method to write an attribute without the ns prefix
          */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+        @SuppressWarnings("unused")
+		private void writeAttribute(java.lang.String namespace,java.lang.String attName,
                                     java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
             if (namespace.equals("")) {
                 xmlWriter.writeAttribute(attName,attValue);
@@ -206,7 +213,8 @@
            /**
              * Util method to write an attribute without the ns prefix
              */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+            @SuppressWarnings("unused")
+			private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
                                              javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
 
                 java.lang.String attributeNamespace = qname.getNamespaceURI();
@@ -232,7 +240,8 @@
          *  method to handle Qnames
          */
 
-        private void writeQName(javax.xml.namespace.QName qname,
+        @SuppressWarnings("unused")
+		private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String namespaceURI = qname.getNamespaceURI();
             if (namespaceURI != null) {
@@ -255,7 +264,8 @@
             }
         }
 
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
+        @SuppressWarnings("unused")
+		private void writeQNames(javax.xml.namespace.QName[] qnames,
                                  javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
 
             if (qnames != null) {
@@ -321,7 +331,8 @@
       *  Factory class that keeps the parse method
       */
     public static class Factory{
-        private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+        @SuppressWarnings("unused")
+		private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
         
         
@@ -337,11 +348,15 @@
             FindSystemByKeyword object =
                 new FindSystemByKeyword();
 
-            int event;
-            javax.xml.namespace.QName currentQName = null;
+            @SuppressWarnings("unused")
+			int event;
+            @SuppressWarnings("unused")
+			javax.xml.namespace.QName currentQName = null;
             java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
+            @SuppressWarnings("unused")
+			java.lang.String prefix ="";
+            @SuppressWarnings("unused")
+			java.lang.String namespaceuri ="";
             try {
                 
                 while (!reader.isStartElement() && !reader.isEndElement())
@@ -379,7 +394,8 @@
                 
                 // Note all attributes that were handled. Used to differ normal attributes
                 // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
+                @SuppressWarnings({ "unused", "rawtypes" })
+				java.util.Vector handledAttributes = new java.util.Vector();
                 
 
                 

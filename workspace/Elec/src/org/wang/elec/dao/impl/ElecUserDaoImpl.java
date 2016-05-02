@@ -105,6 +105,7 @@ public class ElecUserDaoImpl extends CommonDaoImpl<ElecUser> implements
 				+ "b.keyword='"+zName+"' and a.isDuty='1' "
 				+ "GROUP BY b.ddlName,b.keyword "
 				+ "ORDER BY COUNT(b.ddlCode) desc";
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<Object []> list= this.getHibernateTemplate().execute(new HibernateCallback() {
 
 			@Override

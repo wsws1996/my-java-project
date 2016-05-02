@@ -18,7 +18,12 @@ import org.jfree.ui.RefineryUtilities;
 public class LineChartDemo2
   extends ApplicationFrame
 {
-  public LineChartDemo2(String paramString)
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5241624353130713118L;
+
+public LineChartDemo2(String paramString)
   {
     super(paramString);
     JPanel localJPanel = createDemoPanel();

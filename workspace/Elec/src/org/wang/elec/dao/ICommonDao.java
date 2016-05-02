@@ -27,6 +27,7 @@ public interface ICommonDao<T> {
 	List<T> findCollectionByConditionWithPage(String condition,
 			Object[] params, Map<String, String> orderby, PageInfo pageInfo);
 
+	@SuppressWarnings("rawtypes")
 	List findCollectionByConditionNoPageWithSelectCondition(String condition,
 			Object[] params, Map<String, String> orderby, String selectCondition);
 

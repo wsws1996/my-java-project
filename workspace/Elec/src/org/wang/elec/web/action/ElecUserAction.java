@@ -352,6 +352,7 @@ public class ElecUserAction extends BaseAction<ElecUser> {
 
 		File formFile = elecUser.getFile();
 		GenerateSqlFromExcel fromExcel = new GenerateSqlFromExcel();
+		@SuppressWarnings("static-access")
 		ArrayList<String[]> arrayList = fromExcel.generateUserSql(formFile);
 		List<String> errorList = new ArrayList<String>();
 

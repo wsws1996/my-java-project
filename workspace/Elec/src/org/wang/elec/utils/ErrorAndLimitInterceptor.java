@@ -12,7 +12,6 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.StrutsStatics;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.wang.elec.domain.ElecPopedom;
 import org.wang.elec.domain.ElecUser;
 import org.wang.elec.service.IElecRoleService;
 
@@ -43,7 +42,7 @@ public class ErrorAndLimitInterceptor extends MethodFilterInterceptor {
 
 			// 在完成跳转Action之前完成细颗粒权限控制，控制Action的每个方法
 			// 检查注解，是否可以操作权限的URL
-//			boolean flag = isCheckLimit(request, method);
+			boolean flag = isCheckLimit(request, method);
 			//未发布前所有权限都放行
 			
 			if (true) {
@@ -94,6 +93,7 @@ public class ErrorAndLimitInterceptor extends MethodFilterInterceptor {
 		}
 
 		// 获取当前登陆用户的角色（一个用户可以对应多个角色）
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		Hashtable<String, String> ht = (Hashtable) request.getSession()
 				.getAttribute("globle_role");
 		if (ht == null) {

@@ -1,6 +1,5 @@
 package junit;
 
-import java.util.Date;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -19,7 +18,9 @@ public class TestCache {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 
+		@SuppressWarnings("unused")
 		ElecSystemDDL ddl = (ElecSystemDDL) session.get(ElecSystemDDL.class, 1);
+		@SuppressWarnings("unused")
 		ElecSystemDDL ddl2 = (ElecSystemDDL) session
 				.get(ElecSystemDDL.class, 1);
 
@@ -29,7 +30,9 @@ public class TestCache {
 		session = factory.openSession();
 		 transaction = session.beginTransaction();
 
+		@SuppressWarnings("unused")
 		ElecSystemDDL ddl3 = (ElecSystemDDL) session.get(ElecSystemDDL.class, 1);
+		@SuppressWarnings("unused")
 		ElecSystemDDL ddl4 = (ElecSystemDDL) session
 				.get(ElecSystemDDL.class, 1);
 

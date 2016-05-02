@@ -18,7 +18,14 @@
         public  class FindSystemByKeywordResponse
         implements org.apache.axis2.databinding.ADBBean{
         
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                /**
+				 * 
+				 */
+				private static final long serialVersionUID = -4278366777890788388L;
+
+
+
+				public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://webservice.elec.wang.org",
                 "findSystemByKeywordResponse",
                 "ns2");
@@ -95,7 +102,8 @@
                                 local_returnTracker = true;
                             
 
-                               java.util.List list =
+                               @SuppressWarnings("rawtypes")
+							java.util.List list =
                             org.apache.axis2.databinding.utils.ConverterUtil.toList(local_return);
                                list.add(param);
                                this.local_return =
@@ -425,14 +433,16 @@
                 
                 // Note all attributes that were handled. Used to differ normal attributes
                 // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
+                @SuppressWarnings("rawtypes")
+				java.util.Vector handledAttributes = new java.util.Vector();
                 
 
                 
                     
                     reader.next();
                 
-                        java.util.ArrayList list1 = new java.util.ArrayList();
+                        @SuppressWarnings("rawtypes")
+						java.util.ArrayList list1 = new java.util.ArrayList();
                     
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();

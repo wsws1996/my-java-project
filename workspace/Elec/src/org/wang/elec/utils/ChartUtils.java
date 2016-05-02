@@ -13,7 +13,6 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis3D;
 import org.jfree.chart.axis.NumberAxis3D;
-import org.jfree.chart.axis.NumberTickUnit;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;

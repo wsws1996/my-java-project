@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
@@ -31,7 +30,12 @@ import org.jfree.ui.RefineryUtilities;
 public class LineChartDemo1
   extends ApplicationFrame
 {
-  public LineChartDemo1(String paramString)
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6753637028227285414L;
+
+public LineChartDemo1(String paramString)
   {
     super(paramString);
     JPanel localJPanel = createDemoPanel();

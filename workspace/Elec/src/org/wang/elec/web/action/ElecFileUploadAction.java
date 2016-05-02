@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.wang.elec.domain.ElecFileUpload;
 import org.wang.elec.domain.ElecSystemDDL;
-import org.wang.elec.domain.ElecUserFile;
 import org.wang.elec.service.IElecFileUploadService;
 import org.wang.elec.service.IElecSystemDDLService;
 

@@ -68,7 +68,8 @@
         }
         
         //
-            private  org.apache.axiom.om.OMElement  toOM(org.wang.elec.webservice.FindSystemByKeyword param, boolean optimizeContent)
+            @SuppressWarnings("unused")
+			private  org.apache.axiom.om.OMElement  toOM(org.wang.elec.webservice.FindSystemByKeyword param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
@@ -82,7 +83,8 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(org.wang.elec.webservice.FindSystemByKeywordResponse param, boolean optimizeContent)
+            @SuppressWarnings("unused")
+			private  org.apache.axiom.om.OMElement  toOM(org.wang.elec.webservice.FindSystemByKeywordResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
@@ -110,7 +112,8 @@
                     }
                     }
                     
-                         private org.wang.elec.webservice.FindSystemByKeywordResponse wrapfindSystemByKeyword(){
+                         @SuppressWarnings("unused")
+						private org.wang.elec.webservice.FindSystemByKeywordResponse wrapfindSystemByKeyword(){
                                 org.wang.elec.webservice.FindSystemByKeywordResponse wrappedElement = new org.wang.elec.webservice.FindSystemByKeywordResponse();
                                 return wrappedElement;
                          }
@@ -120,14 +123,15 @@
         /**
         *  get the default envelope
         */
-        private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory){
+        @SuppressWarnings("unused")
+		private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory){
         return factory.getDefaultEnvelope();
         }
 
 
         private  java.lang.Object fromOM(
         org.apache.axiom.om.OMElement param,
-        java.lang.Class type) throws org.apache.axis2.AxisFault{
+        @SuppressWarnings("rawtypes") java.lang.Class type) throws org.apache.axis2.AxisFault{
 
         try {
         
@@ -155,7 +159,8 @@
 
     
 
-        private org.apache.axis2.AxisFault createAxisFault(java.lang.Exception e) {
+        @SuppressWarnings("unused")
+		private org.apache.axis2.AxisFault createAxisFault(java.lang.Exception e) {
         org.apache.axis2.AxisFault f;
         Throwable cause = e.getCause();
         if (cause != null) {

@@ -58,6 +58,7 @@ public class LuceneUtils {
 	 * @param queryString
 	 *            文件名称和文件描述
 	 */
+	@SuppressWarnings("deprecation")
 	public static List<ElecFileUpload> searcherIndexByCondition(String projId,
 			String belongTo, String queryString) {
 		List<ElecFileUpload> fileUploadList = new ArrayList<ElecFileUpload>();

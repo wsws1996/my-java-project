@@ -3,7 +3,6 @@ package org.wang.elec.dao.impl;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
