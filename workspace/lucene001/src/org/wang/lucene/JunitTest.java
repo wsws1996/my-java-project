@@ -11,12 +11,12 @@ public class JunitTest {
 	private LuceneDao luceneDao=new LuceneDao();
 	@Test
 	public void addIndex() throws IOException {
-		for (int i = 34; i <= 34; i++) {
+		for (int i = 37; i <=37 ; i++) {
 			Article article=new Article();
 			
 			article.setId(i);
 			
-			article.setTitle("自由的旗帜");
+			article.setTitle("java 是一种very important语言");
 			
 			article.setContent("在大谷仓一头一个凸起的台子上，麦哲已经安稳地坐在草垫子上了，在他头顶上方的房梁上悬挂着一盏马灯。他已");
 			article.setAuthor("自由的旗帜");
