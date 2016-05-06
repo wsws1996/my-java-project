@@ -1,0 +1,5 @@
+package org.wang.springmvc.student.action;
+
+public class EditStudent {
+
+}
