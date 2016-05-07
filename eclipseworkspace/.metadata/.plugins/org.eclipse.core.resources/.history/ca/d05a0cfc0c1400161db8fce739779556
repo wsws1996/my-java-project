@@ -1,0 +1,10 @@
+package org.wang.springmvc.action;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class StudentAction {
+	@RequestMapping("/editstudent")
+	public String editstudent() throws Exception{
+		
+	}
+}

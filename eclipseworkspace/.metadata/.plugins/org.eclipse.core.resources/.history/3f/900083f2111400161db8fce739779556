@@ -1,0 +1,39 @@
+package org.wang.springmvc.action;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.wang.springmvc.student.pojo.Student;
+
+@Controller
+public class StudentAction {
+	@RequestMapping("/editstudent")
+	public String editstudent(Model model) throws Exception{
+		Student student=new Student();
+		student.setId("s001");
+		student.setName("张三");
+		student.setAge(32);
+		student.setBirthday(new Date());
+		
+		model.addAttribute("student", student);
+		return "student/editstudent";
+	}
+	
+	@RequestMapping("/editstudentsubmit")
+	public String editstudentsubmit(Student student) throws Exception{
+		System.out.println(student);
+		
+		return "success";
+	}
+	public void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+		
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));
+	}
+}
