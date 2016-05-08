@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.wang.springmvc.student.pojo.Student;
 import org.wang.springmvc.student.pojo.UserVo;
 
@@ -23,7 +24,8 @@ import org.wang.springmvc.student.pojo.UserVo;
 public class StudentAction {
 
 	@RequestMapping("querystudent")
-	public String querystudent(Model model) throws Exception {
+	public String querystudent(Model model,@RequestParam(value="groupid",required=true,defaultValue="g001")String group, UserVo userVo) throws Exception {
+//		System.out.println("group:"+group);
 		List<Student> list = new ArrayList<Student>();
 		Student student = new Student();
 		student.setId("s001");
@@ -59,10 +61,18 @@ public class StudentAction {
 		return "student/editstudent";
 	}
 
+	@RequestMapping("/deletestu")
+	public String deletestu(String [] deleteid) throws Exception {
+		
+		System.out.println(deleteid.length);
+		return "success";
+	}
+
 	@RequestMapping("/editstudentsubmit")
 	public String editstudentsubmit(String id_, Student student, UserVo userVo) throws Exception {
 		System.out.println(student);
-		return "success";
+//		return "success";
+		return "forward:querystudent.action";
 	}
 
 	@InitBinder

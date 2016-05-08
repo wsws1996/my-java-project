@@ -1,0 +1,18 @@
+package org.wang.springmvc.action;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class LoginAction {
+
+	@RequestMapping("/login")
+	public String login() throws Exception {
+		return "login";
+	}
+
+	@RequestMapping("/loginsubmit")
+	public String loginsubmit() throws Exception {
+		return "redirect:stu/querystudent.action";
+	}
+}

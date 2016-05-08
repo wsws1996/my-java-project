@@ -16,12 +16,15 @@
 	<br/>
 	出生日期：<input name="student.birthday" value='<fmt:formatDate value="${student.birthday }" pattern="yyyy-MM-dd"/>' />
 	<br/>
-	用户状态
-	<td>
+	用户状态：
 	<input type="radio" name="student.userstate" value="true">正常
 	<input type="radio" name="student.userstate" value="false">暂停
 	<br>
-	</td>
+	课程成绩：
+	<br>
+	课程名：<input type="text" name="scores[0].coursename">成绩：<input type="text" name="scores[0].score"><br>
+	课程名：<input type="text" name="scores[1].coursename">成绩：<input type="text" name="scores[1].score"><br>
+	课程名：<input type="text" name="scores[2].coursename">成绩：<input type="text" name="scores[2].score"><br>
 	<input type="submit" value="提交" />
 </form>
 </body>

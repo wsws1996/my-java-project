@@ -9,8 +9,12 @@
 <title>学生信息查询</title>
 </head>
 <body>
+当前用户：${activeUser}<a href="${pageContext.request.contextPath}/logout.action">退出</a>
+<form action="deletestu.action" method="post">
+<input type="submit" value="批量删除">
 <table width="100%" border="1">
 	<tr>
+		<td>选择</td>
 		<td>姓名</td>
 		<td>年龄</td>
 		<td>出生日期</td>
@@ -18,6 +22,7 @@
 	</tr>
 	<c:forEach items="${list}" var="stu">
 		<tr>
+		<td><input type="checkbox" name="deleteid" value="${stu.id }"></td>
 		<td>${stu.name}</td>
 		<td>${stu.age}</td>
 		<td><fmt:formatDate value="${stu.birthday }" pattern="yyyy-MM-dd"/></td>
@@ -25,6 +30,6 @@
 	</tr>
 	</c:forEach>
 </table>
-	
+	</form>
 </body>
 </html>
