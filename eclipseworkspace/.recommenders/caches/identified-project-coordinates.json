@@ -1,1 +1,1 @@
-{}
+[[{"location":"/usr/java/jdk1.8.0_65","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"/E/myproject/my-java-project/eclipseworkspace/mybatis1/lib/mybatis-3.2.3.jar","type":"JAR","hints":{}},"org.mybatis:mybatis:3.2.3"],[{"location":"/E/myproject/my-java-project/eclipseworkspace/mybatis1","type":"PROJECT","hints":{"PROJECT_NAME":"mybatis1"}},"ABSENT"]]
