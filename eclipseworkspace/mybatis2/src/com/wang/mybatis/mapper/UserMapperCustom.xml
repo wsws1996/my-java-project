@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.mybatis.mapper.UserMapperCustom">
+
+	<sql id="query_user_where">
+		<if test="user!=null">
+			<if test="user.username!=null and user.username!=''">
+				and user.username=#{user.username}
+			</if>
+
+			<if test="user.sex!=null and user.sex!=''">
+				and user.sex=#{user.sex}
+			</if>
+		</if>
+
+		<if test="ids!=null">
+			<foreach collection="ids" item="id" open="and (" separator="OR"
+				close=")">
+				id=#{id}
+			</foreach>
+		</if>
+	</sql>
+	
+	<resultMap type="user" id="userListResultMap">
+		<id column="id_" property="id"/>
+		<result column="username_" property="username"/>
+		<result column="birthday_" property="birthday"/>
+	</resultMap>
+
+	<select id="findUserList" parameterType="queryVo" resultType="user">
+		select id ,username from user
+		<where>
+			<include refid="query_user_where"></include>
+		</where>
+	</select>
+
+	<select id="findUserListResultMap" parameterType="queryVo" resultMap="userListResultMap">
+		select id id_,username username_,birthday birthday_ from user
+		<where>
+			<include refid="query_user_where"></include>
+		</where>
+	</select>
+
+	<select id="findUserCount" parameterType="queryVo" resultType="int">
+		select count(*) from user
+		<where>
+			<include refid="query_user_where"></include>
+		</where>
+	</select>
+	<select id="findUserListReturnMap" parameterType="queryVo"
+		resultType="hashmap">
+		select * from user where username=#{user.username} and
+		sex=#{user.sex}
+	</select>
+</mapper>

@@ -23,6 +23,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 
 	<mappers>
-		<mapper resource="sqlmap/UserMapper.xml" />
+		<!-- <mapper resource="sqlmap/UserMapper.xml" /> -->
+		<!-- class方式的规则：mapper.xml和mapper.java放在同一个目录且文件名相同 -->
+		<!-- <mapper class="com.wang.mybatis.mapper.UserMapper"/> -->
+		<package name="com.wang.mybatis.mapper"/>
 	</mappers>
 </configuration>
