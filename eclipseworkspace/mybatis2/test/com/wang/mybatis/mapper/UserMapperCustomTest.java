@@ -1,6 +1,5 @@
 package com.wang.mybatis.mapper;
 
-import static org.junit.Assert.*;
 
 import java.io.InputStream;
 import java.util.List;
@@ -41,7 +40,7 @@ public class UserMapperCustomTest {
 		queryVo.setUser(user);
 		List<User> list = userMapperCustom.findUserList(queryVo);
 		for (User user2 : list) {
-			// System.out.println(user2);
+			 System.out.println(user2);
 		}
 	}
 
@@ -73,8 +72,10 @@ public class UserMapperCustomTest {
 
 		QueryVo queryVo = new QueryVo();
 		queryVo.setUser(user);
+		@SuppressWarnings("rawtypes")
 		Map map = userMapperCustom.findUserListReturnMap(queryVo);
 		for (Object e : map.entrySet()) {
+			@SuppressWarnings("rawtypes")
 			Map.Entry entry = (Entry) e;
 			System.out.println(entry.getKey() + ":" + entry.getValue());
 		}
