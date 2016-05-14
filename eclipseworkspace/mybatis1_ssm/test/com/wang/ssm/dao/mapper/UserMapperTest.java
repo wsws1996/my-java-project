@@ -13,7 +13,7 @@ public class UserMapperTest {
 	@Before
 	public void setUp() throws Exception {
 		applicationContext = new ClassPathXmlApplicationContext(
-				new String[] { "spring/applicationContent.xml", "spring/applicationContent-dao.xml" });
+				new String[] { "spring/applicationContext.xml", "spring/applicationContext-dao.xml" });
 	}
 
 	@Test

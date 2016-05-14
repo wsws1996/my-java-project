@@ -1,5 +1,0 @@
-package org.wang.springmvc.student.action;
-
-public class EditStudentSubmit {
-
-}

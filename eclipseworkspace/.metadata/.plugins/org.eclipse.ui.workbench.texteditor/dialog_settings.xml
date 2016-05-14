@@ -6,12 +6,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="orderUserResultMap" key="selection"/>
+		<item value="pdateByPrimaryKey" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pdateByPrimaryKey"/>
+			<item value="Base_Column_List"/>
+			<item value="selectByPrimaryKey"/>
 			<item value="orderUserResultMap"/>
 			<item value="findOrdersList"/>
 			<item value="username"/>

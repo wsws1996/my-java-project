@@ -1,5 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=mybatis1_ssm/src&lt;com.wang.ssm.dao.old{UserDao.java[UserDao" modifiers="513" timestamp="1463147172000"/>
-<typeInfo handle="=mybatis1_ssm/\/E\/myproject\/my-java-project\/eclipseworkspace\/mybatis1_ssm\/WebRoot\/WEB-INF\/lib\/mysql-connector-java-5.1.7-bin.jar&lt;com.mysql.jdbc.exceptions.jdbc4(MySQLIntegrityConstraintViolationException.class[MySQLIntegrityConstraintViolationException" modifiers="33" timestamp="1463127545000"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

@@ -1,6 +1,0 @@
-package org.wang.springmvc.student.pojo;
-
-public class Student {
-	public Student() {
-	}
-}
