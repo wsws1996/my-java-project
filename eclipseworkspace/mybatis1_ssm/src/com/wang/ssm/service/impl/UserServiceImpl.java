@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUserById(int id) throws Exception {
-			return userMapper.findUserById(10);
+			return userMapper.findUserById(id);
 	}
 
 	@Override

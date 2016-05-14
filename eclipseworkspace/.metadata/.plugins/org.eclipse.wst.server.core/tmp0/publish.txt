@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Sun May 08 16:49:39 CST 2016
-org.eclipse.jst.jee.server\:springmvc2=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/webapps/springmvc2
+#Sat May 14 16:20:46 CST 2016
+org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/mybatis1_ssm/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/webapps/mybatis1_ssm/WEB-INF/lib/log4j-core-2.0-beta9.jar
+org.eclipse.jst.jee.server\:mybatis1_ssm=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/webapps/mybatis1_ssm
