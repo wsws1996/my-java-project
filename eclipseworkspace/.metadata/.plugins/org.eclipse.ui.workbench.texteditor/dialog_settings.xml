@@ -6,21 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="pdateByPrimaryKey" key="selection"/>
+		<item value="com.wang" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="cn.itcast"/>
+			<item value="cn.itcat"/>
+			<item value="itcast"/>
+			<item value="alias"/>
 			<item value="pdateByPrimaryKey"/>
 			<item value="Base_Column_List"/>
 			<item value="selectByPrimaryKey"/>
 			<item value="orderUserResultMap"/>
-			<item value="findOrdersList"/>
-			<item value="username"/>
-			<item value="spring"/>
 		</list>
 		<list key="replacehistory">
+			<item value="com.wang"/>
 			<item value="sex"/>
 		</list>
 	</section>
@@ -28,7 +30,7 @@
 		<item value="327" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="447" key="DIALOG_HEIGHT"/>
-		<item value="801" key="DIALOG_X_ORIGIN"/>
-		<item value="115" key="DIALOG_Y_ORIGIN"/>
+		<item value="83" key="DIALOG_X_ORIGIN"/>
+		<item value="156" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

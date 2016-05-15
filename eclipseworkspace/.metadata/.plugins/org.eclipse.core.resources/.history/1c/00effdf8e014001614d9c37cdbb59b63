@@ -1,5 +1,0 @@
-package org.wang.springmvc.student.pojo;
-
-public class StudentScore {
-
-}

@@ -1,5 +1,0 @@
-package org.wang.springmvc.interceptor;
-
-public class HandlerInterceptor1 {
-
-}
