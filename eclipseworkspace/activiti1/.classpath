@@ -6,7 +6,7 @@
 	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/activiti-bpmn-converter-5.14.jar"/>
 	<classpathentry kind="lib" path="lib/activiti-bpmn-model-5.14.jar"/>
-	<classpathentry kind="lib" path="lib/activiti-engine-5.14.jar"/>
+	<classpathentry kind="lib" path="lib/activiti-engine-5.14.jar" sourcepath="/E/BaiDuYunDownload/java/day63_activiti/day63_activiti/资料/jar包/activiti-5.14源代码/activiti-engine-5.14-sources.jar"/>
 	<classpathentry kind="lib" path="lib/activiti-spring-5.14.jar"/>
 	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/asm-3.3.1.jar"/>

@@ -3,12 +3,13 @@
 	<section name="ShowViewDialog">
 		<item value="379" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="org.eclipse.egit.ui.RepositoriesView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="org.eclipse.ui.views.PropertySheet" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="477" key="DIALOG_HEIGHT"/>
 		<item value="497" key="DIALOG_X_ORIGIN"/>
 		<item value="62" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="Git"/>
+			<item value="General"/>
+			<item value="Web Services"/>
 		</list>
 	</section>
 </section>

@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Sat May 14 21:52:26 CST 2016
-org.eclipse.jst.jee.server\:purchasing1=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/webapps/purchasing1
-org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/purchasing1/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/\u5F00\u53D1\u5DE5\u5177\u5305/apache-tomcat-8.0.28/webapps/purchasing1/WEB-INF/lib/log4j-core-2.0-beta9.jar
+#Tue May 17 00:09:38 CST 2016
+org.eclipse.jst.jee.server\:purchasingflow=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow
+org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/purchasingflow/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow/WEB-INF/lib/log4j-core-2.0-beta9.jar

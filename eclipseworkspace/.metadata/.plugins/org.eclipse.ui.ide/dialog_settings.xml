@@ -5,6 +5,7 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/E/myproject/my-java-project/workspace2/keyauto"/>
 			<item value="/E/BaiDuYunDownload/java/day62_mybatis_springMVC_spring整合/day62_mybatis_springMVC_spring整合/代码/generatorSqlmapCustom"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
