@@ -7952,3 +7952,130 @@ java.util.EmptyStackException
 
 !ENTRY org.eclipse.ui 4 4 2016-05-17 00:03:19.331
 !MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+!SESSION 2016-05-17 12:58:35.574 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 12:58:58.484
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 12:58:58.484
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 12:59:04.034
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 12:59:04.034
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+!SESSION 2016-05-17 15:54:39.400 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 15:54:52.880
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 15:54:52.880
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 15:54:59.599
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 15:54:59.599
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 4 4 2016-05-17 15:59:34.161
+!MESSAGE Plug-in 'org.eclipse.m2e.core.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.m2e.enableNatureAction
+
+!ENTRY org.eclipse.ui 4 4 2016-05-17 15:59:34.342
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+
+!ENTRY org.eclipse.ui 4 4 2016-05-17 15:59:34.344
+!MESSAGE Plug-in 'org.eclipse.wst.jsdt.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.wst.jsdt.internal.web.ui.convertProjects
+
+!ENTRY org.eclipse.wst.server.core 4 0 2016-05-17 16:12:40.014
+!MESSAGE Server Tomcat v8.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+!SESSION 2016-05-17 22:50:27.681 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 22:50:38.932
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 22:50:38.932
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-05-17 22:50:41.048
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-17 22:50:41.048
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+!SESSION 2016-05-18 14:06:31.009 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-05-18 14:06:37.521
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2016-05-18 14:06:42.239
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-18 14:06:42.239
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-05-18 14:06:44.860
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-18 14:06:44.860
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.recommenders.rcp 2 23 2016-05-18 16:23:58.980
+!MESSAGE Failed to parse news feed
+!STACK 0
+java.net.UnknownHostException: www.codetrails.com: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.getRSSFeed(CheckForProjectNewsJob.java:138)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.doRun(CheckForProjectNewsJob.java:89)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.run(CheckForProjectNewsJob.java:62)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2016-05-18 20:02:32.709 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2016-05-18 20:02:42.062
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-18 20:02:42.062
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-05-18 20:02:43.953
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-05-18 20:02:43.953
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'

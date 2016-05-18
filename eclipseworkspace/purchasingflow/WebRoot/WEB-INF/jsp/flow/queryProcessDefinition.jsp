@@ -48,7 +48,7 @@
 						<td class=category>${processDefinition.version}</td>
 						<td class=category><a href="${baseurl}/flow/queryProcessDefinitionResource.action?processDefinitionId=${processDefinition.id}&resourceType=bpmn" target="_blank">查看bpmn</a></td>
 						<td class=category><a href="${baseurl}/flow/queryProcessDefinitionResource.action?processDefinitionId=${processDefinition.id}&resourceType=png" target="_blank">查看图片</a></td>
-						<td class=category><a href=javascript:deleteDeployment('${processDefinition.id}') >删除流程</a></td>
+						<td class=category><a href="javascript:deleteDeployment('${processDefinition.id}')" >删除流程</a></td>
 					</tr>
 				</c:forEach>
 			</TBODY>

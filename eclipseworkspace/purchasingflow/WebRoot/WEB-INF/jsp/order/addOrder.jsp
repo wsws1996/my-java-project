@@ -41,7 +41,6 @@ function ordersave(){
 					<TABLE class="toptable grid" border=1 cellSpacing=1 cellPadding=4
 						align=center>
 						<TBODY>
-							
 							<TR>
 								<TD height=30 width="15%" align=right >采购单名称：</TD>
 								<TD class=category width="35%">
@@ -60,7 +59,6 @@ function ordersave(){
 								<TD height=30 width="15%" align=right ></TD>
 								<TD class=category width="35%">
 								
-								</div>
 								</TD>
 								
 								
