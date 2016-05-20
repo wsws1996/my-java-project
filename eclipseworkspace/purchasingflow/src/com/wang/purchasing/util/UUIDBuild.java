@@ -75,10 +75,9 @@ public class UUIDBuild {
 	}
 
 	public String generate() {
-		return new StringBuffer(36).append(format(getIP())).append(sep).append(
-				format(getJVM())).append(sep).append(format(getHiTime()))
-				.append(sep).append(format(getLoTime())).append(sep).append(
-						format(getCount())).toString();
+		return new StringBuffer(36).append(format(getIP())).append(sep).append(format(getJVM())).append(sep)
+				.append(format(getHiTime())).append(sep).append(format(getLoTime())).append(sep)
+				.append(format(getCount())).toString();
 	}
 
 	public static void main(String[] str) {
@@ -96,8 +95,7 @@ public class UUIDBuild {
 	// 得到一个序号
 	public static String getUUID() {
 		String s = UUID.randomUUID().toString();
-		return s.substring(0, 8) + s.substring(9, 13) + s.substring(14, 18)
-				+ s.substring(19, 23) + s.substring(24);
+		return s.substring(0, 8) + s.substring(9, 13) + s.substring(14, 18) + s.substring(19, 23) + s.substring(24);
 	}
 
 	/**

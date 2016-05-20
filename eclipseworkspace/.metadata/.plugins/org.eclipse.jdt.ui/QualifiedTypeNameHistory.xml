@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="com.wang.mybatis.po.QueryVo"/>
-<fullyQualifiedTypeName name="com.wang.mybatis.mapper.OrdersMapperCustom"/>
-<fullyQualifiedTypeName name="com.wang.mybatis.po.OrdersCustom"/>
 <fullyQualifiedTypeName name="org.apache.logging.log4j.core.config.Order"/>
 <fullyQualifiedTypeName name="com.wang.mybatis.po.Orderdetail"/>
 <fullyQualifiedTypeName name="com.wang.mybatis.po.Orders"/>
@@ -27,7 +22,6 @@
 <fullyQualifiedTypeName name="com.wang.ssm.po.Student"/>
 <fullyQualifiedTypeName name="org.activiti.engine.ProcessEngineConfiguration"/>
 <fullyQualifiedTypeName name="org.activiti.engine.task.TaskQuery"/>
-<fullyQualifiedTypeName name="org.activiti.engine.task.Task"/>
 <fullyQualifiedTypeName name="org.activiti.engine.TaskService"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
 <fullyQualifiedTypeName name="java.util.zip.ZipInputStream"/>
@@ -38,10 +32,8 @@
 <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
 <fullyQualifiedTypeName name="java.lang.Byte"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="com.wang.purchasing.util.ResourcesUtil"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
@@ -52,12 +44,20 @@
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.activiti.engine.runtime.ProcessInstanceQuery"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.activiti.engine.RepositoryService"/>
 <fullyQualifiedTypeName name="org.activiti.engine.repository.ProcessDefinition"/>
-<fullyQualifiedTypeName name="org.activiti.engine.RuntimeService"/>
-<fullyQualifiedTypeName name="org.activiti.engine.runtime.ProcessInstance"/>
 <fullyQualifiedTypeName name="org.activiti.engine.ProcessEngine"/>
 <fullyQualifiedTypeName name="org.activiti.engine.delegate.TaskListener"/>
 <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.activiti.engine.task.Task"/>
+<fullyQualifiedTypeName name="com.wang.purchasing.po.PurBusOrder"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.wang.purchasing.vo.OrderCustom"/>
+<fullyQualifiedTypeName name="com.wang.purchasing.dao.mapper.PurBusOrderMapper"/>
+<fullyQualifiedTypeName name="com.wang.purchasing.util.UUIDBuild"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.activiti.engine.RepositoryService"/>
+<fullyQualifiedTypeName name="org.activiti.engine.RuntimeService"/>
+<fullyQualifiedTypeName name="org.activiti.engine.runtime.ProcessInstance"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

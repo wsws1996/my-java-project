@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=activiti1/src&lt;com.wang.activiti.task{MyTaskListener.java[MyTaskListener" modifiers="1" timestamp="1463564513000"/>
+<typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.service{OrderService.java[OrderService" modifiers="513" timestamp="1463732793000"/>
+<typeInfo handle="=purchasingflow/\/E\/myproject\/my-java-project\/eclipseworkspace\/purchasingflow\/WebRoot\/WEB-INF\/lib\/activiti-engine-5.14.jar&lt;org.activiti.engine(RuntimeService.class[RuntimeService" modifiers="1537" timestamp="1463411728000"/>
 </typeInfoHistroy>

@@ -19,7 +19,7 @@ function ordersave(){
 </head>
 <body>
 
-<form id="orderform" name="orderform" action="${baseurl}order/addOrderSubmit.action" method="post">
+<form id="orderform" name="orderform" action="${baseurl}orderflow/addOrderSave.action" method="post">
 <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" bgColor=#c4d8ed>
 
    <TBODY>
@@ -41,20 +41,21 @@ function ordersave(){
 					<TABLE class="toptable grid" border=1 cellSpacing=1 cellPadding=4
 						align=center>
 						<TBODY>
+							
 							<TR>
 								<TD height=30 width="15%" align=right >采购单名称：</TD>
 								<TD class=category width="35%">
-								<input type="text" name="name"/>
+								<input type="text" name="orderCustom.name"/>
 								</TD>
 								<TD height=30 width="15%" align=right >采购单内容：</TD>
 								<TD class=category width="35%">
-								<textarea rows="3" cols="30" name="content"></textarea>
+								<textarea rows="3" cols="30" name="orderCustom.content"></textarea>
 								</TD>
 							</TR>
 							<TR>
 								<TD height=30 width="15%" align=right >采购金额：</TD>
 								<TD class=category width="35%">
-								<input type="text" name="price"/>
+								<input type="text" name="orderCustom.price"/>
 								</TD>
 								<TD height=30 width="15%" align=right ></TD>
 								<TD class=category width="35%">
@@ -66,7 +67,7 @@ function ordersave(){
 							
 							<tr>
 							  <td colspan=4 align=center class=category>
-								<a id="submitbtn"  class="easyui-linkbutton"   iconCls="icon-ok" href="#" onclick="ordersave()">保存</a>
+								<a id="submitbtn"  class="easyui-linkbutton"   iconCls="icon-ok" href="#" onclick="ordersave()">提交</a>
 								<a id="closebtn"  class="easyui-linkbutton" iconCls="icon-cancel" href="#" onclick="parent.closemodalwindow()">关闭</a>
 							  </td>
 							</tr>

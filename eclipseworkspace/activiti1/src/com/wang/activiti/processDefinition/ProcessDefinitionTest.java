@@ -12,7 +12,6 @@ import org.activiti.engine.RepositoryService;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.repository.ProcessDefinitionQuery;
-import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 public class ProcessDefinitionTest {

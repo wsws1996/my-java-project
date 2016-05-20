@@ -1,7 +1,5 @@
 package com.wang.purchasing.vo;
 
-import java.util.Iterator;
-import java.util.List;
 
 
 /**
@@ -12,6 +10,10 @@ import java.util.List;
  */
 public class ActiveUser  implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8866718782485026998L;
 	private String userid;//用户id
 	private String username;//用户名称
 	private String groupid;//用户类型
