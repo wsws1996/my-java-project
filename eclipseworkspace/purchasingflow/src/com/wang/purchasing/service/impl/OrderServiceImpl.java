@@ -59,12 +59,11 @@ public class OrderServiceImpl implements OrderService {
 
 		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
 				"purchasingProcessDefinitionKey");
-		
-		identityService.setAuthenticatedUserId(userId);//启动实例之前使用该行代码
-		
+
+		identityService.setAuthenticatedUserId(userId);// 启动实例之前使用该行代码
+
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processDefinitionKey, businessKey);
-		
-		
+
 		String processinstance_Id = processInstance.getProcessInstanceId();
 
 		orderCustom.setId(orderId);
@@ -166,15 +165,7 @@ public class OrderServiceImpl implements OrderService {
 		if (task != null) {
 			Map<String, Object> variables = new HashMap<String, Object>();
 
-			if (auditType.equals("firstAudit")) {
-				variables.put("firstAudit", orderAuditCustom);
-			} else if (auditType.equals("secondAudit")) {
-				variables.put("secondAudit", orderAuditCustom);
-
-			} else if (auditType.equals("thirdAudit")) {
-				variables.put("thirdAudit", orderAuditCustom);
-
-			}
+			variables.put("audit", orderAuditCustom);
 
 			taskService.complete(taskId, variables);
 		}
