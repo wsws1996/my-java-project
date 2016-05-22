@@ -72,4 +72,25 @@ public class OrderFlowAction {
 		return "redirect:orderTaskList.action";
 
 	}
+
+	@RequestMapping("/queryActivityOrder")
+	public String queryActivityOrder(Model model) throws Exception {
+		List<OrderCustom> list = orderService.findActivityOrderList();
+		model.addAttribute("list", list);
+		return "order/queryActivityOrder";
+	}
+
+	@RequestMapping("/queryHistoryOrder")
+	public String queryHistoryOrder(Model model) throws Exception {
+		List<OrderCustom> list = orderService.findFinishedOrderList();
+		model.addAttribute("list", list);
+		return "order/queryHistoryOrder";
+	}
+
+	@RequestMapping("/queryOrderTaskByPid")
+	public String queryOrderTaskByPid(Model model, String processInstanceId) throws Exception {
+		List<OrderCustom> list = orderService.findOrderTaskListByPid(processInstanceId);
+		model.addAttribute("list", list);
+		return "order/queryOrderTaskByPid";
+	}
 }

@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="bpmn" key="selection"/>
+		<item value="ordersave" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ordersave"/>
 			<item value="bpmn"/>
 			<item value="InputStream inputStream_bpmn = this.getClass().getClassLoader()"/>
 			<item value="cn.itcast"/>
@@ -19,7 +20,6 @@
 			<item value="itcast"/>
 			<item value="alias"/>
 			<item value="pdateByPrimaryKey"/>
-			<item value="Base_Column_List"/>
 		</list>
 		<list key="replacehistory">
 			<item value="png"/>

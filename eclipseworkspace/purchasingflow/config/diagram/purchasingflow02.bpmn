@@ -5,7 +5,11 @@
     <userTask id="createOrder" name="创建采购单" activiti:assignee="zhangsan"></userTask>
     <userTask id="secondAudit" name="总经理审核" activiti:assignee="wangwu"></userTask>
     <userTask id="thirdAudit" name="财务审核" activiti:assignee="zhaoliu"></userTask>
-    <endEvent id="endevent1" name="End"></endEvent>
+    <endEvent id="endevent1" name="End">
+      <extensionElements>
+        <activiti:executionListener event="end" class="com.wang.purchasing.listener.ProcessCompleteListener"></activiti:executionListener>
+      </extensionElements>
+    </endEvent>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="createOrder"></sequenceFlow>
     <sequenceFlow id="flow4" sourceRef="secondAudit" targetRef="thirdAudit"></sequenceFlow>
     <sequenceFlow id="flow5" sourceRef="thirdAudit" targetRef="endevent1"></sequenceFlow>

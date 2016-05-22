@@ -2,11 +2,20 @@ package com.wang.purchasing.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.activiti.engine.HistoryService;
+import org.activiti.engine.IdentityService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.history.HistoricProcessInstance;
+import org.activiti.engine.history.HistoricProcessInstanceQuery;
+import org.activiti.engine.history.HistoricTaskInstance;
+import org.activiti.engine.history.HistoricTaskInstanceQuery;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.runtime.ProcessInstanceQuery;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
 import org.springframework.beans.BeanUtils;
@@ -35,6 +44,12 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private TaskService taskService;
 
+	@Autowired
+	private HistoryService historyService;
+
+	@Autowired
+	private IdentityService identityService;
+
 	@Override
 	public void saveOrder(String userId, OrderCustom orderCustom) throws Exception {
 
@@ -44,8 +59,12 @@ public class OrderServiceImpl implements OrderService {
 
 		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
 				"purchasingProcessDefinitionKey");
+		
+		identityService.setAuthenticatedUserId(userId);//启动实例之前使用该行代码
+		
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processDefinitionKey, businessKey);
-
+		
+		
 		String processinstance_Id = processInstance.getProcessInstanceId();
 
 		orderCustom.setId(orderId);
@@ -110,13 +129,29 @@ public class OrderServiceImpl implements OrderService {
 	public void saveOrderSubmitStatus(String userId, String taskId) throws Exception {
 		Task task = taskService.createTaskQuery().taskId(taskId).taskAssignee(userId).singleResult();
 		if (task != null) {
-			taskService.complete(taskId);
+
+			OrderCustom orderCustom = new OrderCustom();
+
+			String processInstanceId = task.getProcessInstanceId();
+
+			ProcessInstance processInstance = runtimeService.createProcessInstanceQuery()
+					.processInstanceId(processInstanceId).singleResult();
+			String businessKey = processInstance.getBusinessKey();
+
+			PurBusOrder purBusOrder = purBusOrderMapper.selectByPrimaryKey(businessKey);
+
+			BeanUtils.copyProperties(purBusOrder, orderCustom);
+
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.put("order", orderCustom);
+
+			taskService.complete(taskId, variables);
 		}
 	}
 
 	@Override
-	public void saveOrderAuditStatus(String taskId,String userId, String orderId, String auditType, OrderAuditCustom orderAuditCustom)
-			throws Exception {
+	public void saveOrderAuditStatus(String taskId, String userId, String orderId, String auditType,
+			OrderAuditCustom orderAuditCustom) throws Exception {
 
 		orderAuditCustom.setUserId(userId);
 
@@ -129,8 +164,107 @@ public class OrderServiceImpl implements OrderService {
 
 		Task task = taskService.createTaskQuery().taskId(taskId).taskAssignee(userId).singleResult();
 		if (task != null) {
-			taskService.complete(taskId);
+			Map<String, Object> variables = new HashMap<String, Object>();
+
+			if (auditType.equals("firstAudit")) {
+				variables.put("firstAudit", orderAuditCustom);
+			} else if (auditType.equals("secondAudit")) {
+				variables.put("secondAudit", orderAuditCustom);
+
+			} else if (auditType.equals("thirdAudit")) {
+				variables.put("thirdAudit", orderAuditCustom);
+
+			}
+
+			taskService.complete(taskId, variables);
 		}
+	}
+
+	@Override
+	public List<OrderCustom> findActivityOrderList() throws Exception {
+		ProcessInstanceQuery processInstanceQuery = runtimeService.createProcessInstanceQuery();
+
+		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
+				"purchasingProcessDefinitionKey");
+
+		processInstanceQuery.processDefinitionKey(processDefinitionKey);
+		processInstanceQuery.orderByProcessInstanceId().desc();
+		List<ProcessInstance> list = processInstanceQuery.list();
+
+		List<OrderCustom> orderList = new ArrayList<OrderCustom>();
+
+		for (ProcessInstance processInstance : list) {
+			OrderCustom orderCustom = new OrderCustom();
+			String businessKey = processInstance.getBusinessKey();
+
+			PurBusOrder purBusOrder = purBusOrderMapper.selectByPrimaryKey(businessKey);
+			BeanUtils.copyProperties(purBusOrder, orderCustom);
+
+			orderCustom.setActivityId(processInstance.getActivityId());
+
+			orderList.add(orderCustom);
+
+		}
+		return orderList;
+	}
+
+	@Override
+	public List<OrderCustom> findFinishedOrderList() throws Exception {
+
+		HistoricProcessInstanceQuery historicProcessInstanceQuery = historyService.createHistoricProcessInstanceQuery();
+		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
+				"purchasingProcessDefinitionKey");
+		historicProcessInstanceQuery.processDefinitionKey(processDefinitionKey);
+
+		historicProcessInstanceQuery.finished();
+
+		historicProcessInstanceQuery.orderByProcessInstanceEndTime().desc();
+
+		List<HistoricProcessInstance> list = historicProcessInstanceQuery.list();
+		List<OrderCustom> orderList = new ArrayList<OrderCustom>();
+		for (HistoricProcessInstance historicProcessInstance : list) {
+			OrderCustom orderCustom = new OrderCustom();
+			String businessKey = historicProcessInstance.getBusinessKey();
+			PurBusOrder purBusOrder = purBusOrderMapper.selectByPrimaryKey(businessKey);
+			BeanUtils.copyProperties(purBusOrder, orderCustom);
+			orderCustom.setProcessInstance_startTime(historicProcessInstance.getStartTime());
+			orderCustom.setProcessInstance_endTime(historicProcessInstance.getEndTime());
+
+			orderList.add(orderCustom);
+		}
+
+		return orderList;
+	}
+
+	@Override
+	public List<OrderCustom> findOrderTaskListByPid(String processInstanceId) throws Exception {
+
+		HistoricTaskInstanceQuery historicTaskInstanceQuery = historyService.createHistoricTaskInstanceQuery();
+
+		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
+				"purchasingProcessDefinitionKey");
+		historicTaskInstanceQuery.processDefinitionKey(processDefinitionKey);
+
+		historicTaskInstanceQuery.processInstanceId(processInstanceId);
+
+		historicTaskInstanceQuery.orderByHistoricTaskInstanceStartTime().asc();
+
+		List<HistoricTaskInstance> list = historicTaskInstanceQuery.list();
+		// 保证activiti与业务系统的弱耦合
+		List<OrderCustom> orderList = new ArrayList<OrderCustom>();
+		for (HistoricTaskInstance historicTaskInstance : list) {
+			OrderCustom orderCustom = new OrderCustom();
+			orderCustom.setTaskId(historicTaskInstance.getId());
+			orderCustom.setTaskName(historicTaskInstance.getName());
+			orderCustom.setAssignee(historicTaskInstance.getAssignee());
+			orderCustom.setTaskDefinitionKey(historicTaskInstance.getTaskDefinitionKey());
+			orderCustom.setTask_startTime(historicTaskInstance.getStartTime());
+			orderCustom.setTask_endTime(historicTaskInstance.getEndTime());
+
+			orderList.add(orderCustom);
+		}
+
+		return orderList;
 	}
 
 }

@@ -37,7 +37,8 @@ public interface OrderService {
 	public void saveOrderSubmitStatus(String userId, String taskId) throws Exception;
 
 	/**
-	 * @param taskId 任务id
+	 * @param taskId
+	 *            任务id
 	 * @param userId
 	 *            当前用户id
 	 * @param orderId
@@ -49,4 +50,27 @@ public interface OrderService {
 	 */
 	public void saveOrderAuditStatus(String taskId, String userId, String orderId, String auditType,
 			OrderAuditCustom orderAuditCustom) throws Exception;
+	
+	/**
+	 * 查询当前运行的采购流程
+	 * @return
+	 * @throws Exception
+	 */
+	public List<OrderCustom> findActivityOrderList() throws Exception;
+	
+	/**
+	 * 查询已结束的流程实例
+	 * @return
+	 * @throws Exception
+	 */
+	public List<OrderCustom> findFinishedOrderList() throws Exception;
+
+	/**
+	 *  根据流程实例id查询历史任务
+	 * @param processInstanceId 流程实例id
+	 * @return
+	 * @throws Exception
+	 */
+	
+	public List<OrderCustom> findOrderTaskListByPid(String processInstanceId) throws Exception;
 }
