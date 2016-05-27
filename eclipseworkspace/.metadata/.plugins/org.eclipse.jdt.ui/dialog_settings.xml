@@ -42,8 +42,8 @@
 		<item value="-12" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="585" key="size.y"/>
-		<item value="844" key="size.x"/>
+		<item value="771" key="size.y"/>
+		<item value="1061" key="size.x"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="SortOrdering"/>

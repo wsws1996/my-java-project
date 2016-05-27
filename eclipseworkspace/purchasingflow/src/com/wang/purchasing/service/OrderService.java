@@ -50,27 +50,63 @@ public interface OrderService {
 	 */
 	public void saveOrderAuditStatus(String taskId, String userId, String orderId, String auditType,
 			OrderAuditCustom orderAuditCustom) throws Exception;
-	
+
 	/**
 	 * 查询当前运行的采购流程
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	public List<OrderCustom> findActivityOrderList() throws Exception;
-	
+
 	/**
 	 * 查询已结束的流程实例
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	public List<OrderCustom> findFinishedOrderList() throws Exception;
 
 	/**
-	 *  根据流程实例id查询历史任务
-	 * @param processInstanceId 流程实例id
+	 * 根据流程实例id查询历史任务
+	 * 
+	 * @param processInstanceId
+	 *            流程实例id
 	 * @return
 	 * @throws Exception
 	 */
-	
+
 	public List<OrderCustom> findOrderTaskListByPid(String processInstanceId) throws Exception;
+
+	/**
+	 * 结算
+	 * @param taskId 当前任务id
+	 * @param userId 当前用户id
+	 * @throws Exception
+	 */
+	public void saveSettlement(String taskId, String userId) throws Exception;
+	
+	/**
+	 * 入库
+	 * @param taskId 当前任务id
+	 * @param userId 当前用户id
+	 * @throws Exception
+	 */
+	public void saveStorage(String taskId, String userId) throws Exception;
+	
+	/**
+	 * 根据候选人查询组任务
+	 * @param userId 当前用户id
+	 * @return
+	 * @throws Exception
+	 */
+	public List<OrderCustom> findOrderGroupTaskList(String userId) throws Exception;
+	
+	/**
+	 * 拾取任务
+	 * @param taskId 任务id
+	 * @param candidateUserId 候选人id
+	 * @throws Exception
+	 */
+	public void saveClaimTask(String taskId,String candidateUserId) throws Exception;
 }

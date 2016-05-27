@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.service{OrderService.java[OrderService" modifiers="513" timestamp="1463821164000"/>
+<typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.service{OrderService.java[OrderService" modifiers="513" timestamp="1463895041000"/>
 <typeInfo handle="=purchasingflow/\/E\/myproject\/my-java-project\/eclipseworkspace\/purchasingflow\/WebRoot\/WEB-INF\/lib\/activiti-engine-5.14.jar&lt;org.activiti.engine(RuntimeService.class[RuntimeService" modifiers="1537" timestamp="1463411728000"/>
-<typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.vo{OrderCustom.java[OrderCustom" modifiers="1" timestamp="1463830258000"/>
+<typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.vo{OrderCustom.java[OrderCustom" modifiers="1" timestamp="1463898727000"/>
 <typeInfo handle="=purchasingflow/src&lt;com.wang.purchasing.listener{ProcessCompleteListener.java[ProcessCompleteListener" modifiers="1" timestamp="1463834086000"/>
 </typeInfoHistroy>

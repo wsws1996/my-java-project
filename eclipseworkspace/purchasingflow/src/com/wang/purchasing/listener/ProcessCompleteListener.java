@@ -10,11 +10,16 @@ import com.wang.purchasing.util.ApplicationContextUtils;
 
 public class ProcessCompleteListener implements ExecutionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1689992327312767531L;
 	private static ApplicationContext applicationContext = ApplicationContextUtils.getApplicationContext();
 
 	@Override
 	public void notify(DelegateExecution execution) throws Exception {
 
+		@SuppressWarnings("deprecation")
 		String businesskey = execution.getBusinessKey();
 
 		PurBusOrderMapper purBusOrderMapper = (PurBusOrderMapper) applicationContext.getBean("purBusOrderMapper");

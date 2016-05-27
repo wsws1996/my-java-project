@@ -93,4 +93,36 @@ public class OrderFlowAction {
 		model.addAttribute("list", list);
 		return "order/queryOrderTaskByPid";
 	}
+
+	@RequestMapping("/settlement")
+	public String settlement(HttpSession session, String taskId) throws Exception {
+		ActiveUser activeUser = UserUtil.getUserFromSession(session);
+		String userId = activeUser.getUserid();
+		orderService.saveSettlement(taskId, userId);
+		return "redirect:orderTaskList.action";
+	}
+
+	@RequestMapping("/storage")
+	public String storage(HttpSession session, String taskId) throws Exception {
+		ActiveUser activeUser = UserUtil.getUserFromSession(session);
+		String userId = activeUser.getUserid();
+		orderService.saveStorage(taskId, userId);
+		return "redirect:orderTaskList.action";
+	}
+
+	@RequestMapping("/orderGroupTaskList")
+	public String orderGroupTaskList(HttpSession session, Model model) throws Exception {
+		ActiveUser activeUser = UserUtil.getUserFromSession(session);
+		String userId = activeUser.getUserid();
+		List<OrderCustom> list = orderService.findOrderGroupTaskList(userId);
+		model.addAttribute("list", list);
+		return "order/orderGroupTaskList";
+	}
+	@RequestMapping("/claimTask")
+	public String claimTask(HttpSession session,String taskId) throws Exception {
+		ActiveUser activeUser = UserUtil.getUserFromSession(session);
+		String userId = activeUser.getUserid();
+		orderService.saveClaimTask(taskId, userId);
+		return "redirect:orderGroupTaskList.action";		
+	}
 }

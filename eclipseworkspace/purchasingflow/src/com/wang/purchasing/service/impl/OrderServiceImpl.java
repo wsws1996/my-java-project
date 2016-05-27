@@ -88,7 +88,6 @@ public class OrderServiceImpl implements OrderService {
 
 		TaskQuery taskQuery = taskService.createTaskQuery();
 		taskQuery.taskAssignee(assignee);
-
 		taskQuery.processDefinitionKey(processDefinitionKey);
 
 		taskQuery.orderByTaskCreateTime().desc();
@@ -256,6 +255,73 @@ public class OrderServiceImpl implements OrderService {
 		}
 
 		return orderList;
+	}
+
+	@Override
+	public void saveSettlement(String taskId, String userId) throws Exception {
+		Task task = taskService.createTaskQuery().taskId(taskId).taskAssignee(userId).singleResult();
+		if (task != null) {
+			taskService.complete(taskId);
+		}
+	}
+
+	@Override
+	public void saveStorage(String taskId, String userId) throws Exception {
+		Task task = taskService.createTaskQuery().taskId(taskId).taskAssignee(userId).singleResult();
+		if (task != null) {
+			taskService.complete(taskId);
+		}
+	}
+
+	@Override
+	public List<OrderCustom> findOrderGroupTaskList(String userId) throws Exception {
+		String processDefinitionKey = ResourcesUtil.getValue("diagram.purchasingflow",
+				"purchasingProcessDefinitionKey");
+
+		String candidateUser = userId;
+
+		TaskQuery taskQuery = taskService.createTaskQuery();
+		taskQuery.taskCandidateUser(candidateUser);
+		taskQuery.processDefinitionKey(processDefinitionKey);
+
+		taskQuery.orderByTaskCreateTime().desc();
+
+		List<Task> list = taskQuery.list();
+
+		List<OrderCustom> orderList = new ArrayList<OrderCustom>();
+
+		for (Task task : list) {
+			OrderCustom orderCustom = new OrderCustom();
+
+			String processInstanceId = task.getProcessInstanceId();
+			ProcessInstance processInstance = runtimeService.createProcessInstanceQuery()
+					.processInstanceId(processInstanceId).singleResult();
+
+			String businessKey = processInstance.getBusinessKey();
+
+			String orderId = businessKey;
+			PurBusOrder purBusOrder = purBusOrderMapper.selectByPrimaryKey(orderId);
+
+			BeanUtils.copyProperties(purBusOrder, orderCustom);
+
+			orderCustom.setTaskId(task.getId());
+
+			orderCustom.setTaskDefinitionKey(task.getTaskDefinitionKey());
+
+			orderCustom.setTaskName(task.getName());
+
+			orderList.add(orderCustom);
+		}
+		return orderList;
+	}
+
+	@Override
+	public void saveClaimTask(String taskId, String candidateUserId) throws Exception {
+		Task task = taskService.createTaskQuery().taskId(taskId).taskCandidateUser(candidateUserId).singleResult();
+
+		if (task != null) {
+			taskService.claim(taskId, candidateUserId);
+		}
 	}
 
 }
