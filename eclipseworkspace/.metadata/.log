@@ -9673,3 +9673,40 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 !MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
 !SUBENTRY 1 org.eclipse.ui 2 0 2016-06-06 23:19:29.157
 !MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+!SESSION 2016-06-07 16:37:50.191 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2016-06-07 16:37:58.911
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-06-07 16:37:58.911
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.ui 2 0 2016-06-07 16:38:00.824
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-06-07 16:38:00.824
+!MESSAGE Commands should really have a category: plug-in='org.activiti.designer.kickstart.eclipse', id='org.activiti.designer.kickstart.command.refreshCmisNavigator', categoryId='org.activiti.designer.kickstart.eclipse.categor'
+
+!ENTRY org.eclipse.recommenders.rcp 4 18 2016-06-07 17:31:14.537
+!MESSAGE Failed to resolve selection in ‘=ws_01_socket_server/src<com.wang.ws.socket.server.thread{WeatherRunnable.java’ at offset 336.
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromTypeRootInEditor(JavaElementSelections.java:164)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromEditor(JavaElementSelections.java:119)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromEditor(JavaElementSelections.java:102)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService.handleSelectionInEditor(JavaElementSelectionService.java:108)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService.access$1(JavaElementSelectionService.java:105)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService$1.run(JavaElementSelectionService.java:82)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
