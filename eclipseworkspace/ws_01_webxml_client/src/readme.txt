@@ -1,0 +1,1 @@
+此种方式生成的webservice客户端依赖本地的wsdl文件，如爆出不存在文件错误，复制项目的WeatherWebService.wsdl.xml到缺少文件的位置

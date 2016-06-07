@@ -39,7 +39,7 @@
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="760" key="DIALOG_HEIGHT"/>
 		<item value="55" key="DIALOG_X_ORIGIN"/>
-		<item value="-12" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
 		<item value="771" key="size.y"/>

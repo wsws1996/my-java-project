@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity"/>
-<fullyQualifiedTypeName name="org.activiti.engine.impl.pvm.process.ActivityImpl"/>
-<fullyQualifiedTypeName name="org.activiti.engine.history.HistoricProcessInstanceQuery"/>
-<fullyQualifiedTypeName name="org.activiti.engine.history.HistoricProcessInstance"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="org.activiti.engine.impl.pvm.delegate.ExecutionListenerExecution"/>
-<fullyQualifiedTypeName name="org.activiti.engine.delegate.ExecutionListener"/>
-<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
 <fullyQualifiedTypeName name="com.wang.purchasing.util.ApplicationContextUtils"/>
 <fullyQualifiedTypeName name="com.wang.purchasing.dao.mapper.PurBusOrderMapper"/>
 <fullyQualifiedTypeName name="org.activiti.engine.HistoryService"/>
@@ -58,6 +49,15 @@
 <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="oracle.jdbc.OracleCallableStatement"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.net.ServerSocket"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.wang.ws.socket.server.thread.WeatherRunnable"/>
+<fullyQualifiedTypeName name="java.net.Socket"/>
 </qualifiedTypeNameHistroy>
