@@ -1,8 +1,10 @@
 package com.wang.ws.jaxws.weather.server;
 
 import javax.jws.WebService;
+import javax.xml.ws.BindingType;
 
 @WebService
+@BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
 public class WeatherInterfaceImpl implements WeatherInterface {
 
 	@Override
