@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Fri May 27 22:55:35 CST 2016
-org.eclipse.jst.jee.server\:purchasingflow=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow
+#Thu Jun 09 22:25:06 CST 2016
+org.eclipse.jst.jee.server\:ws_02_cxf_spring_server=/E/developerpackage/apache-tomcat-8.0.28/webapps/ws_02_cxf_spring_server
 org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/purchasingflow/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow/WEB-INF/lib/log4j-core-2.0-beta9.jar
