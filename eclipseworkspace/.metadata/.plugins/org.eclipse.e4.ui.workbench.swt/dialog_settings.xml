@@ -3,22 +3,15 @@
 	<section name="ShowViewDialog">
 		<item value="379" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="org.eclipse.wst.internet.monitor.view" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="org.eclipse.ui.views.ProgressView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="477" key="DIALOG_HEIGHT"/>
 		<item value="76" key="DIALOG_X_ORIGIN"/>
 		<item value="55" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="API Tools"/>
+			<item value="Code Recommenders"/>
 			<item value="General"/>
-			<item value="Debug"/>
-			<item value="Git"/>
-			<item value="Java"/>
 			<item value="Java Browsing"/>
-			<item value="JavaServer Faces"/>
-			<item value="Mylyn"/>
-			<item value="Plug-in Development"/>
-			<item value="Remote Systems"/>
-			<item value="Terminal"/>
+			<item value="Web Services"/>
 		</list>
 	</section>
 </section>
