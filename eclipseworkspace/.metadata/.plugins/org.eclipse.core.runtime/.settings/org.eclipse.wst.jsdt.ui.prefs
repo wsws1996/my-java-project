@@ -1,3 +1,6 @@
+AbstractTextEditor.Color.Background.SystemDefault=true
+AbstractTextEditor.Color.Foreground.SystemDefault=true
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=true
 content_assist_autoactivation=true
 content_assist_autoactivation_delay=0
 content_assist_autoactivation_triggers_java=.qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM

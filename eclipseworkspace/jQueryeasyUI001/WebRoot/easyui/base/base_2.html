@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery easyui 进度条..</title>
+<script type="text/javascript" charset="utf-8"
+	src="../../js/jquery.min.js"></script>
+<script src="../../js/jquery.easyui.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<link rel="stylesheet" href="../../js/themes/default/easyui.css"
+	type="text/css" media="screen" title="no title" charset="utf-8" />
+<link rel="stylesheet" href="../../js/themes/icon.css" type="text/css"
+	media="screen" title="no title" charset="utf-8" />
+<script type="text/javascript">
+	$(function() {
+		$("#loadbutton").bind("click", function() {
+			loadprogress();
+		});
+
+		var i = 1;
+
+		function loadprogress() {
+			$("#progressId").progressbar({
+				value : i++
+			});
+			window.setTimeout(function() {
+				loadprogress();
+			}, 10);
+		}
+	});
+</script>
+</head>
+<body>
+	<div id="progressId" style="width: 400px;"></div>
+
+	<input type="button" id="loadbutton" value="加载">
+</body>
+</html>

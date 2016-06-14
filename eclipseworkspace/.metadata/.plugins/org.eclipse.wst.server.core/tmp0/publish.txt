@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Fri Jun 10 22:06:39 CST 2016
-org.eclipse.jst.jee.server\:ws_02_mobile_server=/E/developerpackage/apache-tomcat-8.0.28/webapps/ws_02_mobile_server
+#Tue Jun 14 23:37:12 CST 2016
 org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/purchasingflow/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow/WEB-INF/lib/log4j-core-2.0-beta9.jar
+org.eclipse.jst.jee.server\:jQueryeasyUI001=/E/developerpackage/apache-tomcat-8.0.28/webapps/jQueryeasyUI001

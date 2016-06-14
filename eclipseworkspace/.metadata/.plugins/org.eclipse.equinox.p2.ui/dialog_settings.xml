@@ -8,7 +8,7 @@
 		<item value="800" key="ListSashWeight"/>
 	</section>
 	<section name="AvailableIUsPage">
-		<item value="1" key="AvailableViewType"/>
+		<item value="3" key="AvailableViewType"/>
 		<item value="800" key="AvailableListSashWeight"/>
 		<item value="true" key="HideInstalledContent"/>
 		<item value="328" key="AvailableVersionColumnWidth"/>
@@ -17,6 +17,13 @@
 		<item value="true" key="ResolveInstallWithAllSites"/>
 		<item value="600" key="AvailableNameColumnWidth"/>
 		<item value="false" key="FilterOnEnv"/>
+	</section>
+	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UninstallWizard.WizardSettings">
+		<item value="700" key="DIALOG_WIDTH"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="661" key="DIALOG_HEIGHT"/>
+		<item value="36" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.ResolutionResultsPage">
 		<item value="200" key="DetailsSashWeight"/>
@@ -28,7 +35,7 @@
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.WizardSettings">
 		<item value="940" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="768" key="DIALOG_HEIGHT"/>
+		<item value="760" key="DIALOG_HEIGHT"/>
 		<item value="300" key="DIALOG_X_ORIGIN"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
