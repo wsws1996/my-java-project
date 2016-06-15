@@ -6,22 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="menu" key="selection"/>
+		<item value="&quot;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&quot;"/>
+			<item value="&lt;a id=&quot;btn&quot; href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; &quot;&gt;搜索&lt;/a&gt;"/>
 			<item value="menu"/>
 			<item value="MobileCodeWSSoap"/>
 			<item value="&apos;"/>
 			<item value="namespace"/>
 			<item value="settlement"/>
 			<item value="identityService"/>
-			<item value="ordersave"/>
-			<item value="bpmn"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&apos;"/>
 			<item value="\&quot;"/>
 			<item value="storage"/>
 			<item value="png"/>
@@ -33,7 +34,7 @@
 		<item value="327" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="463" key="DIALOG_HEIGHT"/>
-		<item value="603" key="DIALOG_X_ORIGIN"/>
-		<item value="208" key="DIALOG_Y_ORIGIN"/>
+		<item value="932" key="DIALOG_X_ORIGIN"/>
+		<item value="165" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
