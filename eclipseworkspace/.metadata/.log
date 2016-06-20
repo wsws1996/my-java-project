@@ -10936,3 +10936,6 @@ java.io.FileNotFoundException: /E/developerpackage/mavenRepository/com/octo/capt
 
 !ENTRY org.eclipse.ui 4 4 2016-06-20 23:24:52.044
 !MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.jst.jsp.ui.refactor.move
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-06-20 23:30:16.137
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
