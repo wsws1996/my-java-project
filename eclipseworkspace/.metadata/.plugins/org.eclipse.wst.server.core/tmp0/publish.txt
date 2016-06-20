@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Thu Jun 16 00:09:37 CST 2016
-org.eclipse.jst.jee.server\:jQueryeasyUI001=/E/developerpackage/apache-tomcat-8.0.28/webapps/jQueryeasyUI001
+#Mon Jun 20 22:11:07 CST 2016
+org.eclipse.jst.j2ee.server\:babasport=/E/developerpackage/apache-tomcat-8.0.28/webapps/babasport
+org.eclipse.jst.j2ee.server\:/binary\:/E/developerpackage/mavenRepository/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/babasport/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/purchasingflow/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/purchasingflow/WEB-INF/lib/log4j-core-2.0-beta9.jar
