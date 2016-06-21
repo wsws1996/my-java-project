@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wang.ws.area.server.service.AreaServiceInterface"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.wang.ws.area.server.po.Area"/>
 <fullyQualifiedTypeName name="org.dom4j.Document"/>
 <fullyQualifiedTypeName name="javax.lang.model.element.Element"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="redis.clients.jedis.ShardedJedis"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="com.danga.MemCached.MemCachedClient"/>
+<fullyQualifiedTypeName name="com.danga.MemCached.SockIOPool"/>
 </qualifiedTypeNameHistroy>
