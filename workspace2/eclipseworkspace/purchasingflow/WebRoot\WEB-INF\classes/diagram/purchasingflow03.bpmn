@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="purchasingflow" name="采购流程" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="createOrder" name="创建采购单" activiti:assignee="zhangsan"></userTask>
+    <userTask id="secondAudit" name="总经理审核" activiti:assignee="wangwu"></userTask>
+    <userTask id="thirdAudit" name="财务审核" activiti:assignee="zhaoliu"></userTask>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="createOrder"></sequenceFlow>
+    <sequenceFlow id="flow5" sourceRef="thirdAudit" targetRef="endevent1"></sequenceFlow>
+    <userTask id="firstAudit" name="部门经理审核" activiti:assignee="lisi"></userTask>
+    <sequenceFlow id="flow6" name="采购金额大于等于10000元" sourceRef="firstAudit" targetRef="secondAudit">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${order.price>=10000}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow8" name="采购金额小于10000元" sourceRef="firstAudit" targetRef="thirdAudit">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${order.price<10000}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow9" sourceRef="createOrder" targetRef="firstAudit"></sequenceFlow>
+    <sequenceFlow id="flow10" sourceRef="secondAudit" targetRef="thirdAudit"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_purchasingflow">
+    <bpmndi:BPMNPlane bpmnElement="purchasingflow" id="BPMNPlane_purchasingflow">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="145.0" y="23.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="createOrder" id="BPMNShape_createOrder">
+        <omgdc:Bounds height="55.0" width="105.0" x="110.0" y="80.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="secondAudit" id="BPMNShape_secondAudit">
+        <omgdc:Bounds height="55.0" width="105.0" x="480.0" y="168.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="thirdAudit" id="BPMNShape_thirdAudit">
+        <omgdc:Bounds height="55.0" width="105.0" x="110.0" y="260.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="145.0" y="380.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="firstAudit" id="BPMNShape_firstAudit">
+        <omgdc:Bounds height="55.0" width="105.0" x="110.0" y="170.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="162.0" y="58.0"></omgdi:waypoint>
+        <omgdi:waypoint x="162.0" y="80.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="162.0" y="315.0"></omgdi:waypoint>
+        <omgdi:waypoint x="162.0" y="380.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="215.0" y="197.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="195.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="51.0" width="100.0" x="360.0" y="172.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="162.0" y="225.0"></omgdi:waypoint>
+        <omgdi:waypoint x="162.0" y="260.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="51.0" width="100.0" x="162.0" y="225.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="162.0" y="135.0"></omgdi:waypoint>
+        <omgdi:waypoint x="162.0" y="170.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="532.0" y="223.0"></omgdi:waypoint>
+        <omgdi:waypoint x="162.0" y="260.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
