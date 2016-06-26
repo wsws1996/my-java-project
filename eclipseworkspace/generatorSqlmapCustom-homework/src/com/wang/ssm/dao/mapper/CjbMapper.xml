@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wang.ssm.dao.mapper.CjbMapper" >
+  <resultMap id="BaseResultMap" type="com.wang.ssm.po.Cjb" >
+    <result column="XH" property="xh" jdbcType="CHAR" />
+    <result column="KCH" property="kch" jdbcType="CHAR" />
+    <result column="CJ" property="cj" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    XH, KCH, CJ
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wang.ssm.po.CjbExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cjb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wang.ssm.po.CjbExample" >
+    delete from cjb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wang.ssm.po.Cjb" >
+    insert into cjb (XH, KCH, CJ)
+    values (#{xh,jdbcType=CHAR}, #{kch,jdbcType=CHAR}, #{cj,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.ssm.po.Cjb" >
+    insert into cjb
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xh != null" >
+        XH,
+      </if>
+      <if test="kch != null" >
+        KCH,
+      </if>
+      <if test="cj != null" >
+        CJ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xh != null" >
+        #{xh,jdbcType=CHAR},
+      </if>
+      <if test="kch != null" >
+        #{kch,jdbcType=CHAR},
+      </if>
+      <if test="cj != null" >
+        #{cj,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wang.ssm.po.CjbExample" resultType="java.lang.Integer" >
+    select count(*) from cjb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cjb
+    <set >
+      <if test="record.xh != null" >
+        XH = #{record.xh,jdbcType=CHAR},
+      </if>
+      <if test="record.kch != null" >
+        KCH = #{record.kch,jdbcType=CHAR},
+      </if>
+      <if test="record.cj != null" >
+        CJ = #{record.cj,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update cjb
+    set XH = #{record.xh,jdbcType=CHAR},
+      KCH = #{record.kch,jdbcType=CHAR},
+      CJ = #{record.cj,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

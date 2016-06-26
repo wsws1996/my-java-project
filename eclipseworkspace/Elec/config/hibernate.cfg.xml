@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/elec?useUnicode=true&amp;characterEncoding=utf8
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.autocommit">true</property>
+
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- 添加二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">
+			true
+		</property>
+		<!-- 二级缓存供应商 -->
+		<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property>
+		<!-- 启用查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+
+		<mapping resource="org/wang/elec/domain/ElecText.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecCommonMsg.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecCommonMsgContent.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecSystemDDL.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecUser.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecUserFile.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecPopedom.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecRole.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecRolePopedom.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecExportFields.hbm.xml" />
+		<mapping resource="org/wang/elec/domain/ElecFileUpload.hbm.xml" />
+
+		<!-- 指定使用二级缓存的类放在mapping的下面 -->
+		<!-- 配置类级别的二级缓存 -->
+		<class-cache usage="read-write" class="org.wang.elec.domain.ElecSystemDDL" />
+	</session-factory>
+</hibernate-configuration>

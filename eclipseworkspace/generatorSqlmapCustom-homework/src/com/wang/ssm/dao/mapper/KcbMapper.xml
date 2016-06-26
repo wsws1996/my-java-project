@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wang.ssm.dao.mapper.KcbMapper" >
+  <resultMap id="BaseResultMap" type="com.wang.ssm.po.Kcb" >
+    <result column="KCH" property="kch" jdbcType="CHAR" />
+    <result column="KCM" property="kcm" jdbcType="CHAR" />
+    <result column="KKXQ" property="kkxq" jdbcType="INTEGER" />
+    <result column="XS" property="xs" jdbcType="INTEGER" />
+    <result column="XF" property="xf" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    KCH, KCM, KKXQ, XS, XF
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wang.ssm.po.KcbExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from kcb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wang.ssm.po.KcbExample" >
+    delete from kcb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wang.ssm.po.Kcb" >
+    insert into kcb (KCH, KCM, KKXQ, XS, 
+      XF)
+    values (#{kch,jdbcType=CHAR}, #{kcm,jdbcType=CHAR}, #{kkxq,jdbcType=INTEGER}, #{xs,jdbcType=INTEGER}, 
+      #{xf,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.ssm.po.Kcb" >
+    insert into kcb
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="kch != null" >
+        KCH,
+      </if>
+      <if test="kcm != null" >
+        KCM,
+      </if>
+      <if test="kkxq != null" >
+        KKXQ,
+      </if>
+      <if test="xs != null" >
+        XS,
+      </if>
+      <if test="xf != null" >
+        XF,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="kch != null" >
+        #{kch,jdbcType=CHAR},
+      </if>
+      <if test="kcm != null" >
+        #{kcm,jdbcType=CHAR},
+      </if>
+      <if test="kkxq != null" >
+        #{kkxq,jdbcType=INTEGER},
+      </if>
+      <if test="xs != null" >
+        #{xs,jdbcType=INTEGER},
+      </if>
+      <if test="xf != null" >
+        #{xf,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wang.ssm.po.KcbExample" resultType="java.lang.Integer" >
+    select count(*) from kcb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update kcb
+    <set >
+      <if test="record.kch != null" >
+        KCH = #{record.kch,jdbcType=CHAR},
+      </if>
+      <if test="record.kcm != null" >
+        KCM = #{record.kcm,jdbcType=CHAR},
+      </if>
+      <if test="record.kkxq != null" >
+        KKXQ = #{record.kkxq,jdbcType=INTEGER},
+      </if>
+      <if test="record.xs != null" >
+        XS = #{record.xs,jdbcType=INTEGER},
+      </if>
+      <if test="record.xf != null" >
+        XF = #{record.xf,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update kcb
+    set KCH = #{record.kch,jdbcType=CHAR},
+      KCM = #{record.kcm,jdbcType=CHAR},
+      KKXQ = #{record.kkxq,jdbcType=INTEGER},
+      XS = #{record.xs,jdbcType=INTEGER},
+      XF = #{record.xf,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

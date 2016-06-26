@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wang.ssm.dao.mapper.XsbMapper" >
+  <resultMap id="BaseResultMap" type="com.wang.ssm.po.Xsb" >
+    <result column="XH" property="xh" jdbcType="CHAR" />
+    <result column="XM" property="xm" jdbcType="CHAR" />
+    <result column="XB" property="xb" jdbcType="TINYINT" />
+    <result column="CSSJ" property="cssj" jdbcType="TIMESTAMP" />
+    <result column="ZY" property="zy" jdbcType="CHAR" />
+    <result column="ZXF" property="zxf" jdbcType="INTEGER" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wang.ssm.po.Xsb" extends="BaseResultMap" >
+    <result column="ZP" property="zp" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    XH, XM, XB, CSSJ, ZY, ZXF, BZ
+  </sql>
+  <sql id="Blob_Column_List" >
+    ZP
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.wang.ssm.po.XsbExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from xsb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wang.ssm.po.XsbExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xsb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wang.ssm.po.XsbExample" >
+    delete from xsb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wang.ssm.po.Xsb" >
+    insert into xsb (XH, XM, XB, CSSJ, 
+      ZY, ZXF, BZ, ZP
+      )
+    values (#{xh,jdbcType=CHAR}, #{xm,jdbcType=CHAR}, #{xb,jdbcType=TINYINT}, #{cssj,jdbcType=TIMESTAMP}, 
+      #{zy,jdbcType=CHAR}, #{zxf,jdbcType=INTEGER}, #{bz,jdbcType=VARCHAR}, #{zp,jdbcType=LONGVARBINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.ssm.po.Xsb" >
+    insert into xsb
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xh != null" >
+        XH,
+      </if>
+      <if test="xm != null" >
+        XM,
+      </if>
+      <if test="xb != null" >
+        XB,
+      </if>
+      <if test="cssj != null" >
+        CSSJ,
+      </if>
+      <if test="zy != null" >
+        ZY,
+      </if>
+      <if test="zxf != null" >
+        ZXF,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="zp != null" >
+        ZP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xh != null" >
+        #{xh,jdbcType=CHAR},
+      </if>
+      <if test="xm != null" >
+        #{xm,jdbcType=CHAR},
+      </if>
+      <if test="xb != null" >
+        #{xb,jdbcType=TINYINT},
+      </if>
+      <if test="cssj != null" >
+        #{cssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zy != null" >
+        #{zy,jdbcType=CHAR},
+      </if>
+      <if test="zxf != null" >
+        #{zxf,jdbcType=INTEGER},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="zp != null" >
+        #{zp,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wang.ssm.po.XsbExample" resultType="java.lang.Integer" >
+    select count(*) from xsb
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update xsb
+    <set >
+      <if test="record.xh != null" >
+        XH = #{record.xh,jdbcType=CHAR},
+      </if>
+      <if test="record.xm != null" >
+        XM = #{record.xm,jdbcType=CHAR},
+      </if>
+      <if test="record.xb != null" >
+        XB = #{record.xb,jdbcType=TINYINT},
+      </if>
+      <if test="record.cssj != null" >
+        CSSJ = #{record.cssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.zy != null" >
+        ZY = #{record.zy,jdbcType=CHAR},
+      </if>
+      <if test="record.zxf != null" >
+        ZXF = #{record.zxf,jdbcType=INTEGER},
+      </if>
+      <if test="record.bz != null" >
+        BZ = #{record.bz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zp != null" >
+        ZP = #{record.zp,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update xsb
+    set XH = #{record.xh,jdbcType=CHAR},
+      XM = #{record.xm,jdbcType=CHAR},
+      XB = #{record.xb,jdbcType=TINYINT},
+      CSSJ = #{record.cssj,jdbcType=TIMESTAMP},
+      ZY = #{record.zy,jdbcType=CHAR},
+      ZXF = #{record.zxf,jdbcType=INTEGER},
+      BZ = #{record.bz,jdbcType=VARCHAR},
+      ZP = #{record.zp,jdbcType=LONGVARBINARY}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update xsb
+    set XH = #{record.xh,jdbcType=CHAR},
+      XM = #{record.xm,jdbcType=CHAR},
+      XB = #{record.xb,jdbcType=TINYINT},
+      CSSJ = #{record.cssj,jdbcType=TIMESTAMP},
+      ZY = #{record.zy,jdbcType=CHAR},
+      ZXF = #{record.zxf,jdbcType=INTEGER},
+      BZ = #{record.bz,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

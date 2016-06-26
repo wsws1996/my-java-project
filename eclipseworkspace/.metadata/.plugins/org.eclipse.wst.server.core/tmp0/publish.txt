@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Wed Jun 22 12:38:21 CST 2016
-org.eclipse.jst.j2ee.server\:babasport=/E/developerpackage/apache-tomcat-8.0.28/wtpwebapps/babasport
-org.eclipse.jst.j2ee.server\:/binary\:/E/developerpackage/heimarepository/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar=/E/developerpackage/apache-tomcat-8.0.28/wtpwebapps/babasport/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
+#Sun Jun 26 19:37:26 CST 2016
+org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/Student/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/Student/WEB-INF/lib/log4j-core-2.0-beta9.jar
+org.eclipse.jst.jee.server\:Student=/E/developerpackage/apache-tomcat-8.0.28/webapps/Student
+org.eclipse.jst.jee.server\:jQueryeasyUI001=/E/developerpackage/apache-tomcat-8.0.28/webapps/jQueryeasyUI001
