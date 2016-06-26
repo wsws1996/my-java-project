@@ -32,6 +32,21 @@ public class StudentInfoAction {
 		return xsbs;
 	}
 
+	@RequestMapping("editStudent")
+	public void editStudent(Xsb xsb) throws Exception {
+		studentInfoService.updateStudent(xsb);
+	}
+
+	@RequestMapping("delStudent")
+	public void delStudent(String xh) throws Exception {
+		studentInfoService.deleteStudent(xh);
+	}
+
+	@RequestMapping("addStudent")
+	public void addStudent(Xsb xsb) throws Exception {
+		studentInfoService.insertStudent(xsb);
+	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

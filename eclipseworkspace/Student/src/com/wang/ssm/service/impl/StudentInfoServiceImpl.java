@@ -62,27 +62,29 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 			criteria.andZxfGreaterThanOrEqualTo(nzxf1);
 		}
 		List<Xsb> xsbs = xsbMapper.selectByExample(xsbExample);
-		for (Xsb xsb : xsbs) {
-		}
+
 		return xsbs;
 	}
 
 	@Override
 	public void insertStudent(Xsb student) throws Exception {
-		// TODO Auto-generated method stub
-
+		xsbMapper.insert(student);
 	}
 
 	@Override
 	public void updateStudent(Xsb student) throws Exception {
-		// TODO Auto-generated method stub
-
+		XsbExample xsbExample = new XsbExample();
+		XsbExample.Criteria criteria = xsbExample.createCriteria();
+		criteria.andXhEqualTo(student.getXh());
+		xsbMapper.updateByExampleSelective(student, xsbExample);
 	}
 
 	@Override
 	public void deleteStudent(String xh) throws Exception {
-		// TODO Auto-generated method stub
-
+		XsbExample xsbExample = new XsbExample();
+		XsbExample.Criteria criteria = xsbExample.createCriteria();
+		criteria.andXhEqualTo(xh);
+		xsbMapper.deleteByExample(xsbExample);
 	}
 
 }

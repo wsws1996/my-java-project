@@ -33,7 +33,20 @@
 				$("#jeasyUItree")
 						.tree(
 								{
-									url : "treedata.json",
+									data:[
+									  	{
+											"id": "info",
+											"text": "学生信息管理",
+											"iconCls": "icon-info",
+											"children": [
+												{
+													"id": "queryStudentUI",
+													"text": "学生信息查询",
+													"iconCls": "icon-search"
+												}
+											]
+										}
+									],
 									dnd : true,
 									animate : true,
 									lines : true,
