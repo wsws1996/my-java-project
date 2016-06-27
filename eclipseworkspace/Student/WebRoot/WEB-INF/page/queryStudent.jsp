@@ -204,52 +204,51 @@
 			style="width: 100px;"> <a href="javascript:FindData()"
 			class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
 	</form>
-		<table id="mytable" style="width: 100%"></table>
-		<div id="dlg" class="easyui-dialog"
-			style="width: 400px; height: 280px; padding: 10px 20px;"
-			closed="true" buttons="#dlg-buttons">
-			<div class="ftitle">学生信息</div>
-			<form id="fm" method="post" action="">
-				<div class="fitem">
-					<label>学号：</label> <input name="xh" id="xh"
-						class="easyui-validatebox" type="text" required="true" />
-				</div>
-				<div class="fitem">
-					<label>姓名：</label> <input name="xm" class="easyui-validatebox"
-						type="text" required="true" />
-				</div>
-				<div class="fitem">
-					<label> 性别：</label> <input name="xb" type="radio" value="0"
-						checked="checked" />女 <input name="xb" type="radio" value="1" />男
-				</div>
-				<div class="fitem">
-					<label>出生时间：</label> <input id="dd" type="text"
-						class="easyui-datebox" required="required" name="cssj"
-						value="row.cssj"></input>
-				</div>
-				<div class="fitem">
-					<label>专业：</label> <select id="cc" class="easyui-combobox"
-						name="zy" style="width: 100px;">
-						<option value="">请选择</option>
-						<option value="计算机">计算机</option>
-						<option value="通信工程">通信工程</option>
-						<option value="网络工程">网络工程</option>
-					</select>
-				</div>
-				<div class="fitem">
-					<label>总学分：</label> <input id="vv" class="easyui-validatebox"
-						data-options="required:true" name="zxf" />
-				</div>
-				<div class="fitem">
-					<label>备注：</label> <input class="easyui-textbox" name="bz">
-				</div>
-			</form>
-		</div>
+	<table id="mytable" style="width: 100%"></table>
+	<div id="dlg" class="easyui-dialog"
+		style="width: 400px; height: 280px; padding: 10px 20px;" closed="true"
+		buttons="#dlg-buttons">
+		<div class="ftitle">学生信息</div>
+		<form id="fm" method="post" action="">
+			<div class="fitem">
+				<label>学号：</label> <input name="xh" id="xh"
+					class="easyui-validatebox" type="text" required="true" />
+			</div>
+			<div class="fitem">
+				<label>姓名：</label> <input name="xm" class="easyui-validatebox"
+					type="text" required="true" />
+			</div>
+			<div class="fitem">
+				<label> 性别：</label> <input name="xb" type="radio" value="0"
+					checked="checked" />女 <input name="xb" type="radio" value="1" />男
+			</div>
+			<div class="fitem">
+				<label>出生时间：</label> <input id="dd" type="text"
+					class="easyui-datebox" required="required" name="cssj"
+					value="row.cssj"></input>
+			</div>
+			<div class="fitem">
+				<label>专业：</label> <select id="cc" class="easyui-combobox" name="zy"
+					style="width: 100px;">
+					<option value="">请选择</option>
+					<option value="计算机">计算机</option>
+					<option value="通信工程">通信工程</option>
+					<option value="网络工程">网络工程</option>
+				</select>
+			</div>
+			<div class="fitem">
+				<label>总学分：</label> <input id="vv" class="easyui-validatebox"
+					data-options="required:true" name="zxf" />
+			</div>
+			<div class="fitem">
+				<label>备注：</label> <input class="easyui-textbox" name="bz">
+			</div>
+		</form>
+	</div>
 
-		<div id="dlg-buttons">
-			<a href="javascript:void(0)" class="easyui-linkbutton"
-				onclick="submitForm()" iconcls="icon-save">保存</a> <a
-				href="javascript:void(0)" class="easyui-linkbutton"
-				onclick="javascript: $('#dlg').dialog('close')"
-				iconcls="icon-cancel">取消</a>
-		</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			onclick="submitForm()" iconcls="icon-save">保存</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			onclick="javascript: $('#dlg').dialog('close')" iconcls="icon-cancel">取消</a>
+	</div>

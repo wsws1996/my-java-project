@@ -1,5 +1,2 @@
 #Tomcat publish data
-#Mon Jun 27 22:48:16 CST 2016
-org.eclipse.jst.jee.server\:/binary\:/E/myproject/my-java-project/eclipseworkspace/Student/WebRoot/WEB-INF/lib/log4j-core-2.0-beta9.jar=/E/developerpackage/apache-tomcat-8.0.28/webapps/Student/WEB-INF/lib/log4j-core-2.0-beta9.jar
-org.eclipse.jst.jee.server\:Student=/E/developerpackage/apache-tomcat-8.0.28/webapps/Student
-org.eclipse.jst.jee.server\:jQueryeasyUI001=/E/developerpackage/apache-tomcat-8.0.28/webapps/jQueryeasyUI001
+#Mon Jun 27 23:37:30 CST 2016

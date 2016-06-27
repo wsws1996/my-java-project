@@ -28,7 +28,7 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 			criteria.andXhEqualTo(student.getXh());
 		}
 		if (StringUtils.isNotBlank(student.getXm())) {
-			criteria.andXmLike(student.getXm());
+			criteria.andXmLike("%"+student.getXm()+"%");
 		}
 		if (student.getXb() != null) {
 			criteria.andXbEqualTo(student.getXb());
