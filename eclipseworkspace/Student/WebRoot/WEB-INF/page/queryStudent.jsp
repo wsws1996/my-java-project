@@ -25,6 +25,24 @@
 }
 </style>
 <script type="text/javascript">
+	function queryScore() {
+		var row = $("#mytable").datagrid("getSelected");
+		if (row) {
+			var tabs = $("#center_tab").tabs("getTab", "成绩详情");
+			if (tabs) {
+				$("#center_tab").tabs("close", "成绩详情");
+
+			}
+			$("#center_tab")
+					.tabs(
+							'add',
+							{
+								title : "成绩详情",
+								closable : true,
+								href : "${pageContext.request.contextPath }/queryScoreUI.action"
+							});
+		}
+	}
 	function editStudent() {
 		$('#fm').form({
 			url : "${pageContext.request.contextPath }/editStudent.action",
@@ -84,15 +102,15 @@
 						"checkbox" : false
 					}, {
 						title : "学号",
-						width : 150,
+						width : 170,
 						field : 'xh'
 					}, {
 						title : "姓名",
-						width : 100,
+						width : 120,
 						field : 'xm'
 					}, {
 						title : "性别",
-						width : 80,
+						width : 100,
 						field : 'xb',
 						formatter : function(value, row, index) {
 							if (value == "0") {
@@ -104,23 +122,19 @@
 						}
 					}, {
 						title : "出生时间",
-						width : 200,
+						width : 220,
 						field : 'cssj'
 					}, {
 						title : "专业",
-						width : 100,
+						width : 120,
 						field : 'zy'
 					}, {
 						title : "总学分",
-						width : 100,
+						width : 120,
 						field : 'zxf'
 					}, {
-						title : "成绩",
-						width : 100,
-						field : 'cj'
-					}, {
 						title : "备注",
-						width : 200,
+						width : 180,
 						field : 'bz'
 					}, {
 						title : "",
@@ -131,6 +145,12 @@
 					fitColumns : true,
 					data : eval('(' + data + ')'),
 					toolbar : [ {
+						text : "查看成绩",
+						iconCls : 'icon-tip',
+						handler : function() {
+							queryScore();
+						}
+					}, {
 						text : "修改",
 						iconCls : 'icon-edit',
 						handler : function() {
@@ -184,12 +204,11 @@
 			style="width: 100px;"> <a href="javascript:FindData()"
 			class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
 	</form>
-	<div>
 		<table id="mytable" style="width: 100%"></table>
 		<div id="dlg" class="easyui-dialog"
 			style="width: 400px; height: 280px; padding: 10px 20px;"
 			closed="true" buttons="#dlg-buttons">
-			<div class="ftitle">信息编辑</div>
+			<div class="ftitle">学生信息</div>
 			<form id="fm" method="post" action="">
 				<div class="fitem">
 					<label>学号：</label> <input name="xh" id="xh"

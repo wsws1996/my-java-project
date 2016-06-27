@@ -6,7 +6,9 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.wang.ssm.dao.mapper.CjbMapper;
 import com.wang.ssm.dao.mapper.XsbMapper;
+import com.wang.ssm.po.CjbExample;
 import com.wang.ssm.po.Xsb;
 import com.wang.ssm.po.XsbExample;
 import com.wang.ssm.service.StudentInfoService;
@@ -15,6 +17,8 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 
 	@Autowired
 	XsbMapper xsbMapper;
+	@Autowired
+	CjbMapper cjbMapper;
 
 	@Override
 	public List<Xsb> findStudent(Xsb student, Date startDate, Date endDate, String zxf1, String zxf2) throws Exception {
@@ -61,6 +65,7 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 
 			criteria.andZxfGreaterThanOrEqualTo(nzxf1);
 		}
+		xsbExample.setOrderByClause("xh");
 		List<Xsb> xsbs = xsbMapper.selectByExample(xsbExample);
 
 		return xsbs;
@@ -68,15 +73,24 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 
 	@Override
 	public void insertStudent(Xsb student) throws Exception {
-		xsbMapper.insert(student);
+		if (StringUtils.isNoneBlank(student.getXh())) {
+			XsbExample xsbExample = new XsbExample();
+			XsbExample.Criteria criteria = xsbExample.createCriteria();
+			criteria.andXhEqualTo(student.getXh());
+			if (xsbMapper.countByExample(xsbExample) == 0) {
+				xsbMapper.insert(student);
+			}
+		}
 	}
 
 	@Override
 	public void updateStudent(Xsb student) throws Exception {
-		XsbExample xsbExample = new XsbExample();
-		XsbExample.Criteria criteria = xsbExample.createCriteria();
-		criteria.andXhEqualTo(student.getXh());
-		xsbMapper.updateByExampleSelective(student, xsbExample);
+		if (StringUtils.isNotBlank(student.getXh())) {
+			XsbExample xsbExample = new XsbExample();
+			XsbExample.Criteria criteria = xsbExample.createCriteria();
+			criteria.andXhEqualTo(student.getXh());
+			xsbMapper.updateByExampleSelective(student, xsbExample);
+		}
 	}
 
 	@Override
@@ -85,6 +99,10 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 		XsbExample.Criteria criteria = xsbExample.createCriteria();
 		criteria.andXhEqualTo(xh);
 		xsbMapper.deleteByExample(xsbExample);
+		CjbExample cjbExample = new CjbExample();
+		CjbExample.Criteria criteria2 = cjbExample.createCriteria();
+		criteria2.andXhEqualTo(xh);
+		cjbMapper.deleteByExample(cjbExample);
 	}
 
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wang.ssm.dao.mapper.ScoreMapper">
+	<resultMap type="com.wang.ssm.po.Score" id="BaseResultMap">
+		<result column="KCH" property="kch" jdbcType="CHAR" />
+		<result column="KCM" property="kcm" jdbcType="CHAR" />
+		<result column="XF" property="xf" jdbcType="INTEGER" />
+		<result column="CJ" property="cj" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="selectByXh" resultMap="BaseResultMap" parameterType="string">
+		select c.kch,kcm,xf,cj from cjb c,kcb k where c.kch=k.kch and
+		c.xh=#{xh}
+	</select>
+</mapper>

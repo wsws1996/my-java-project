@@ -20,7 +20,7 @@ public class StudentInfoAction {
 	@Autowired
 	private StudentInfoService studentInfoService;
 
-	@RequestMapping("/queryStudentUI")
+	@RequestMapping("queryStudentUI")
 	public String queryStudentUI() throws Exception {
 		return "queryStudent";
 	}

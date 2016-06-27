@@ -33,20 +33,16 @@
 				$("#jeasyUItree")
 						.tree(
 								{
-									data:[
-									  	{
-											"id": "info",
-											"text": "学生信息管理",
-											"iconCls": "icon-info",
-											"children": [
-												{
-													"id": "queryStudentUI",
-													"text": "学生信息查询",
-													"iconCls": "icon-search"
-												}
-											]
-										}
-									],
+									data : [ {
+										"id" : "info",
+										"text" : "学生信息管理",
+										"iconCls" : "icon-info",
+										"children" : [ {
+											"id" : "queryStudentUI",
+											"text" : "学生信息查询",
+											"iconCls" : "icon-search"
+										} ]
+									} ],
 									dnd : true,
 									animate : true,
 									lines : true,
@@ -70,7 +66,8 @@
 																title : node.text,
 																closable : true,
 																href : "${pageContext.request.contextPath }/"
-																		+ node.id+".action"
+																		+ node.id
+																		+ ".action"
 															});
 										}
 									}
