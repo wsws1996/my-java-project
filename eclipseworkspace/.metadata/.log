@@ -11,3 +11,19 @@ java.lang.NullPointerException
 	at org.eclipse.wst.server.discovery.Discovery.refreshServerAdapters(Discovery.java:66)
 	at org.eclipse.wst.server.ui.ServerUIUtil$1RefreshJob.run(ServerUIUtil.java:107)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2016-09-27 00:52:23.185 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-09-27 00:52:54.275
+!MESSAGE The artifact freemarker:freemarker:jar:2.3.9 has been relocated to org.freemarker:freemarker:jar:2.3.9
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-09-27 00:52:55.343
+!MESSAGE The artifact freemarker:freemarker:jar:2.3.9 has been relocated to org.freemarker:freemarker:jar:2.3.9
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-09-27 00:52:59.004
+!MESSAGE The artifact freemarker:freemarker:jar:2.3.9 has been relocated to org.freemarker:freemarker:jar:2.3.9
