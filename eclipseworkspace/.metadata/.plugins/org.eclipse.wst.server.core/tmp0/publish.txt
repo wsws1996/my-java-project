@@ -1,2 +1,4 @@
 #Tomcat publish data
-#Mon Jun 27 23:37:30 CST 2016
+#Tue Sep 27 00:48:26 CST 2016
+org.eclipse.jst.j2ee.server\:babasport=/E/developerpackage/apache-tomcat-8.0.28/wtpwebapps/babasport
+org.eclipse.jst.j2ee.server\:/binary\:/E/developerpackage/.babasportm2/repository/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar=/E/developerpackage/apache-tomcat-8.0.28/wtpwebapps/babasport/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
