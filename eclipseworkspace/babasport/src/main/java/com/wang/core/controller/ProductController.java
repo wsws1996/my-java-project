@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
-public class CenterController {
+public class ProductController {
 	@RequestMapping(value = "/test/springmvc.do")
 	public String test(String name, Date birthday) {
 		System.out.println(name + ":" + birthday);
