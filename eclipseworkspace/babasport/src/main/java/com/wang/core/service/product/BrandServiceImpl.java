@@ -1,6 +1,5 @@
 package com.wang.core.service.product;
 
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -26,11 +25,11 @@ public class BrandServiceImpl implements BrandService {
 
 	@Transactional(readOnly = true)
 	public Pagination getBrandListWithPage(Brand brand) {
-		//1.起始行 startRow = (pageNo - 1)*pageSize
-		//2.每页数
-		//3.总记录数
-		Pagination pagination = new Pagination((brand.getPageNo() - 1) * 5, 5, brandDao.getBrandCount(brand));
-		//Brand集合
+		// 1.起始行 startRow = (pageNo - 1)*pageSize
+		// 2.每页数
+		// 3.总记录数
+		Pagination pagination = new Pagination(brand.getPageNo(), brand.getPageSize(), brandDao.getBrandCount(brand));
+		// Brand集合
 		pagination.setList(brandDao.getBrandListWithPage(brand));
 
 		return pagination;

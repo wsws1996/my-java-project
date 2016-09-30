@@ -1,5 +1,6 @@
 Console.highWaterMark=1000007999
 Console.lowWaterMark=999999999
+DEBUG.consoleOpenOnErr=false
 DEBUG.consoleOpenOnOut=false
 eclipse.preferences.version=1
 org.eclipse.debug.ui.BreakpointView+org.eclipse.debug.ui.ShowSupportedBreakpointsAction=true

@@ -25,20 +25,39 @@ public class BrandController {
 
 	// 品牌列表页面
 	@RequestMapping(value = "/brand/list.do")
-	public String list(String name, Integer isDisplay, Integer pageNo,ModelMap model) {
+	public String list(String name, Integer isDisplay, Integer pageNo, ModelMap model) {
+		// 参数
+		StringBuilder params = new StringBuilder();
 		Brand brand = new Brand();
 		// 判断传进来的名称是否为null并判断是否为空串
 		if (null != name && StringUtils.isNotBlank(name)) {
 			brand.setName(name);
+			params.append("name=").append(name);
 		}
-		brand.setIsDisplay(isDisplay);
-
+		if (null != isDisplay) {
+			brand.setIsDisplay(isDisplay);
+			params.append("&").append("isDisplay=").append(isDisplay);
+		} else {
+			brand.setIsDisplay(1);
+			params.append("&").append("isDisplay=").append(1);
+		}
 		// 页号
-		//如果页号为null或小于1，置为1
+		// 如果页号为null或小于1，置为1
 		brand.setPageNo(Pagination.cpn(pageNo));
-		//分页对象
+
+		// 每页数
+		brand.setPageSize(5);
+
+		// 分页对象
 		Pagination pagination = brandService.getBrandListWithPage(brand);
+
+		// 分页展示
+		String url = "/brand/list.do";
+		pagination.pageView(url, params.toString());
+
 		model.addAttribute("pagination", pagination);
+		model.addAttribute("name", name);
+		model.addAttribute("isDisplay", isDisplay);
 		return "brand/list";
 	}
 }

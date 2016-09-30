@@ -27,7 +27,7 @@
 			</if>
 		</where>
 		order by id desc
-		limit 0,5
+		limit #{startRow},#{pageSize}
 	</select>
 	
 	<!-- 查询总记录数 -->
