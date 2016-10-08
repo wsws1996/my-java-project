@@ -26,4 +26,8 @@
 		<property name="prefix" value="/WEB-INF/back_page/" />
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	<!-- 上传图片 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1048576"></property>
+	</bean>
 </beans>

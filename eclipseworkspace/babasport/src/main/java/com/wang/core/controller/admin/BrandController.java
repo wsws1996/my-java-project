@@ -1,5 +1,7 @@
 package com.wang.core.controller.admin;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,5 +61,33 @@ public class BrandController {
 		model.addAttribute("name", name);
 		model.addAttribute("isDisplay", isDisplay);
 		return "brand/list";
+	}
+
+	// 跳转品牌添加页面
+	@RequestMapping(value = "/brand/toAdd.do")
+	public String toAdd() {
+		return "brand/add";
+	}
+
+	// 添加品牌
+	@RequestMapping(value = "/brand/add.do")
+	public String add(Brand brand) {
+		// 添加开始
+		brandService.addBrand(brand);
+		return "redirect:/brand/list.do";
+	}
+
+	// 删除一个品牌
+	@RequestMapping(value = "/brand/delete.do")
+	public String delete(Integer id, String name, Integer isDisplay, ModelMap model) {
+
+		if (StringUtils.isNotBlank(name)) {
+			model.addAttribute("name", name);
+		}
+		if (null != isDisplay) {
+			model.addAttribute("isDisplay", isDisplay);
+		}
+
+		return "redirect:/brand/list.do";
 	}
 }

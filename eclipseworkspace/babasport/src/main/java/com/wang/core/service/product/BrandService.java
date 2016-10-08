@@ -11,4 +11,7 @@ import cn.itcast.common.page.Pagination;
  */
 public interface BrandService {
 	public Pagination getBrandListWithPage(Brand brand);
+	
+	//添加品牌
+	public void addBrand(Brand brand);
 }

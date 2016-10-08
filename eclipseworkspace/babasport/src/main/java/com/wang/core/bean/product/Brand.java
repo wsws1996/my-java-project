@@ -1,5 +1,7 @@
 package com.wang.core.bean.product;
 
+import com.wang.core.web.Constants;
+
 /**
  * 品牌
  * 
@@ -14,6 +16,11 @@ public class Brand {
 	private String imgUrl;
 	private Integer sort;
 	private Integer isDisplay;
+
+	// 获取全路径
+	public String getAllUrl() {
+		return Constants.IMAGE_URL + imgUrl;
+	}
 
 	// 页号
 	private Integer pageNo = 1;

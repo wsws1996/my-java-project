@@ -34,4 +34,8 @@ public class BrandServiceImpl implements BrandService {
 
 		return pagination;
 	}
+
+	public void addBrand(Brand brand) {
+		brandDao.addBrand(brand);
+	}
 }

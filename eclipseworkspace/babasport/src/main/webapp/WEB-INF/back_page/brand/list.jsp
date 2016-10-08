@@ -10,7 +10,7 @@
 <div class="box-positon">
 	<div class="rpos">当前位置: 品牌管理 - 列表</div>
 	<form class="ropt">
-		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='add.jsp'"/>
+		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='toAdd.do'"/>
 	</form>
 	<div class="clear"></div>
 </div>
@@ -43,12 +43,12 @@
 			<td><input type="checkbox" value="${entry.id }" name="ids"/></td>
 			<td align="center">${entry.id }</td>
 			<td align="center">${entry.name }</td>
-			<td align="center"><img width="40" height="40" src="/res/img/pic/ppp0.jpg"/></td>
+			<td align="center"><img width="40" height="40" src="${entry.allUrl }"/></td>
 			<td align="center">${entry.description }</td>
 			<td align="center">${sort }</td>
 			<td align="center"><c:if test="${entry.isDisplay == 1 }">是</c:if><c:if test="${entry.isDisplay == 0 }">不是</c:if></td>
 			<td align="center">
-			<a class="pn-opt" href="#">修改</a> | <a class="pn-opt" onclick="if(!confirm('您确定删除吗？')) {return false;}" href="#">删除</a>
+			<a class="pn-opt" href="#">修改</a> | <a class="pn-opt" onclick="if(!confirm('您确定删除吗？')) {return false;}" href="/brand/delete.do?id=${entry.id }&name=${name}&isDisplay=${isDisplay}">删除</a>
 			</td>
 		</tr>		
 		</c:forEach>
