@@ -5,19 +5,19 @@
 
 	<!-- resultMap -->
 	<resultMap type="Brand" id="brand">
-		<result column="id" property="id"/>
-		<result column="name" property="name"/>
-		<result column="description" property="description"/>
-		<result column="img_url" property="imgUrl"/>
-		<result column="sort" property="sort"/>
-		<result column="is_display" property="isDisplay"/>
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="description" property="description" />
+		<result column="img_url" property="imgUrl" />
+		<result column="sort" property="sort" />
+		<result column="is_display" property="isDisplay" />
 	</resultMap>
 
 	<!-- 查询品牌 get* -->
 	<select id="getBrandListWithPage" parameterType="Brand"
 		resultMap="brand">
 		SELECT id,name,description,img_url,sort,is_display
-		FROM bbs_brand 
+		FROM bbs_brand
 		<where>
 			<if test="isDisplay != null">
 				is_display = #{isDisplay}
@@ -29,11 +29,10 @@
 		order by id desc
 		limit #{startRow},#{pageSize}
 	</select>
-	
 	<!-- 查询总记录数 -->
 	<select id="getBrandCount" parameterType="Brand" resultType="Integer">
 		SELECT count(1)
-		FROM bbs_brand 
+		FROM bbs_brand
 		<where>
 			<if test="isDisplay != null">
 				is_display = #{isDisplay}
@@ -62,4 +61,46 @@
 			#{isDisplay}
 		</trim>
 	</insert>
+	<!-- 删除 通过主键 -->
+	<delete id="deleteBrandByKey" parameterType="Integer">
+		delete from bbs_brand
+		<where>
+			id=#{id}
+		</where>
+	</delete>
+	<!-- 批量删除 -->
+	<delete id="deleteBrandByKeys" parameterType="Integer">
+		delete from bbs_brand
+		<where>
+			id in
+			<foreach collection="array" item="id" open="(" close=")"
+				separator=",">
+				#{id}
+			</foreach>
+		</where>
+	</delete>
+	<!-- 修改 -->
+	<update id="updateBrandByKey" parameterType="Brand">
+		update bbs_brand
+		<set>
+			<if test="name != null">
+				name=#{name},
+			</if>
+			<if test="description != null">
+				description=#{description},
+			</if>
+			<if test="imgUrl != null">
+				img_url=#{imgUrl},
+			</if>
+			<if test="sort != null">
+				sort=#{sort},
+			</if>
+			<if test="isDisplay != null">
+				is_display=#{isDisplay}
+			</if>
+		</set>
+		<where>
+			id=#{id}
+		</where>
+	</update>
 </mapper>
