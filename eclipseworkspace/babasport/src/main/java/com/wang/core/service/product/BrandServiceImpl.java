@@ -1,5 +1,7 @@
 package com.wang.core.service.product;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wang.core.bean.product.Brand;
 import com.wang.core.dao.product.BrandDao;
+import com.wang.core.query.BrandQuery;
 
 import cn.itcast.common.page.Pagination;
 
@@ -49,5 +52,13 @@ public class BrandServiceImpl implements BrandService {
 
 	public void updateBrandByKey(Brand brand) {
 		brandDao.updateBrandByKey(brand);
+	}
+
+	public Brand getBrandByKey(Integer id) {
+		return brandDao.getBrandByKey(id);
+	}
+
+	public List<Brand> getBrandList(BrandQuery brandQuery) {
+		return brandDao.getBrandList(brandQuery);
 	}
 }

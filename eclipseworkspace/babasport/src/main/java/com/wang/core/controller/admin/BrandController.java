@@ -89,10 +89,10 @@ public class BrandController {
 
 		return "redirect:/brand/list.do";
 	}
-	
+
 	// 删除多个品牌
 	@RequestMapping(value = "/brand/deletes.do")
-	public String deletes(Integer [] ids, String name, Integer isDisplay, ModelMap model) {
+	public String deletes(Integer[] ids, String name, Integer isDisplay, ModelMap model) {
 
 		brandService.deleteBrandByKeys(ids);
 		if (StringUtils.isNotBlank(name)) {
@@ -102,6 +102,20 @@ public class BrandController {
 			model.addAttribute("isDisplay", isDisplay);
 		}
 
+		return "redirect:/brand/list.do";
+	}
+
+	// 去修改页面
+	@RequestMapping(value = "/brand/toEdit.do")
+	public String toEdit(Integer id, ModelMap model) {
+		Brand brand = brandService.getBrandByKey(id);
+		model.addAttribute("brand", brand);
+		return "brand/edit";
+	}
+
+	@RequestMapping(value = "/brand/edit.do")
+	public String edit(Brand brand, ModelMap model) {
+		brandService.updateBrandByKey(brand);
 		return "redirect:/brand/list.do";
 	}
 }

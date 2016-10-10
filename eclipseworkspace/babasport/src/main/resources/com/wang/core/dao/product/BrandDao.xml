@@ -13,10 +13,64 @@
 		<result column="is_display" property="isDisplay" />
 	</resultMap>
 
+	<!-- brandSelector -->
+	<sql id="brandSelector">
+		SELECT
+		<if test="fields != null">
+			${fields}
+		</if>
+		<if test="fields == null">
+			id,name,description,img_url,sort,is_display
+		</if>
+		FROM bbs_brand
+	</sql>
+	<!-- 品牌条件 -->
+	<sql id="brandWhere">
+		<where>
+			<if test="isDisplay != null">
+				is_display = #{isDisplay}
+			</if>
+			<if test="name != null">
+				<if test="nameLike == false">
+					and name = #{name}
+				</if>
+				<if test="nameLike == true">
+					and name like "%"#{name}"%"
+				</if>
+			</if>
+		</where>
+	</sql>
+
+	<!-- 品牌Order By -->
+	<sql id="brandOrderBy">
+		<if test="fieldOrders != null and fieldOrders.size > 0">
+			order by
+			<foreach collection="fieldOrders" item="fieldOrder"
+				separator=",">
+				${fieldOrder.field} ${fieldOrder.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<!-- limit -->
+	<sql id="brandLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+	<!-- 查询品牌集合 -->
+	<select id="getBrandList" parameterType="BrandQuery" resultType="Brand">
+		<include refid="brandSelector"></include>
+		<include refid="brandWhere"></include>
+		<include refid="brandOrderBy"></include>
+		<include refid="brandLimit"></include>
+	</select>
+
 	<!-- 查询品牌 get* -->
 	<select id="getBrandListWithPage" parameterType="Brand"
 		resultMap="brand">
-		SELECT id,name,description,img_url,sort,is_display
+		SELECT
+		id,name,description,img_url,sort,is_display
 		FROM bbs_brand
 		<where>
 			<if test="isDisplay != null">
@@ -103,4 +157,12 @@
 			id=#{id}
 		</where>
 	</update>
+	<!-- 通过ID查询一个品牌对象 -->
+	<select id="getBrandByKey" parameterType="Integer" resultMap="brand">
+		SELECT id,name,description,img_url,sort,is_display
+		FROM bbs_brand
+		<where>
+			id = #{id}
+		</where>
+	</select>
 </mapper>
