@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.wang.common.junit.SpringJunitTest;
 import com.wang.core.bean.product.Brand;
-import com.wang.core.query.BrandQuery;
+import com.wang.core.query.product.BrandQuery;
 import com.wang.core.service.product.BrandService;
 
 public class TestBrand extends SpringJunitTest {

@@ -1,4 +1,4 @@
-package com.wang.core.query;
+package com.wang.core.query.product;
 
 import java.util.ArrayList;
 import java.util.List;

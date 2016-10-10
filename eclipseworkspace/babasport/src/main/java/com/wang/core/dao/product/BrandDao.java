@@ -3,7 +3,7 @@ package com.wang.core.dao.product;
 import java.util.List;
 
 import com.wang.core.bean.product.Brand;
-import com.wang.core.query.BrandQuery;
+import com.wang.core.query.product.BrandQuery;
 
 /**
  * 品牌

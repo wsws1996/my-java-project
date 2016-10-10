@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wang.core.bean.product.Brand;
 import com.wang.core.dao.product.BrandDao;
-import com.wang.core.query.BrandQuery;
+import com.wang.core.query.product.BrandQuery;
 
 import cn.itcast.common.page.Pagination;
 
