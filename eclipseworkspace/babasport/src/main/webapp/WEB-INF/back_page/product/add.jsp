@@ -46,11 +46,31 @@ $(function(){
 				var fck = new FCKeditor("productdesc");
 				fck.BasePath = "/res/fckeditor/";
 				fck.Height = 400 ;
+				fck.Config["ImageUploadURL"]="/upload/uploadFck.do";
 				fck.ReplaceTextarea();
 			}
 		});
 	});
 });
+//上传图片
+function uploadPic() {
+	//定义参数
+	var options = {
+			url : "/upload/uploadPic.do",
+			dataType : "json",
+			type : "post",
+			success : function(data) {
+				//回调两个路径
+				//url
+				//path
+				$("#allImgUrl").attr("src",data.url);
+				$("#path").val(data.path);
+			}
+	};
+	
+	//jquery.form的使用方式
+	$("#jvForm").ajaxSubmit(options);
+}
 </script>
 </head>
 <body>
@@ -76,8 +96,10 @@ $(function(){
 						商品类型:</td><td width="80%" class="pn-fcontent">
 								<select name="typeId">
 									<option value="">请选择</option>
-									<option value="2">瑜珈服</option>
-									<option value="3">瑜伽辅助</option>
+									<c:forEach items="${types }" var="type">
+									
+									<option value="${type.id }">${type.name }</option>
+									</c:forEach>
 								</select>
 					</td>
 				</tr>
@@ -93,9 +115,10 @@ $(function(){
 						商品品牌:</td><td width="80%" class="pn-fcontent">
 						<select name="brandId">
 							<option value="">请选择品牌</option>
-							<option value="1">依琦莲</option>
-							<option value="2">凯速（KANSOON）</option>
-							<option value="3">梵歌纳（vangona）</option>
+							<c:forEach items="${brands }" var="brand">
+									
+									<option value="${brand.id }">${brand.name }</option>
+									</c:forEach>
 						</select>
 					</td>
 				</tr>
@@ -108,25 +131,22 @@ $(function(){
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						材质:</td><td width="80%" class="pn-fcontent">
-							<input type="checkbox" value="1" name="feature"/>环保人棉
-							<input type="checkbox" value="1" name="feature"/>环保人棉
-							<input type="checkbox" value="1" name="feature"/>环保人棉
-							<input type="checkbox" value="1" name="feature"/>环保人棉
-							<input type="checkbox" value="1" name="feature"/>环保人棉
-							<input type="checkbox" value="1" name="feature"/>环保人棉
+						<c:forEach items="${features }" var="feature">
+									
+								<input type="checkbox" value="${feature.id }" name="feature"/>${feature.name }
+									</c:forEach>
+							
+							
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						<span class="pn-frequired">*</span>
 						颜色:</td><td width="80%" class="pn-fcontent">
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
-							<input type="checkbox" value="9" name="color"/>西瓜红
+							<c:forEach items="${colors }" var="color">
+									
+								<input type="checkbox" value="${color.id }" name="color"/>${color.name }
+									</c:forEach>
 					</td>
 				</tr>
 				<tr>
@@ -159,8 +179,8 @@ $(function(){
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h"></td>
 						<td width="80%" class="pn-fcontent">
-						<img width="100" height="100" id="product_url"/>
-						<input type="hidden" name="picPath" id="product_path"/>
+						<img width="100" height="100" id="allImgUrl"/>
+						<input type="hidden" name="url" id="path"/>
 						<input type="file" onchange="uploadPic()" name="pic"/>
 					</td>
 				</tr>

@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Thu Oct 13 20:07:49 CST 2016
+#Sun Oct 16 18:33:20 CST 2016
 org.eclipse.jst.j2ee.server\:babasport=/E/developerpackage/apache-tomcat-8.5.5/webapps/babasport
-org.eclipse.jst.j2ee.server\:/binary\:/E/developerpackage/.babasportm2/repository/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar=/E/developerpackage/apache-tomcat-8.5.5/webapps/babasport/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
 org.eclipse.jst.jee.server\:fck=/E/developerpackage/apache-tomcat-8.5.5/webapps/fck
+org.eclipse.jst.j2ee.server\:/binary\:/E/developerpackage/.babasportm2/repository/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar=/E/developerpackage/apache-tomcat-8.5.5/webapps/babasport/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
