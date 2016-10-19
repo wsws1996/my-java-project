@@ -1,5 +1,6 @@
 package com.wang.core.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -11,8 +12,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.wang.core.bean.product.Brand;
+import com.wang.core.bean.product.Color;
 import com.wang.core.bean.product.Feature;
 import com.wang.core.bean.product.Product;
+import com.wang.core.bean.product.Sku;
 import com.wang.core.bean.product.Type;
 import com.wang.core.query.product.BrandQuery;
 import com.wang.core.query.product.FeatureQuery;
@@ -21,6 +24,7 @@ import com.wang.core.query.product.TypeQuery;
 import com.wang.core.service.product.BrandService;
 import com.wang.core.service.product.FeatureService;
 import com.wang.core.service.product.ProductService;
+import com.wang.core.service.product.SkuService;
 import com.wang.core.service.product.TypeService;
 
 import cn.itcast.common.page.Pagination;
@@ -65,7 +69,6 @@ public class FrontProductController {
 		productQuery.setPageSize(Product.FRONT_PAGE_SIZE);
 		// 设置ID倒排
 		productQuery.orderbyId(false);
-		// TODO 条件
 		// 隐藏已选条件
 		boolean flag = false;
 		// 条件Map窗口
@@ -125,15 +128,33 @@ public class FrontProductController {
 		return "";
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	// 跳转商品详情页
+	@RequestMapping(value = "/product/detail.shtml")
+	public String detail(Integer id, ModelMap model) {
+		// 商品加载
+		Product product = productService.getProductByKey(id);
+
+		model.addAttribute("product", product);
+
+		// skus
+		List<Sku> skus = skuService.getStock(id);
+		model.addAttribute("skus", skus);
+		// 去重复
+		List<Color> colors = new ArrayList<Color>();
+		// 遍历Sku
+		for (Sku sku : skus) {
+			// 判断集合中是否已经有此颜色对象了
+			if (!colors.contains(sku.getColor())) {
+				colors.add(sku.getColor());
+			}
+		}
+		model.addAttribute("colors", colors);
+		return "product/productDetail";
+	}
+
+	@Autowired
+	private SkuService skuService;
+
 	// @InitBinder
 	// public void initBinder(WebDataBinder binder, WebRequest request) {
 	// 转换日期格式

@@ -394,4 +394,11 @@
 					</if>
 		</trim>
 	</insert>
+	<!-- 库存大于0 -->
+	<select id="getStock" parameterType="Integer" resultMap="sku">
+		<include refid="skuSelector"></include>
+		<where>
+			stock_inventory > 0 and product_id=#{productId}
+		</where>
+	</select>
 </mapper>

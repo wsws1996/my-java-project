@@ -11,8 +11,10 @@ import cn.itcast.common.page.Pagination;
 import com.wang.core.bean.product.Sku;
 import com.wang.core.dao.product.SkuDao;
 import com.wang.core.query.product.SkuQuery;
+
 /**
  * 最小销售单元事务层
+ * 
  * @author wang
  * @Date [2014-3-27 下午03:31:57]
  */
@@ -22,6 +24,8 @@ public class SkuServiceImpl implements SkuService {
 
 	@Resource
 	SkuDao skuDao;
+	@Resource
+	ColorService colorService;
 
 	/**
 	 * 插入数据库
@@ -39,7 +43,7 @@ public class SkuServiceImpl implements SkuService {
 	public Sku getSkuByKey(Integer id) {
 		return skuDao.getSkuByKey(id);
 	}
-	
+
 	@Transactional(readOnly = true)
 	public List<Sku> getSkusByKeys(List<Integer> idList) {
 		return skuDao.getSkusByKeys(idList);
@@ -66,16 +70,31 @@ public class SkuServiceImpl implements SkuService {
 	public Integer updateSkuByKey(Sku sku) {
 		return skuDao.updateSkuByKey(sku);
 	}
-	
+
 	@Transactional(readOnly = true)
 	public Pagination getSkuListWithPage(SkuQuery skuQuery) {
-		Pagination p = new Pagination(skuQuery.getPageNo(),skuQuery.getPageSize(),skuDao.getSkuListCount(skuQuery));
+		Pagination p = new Pagination(skuQuery.getPageNo(), skuQuery.getPageSize(), skuDao.getSkuListCount(skuQuery));
 		p.setList(skuDao.getSkuListWithPage(skuQuery));
 		return p;
 	}
-	
+
 	@Transactional(readOnly = true)
 	public List<Sku> getSkuList(SkuQuery skuQuery) {
-		return skuDao.getSkuList(skuQuery);
+		List<Sku> skus = skuDao.getSkuList(skuQuery);
+
+		// 颜色加载
+		for (Sku sku : skus) {
+			sku.setColor(colorService.getColorByKey(sku.getColorId()));
+		}
+		return skus;
+	}
+
+	public List<Sku> getStock(Integer productId) {
+		List<Sku> skus = skuDao.getStock(productId);
+		// 颜色加载
+		for (Sku sku : skus) {
+			sku.setColor(colorService.getColorByKey(sku.getColorId()));
+		}
+		return skus;
 	}
 }

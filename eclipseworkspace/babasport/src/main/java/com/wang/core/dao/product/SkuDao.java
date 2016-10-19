@@ -60,5 +60,11 @@ public interface SkuDao {
 	 * @param skuQuery
 	 */
 	public int getSkuListCount(SkuQuery skuQuery);
+	
+	/**
+	 * 库存大于0
+	 * @param productId
+	 */
+	public List<Sku> getStock(Integer productId);
 
 }
