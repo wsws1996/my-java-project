@@ -42,20 +42,111 @@
 </style>
 
 <script type="text/javascript">
-
+$(function() {
+	//初始化点击第一个颜色
+	$("#colors a:first").trigger("click");
+	//给A标签绑定事件
+	$("#sub").click(function() {
+		var num =$("#num").val();
+		num--;
+		if (num == 0) {
+			return;
+		}
+		//赋值
+		$("#num").val(num);
+	});
+	$("#add").click(function() {
+		var num =$("#num").val();
+		num++;
+		if (num > buyLimit) {
+			alert("此商品只能买" + buyLimit + "件");
+			return;
+		}
+		//赋值
+		$("#num").val(num);
+	});
+});
+//全局变量
+//颜色ID
+var colorId;
+//SkuId
+var SkuId;
+//限购
+var buyLimit;
 //点击颜色
 function colorToRed(target,id) {
+	//赋值
+	colorId=id;
 	//先清理其他颜色
 	$("#colors a").each(function () {
 		$(this).attr("class","changToWhite");
 	});
+	//先清理尺码，都变成不可点
+	$("#sizes a").each(function () {
+		$(this).attr("class","not-allow");
+	});
 	$(target).attr("class","changToRed");
 	//控制尺码
+	var flag = 0;
 	<c:forEach items="${skus}" var="sku">
-
+		//判断Sku中与当前选择的颜色ID一样的，获取出所有尺码
+		if (id=='${sku.colorId}') {
+			if (flag == 0) {
+				$("#"+'${sku.size}').attr("class","changToRed");
+				flag = 1;		
+				//赋值
+				//巴巴价
+				$("#price").html("￥"+'${sku.skuPrice}');
+				//市场价
+				$("#mprice").html("￥"+'${sku.marketPrice}');
+				//运费
+				$("#fee").html('${sku.deliveFee}');
+				//库存
+				$("#stock").html('${sku.stockInventory}');
+				//skuId
+				skuId='${sku.id}';
+				//限购
+				buyLimit='${sku.skuUpperLimit}';
+			}else {
+				$("#"+'${sku.size}').attr("class","changToWhite");
+			}
+		}
 	</c:forEach>
 }
 
+//点击尺码
+function sizeToRed(target,id) {
+	if ($(target).attr("class") == "not-allow") {
+		return;
+	}
+	//先清理尺码，都变成不可点
+	$("#sizes a").each(function () {
+		var c = $(this).attr("class");
+		if (c != "not-allow") {
+			$(this).attr("class","changToWhite");
+		}
+	});
+	//尺码变红
+	$(target).attr("class","changToRed");
+	<c:forEach items="${skus}" var="sku">
+	//判断Sku中与当前选择的颜色ID一样的，获取出所有尺码
+	if (colorId=='${sku.colorId}' && id == '${sku.size}') {
+		//赋值
+		//巴巴价
+		$("#price").html("￥"+'${sku.skuPrice}');
+		//市场价
+		$("#mprice").html("￥"+'${sku.marketPrice}');
+		//运费
+		$("#fee").html('${sku.deliveFee}');
+		//库存
+		$("#stock").html('${sku.stockInventory}');
+		//skuId
+		skuId='${sku.id}';
+		//限购
+		buyLimit='${sku.skuUpperLimit}';
+	}
+</c:forEach>
+}
 //加入购物车
 function addCart(){
 	alert("添加购物车成功!");
@@ -162,10 +253,10 @@ function buy(){
 	<div class="r" style="width: 640px">
 		<ul class="uls form">
 			<li><h2>${product.name}</h2></li>
-			<li><label>巴  巴 价：</label><span class="word"><b class="f14 red mr">￥128.00</b>(市场价:<del>￥150.00</del>)</span></li>
+			<li><label>巴  巴 价：</label><span class="word"><b class="f14 red mr" id="price">￥128.00</b>(市场价:<del id="mprice">￥150.00</del>)</span></li>
 			<li><label>商品评价：</label><span class="word"><span class="val_no val3d4" title="4分">4分</span><var class="blue">(已有888人评价)</var></span></li>
-			<li><label>运　　费：</label><span class="word">10元</span></li>
-			<li><label>库　　存：</label><span class="word" id="stockInventory">100</span><span class="word" >件</span></li>
+			<li><label>运　　费：</label><span class="word" id="fee">10元</span></li>
+			<li><label>库　　存：</label><span class="word" id="stock">100</span><span class="word" >件</span></li>
 			<li><label>选择颜色：</label>
 				<div id="colors" class="pre spec">
 				<c:forEach items="${colors }" var="color">
@@ -174,11 +265,11 @@ function buy(){
 				</div>
 			</li>
 			<li id="sizes"><label>尺　　码：</label>
-						<a href="javascript:void(0)" class="not-allow"  id="S">S</a>
-						<a href="javascript:void(0)" class="not-allow"  id="M">M</a>
-						<a href="javascript:void(0)" class="not-allow"  id="L">L</a>
-						<a href="javascript:void(0)" class="not-allow"  id="XL">XL</a>
-						<a href="javascript:void(0)" class="not-allow"  id="XXL">XXL</a>
+						<a href="javascript:void(0)" class="not-allow"  id="S" onclick="sizeToRed(this,'S')">S</a>
+						<a href="javascript:void(0)" class="not-allow"  id="M" onclick="sizeToRed(this,'M')">M</a>
+						<a href="javascript:void(0)" class="not-allow"  id="L" onclick="sizeToRed(this,'L')">L</a>
+						<a href="javascript:void(0)" class="not-allow"  id="XL" onclick="sizeToRed(this,'XL')">XL</a>
+						<a href="javascript:void(0)" class="not-allow"  id="XXL" onclick="sizeToRed(this,'XXL')">XXL</a>
 			</li>
 			<li><label>我 要 买：</label>
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
