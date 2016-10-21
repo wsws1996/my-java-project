@@ -80,4 +80,13 @@
 		<servlet-name>back</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>captcha</servlet-name>
+		<servlet-class>com.wang.common.captcha.JcaptchaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>captcha</servlet-name>
+		<url-pattern>/captcha.svl</url-pattern>
+	</servlet-mapping>
 </web-app>

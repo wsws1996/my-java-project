@@ -17,7 +17,7 @@
 <script type="text/javascript">
 //登陆
 function login(){
-	window.location.href = "../buyer/login.jsp";
+	window.location.href = "/shopping/login.shtml?returnUrl="+window.location.href;
 }
 </script>
 </head>
@@ -331,7 +331,7 @@ function login(){
 				<ul class="uls i_150x150 x4_150x150b">
 				<c:forEach items="${pagination.list }" var="entry">
 					<li>
-						<a href="javascript:void(0)" onclick="window.open('/product/detail.shtml?id=${entry.id}')" title="${entry.name }" class="pic"><img src="${entry.img.allUrl }" alt="${entry.name }" /></a>
+						<a href="javascript:void(0)" onclick="window.open('/html/product/${entry.id}.html')" title="${entry.name }" class="pic"><img src="${entry.img.allUrl }" alt="${entry.name }" /></a>
 						<dl>
 							<!-- dt 10个文字+... -->
 							<dt><a href="javascript:void(0)" onclick="window.open('/product/detail.shtml?id=${entry.id}')" title="${entry.name }" >${entry.name }</a></dt>

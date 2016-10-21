@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.wang.common.web.session.SessionProvider;
 import com.wang.core.bean.product.Brand;
 import com.wang.core.bean.product.Color;
 import com.wang.core.bean.product.Feature;
@@ -28,6 +29,7 @@ import com.wang.core.service.product.SkuService;
 import com.wang.core.service.product.TypeService;
 
 import cn.itcast.common.page.Pagination;
+import sun.print.resources.serviceui;
 
 /**
  * 前台商品列表 测试 商品详情页面
@@ -46,6 +48,9 @@ public class FrontProductController {
 	private TypeService typeService;
 	@Autowired
 	private FeatureService featureService;
+
+	@Autowired
+	private SessionProvider sessionProvider;
 
 	// 商品列表页面
 	@RequestMapping(value = "/product/display/list.shtml")

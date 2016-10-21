@@ -1,6 +1,9 @@
 package com.wang.core.controller.admin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import com.wang.core.bean.product.Color;
 import com.wang.core.bean.product.Feature;
 import com.wang.core.bean.product.Img;
 import com.wang.core.bean.product.Product;
+import com.wang.core.bean.product.Sku;
 import com.wang.core.bean.product.Type;
 import com.wang.core.query.product.BrandQuery;
 import com.wang.core.query.product.ColorQuery;
@@ -23,7 +27,9 @@ import com.wang.core.service.product.BrandService;
 import com.wang.core.service.product.ColorService;
 import com.wang.core.service.product.FeatureService;
 import com.wang.core.service.product.ProductService;
+import com.wang.core.service.product.SkuService;
 import com.wang.core.service.product.TypeService;
+import com.wang.core.service.staticpage.StaticPageService;
 
 import cn.itcast.common.page.Pagination;
 
@@ -161,22 +167,42 @@ public class ProductController {
 
 	// 上架
 	@RequestMapping(value = "/product/isShow.do")
-	public String isShow(Integer [] ids,Integer pageNo, String name, Integer brandId, Integer isShow, ModelMap model) {
-		//实例化商品
-		Product product=new Product();
+	public String isShow(Integer[] ids, Integer pageNo, String name, Integer brandId, Integer isShow, ModelMap model) {
+		// 实例化商品
+		Product product = new Product();
 		product.setIsShow(1);
-		
-		//上架
-		if (null != ids && ids.length>0) {
+
+		// 上架
+		if (null != ids && ids.length > 0) {
 			for (Integer id : ids) {
 				product.setId(id);
-				//修改上架状态
+				// 修改上架状态
 				productService.updateProductByKey(product);
+				// TODO 静态化
+				Map<String, Object> root = new HashMap<String, Object>();
+				// 设置值
+				// 商品加载
+				Product p = productService.getProductByKey(id);
+
+				root.put("product", p);
+
+				// skus
+				List<Sku> skus = skuService.getStock(id);
+				root.put("skus", skus);
+				// 去重复
+				List<Color> colors = new ArrayList<Color>();
+				// 遍历Sku
+				for (Sku sku : skus) {
+					// 判断集合中是否已经有此颜色对象了
+					if (!colors.contains(sku.getColor())) {
+						colors.add(sku.getColor());
+					}
+				}
+				root.put("colors", colors);
+				staticPageService.productIndex(root, id);
 			}
 		}
-		
-		//TODO 静态化
-		
+
 		// 判断
 		if (null != pageNo) {
 			model.addAttribute("pageNo", pageNo);
@@ -193,4 +219,9 @@ public class ProductController {
 
 		return "redirect:/product/list.do";
 	}
+
+	@Autowired
+	private StaticPageService staticPageService;
+	@Autowired
+	private SkuService skuService;
 }
