@@ -10,7 +10,7 @@ org.eclipse.debug.ui.errorColor=202,0,0
 org.eclipse.debug.ui.inColor=0,92,0
 org.eclipse.debug.ui.outColor=0,0,0
 org.eclipse.debug.ui.save_dirty_editors_before_launch=never
-org.eclipse.debug.ui.user_view_bindings=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<viewBindings>\n<view id\="org.eclipse.debug.ui.ExpressionView">\n<perspective id\="org.eclipse.debug.ui.DebugPerspective" userAction\="closed"/>\n</view>\n</viewBindings>\n
+org.eclipse.debug.ui.user_view_bindings=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<viewBindings>\n<view id\="org.eclipse.debug.ui.ExpressionView">\n<perspective id\="org.eclipse.debug.ui.DebugPerspective" userAction\="opened"/>\n</view>\n</viewBindings>\n
 org.eclipse.debug.uiinspectPopupSashWeights=750\:250
 org.eclispe.debug.ui.Debug_view.debug_toolbar_hidden_perspectives=org.eclipse.debug.ui.DebugPerspective,
 org.eclispe.debug.ui.Debug_view.mode=Debug_view.mode.full

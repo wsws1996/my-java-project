@@ -13,4 +13,6 @@
 	<!-- SessionProvider 实例化 -->
 	<bean id="sessionProvider" class="com.wang.common.web.session.HttpSessionProvider" />
 
+	<!-- Md5加密 -->
+	<bean id="md5Pwd" class="com.wang.common.encode.Md5PwdImpl" />
 </beans>
