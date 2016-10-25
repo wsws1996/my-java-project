@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="net.fckeditor.response.UploadResponse"/>
-<fullyQualifiedTypeName name="com.wang.core.bean.product.Img"/>
-<fullyQualifiedTypeName name="java.text.DateFormat"/>
-<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
-<fullyQualifiedTypeName name="com.wang.core.service.product.ImgService"/>
-<fullyQualifiedTypeName name="com.sun.scenario.effect.impl.prism.PrReflectionPeer"/>
 <fullyQualifiedTypeName name="com.wang.core.query.product.ImgQuery"/>
 <fullyQualifiedTypeName name="org.springframework.jmx.export.naming.IdentityNamingStrategy"/>
 <fullyQualifiedTypeName name="com.wang.core.query.product.ProductQuery"/>
 <fullyQualifiedTypeName name="cn.itcast.common.page.Pagination"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="com.wang.common.web.ResponseUtils"/>
 <fullyQualifiedTypeName name="com.wang.core.bean.product.Product"/>
 <fullyQualifiedTypeName name="com.wang.core.query.product.SkuQuery"/>
 <fullyQualifiedTypeName name="com.wang.core.service.product.ColorService"/>
@@ -34,7 +24,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.context.ServletContextAware"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.wang.core.service.staticpage.StaticPageService"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -49,15 +38,26 @@
 <fullyQualifiedTypeName name="com.wang.common.encode.Md5Pwd"/>
 <fullyQualifiedTypeName name="javax.management.BadAttributeValueExpException"/>
 <fullyQualifiedTypeName name="com.wang.core.service.user.BuyerService"/>
-<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
 <fullyQualifiedTypeName name="com.octo.captcha.service.image.ImageCaptchaService"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerInterceptor"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.wang.common.web.session.SessionProvider"/>
-<fullyQualifiedTypeName name="com.wang.core.web.Constants"/>
+<fullyQualifiedTypeName name="com.wang.core.service.country.ProvinceService"/>
+<fullyQualifiedTypeName name="com.wang.core.service.country.CityService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.wang.core.service.country.TownService"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+<fullyQualifiedTypeName name="com.wang.core.query.country.CityQuery"/>
+<fullyQualifiedTypeName name="com.wang.core.query.country.TownQuery"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.scripts.JS"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="com.wang.common.web.ResponseUtils"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="com.sun.jersey.core.util.StringIgnoreCaseKeyComparator"/>
 <fullyQualifiedTypeName name="com.wang.core.bean.user.Buyer"/>
+<fullyQualifiedTypeName name="com.wang.core.web.Constants"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

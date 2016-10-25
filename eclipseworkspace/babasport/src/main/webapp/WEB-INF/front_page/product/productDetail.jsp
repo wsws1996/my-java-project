@@ -153,7 +153,7 @@ function addCart(){
 }
 //立即购买
 function buy(){
-	window.location.href='cart.jsp';
+	window.location.href='/shopping/buyCart.shtml?skuId='+skuId+"&amount="+$("#num").val()+"&buyLimit="+buyLimit+"&productId="+productId;
 }
 </script>
 </head>
@@ -275,7 +275,7 @@ function buy(){
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
 				<input id="num" type="text" value="1" name="" size="1" readonly="readonly">
 				<a id="add" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="加" href="javascript:void(0);">+</a></li>
-			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy();"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
+			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy(${product.id});"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
 		</ul>
 	</div>
 </div>
