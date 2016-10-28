@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.itcast.common.page.Pagination;
+
+import com.wang.core.bean.product.Product;
 import com.wang.core.bean.product.Sku;
 import com.wang.core.dao.product.SkuDao;
 import com.wang.core.query.product.SkuQuery;
@@ -26,6 +28,8 @@ public class SkuServiceImpl implements SkuService {
 	SkuDao skuDao;
 	@Resource
 	ColorService colorService;
+	@Resource
+	ProductService productService;
 
 	/**
 	 * 插入数据库
@@ -41,7 +45,14 @@ public class SkuServiceImpl implements SkuService {
 	 */
 	@Transactional(readOnly = true)
 	public Sku getSkuByKey(Integer id) {
-		return skuDao.getSkuByKey(id);
+		Sku sku = skuDao.getSkuByKey(id);
+		// 通过商品ID
+		Product product = productService.getProductByKey(sku.getProductId());
+		//颜色加载
+		sku.setColor(colorService.getColorByKey(sku.getColorId()));
+		sku.setProduct(product);
+
+		return sku;
 	}
 
 	@Transactional(readOnly = true)

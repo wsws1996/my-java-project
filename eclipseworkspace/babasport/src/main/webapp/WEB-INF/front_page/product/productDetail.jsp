@@ -70,7 +70,7 @@ $(function() {
 //颜色ID
 var colorId;
 //SkuId
-var SkuId;
+var skuId;
 //限购
 var buyLimit;
 //点击颜色
@@ -152,7 +152,7 @@ function addCart(){
 	alert("添加购物车成功!");
 }
 //立即购买
-function buy(){
+function buy(productId){
 	window.location.href='/shopping/buyCart.shtml?skuId='+skuId+"&amount="+$("#num").val()+"&buyLimit="+buyLimit+"&productId="+productId;
 }
 </script>
