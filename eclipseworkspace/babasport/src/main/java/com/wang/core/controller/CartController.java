@@ -60,7 +60,9 @@ public class CartController {
 			Sku sku = new Sku();
 			sku.setId(skuId);
 			// 购买限制
-			sku.setSkuUpperLimit(buyLimit);
+			if (null != buyLimit) {
+				sku.setSkuUpperLimit(buyLimit);
+			}
 			// 创建购物项
 			BuyItem buyItem = new BuyItem();
 			buyItem.setSku(sku);
@@ -69,7 +71,9 @@ public class CartController {
 			// 添加购物项
 			buyCart.addItem(buyItem);
 			// 最后一款商品的ID
-			buyCart.setProductId(productId);
+			if (null != productId) {
+				buyCart.setProductId(productId);
+			}
 
 			// 流
 			StringWriter str = new StringWriter();
@@ -103,6 +107,70 @@ public class CartController {
 		model.addAttribute("buyCart", buyCart);
 
 		return "product/cart";
+	}
+
+	@RequestMapping(value = "/shopping/clearCart.shtml")
+	public String clearCart(HttpServletRequest request, HttpServletResponse response) {
+		Cookie cookie = new Cookie(Constants.BUYCART_COOKIE, null);
+		cookie.setMaxAge(0);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		return "redirect:/shopping/buyCart.shtml";
+	}
+
+	@RequestMapping(value = "/shopping/deleteItem.shtml")
+	public String deleteItem(HttpServletRequest request, Integer skuId, HttpServletResponse response) {
+		ObjectMapper om = new ObjectMapper();
+		om.setSerializationInclusion(Inclusion.NON_NULL);
+		// 声明
+		BuyCart buyCart = null;
+		// 判断Cookie是否有购物车
+		Cookie[] cookies = request.getCookies();
+		if (null != cookies && cookies.length > 0) {
+			for (Cookie cookie : cookies) {
+				if (Constants.BUYCART_COOKIE.equals(cookie.getName())) {
+					// 如果有了 就使用此购物车
+					String value = cookie.getValue();
+					try {
+						buyCart = om.readValue(value, BuyCart.class);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					break;
+				}
+			}
+		}
+		if (null != buyCart) {
+			Sku sku = new Sku();
+			sku.setId(skuId);
+			// 创建购物项
+			BuyItem buyItem = new BuyItem();
+			buyItem.setSku(sku);
+
+			buyCart.deleteItem(buyItem);
+			// 流
+			StringWriter str = new StringWriter();
+
+			try {
+				om.writeValue(str, buyCart);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			// 将购物车装进Cookie中
+			Cookie cookie = new Cookie(Constants.BUYCART_COOKIE, str.toString());
+			// 关闭浏览器 也要有Cookie
+			// 默认是-1 关闭浏览器就不存在了
+			// 销毁 0 立即销毁
+			// expiry 单位：秒
+			cookie.setMaxAge(60 * 60 * 24);
+			// 路径
+			/// shopping/buyCart.shtml
+			// 默认 /shopping
+			cookie.setPath("/");
+			// 发送
+			response.addCookie(cookie);
+		}
+		return "redirect:/shopping/buyCart.shtml";
 	}
 
 	@Autowired

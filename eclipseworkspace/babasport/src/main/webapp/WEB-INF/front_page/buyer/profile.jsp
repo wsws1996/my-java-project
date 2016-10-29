@@ -24,6 +24,20 @@
 			$("#town").html(html);
 		},"json");
 	}
+	//保存
+	function addProfile() {
+		var province = $("#province").find("option:selected").text();
+		//alert(province);
+		//$("input[name='statusAddr']").attr("checked",true);
+		var v =$("input[name='gender']:checked").val();
+		//alert(v);
+		$("input[name='gender']").each(function(data) {
+			var v= $(this).val();
+			if (v=="MAN") {
+				$(this).attr("checked",true);
+			}
+		});
+	}
 </script>
 </head>
 <body>
@@ -184,7 +198,8 @@
 						<span class="bg_text"><input type="text" id="address" name="address" maxLength="32" value="${buyer.addr }"/></span>
 						<span class="pos"><span class="tip errorTip">用户名为4-20位字母、数字或中文组成，字母区分大小写。</span></span>
 					</li>
-					<li><label for="">&nbsp;</label><input type="submit" value="保存" class="hand btn66x23" /></li>
+					<li><input type="checkbox" name="statusAddr" />设为默认收货地址</li>
+					<li><label for="">&nbsp;</label><input type="button" onclick="addProfile()" value="保存" class="hand btn66x23" /></li>
 					</ul>
 				</form>
 			</div>

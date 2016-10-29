@@ -50,6 +50,11 @@ public class BuyCart {
 		}
 	}
 
+	// 删除一个
+	public void deleteItem(BuyItem item) {
+		items.remove(item);
+	}
+
 	public List<BuyItem> getItems() {
 		return items;
 	}
@@ -95,5 +100,10 @@ public class BuyCart {
 	@JsonIgnore
 	public Double getTotalPrice() {
 		return getFee() + getProductPrice();
+	}
+
+	// 清空购物车
+	public void clearCart() {
+		items.clear();
 	}
 }

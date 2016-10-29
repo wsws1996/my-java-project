@@ -14,6 +14,37 @@
 function trueBuy(){
  	window.location.href = "productOrder.jsp";
 }
+//清空购物车
+function clearCart() {
+	window.location.href="/shopping/clearCart.shtml";
+}
+//+
+function addProductAmount(skuId,buyLimit) {
+	var num=$("#num"+skuId).val();
+	if (num==buyLimit) {
+		alert("不能买"+buyLimit+"件商品");
+		return;
+	}
+	//跟后台交互
+	//$("#num"+skuId).val(++num);
+	window.location.href="/shopping/buyCart.shtml?skuId="+skuId+"&amount=1";
+}
+//-
+function subProductAmount(skuId) {
+	var num=$("#num"+skuId).val();
+	num--;
+	if (num==0) {
+		delProduct(skuId);
+		return;
+	}
+	//跟后台交互
+	window.location.href="/shopping/buyCart.shtml?skuId="+skuId+"&amount=-1";
+}
+function delProduct(skuId) {
+	if (confirm("你确定要删除吗？")) {
+		window.location.href="/shopping/deleteItem.shtml?skuId="+skuId;
+	}
+}
 </script>
 </head>
 <body>
@@ -40,6 +71,7 @@ function trueBuy(){
 <li title="2.填写核对订单信息">2.填写核对订单信息</li>
 <li title="3.成功提交订单">3.成功提交订单</li>
 </ul>
+<c:if test="${fn:length(buyCart.items)!=0 }">
 <div class="w ofc case">
 	<div class="confirm">
 		<div class="tl"></div><div class="tr"></div>
@@ -76,8 +108,8 @@ function trueBuy(){
 						</ul>
 					</td>
 					<td>${item.sku.skuPrice }</td>
-					<td><a onclick="subProductAmount(492,9)" class="inb arr" title="减" href="javascript:void(0);">-</a><input type="text" id="num492" readonly="readonly" value="${item.amount }" name="" size="1" class="txts"><a onclick="addProductAmount(492,9)" class="inb arr" title="加" href="javascript:void(0);">+</a></td>
-					<td class="blue"><a onclick="delProduct(492)" title="删除" href="javascript:void(0);">删除</a></td>
+					<td><a onclick="subProductAmount(${item.sku.id },9)" class="inb arr" title="减" href="javascript:void(0);">-</a><input type="text" id="num${item.sku.id }" readonly="readonly" value="${item.amount }" name="" size="1" class="txts"><a onclick="addProductAmount(${item.sku.id },${item.sku.skuUpperLimit })" class="inb arr" title="加" href="javascript:void(0);">+</a></td>
+					<td class="blue"><a onclick="delProduct(${item.sku.id})" title="删除" href="javascript:void(0);">删除</a></td>
 				</tr>
 				
 				</c:forEach>
@@ -102,7 +134,9 @@ function trueBuy(){
 		</div>
 	</div>
 </div>
-<div class="w ofc case" style="display: none;">
+</c:if>
+<c:if test="${fn:length(buyCart.items)==0 }">
+<div class="w ofc case" >
 	<div class="confirm">
 		<div class="tl"></div><div class="tr"></div>
 		<div class="ofc pb40" style="text-align: center;height: 200px;margin-top: 80px">
@@ -110,6 +144,7 @@ function trueBuy(){
 		</div>
 	</div>
 </div>
+</c:if>
 <div class="mode">
 	<div class="tl"></div><div class="tr"></div>
 	<ul class="uls">

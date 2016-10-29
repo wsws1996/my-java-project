@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="freemarker.template.Configuration"/>
-<fullyQualifiedTypeName name="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
 <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.wang.core.web.Constants"/>
 <fullyQualifiedTypeName name="com.wang.core.bean.user.Buyer"/>
 <fullyQualifiedTypeName name="com.wang.core.bean.BuyCart"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.annotate.JsonIgnore"/>
 </qualifiedTypeNameHistroy>
