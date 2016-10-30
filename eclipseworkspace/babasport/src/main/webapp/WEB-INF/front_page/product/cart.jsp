@@ -12,7 +12,7 @@
 <script type="text/javascript">
 //结算
 function trueBuy(){
- 	window.location.href = "productOrder.jsp";
+ 	window.location.href = "/buyer/trueBuy.shtml";
 }
 //清空购物车
 function clearCart() {

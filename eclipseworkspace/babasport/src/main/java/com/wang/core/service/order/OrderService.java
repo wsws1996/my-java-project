@@ -3,6 +3,8 @@ package com.wang.core.service.order;
 import java.util.List;
 
 import cn.itcast.common.page.Pagination;
+
+import com.wang.core.bean.BuyCart;
 import com.wang.core.bean.order.Order;
 import com.wang.core.query.order.OrderQuery;
 
@@ -17,7 +19,7 @@ public interface OrderService {
 	 * 
 	 * @return
 	 */
-	public Integer addOrder(Order order);
+	public Integer addOrder(Order order,BuyCart buyCart);
 
 	/**
 	 * 根据主键查询
