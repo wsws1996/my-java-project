@@ -10280,3 +10280,7 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/babasport/pom.
 2016-10-30 18:48:36,904 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 28 resources
 2016-10-30 18:48:36,908 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-10-30 18:48:36,908 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-10-30 19:04:16,855 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-30 19:04:16,860 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-10-30 19:04:16,865 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-30 19:04:16,866 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
