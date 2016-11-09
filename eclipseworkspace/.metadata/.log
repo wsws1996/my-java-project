@@ -469,3 +469,13 @@ java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquir
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-09 21:14:11.488
 !MESSAGE The artifact freemarker:freemarker:jar:2.3.9 has been relocated to org.freemarker:freemarker:jar:2.3.9
+!SESSION 2016-11-09 21:17:58.091 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-09 21:18:21.437
+!MESSAGE The artifact freemarker:freemarker:jar:2.3.9 has been relocated to org.freemarker:freemarker:jar:2.3.9
