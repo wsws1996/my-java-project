@@ -13,7 +13,7 @@ public class TestMemcached extends SpringJunitTest {
 	private MemCachedClient memCachedClient;
 
 	@Test
-	public void testAdd() throws Exception {
+	public void testAdd() throws Exception {    
 		// memCachedClient.set("12", "我是");
 		// Object object = memCachedClient.get("ww");
 		// System.out.println(object);
