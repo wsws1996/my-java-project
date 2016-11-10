@@ -1,5 +1,7 @@
 package com.wang.core.bean.product;
 
+import java.io.Serializable;
+
 import com.wang.core.web.Constants;
 
 /**
@@ -8,7 +10,7 @@ import com.wang.core.web.Constants;
  * @author wang
  *
  */
-public class Brand {
+public class Brand implements Serializable {
 
 	private Integer id;
 	private String name;

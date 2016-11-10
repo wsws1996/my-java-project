@@ -17,13 +17,19 @@
 		</constructor-arg>
 	</bean>
 	<!-- 切面对象 -->
-	<bean id="cacheInterceptor" class="com.wang.common.web.aop.CacheInterceptor" />
+	<bean id="cacheInterceptor" class="com.wang.common.web.aop.CacheInterceptor" >
+		<property name="expiry" value="4200000" />
+	</bean>
 	<!-- Spring Aop 配置 get* 配置环绕 -->
 	<aop:config>
 		<!-- 面 -->
 		<aop:aspect ref="cacheInterceptor">
 			<!-- 点 -->
 			<aop:around method="doAround" pointcut="execution(* com.wang.core.service.*.*.get*(..))"/>
+			<!-- 变更 -->
+			<aop:after method="doAfter" pointcut="execution(* com.wang.core.service.*.*.update*(..))"/>
+			<aop:after method="doAfter" pointcut="execution(* com.wang.core.service.*.*.add*(..))"/>
+			<aop:after method="doAfter" pointcut="execution(* com.wang.core.service.*.*.delete*(..))"/>
 		</aop:aspect>
 	</aop:config>
 
