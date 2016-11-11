@@ -29,7 +29,6 @@ import com.wang.core.service.product.SkuService;
 import com.wang.core.service.product.TypeService;
 
 import cn.itcast.common.page.Pagination;
-import sun.print.resources.serviceui;
 
 /**
  * 前台商品列表 测试 商品详情页面

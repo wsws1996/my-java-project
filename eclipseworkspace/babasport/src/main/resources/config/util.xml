@@ -11,8 +11,11 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<!-- SessionProvider 实例化 -->
-	<bean id="sessionProvider" class="com.wang.common.web.session.HttpSessionProvider" />
-
+	<!-- <bean id="sessionProvider" class="com.wang.common.web.session.HttpSessionProvider" 
+		/> -->
+	<bean id="sessionProvider" class="com.wang.common.web.session.CacheSessionProvider">
+		<property name="expiry" value="60" />
+	</bean>
 	<!-- Md5加密 -->
 	<bean id="md5Pwd" class="com.wang.common.encode.Md5PwdImpl" />
 </beans>

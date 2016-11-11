@@ -65,7 +65,7 @@ public class FrontOrderController {
 			item.setSku(s);
 		}
 
-		Buyer buyer = (Buyer) sessionProvider.getAttribute(request, Constants.BUYER_SESSION);
+		Buyer buyer = (Buyer) sessionProvider.getAttribute(request, response, Constants.BUYER_SESSION);
 
 		// 用户id
 		order.setBuyerId(buyer.getUsername());

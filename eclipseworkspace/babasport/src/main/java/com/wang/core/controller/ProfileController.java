@@ -55,17 +55,18 @@ public class ProfileController {
 
 	// POST
 	@RequestMapping(value = "/shopping/login.shtml", method = RequestMethod.POST)
-	public String login(Buyer buyer, String captcha, String returnUrl, ModelMap model, HttpServletRequest request) {
+	public String login(Buyer buyer, String captcha, String returnUrl, ModelMap model, HttpServletRequest request,
+			HttpServletResponse response) {
 		// 验证码是否为空
 		if (StringUtils.isNotBlank(captcha)) {
-			if (imageCaptchaService.validateResponseForID(sessionProvider.getSessionId(request), captcha)) {
+			if (imageCaptchaService.validateResponseForID(sessionProvider.getSessionId(request, response), captcha)) {
 				if (null != buyer && StringUtils.isNotBlank(buyer.getUsername())) {
 					if (StringUtils.isNotBlank(buyer.getPassword())) {
 						Buyer b = buyerService.getBuyerByKey(buyer.getUsername());
 						if (null != b) {
 							if (b.getPassword().equals(md5Pwd.encode(buyer.getPassword()))) {
 								// 把用户对象放在Session
-								sessionProvider.setAttribute(request, Constants.BUYER_SESSION, b);
+								sessionProvider.setAttribute(request, response, Constants.BUYER_SESSION, b);
 								if (StringUtils.isNotBlank(returnUrl)) {
 									return "redirect:" + returnUrl;
 								} else {
@@ -100,9 +101,9 @@ public class ProfileController {
 
 	// 个人资料
 	@RequestMapping(value = "/buyer/profile.shtml")
-	public String profile(HttpServletRequest request, ModelMap model) {
+	public String profile(HttpServletRequest request, ModelMap model, HttpServletResponse response) {
 		// 加载用户
-		Buyer buyer = (Buyer) sessionProvider.getAttribute(request, Constants.BUYER_SESSION);
+		Buyer buyer = (Buyer) sessionProvider.getAttribute(request, response, Constants.BUYER_SESSION);
 		Buyer b = buyerService.getBuyerByKey(buyer.getUsername());
 		model.addAttribute("buyer", b);
 		// 省

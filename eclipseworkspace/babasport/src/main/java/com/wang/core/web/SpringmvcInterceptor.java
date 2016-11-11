@@ -1,7 +1,5 @@
 package com.wang.core.web;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sun.jersey.core.util.StringIgnoreCaseKeyComparator;
 import com.wang.common.web.session.SessionProvider;
 import com.wang.core.bean.user.Buyer;
 
@@ -34,9 +31,9 @@ public class SpringmvcInterceptor implements HandlerInterceptor {
 		if (adminId != null) {
 			Buyer buyer = new Buyer();
 			buyer.setUsername("fbb2014");
-			sessionProvider.setAttribute(request, Constants.BUYER_SESSION, buyer);
+			sessionProvider.setAttribute(request, response, Constants.BUYER_SESSION, buyer);
 		} else {
-			Buyer buyer = (Buyer) sessionProvider.getAttribute(request, Constants.BUYER_SESSION);
+			Buyer buyer = (Buyer) sessionProvider.getAttribute(request, response, Constants.BUYER_SESSION);
 			boolean flag = false;
 			if (null != buyer) {
 				flag = true;
