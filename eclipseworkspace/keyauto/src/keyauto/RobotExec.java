@@ -1,4 +1,4 @@
-package keyauto;
+//package keyauto;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
