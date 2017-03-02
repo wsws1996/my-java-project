@@ -24,3 +24,10 @@
 1488369842410	Move file
 1488371778786	Rename package 'com.shopping.contoller'
 1488376985719	Extract local variable 'result'
+1488421171656	Extract local variable 'catList'
+1488421220218	Extract local variable 'list'
+1488431398396	Extract local variable 'ftpClient'
+1488431499404	Extract local variable 'fileInputStream'
+1488437878066	Extract local variable 'result'
+1488441806541	Extract local variable 'itemDesc'
+1488441844254	Extract local variable 'result'

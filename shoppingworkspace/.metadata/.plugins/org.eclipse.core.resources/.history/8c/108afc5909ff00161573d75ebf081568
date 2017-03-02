@@ -1,0 +1,16 @@
+package com.shopping.service.impl;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.shopping.pojo.PictureResult;
+import com.shopping.service.PictureService;
+
+public class PictureServiceImpl implements PictureService {
+
+	@Override
+	public PictureResult uploadPicture(MultipartFile uploadFile) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

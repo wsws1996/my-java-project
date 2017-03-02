@@ -1,0 +1,12 @@
+package com.shopping.ftp;
+
+import org.apache.commons.net.ftp.FTPClient;
+import org.junit.Test;
+
+public class FTPClientTest {
+	@Test
+	public void testFtp() throws Exception {
+		FTPClient ftpClient = new FTPClient();
+		ftpClient.connect("192.168.33.10",21);
+	}
+}
