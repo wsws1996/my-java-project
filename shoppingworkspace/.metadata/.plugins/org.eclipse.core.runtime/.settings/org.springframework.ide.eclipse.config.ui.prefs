@@ -1,0 +1,8 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/applicationContext-dao.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/applicationContext-service.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/applicationContext-trans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/spring/applicationContext-dao.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/spring/applicationContext-service.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/spring/applicationContext-trans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/shopping-manager-web/src/main/resources/spring/springmvc.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+eclipse.preferences.version=1

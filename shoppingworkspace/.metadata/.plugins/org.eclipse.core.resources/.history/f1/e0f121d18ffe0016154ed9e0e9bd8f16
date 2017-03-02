@@ -1,0 +1,27 @@
+package com.shopping.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+import com.shopping.pojo.EUDataGridResult;
+import com.shopping.service.ItemService;
+
+@Controller
+@EnableWebMvc
+@RequestMapping("/item")
+public class ItemController {
+	@Autowired
+	private ItemService itemService;
+	
+	@RequestMapping("/list")
+	@ResponseBody
+	public EUDataGridResult getItemlist(@RequestParam Integer page,
+			@RequestParam(defaultValue = "30") Integer rows) {
+		EUDataGridResult result = itemService.getItemList(page, rows);
+		return result;
+	}
+}

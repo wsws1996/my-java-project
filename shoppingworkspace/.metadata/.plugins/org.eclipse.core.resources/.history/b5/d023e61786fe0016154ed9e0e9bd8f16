@@ -1,0 +1,24 @@
+package com.shopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.github.pagehelper.PageHelper;
+import com.shopping.mapper.TbItemMapper;
+import com.shopping.pojo.EUDataGridResult;
+import com.shopping.pojo.TbItemExample;
+import com.shopping.service.ItemService;
+
+public class ItemServiceImpl implements ItemService {
+
+	@Autowired
+	public TbItemMapper itemMapper;
+	
+	@Override
+	public EUDataGridResult getItemList(int page, int rows) {
+		TbItemExample tbItemExample = new TbItemExample();
+		PageHelper.startPage(page, rows);
+		
+		return null;
+	}
+
+}
