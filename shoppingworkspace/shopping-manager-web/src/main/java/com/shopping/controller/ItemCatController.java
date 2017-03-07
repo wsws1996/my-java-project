@@ -22,6 +22,7 @@ public class ItemCatController {
 	@Autowired
 	private ItemCatService itemCatService;
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping("/list")
 	@ResponseBody
 	public List categoryList(@RequestParam(value = "id", defaultValue = "0") Long parentId) {

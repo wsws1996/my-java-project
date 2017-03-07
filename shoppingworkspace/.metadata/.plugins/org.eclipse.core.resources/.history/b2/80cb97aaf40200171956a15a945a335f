@@ -1,0 +1,7 @@
+package com.shopping.service;
+
+import com.shopping.result.ShoppingResult;
+
+public interface ItemParamService {
+	public ShoppingResult getItemParamByCid(long cid);
+}

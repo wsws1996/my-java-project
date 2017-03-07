@@ -10,10 +10,12 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shopping.mapper.TbItemDescMapper;
 import com.shopping.mapper.TbItemMapper;
+import com.shopping.mapper.TbItemParamItemMapper;
 import com.shopping.pojo.EUDataGridResult;
 import com.shopping.pojo.TbItem;
 import com.shopping.pojo.TbItemDesc;
 import com.shopping.pojo.TbItemExample;
+import com.shopping.pojo.TbItemParamItem;
 import com.shopping.result.ShoppingResult;
 import com.shopping.service.ItemService;
 import com.shopping.utils.ExceptionUtil;
@@ -28,6 +30,9 @@ public class ItemServiceImpl implements ItemService {
 	@Autowired
 	public TbItemDescMapper itemDescMapper;
 
+	@Autowired
+	public TbItemParamItemMapper itemParamItemMapper;
+
 	@Override
 	public EUDataGridResult getItemList(int page, int rows) {
 		TbItemExample example = new TbItemExample();
@@ -41,7 +46,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public ShoppingResult addItem(TbItem item, TbItemDesc itemDesc) {
+	public ShoppingResult addItem(TbItem item, TbItemDesc itemDesc, String itemParams) {
 		try {
 			long itemId = IDUtils.genItemId();
 			item.setId(itemId);
@@ -57,11 +62,26 @@ public class ItemServiceImpl implements ItemService {
 			itemDesc.setUpdated(date);
 
 			itemDescMapper.insert(itemDesc);
+			
+			insertItemParamItem(itemId, itemParams);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ShoppingResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
 
+		return ShoppingResult.ok();
+	}
+
+	private ShoppingResult insertItemParamItem(Long itemId, String itemParams) {
+		TbItemParamItem itemParamItem = new TbItemParamItem();
+
+		itemParamItem.setItemId(itemId);
+		itemParamItem.setParamData(itemParams);
+		itemParamItem.setCreated(new Date());
+		itemParamItem.setUpdated(new Date());
+		
+		itemParamItemMapper.insert(itemParamItem);
+		
 		return ShoppingResult.ok();
 	}
 

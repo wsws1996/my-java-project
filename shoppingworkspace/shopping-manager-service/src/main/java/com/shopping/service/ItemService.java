@@ -8,5 +8,6 @@ import com.shopping.result.ShoppingResult;
 public interface ItemService {
 	public EUDataGridResult getItemList(int page, int rows);
 
-	public ShoppingResult addItem(TbItem item, TbItemDesc itemDesc);
+	public ShoppingResult addItem(TbItem item, TbItemDesc itemDesc, String itemParams);
+
 }

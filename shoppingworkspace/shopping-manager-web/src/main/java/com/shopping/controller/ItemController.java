@@ -28,10 +28,10 @@ public class ItemController {
 
 	@RequestMapping("/save")
 	@ResponseBody
-	public ShoppingResult addItem(TbItem item, String desc) {
+	public ShoppingResult addItem(TbItem item, String desc, String itemParams) {
 		TbItemDesc itemDesc = new TbItemDesc();
 		itemDesc.setItemDesc(desc);
-		ShoppingResult result = itemService.addItem(item, itemDesc);
+		ShoppingResult result = itemService.addItem(item, itemDesc, itemParams);
 		return result;
 	}
 }

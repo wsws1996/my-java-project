@@ -1,0 +1,23 @@
+package com.shopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopping.mapper.TbItemParamMapper;
+import com.shopping.result.ShoppingResult;
+import com.shopping.service.ItemParamService;
+
+@Service
+public class ItemParamServiceImpl implements ItemParamService {
+
+	@Autowired
+	private TbItemParamMapper itemParamMapper;
+	
+	@Override
+	public ShoppingResult getItemParamByCid(long cid) {
+		
+		
+		return null;
+	}
+
+}

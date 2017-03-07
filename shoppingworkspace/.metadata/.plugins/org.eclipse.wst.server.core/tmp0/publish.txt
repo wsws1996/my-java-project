@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Thu Mar 02 16:28:54 CST 2017
+#Tue Mar 07 16:28:52 CST 2017
 org.eclipse.jst.jee.server\:shopping-manager-web=/E/developerpackage/apache-tomcat-7.0.75/apache-tomcat-7.0.75/webapps/shopping-manager-web
 org.eclipse.jst.j2ee.server\:shopping-manager-service=/E/developerpackage/apache-tomcat-7.0.75/apache-tomcat-7.0.75/webapps/shopping-manager-web/WEB-INF/lib/shopping-manager-service-0.0.1-SNAPSHOT.jar
 org.eclipse.jst.jee.server\:/binary\:/E/developerpackage/taotaom2/taotaorepository/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar=/E/developerpackage/apache-tomcat-7.0.75/apache-tomcat-7.0.75/webapps/shopping-manager-web/WEB-INF/lib/spring-web-4.1.3.RELEASE.jar
