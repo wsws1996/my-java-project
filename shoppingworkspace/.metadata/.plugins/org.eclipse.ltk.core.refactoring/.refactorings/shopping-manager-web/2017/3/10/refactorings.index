@@ -3,3 +3,5 @@
 1488864173346	Extract local variable 'result'
 1488870861324	Extract local variable 'string'
 1488873195090	Extract local variable 'result'
+1489019422364	Rename resource 'taotao.css'
+1489020233235	Copy folders

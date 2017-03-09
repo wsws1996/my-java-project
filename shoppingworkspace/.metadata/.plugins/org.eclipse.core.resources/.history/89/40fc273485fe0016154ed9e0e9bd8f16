@@ -1,7 +1,0 @@
-package com.shopping.service;
-
-import com.shopping.pojo.EUDataGridResult;
-
-public interface ItemService {
-	EUDataGridResult 
-}

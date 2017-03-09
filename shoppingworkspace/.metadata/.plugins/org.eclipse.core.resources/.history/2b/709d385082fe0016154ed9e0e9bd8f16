@@ -1,9 +1,0 @@
-package com.shopping.pojo;
-
-import java.awt.List;
-
-public class EUDataGridResult {
-	private long total;
-	private List rows;
-	
-}

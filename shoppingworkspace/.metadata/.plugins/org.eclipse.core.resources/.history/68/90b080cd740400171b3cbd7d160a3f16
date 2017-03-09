@@ -1,0 +1,14 @@
+package com.shopping.service.impl;
+
+import com.shopping.pojo.CatResult;
+import com.shopping.service.ItemCatService;
+
+public class ItemCatServiceImpl implements ItemCatService{
+
+	@Override
+	public CatResult getItemCatList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

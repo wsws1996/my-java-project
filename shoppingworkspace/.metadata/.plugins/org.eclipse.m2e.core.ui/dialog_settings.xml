@@ -9,12 +9,14 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="shopping-portal"/>
+			<item value="shopping-parent"/>
+			<item value="shopping-rest"/>
 			<item value="shopping-manager-web"/>
 			<item value="shopping-manager"/>
 			<item value="shopping-manager-service"/>
 			<item value="shopping-manager-mapper"/>
 			<item value="shopping-manager-pojo"/>
-			<item value="shopping-parent"/>
 			<item value="shopping-common"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,6 +59,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/E/myproject/my-java-project/shoppingworkspace/shopping-rest"/>
+			<item value="/E/myproject/my-java-project/shoppingworkspace/shopping-parent"/>
 			<item value="/home/wang/桌面/workspace/shopping-manager-service"/>
 			<item value="/home/wang/桌面/workspace/shopping-manager-mapper"/>
 			<item value="/home/wang/桌面/workspace/shopping-common"/>

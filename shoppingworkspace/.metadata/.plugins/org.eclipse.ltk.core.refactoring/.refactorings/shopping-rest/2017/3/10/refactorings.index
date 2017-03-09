@@ -1,0 +1,11 @@
+1489021239872	Copy folders
+1489028610556	Extract local variable 'example'
+1489028624951	Extract local variable 'criteria'
+1489028736988	Extract local variable 'list'
+1489028778454	Extract local variable 'resultList'
+1489029420559	Extract local variable 'catNode'
+1489029806762	Extract local variable 'catResult'
+1489030638902	Extract local variable 'itemCatList'
+1489030670810	Extract local variable 'json'
+1489030693111	Extract local variable 'result'
+1489032860341	Extract local variable 'mappingJacksonValue'

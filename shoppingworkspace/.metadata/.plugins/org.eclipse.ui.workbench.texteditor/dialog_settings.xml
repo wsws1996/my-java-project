@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="itemParams" key="selection"/>
+		<item value="getDataService" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="getDataService"/>
+			<item value="taotao"/>
+			<item value="formatPrice"/>
+			<item value="format"/>
+			<item value="fmart"/>
+			<item value="SHOPPING"/>
+			<item value="taota"/>
 			<item value="itemParams"/>
-			<item value="JSON"/>
-			<item value="init"/>
-			<item value="node"/>
-			<item value="changeItemParam"/>
-			<item value="$(function"/>
-			<item value="joda"/>
-			<item value="jackson"/>
 		</list>
 		<list key="replacehistory">
+			<item value="shopping"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
