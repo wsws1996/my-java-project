@@ -1,0 +1,15 @@
+package com.shopping.service.impl;
+
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.pojo.TbContent;
+import com.shopping.service.ContentService;
+
+public class ContentServiceImpl implements ContentService {
+
+	@Override
+	public ShoppingResult insertContent(TbContent tbContent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.pojo.EUDataGridResult;
+import com.shopping.pojo.ShoppingResult;
 import com.shopping.pojo.TbItemParam;
-import com.shopping.result.ShoppingResult;
 import com.shopping.service.ItemParamService;
 
 @Controller

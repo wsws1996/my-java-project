@@ -1,0 +1,19 @@
+package com.shopping.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.shopping.pojo.EUTreeNode;
+import com.shopping.service.ContentCategoryService;
+
+public class ContentCategoryController {
+	
+	@Autowired
+	private ContentCategoryService contentCategoryService;
+
+	public List<EUTreeNode> getContentCatList(@RequestParam(value="id",defaultValue="0")Long id) {
+		
+	}
+}

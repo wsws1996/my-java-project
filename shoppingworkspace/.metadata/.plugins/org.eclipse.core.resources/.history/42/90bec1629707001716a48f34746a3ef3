@@ -1,0 +1,16 @@
+package com.shopping.service.impl;
+
+import java.util.List;
+
+import com.shopping.pojo.TbContent;
+import com.shopping.service.ContentService;
+
+public class ContentServiceImpl implements ContentService {
+
+	@Override
+	public List<TbContent> getContentList(long contentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

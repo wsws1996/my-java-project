@@ -1,0 +1,7 @@
+package com.shopping.test;
+
+public class HttpClientTest {
+
+	public void doGet() throws Exception {
+	}
+}

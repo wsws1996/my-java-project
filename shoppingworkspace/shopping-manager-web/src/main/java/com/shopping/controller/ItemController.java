@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.pojo.EUDataGridResult;
+import com.shopping.pojo.ShoppingResult;
 import com.shopping.pojo.TbItem;
 import com.shopping.pojo.TbItemDesc;
-import com.shopping.result.ShoppingResult;
 import com.shopping.service.ItemService;
 
 @Controller

@@ -10,10 +10,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shopping.mapper.TbItemParamMapper;
 import com.shopping.pojo.EUDataGridResult;
+import com.shopping.pojo.ShoppingResult;
 import com.shopping.pojo.TbItemParam;
 import com.shopping.pojo.TbItemParamExample;
 import com.shopping.pojo.TbItemParamExample.Criteria;
-import com.shopping.result.ShoppingResult;
 import com.shopping.service.ItemParamService;
 
 @Service

@@ -1,0 +1,13 @@
+package com.shopping.service.impl;
+
+import com.shopping.service.ContentService;
+
+public class ContentServiceImpl implements ContentService {
+
+	@Override
+	public String getContentList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

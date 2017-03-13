@@ -1,0 +1,6 @@
+1489377634106	Extract local variable 'result'
+1489378048947	Extract local variable 'shoppingResult'
+1489378073640	Extract local variable 'list'
+1489378167766	Extract local variable 'resultList'
+1489378217496	Extract local variable 'map'
+1489378726542	Extract local variable 'adJson'

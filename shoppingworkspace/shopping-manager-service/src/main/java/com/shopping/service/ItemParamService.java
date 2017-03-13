@@ -1,8 +1,8 @@
 package com.shopping.service;
 
 import com.shopping.pojo.EUDataGridResult;
+import com.shopping.pojo.ShoppingResult;
 import com.shopping.pojo.TbItemParam;
-import com.shopping.result.ShoppingResult;
 
 public interface ItemParamService {
 	public ShoppingResult getItemParamByCid(long cid);

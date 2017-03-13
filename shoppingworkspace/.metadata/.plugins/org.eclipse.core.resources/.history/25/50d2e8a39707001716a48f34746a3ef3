@@ -1,0 +1,18 @@
+package com.shopping.service.impl;
+
+import java.util.List;
+
+import com.shopping.mapper.TbContentMapper;
+import com.shopping.pojo.TbContent;
+import com.shopping.service.ContentService;
+
+public class ContentServiceImpl implements ContentService {
+
+	private TbContentMapper contentMapper;
+
+	@Override
+	public List<TbContent> getContentList(long contentId) {
+		return null;
+	}
+
+}

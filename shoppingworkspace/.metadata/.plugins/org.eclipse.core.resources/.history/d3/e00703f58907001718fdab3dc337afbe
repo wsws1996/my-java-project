@@ -1,0 +1,18 @@
+package com.shopping.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.shopping.pojo.EUTreeNode;
+import com.shopping.service.ContentCategoryService;
+
+@Service
+public class ContentCategoryServiceImpl implements ContentCategoryService {
+
+	@Override
+	public List<EUTreeNode> getCategoryList(long parentId) {
+		return null;
+	}
+
+}
