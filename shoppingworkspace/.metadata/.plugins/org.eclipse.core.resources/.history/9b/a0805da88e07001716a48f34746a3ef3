@@ -1,9 +1,0 @@
-package com.shopping.service;
-
-import java.util.List;
-
-import com.shopping.pojo.EUTreeNode;
-
-public interface ContentCategoryService {
-	public List<EUTreeNode> getCategoryList(long parentId);
-}

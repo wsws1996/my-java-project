@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="HttpClientTest" project="shopping-rest" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.shopping.test.HttpClientTest" time="1.511">
-    <testcase name="doPost" classname="com.shopping.test.HttpClientTest" time="0.55"/>
-    <testcase name="doGetWithParam" classname="com.shopping.test.HttpClientTest" time="0.65"/>
-    <testcase name="doGet" classname="com.shopping.test.HttpClientTest" time="0.267"/>
-    <testcase name="doPostWithParam" classname="com.shopping.test.HttpClientTest" time="0.044"/>
-  </testsuite>
-</testrun>
