@@ -19,7 +19,7 @@ public class SearchController {
 	@Autowired
 	private SearchService searchService;
 
-	@RequestMapping(value = "/query", method = RequestMethod.GET)
+	@RequestMapping(value ="/query", method = RequestMethod.GET)
 	@ResponseBody
 	public ShoppingResult search(@RequestParam("q") String queryString, @RequestParam(defaultValue = "1") Integer page,
 			@RequestParam(defaultValue = "60") Integer rows) {

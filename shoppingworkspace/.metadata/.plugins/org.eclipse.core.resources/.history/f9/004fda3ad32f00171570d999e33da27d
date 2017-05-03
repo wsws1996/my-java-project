@@ -1,0 +1,20 @@
+package com.shopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import com.shopping.pojo.TbItem;
+import com.shopping.service.ItemService;
+
+public class ItemServiceImpl implements ItemService {
+
+	@Value("${REST_BASE_URL}")
+	private String REST_BASE_URL;
+	
+	@Value("${ITEM_INFO_URL}")
+	
+	@Override
+	public TbItem getItemById(Long itemId) {
+		return null;
+	}
+
+}

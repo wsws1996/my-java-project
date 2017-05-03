@@ -1,0 +1,18 @@
+package com.shopping.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.shopping.pojo.SearchResult;
+
+@Service
+public class SearchServiceImpl implements SearchService {
+
+	@Value("SEARCH_BASE_URL")
+	
+	@Override
+	public SearchResult search(String queryString, int page) {
+		return null;
+	}
+
+}

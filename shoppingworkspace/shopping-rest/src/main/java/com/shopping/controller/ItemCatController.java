@@ -1,7 +1,6 @@
 package com.shopping.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.pojo.CatResult;
 import com.shopping.service.ItemCatService;
-import com.shopping.utils.JsonUtils;
 
 @Controller
 public class ItemCatController {

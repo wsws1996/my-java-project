@@ -2,3 +2,4 @@
 1493708407811	Extract local variable 'solrServer'
 1493708438287	Extract local variable 'solrInputDocument'
 1493709512711	Copy folders
+1493796262137	Extract local variable 'list'

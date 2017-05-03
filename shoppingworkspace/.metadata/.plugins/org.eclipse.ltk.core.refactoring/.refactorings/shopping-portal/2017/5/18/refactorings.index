@@ -1,0 +1,6 @@
+1493786884946	Extract local variable 'json'
+1493786926599	Extract local variable 'searchResult'
+1493787615528	Extract local variable 'images'
+1493796806779	Move compilation unit
+1493797986543	Extract local variable 'images'
+1493799295521	Extract local variable 'jsonList'
