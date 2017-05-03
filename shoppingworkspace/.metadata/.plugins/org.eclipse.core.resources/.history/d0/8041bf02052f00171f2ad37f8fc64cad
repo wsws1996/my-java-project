@@ -1,0 +1,9 @@
+package com.shopping.test;
+
+import org.apache.solr.client.solrj.impl.HttpSolrServer;
+
+public class SolrJTest {
+	public void addDocument() throws Exception{
+		SolrServer solrServer = new HttpSolrServer("192.168.33.10:8080/solr");
+	}
+}

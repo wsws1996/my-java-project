@@ -1,0 +1,17 @@
+package com.shopping.dao.impl;
+
+import org.apache.solr.client.solrj.SolrQuery;
+
+import com.shopping.dao.SearchDao;
+import com.shopping.pojo.SearchResult;
+
+public class SearchDaoImpl implements SearchDao {
+
+	@Override
+	public SearchResult search(SolrQuery query) throws Exception {
+		SearchResult result = new SearchResult();
+
+		return null;
+	}
+
+}

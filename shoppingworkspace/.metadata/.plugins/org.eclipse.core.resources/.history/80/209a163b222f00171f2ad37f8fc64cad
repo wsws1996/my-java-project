@@ -1,0 +1,34 @@
+package com.shopping.controller;
+
+import static org.hamcrest.CoreMatchers.nullValue;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.shopping.pojo.SearchResult;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.service.SearchService;
+import com.shopping.utils.ExceptionUtil;
+
+@Controller
+public class SearchController {
+
+	private SearchService searchService;
+
+	public ShoppingResult search(@RequestParam("q") String queryString, @RequestParam(defaultValue = "1") Integer page,
+			@RequestParam(defaultValue = "60") Integer rows) {
+		if (StringUtils.isBlank(queryString)) {
+			return ShoppingResult.build(400, "查询条件不能为空");
+		}
+		SearchResult searchResult = null;
+		try {
+			searchResult = searchService.search(queryString, page, rows);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ShoppingResult.build(500, ExceptionUtil.getStackTrace(e));
+		}
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.shopping.test;
+
+public class SolrJTest {
+	public void addDocument() throws Exception{
+		
+	}
+}

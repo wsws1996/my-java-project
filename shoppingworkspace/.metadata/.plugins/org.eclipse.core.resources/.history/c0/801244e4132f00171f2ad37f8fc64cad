@@ -1,0 +1,10 @@
+package com.shopping.pojo;
+
+import java.util.List;
+
+public class SearchResult {
+	private List<Item> itemList;
+	private long recordCount;
+	private long pageCount;
+	private long curPage;
+}

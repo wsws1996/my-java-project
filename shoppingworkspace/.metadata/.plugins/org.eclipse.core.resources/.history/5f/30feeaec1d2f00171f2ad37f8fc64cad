@@ -1,0 +1,46 @@
+package com.shopping.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.shopping.dao.SearchDao;
+import com.shopping.pojo.Item;
+import com.shopping.pojo.SearchResult;
+
+@ResponseBody
+public class SearchDaoImpl implements SearchDao {
+
+	@Autowired
+	private SolrServer solrServer;
+
+	@Override
+	public SearchResult search(SolrQuery query) throws Exception {
+		SearchResult result = new SearchResult();
+
+		QueryResponse queryResponse = solrServer.query(query);
+		SolrDocumentList solrDocumentList = queryResponse.getResults();
+		result.setRecordCount(solrDocumentList.getNumFound());
+
+		List<Item> itemList = new ArrayList<>();
+
+		Map<String, Map<String, List<String>>> highlighting = queryResponse.getHighlighting();
+
+		for (SolrDocument solrDocument : solrDocumentList) {
+			Item item=new Item();
+			item.setId((String) solrDocument.get("id"));
+			highlighting.get
+		}
+
+		return null;
+	}
+
+}

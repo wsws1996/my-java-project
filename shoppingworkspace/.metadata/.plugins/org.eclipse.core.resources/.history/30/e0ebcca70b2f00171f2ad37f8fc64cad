@@ -1,0 +1,19 @@
+package com.shopping.service;
+
+import org.springframework.stereotype.Service;
+
+import com.shopping.mapper.ItemMapper;
+import com.shopping.pojo.ShoppingResult;
+
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	private ItemMapper itemMapper;
+
+	@Override
+	public ShoppingResult importAllItems() {
+
+		return null;
+	}
+
+}

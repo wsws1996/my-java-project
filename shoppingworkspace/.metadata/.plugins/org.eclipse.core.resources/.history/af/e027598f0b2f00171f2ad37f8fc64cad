@@ -1,0 +1,13 @@
+package com.shopping.service;
+
+import com.shopping.pojo.ShoppingResult;
+
+public class ItemServiceImpl implements ItemService {
+
+	@Override
+	public ShoppingResult importAllItems() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
