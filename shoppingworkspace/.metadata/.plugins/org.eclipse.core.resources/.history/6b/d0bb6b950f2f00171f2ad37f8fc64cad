@@ -1,7 +1,0 @@
-package com.shopping.test;
-
-public class SolrJTest {
-	public void queryDocument() throws Exception {
-		
-	}
-}

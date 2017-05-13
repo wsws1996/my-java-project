@@ -1,0 +1,51 @@
+package com.shopping.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
+
+import com.shopping.mapper.TbUserMapper;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.pojo.TbUser;
+import com.shopping.pojo.TbUserExample;
+import com.shopping.pojo.TbUserExample.Criteria;
+import com.shopping.service.UserService;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private TbUserMapper userMapper;
+
+	@Override
+	public ShoppingResult checkData(String content, Integer type) {
+		TbUserExample example = new TbUserExample();
+		Criteria criteria = example.createCriteria();
+		if (1 == type) {
+			criteria.andUsernameEqualTo(content);
+		} else if (2 == type) {
+			criteria.andPhoneEqualTo(content);
+		} else {
+			criteria.andEmailEqualTo(content);
+		}
+		List<TbUser> list = userMapper.selectByExample(example);
+		if (list == null || list.size() == 0) {
+			return ShoppingResult.ok(true);
+		}
+
+		return ShoppingResult.ok(false);
+	}
+
+	@Override
+	public ShoppingResult createUser(TbUser user) {
+		user.setUpdated(new Date());
+		user.setCreated(new Date());
+		user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
+		userMapper.insert(user);
+		return null;
+	}
+
+}

@@ -9,8 +9,9 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="shopping-search"/>
+			<item value="shopping-sso"/>
 			<item value="shopping-parent"/>
+			<item value="shopping-search"/>
 			<item value="shopping-portal"/>
 			<item value="shopping-rest"/>
 			<item value="shopping-manager-web"/>
@@ -49,6 +50,7 @@
 		<item value="667" key="height"/>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>

@@ -1,8 +1,0 @@
-package com.shopping.pojo;
-
-public class Item {
-	private Long id;
-	private String title;
-	private String sell_point;
-	
-}

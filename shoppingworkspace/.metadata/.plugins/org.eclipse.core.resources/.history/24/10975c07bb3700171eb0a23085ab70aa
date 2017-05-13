@@ -1,0 +1,7 @@
+package com.shopping.service;
+
+import com.shopping.pojo.ShoppingResult;
+
+public interface UserService {
+	public ShoppingResult checkData(String content,Integer type);
+}
