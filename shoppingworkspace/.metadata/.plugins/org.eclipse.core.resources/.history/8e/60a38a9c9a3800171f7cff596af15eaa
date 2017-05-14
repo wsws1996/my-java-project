@@ -1,0 +1,14 @@
+package com.shopping.service.impl;
+
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.service.CartService;
+
+public class CartServiceImpl implements CartService {
+
+	@Override
+	public ShoppingResult addCartItem(long itemId, int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

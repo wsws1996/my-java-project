@@ -94,7 +94,7 @@
                 <p><span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice / 100}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>总计：</p>
                 <p><span id="totalRePrice">- ¥0.00</span>优惠：</p>
             </div>
-            <div class="amout fr"><span id="selectedCount">1</span> 件商品</div>
+            <div class="amout fr"><span id="selectedCount"></span> 件商品</div>
         </div>
         <div class="ui-ceilinglamp-1" style="width: 988px; height: 49px;"><div class="cart-dibu ui-ceilinglamp-current" style="width: 988px; height: 49px;">
           <div class="control fdibu fdibucurrent">
@@ -152,5 +152,13 @@
 <!-- 购物车相关业务 -->
 <script type="text/javascript" src="/js/cart.js"></script>
 <script type="text/javascript" src="/js/jquery.price_format.2.0.min.js"></script>
-
+<!-- 计算商品数量 -->
+<script type="text/javascript">
+var total = 0;
+$(".quantity-form .quantity-text").each(function(i,e){
+	var _this = $(e);
+	total += eval(_this.val());
+});
+$("#selectedCount").append(total);
+</script>
 </html>

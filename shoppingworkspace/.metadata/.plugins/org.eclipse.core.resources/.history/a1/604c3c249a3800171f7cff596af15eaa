@@ -1,0 +1,6 @@
+package com.shopping.pojo;
+
+public class CartItem {
+	private long id;
+	private String title;
+}

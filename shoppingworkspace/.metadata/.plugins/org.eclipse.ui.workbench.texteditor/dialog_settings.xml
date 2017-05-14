@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="shopping" key="selection"/>
+		<item value="buy-num" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="taotao"/>
-			<item value="淘淘"/>
-			<item value="getDataService"/>
-			<item value="formatPrice"/>
-			<item value="format"/>
-			<item value="fmart"/>
-			<item value="SHOPPING"/>
-			<item value="taota"/>
+			<item value="buy-num"/>
+			<item value="/cart/add"/>
+			<item value="selectedCount"/>
+			<item value="件商品"/>
+			<item value="increment"/>
+			<item value="redirect"/>
+			<item value="localhost:8082"/>
+			<item value="/user/showR"/>
 		</list>
 		<list key="replacehistory">
+			<item value="localhost:8081"/>
+			<item value="/page/login"/>
 			<item value="shopping"/>
 			<item value="商城"/>
 		</list>
@@ -26,7 +28,7 @@
 		<item value="342" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="436" key="DIALOG_HEIGHT"/>
-		<item value="347" key="DIALOG_X_ORIGIN"/>
-		<item value="195" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="179" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

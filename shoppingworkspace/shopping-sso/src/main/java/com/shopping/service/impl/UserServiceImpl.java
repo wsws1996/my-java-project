@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +19,7 @@ import com.shopping.pojo.TbUser;
 import com.shopping.pojo.TbUserExample;
 import com.shopping.pojo.TbUserExample.Criteria;
 import com.shopping.service.UserService;
+import com.shopping.utils.CookieUtils;
 import com.shopping.utils.JsonUtils;
 
 import redis.clients.jedis.JedisCluster;
@@ -64,7 +68,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public ShoppingResult userLogin(String username, String password) {
+	public ShoppingResult userLogin(String username, String password, HttpServletRequest request,
+			HttpServletResponse response) {
 		TbUserExample example = new TbUserExample();
 		Criteria criteria = example.createCriteria();
 		criteria.andUsernameEqualTo(username);
@@ -82,6 +87,7 @@ public class UserServiceImpl implements UserService {
 		jedisCluster.set(REDIS_USER_SESSION_KEY + ":" + token, JsonUtils.objectToJson(user));
 		jedisCluster.expire(REDIS_USER_SESSION_KEY + ":" + token, SSO_SESSION_EXPIRE);
 
+		CookieUtils.setCookie(request, response, "TT_TOKEN", token);
 		return ShoppingResult.ok(token);
 	}
 

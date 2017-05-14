@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;list&apos; from expression &apos;cartService.getCartItemList(request,response)&apos;&#x0A;- Original project: &apos;shopping-portal&apos;&#x0A;- Variable name: &apos;list&apos;&#x0A;- Destination method: &apos;com.shopping.controller.CartController.showCart()&apos;&#x0A;- Variable expression: &apos;cartService.getCartItemList(request,response)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;list&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/main\/java&lt;com.shopping.controller{CartController.java" name="list" replace="true" selection="1000 0" stamp="1494763944415" version="1.0"/>
+</session>

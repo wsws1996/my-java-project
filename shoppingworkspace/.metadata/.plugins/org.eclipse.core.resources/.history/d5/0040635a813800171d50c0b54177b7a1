@@ -1,0 +1,31 @@
+package com.shopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.pojo.TbUser;
+import com.shopping.service.UserService;
+import com.shopping.utils.HttpClientUtil;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Value("${{SSO_BASE_URL}")
+	private String SSO_BASE_URL;
+
+	@Value("${SSO_USER_TOKEN}")
+	private String SSO_USER_TOKEN;
+
+	@Override
+	public TbUser getUserByToken(String token) {
+		String json = HttpClientUtil.doGet(SSO_BASE_URL + SSO_USER_TOKEN + token);
+		ShoppingResult result = ShoppingResult.formatToPojo(json, TbUser.class);
+		if (result.getStatus() == 200) {
+			TbUser user = (TbUser) result.getData();
+			return user;
+		}
+		return null;
+	}
+
+}

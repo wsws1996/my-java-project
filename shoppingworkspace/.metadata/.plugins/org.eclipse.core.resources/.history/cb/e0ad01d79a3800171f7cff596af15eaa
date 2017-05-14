@@ -1,0 +1,10 @@
+package com.shopping.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.shopping.pojo.ShoppingResult;
+
+public interface CartService {
+	public ShoppingResult addCartItem(long itemId, int num,, HttpServletRequest request, HttpServletResponse response);
+}

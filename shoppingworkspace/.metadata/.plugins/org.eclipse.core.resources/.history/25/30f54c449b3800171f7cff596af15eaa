@@ -1,0 +1,40 @@
+package com.shopping.service.impl;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import com.shopping.pojo.CartItem;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.service.CartService;
+
+public class CartServiceImpl implements CartService {
+
+	@Value("${REST_BASE_URL}")
+	private String REST_BASE_URL;
+
+	@Value("${ITEM_INFO_URL}")
+	private String ITEM_INFO_URL;
+
+	@Override
+	public ShoppingResult addCartItem(long itemId, int num, HttpServletRequest request, HttpServletResponse response) {
+		CartItem cartItem = null;
+		List<CartItem> itemList = getCartItemList(request);
+		for (CartItem cItem : itemList) {
+			if (cItem.getId() == itemId) {
+				cItem.setNum(cItem.getNum() + num);
+				cartItem = cItem;
+			}
+		}
+		return null;
+	}
+
+	private List<CartItem> getCartItemList(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
