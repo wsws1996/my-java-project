@@ -1,0 +1,79 @@
+package com.shopping.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.shopping.mapper.TbOrderItemMapper;
+import com.shopping.mapper.TbOrderMapper;
+import com.shopping.mapper.TbOrderShippingMapper;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.pojo.TbOrder;
+import com.shopping.pojo.TbOrderItem;
+import com.shopping.pojo.TbOrderShipping;
+import com.shopping.service.OrderService;
+
+import redis.clients.jedis.JedisCluster;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private TbOrderMapper orderMapper;
+
+	@Autowired
+	private TbOrderItemMapper orderItemMapper;
+
+	@Autowired
+	private TbOrderShippingMapper orderShippingMapper;
+
+	@Autowired
+	private JedisCluster jedisCluster;
+
+	@Value("${ORDER_GEN_KEY}")
+	private String ORDER_GEN_KEY;
+
+	@Value("${ORDER_INIT_ID}")
+	private String ORDER_INIT_ID;
+
+	@Value("${ORDER_DETAIL_GEN_KEY}")
+	private String ORDER_DETAIL_GEN_KEY;
+
+	@Override
+	public ShoppingResult createOrder(TbOrder order, List<TbOrderItem> itemList, TbOrderShipping orderShipping) {
+
+		String string = jedisCluster.get(ORDER_GEN_KEY);
+		if (StringUtils.isBlank(string)) {
+			jedisCluster.set(ORDER_GEN_KEY, ORDER_INIT_ID);
+		}
+		long orderId = jedisCluster.incr(ORDER_GEN_KEY);
+
+		order.setOrderId(orderId + "");
+		order.setStatus(1);
+		Date date = new Date();
+		order.setCreateTime(date);
+		order.setUpdateTime(date);
+		order.setBuyerRate(0);
+		orderMapper.insert(order);
+
+		for (TbOrderItem tbOrderItem : itemList) {
+			long orderDetailId = jedisCluster.incr(ORDER_DETAIL_GEN_KEY);
+			tbOrderItem.setId(orderDetailId + "");
+			tbOrderItem.setOrderId(orderId + "");
+			orderItemMapper.insert(tbOrderItem);
+		}
+
+		orderShipping.setOrderId(orderId + "");
+		orderShipping.setCreated(date);
+		orderShipping.setUpdated(date);
+
+		orderShippingMapper.insert(orderShipping);
+
+		return null;
+	}
+
+}

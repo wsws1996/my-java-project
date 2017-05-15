@@ -40,12 +40,12 @@
 			<input type="hidden" name="orderItems[${status.index}].picPath" value="${cart.images[0]}"/>
 		</c:forEach>
 		<input type="hidden" name="payment" value="<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${totalPrice/100 }"/>"/>
-		<input type="hidden" name="orderShipping.receiverName" value="入云龙"/>
+		<input type="hidden" name="orderShipping.receiverName" value="王五"/>
 		<input type="hidden" name="orderShipping.receiverMobile" value="15891588888"/>
-		<input type="hidden" name="orderShipping.receiverState" value="北京"/>
-		<input type="hidden" name="orderShipping.receiverCity" value="北京"/>
-		<input type="hidden" name="orderShipping.receiverDistrict" value="昌平区"/>
-		<input type="hidden" name="orderShipping.receiverAddress" value="西三旗 xxxxxxxxx"/>
+		<input type="hidden" name="orderShipping.receiverState" value="河南"/>
+		<input type="hidden" name="orderShipping.receiverCity" value="新乡"/>
+		<input type="hidden" name="orderShipping.receiverDistrict" value="牧野区"/>
+		<input type="hidden" name="orderShipping.receiverAddress" value="河师大 xxxxxxxxx"/>
 </form>
 
 <!-- main -->
@@ -79,13 +79,13 @@
 						<b></b>
 						<div class="user-name">
 							<div class="fl">
-								<strong limit="4">入云龙</strong>&nbsp;&nbsp;收
+								<strong limit="4">王五</strong>&nbsp;&nbsp;收
 							</div>
 							<div class="fr">158****8888</div>
 							<div class="clr"></div>
 						</div>
-						<div class="mt10" limit="15">北京 昌平区 五环外六环里</div>
-						<div class="adr-m" limit="30">西三旗 xxxxxxxxx</div>
+						<div class="mt10" limit="15">河南 新乡市 牧野区</div>
+						<div class="adr-m" limit="30">河师大 xxxxxxxxx</div>
 						<div class="op-btns ar">
 							<a href="#none"
 								class="ftx-05 mr10 setdefault-consignee hide"

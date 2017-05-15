@@ -31,8 +31,7 @@ public class CartController {
 			model.addAttribute("message", result.getMsg());
 			return "error/exception";
 		}
-		model.addAttribute("cartList", result.getData());
-		return "cart";
+		return "redirect:/cart/cart.html";
 	}
 
 	@RequestMapping("/cart")
@@ -43,8 +42,13 @@ public class CartController {
 	}
 
 	@RequestMapping("/delete/{itemId}")
-	public String deleteCartItem(@PathVariable Long itemId, HttpServletRequest request, HttpServletResponse response) {
-		cartService.deleteCartItem(itemId, request, response);
+	public String deleteCartItem(@PathVariable Long itemId, HttpServletRequest request, HttpServletResponse response,
+			Model model) {
+		ShoppingResult result = cartService.deleteCartItem(itemId, request, response);
+		if (result.getStatus() != 200) {
+			model.addAttribute("message", result.getMsg());
+			return "error/exception";
+		}
 		return "redirect:/cart/cart.html";
 	}
 }

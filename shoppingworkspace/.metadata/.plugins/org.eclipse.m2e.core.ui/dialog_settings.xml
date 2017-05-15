@@ -9,8 +9,9 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="shopping-sso"/>
+			<item value="shopping-order"/>
 			<item value="shopping-parent"/>
+			<item value="shopping-sso"/>
 			<item value="shopping-search"/>
 			<item value="shopping-portal"/>
 			<item value="shopping-rest"/>

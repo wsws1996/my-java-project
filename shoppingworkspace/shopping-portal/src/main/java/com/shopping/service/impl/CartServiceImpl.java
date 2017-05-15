@@ -52,7 +52,7 @@ public class CartServiceImpl implements CartService {
 			itemList.add(cartItem);
 		}
 		CookieUtils.setCookie(request, response, "TT_CART", JsonUtils.objectToJson(itemList), true);
-		return ShoppingResult.ok(itemList);
+		return ShoppingResult.ok();
 	}
 
 	private List<CartItem> getCartItemList(HttpServletRequest request) {

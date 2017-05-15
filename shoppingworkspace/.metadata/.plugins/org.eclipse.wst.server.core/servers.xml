@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost-config" hostname="localhost" id="Tomcat v7.0 Server at localhost" instanceDir="/E/developerpackage/apache-tomcat-7.0.75/8081" name="Tomcat v7.0 Server at localhost" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="450" stop-timeout="150" testEnvironment="true" timestamp="6">
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost-config" hostname="localhost" id="Tomcat v7.0 Server at localhost" instanceDir="/E/developerpackage/apache-tomcat-7.0.75/8081" name="Tomcat v7.0 Server at localhost" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="450" stop-timeout="150" testEnvironment="true" timestamp="8">
     <list key="modules" value0="shopping-portal::org.eclipse.jst.jee.server:shopping-portal::jst.web::2.5"/>
   </server>
   <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost (2)-config" hostname="localhost" id="Tomcat v7.0 Server at localhost (2)" instanceDir="/E/developerpackage/apache-tomcat-7.0.75/8082" name="Tomcat v7.0 Server at localhost (2)" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="450" stop-timeout="150" testEnvironment="true" timestamp="5">
@@ -14,5 +14,8 @@
   </server>
   <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost (5)-config" hostname="localhost" id="Tomcat v7.0 Server at localhost (5)" instanceDir="/E/developerpackage/apache-tomcat-7.0.75/8084" name="Tomcat v7.0 Server at localhost (5)" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="450" stop-timeout="150" testEnvironment="true" timestamp="4">
     <list key="modules" value0="shopping-sso::org.eclipse.jst.jee.server:shopping-sso::jst.web::2.5"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost (6)-config" hostname="localhost" id="Tomcat v7.0 Server at localhost (6)" instanceDir="/E/developerpackage/apache-tomcat-7.0.75/8085" name="Tomcat v7.0 Server at localhost (6)" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="450" stop-timeout="150" testEnvironment="true" timestamp="5">
+    <list key="modules" value0="shopping-order::org.eclipse.jst.jee.server:shopping-order::jst.web::2.5"/>
   </server>
 </servers>

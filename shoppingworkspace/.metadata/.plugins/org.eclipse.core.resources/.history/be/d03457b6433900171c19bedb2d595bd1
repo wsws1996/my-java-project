@@ -1,0 +1,10 @@
+package com.shopping.service.impl;
+
+import com.shopping.service.OrderService;
+
+public interface OrderServiceImpl extends OrderService {
+	@Value("${ORDER_BASE_URL}")
+	private String ORDER_BASE_URL;
+	@Value("${ORDER_CREATE_URL}")
+	private String ORDER_CREATE_URL;
+}

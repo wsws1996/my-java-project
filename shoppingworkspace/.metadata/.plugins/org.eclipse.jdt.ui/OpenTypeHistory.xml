@@ -9,4 +9,6 @@
 <typeInfo handle="=shopping-portal/src\/main\/java&lt;com.shopping.service{UserService.java[UserService" modifiers="513" timestamp="1494750890000"/>
 <typeInfo handle="=shopping-portal/src\/main\/java&lt;com.shopping.service{CartService.java[CartService" modifiers="513" timestamp="1494765629000"/>
 <typeInfo handle="=shopping-common/\/usr\/java\/jdk1.8.0_65\/jre\/lib\/rt.jar&lt;java.util(ArrayList.class[ArrayList" modifiers="33" timestamp="1446627935000"/>
+<typeInfo handle="=shopping-manager-pojo/src\/main\/java&lt;com.shopping.pojo{TbOrder.java[TbOrder" modifiers="1" timestamp="1488279743000"/>
+<typeInfo handle="=shopping-portal/src\/main\/java&lt;com.shopping.service{OrderService.java[OrderService" modifiers="513" timestamp="1494833990000"/>
 </typeInfoHistroy>

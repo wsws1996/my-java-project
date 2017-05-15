@@ -1,0 +1,7 @@
+package com.shopping.service.impl;
+
+import com.shopping.service.OrderService;
+
+public interface OrderServiceImpl extends OrderService {
+
+}

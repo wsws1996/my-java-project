@@ -1,0 +1,40 @@
+package com.shopping.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopping.mapper.TbOrderItemMapper;
+import com.shopping.mapper.TbOrderMapper;
+import com.shopping.mapper.TbOrderShippingMapper;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.pojo.TbOrder;
+import com.shopping.pojo.TbOrderItem;
+import com.shopping.pojo.TbOrderShipping;
+import com.shopping.service.OrderService;
+
+import redis.clients.jedis.JedisCluster;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private TbOrderMapper orderMapper;
+
+	@Autowired
+	private TbOrderItemMapper orderItemMapper;
+
+	@Autowired
+	private TbOrderShippingMapper orderShippingMapper;
+
+	@Autowired
+	private JedisCluster jedisCluster;
+
+	@Override
+	public ShoppingResult createOrder(TbOrder order, List<TbOrderItem> itemList, TbOrderShipping orderShipping) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

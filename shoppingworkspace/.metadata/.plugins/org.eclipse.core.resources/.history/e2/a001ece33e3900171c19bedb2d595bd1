@@ -1,0 +1,24 @@
+package com.shopping.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shopping.pojo.Order;
+import com.shopping.pojo.ShoppingResult;
+import com.shopping.service.OrderService;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	private OrderService orderService;
+
+	@RequestMapping("/create")
+	public ShoppingResult createOrder(@RequestBody Order order) {
+		return null;
+	}
+	
+}
