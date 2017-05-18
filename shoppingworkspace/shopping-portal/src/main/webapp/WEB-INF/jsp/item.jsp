@@ -8,7 +8,7 @@
 	<title>${item.title } - 商城</title>
 	<script>var jdpts = new Object(); jdpts._st = new Date().getTime();</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/css/taotao.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/shopping.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/pshow.css" media="all" />
 	<script type="text/javascript">
     	window.pageConfig = {
@@ -55,7 +55,7 @@
 <script type="text/javascript">pageConfig.product.marketPrice='';</script>
 <ul id="summary">
 	<li id="summary-price">
-		<div class="dt">淘&nbsp;淘&nbsp;价：</div>
+		<div class="dt">商&nbsp;城&nbsp;价：</div>
 		<div class="dd">
 			<strong class="p-price"  id="jd-price">￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price / 100 }"/> </strong>
 			<a id="notice-downp" href="#none" target="_blank" clstag="shangpin|keycount|product|jiangjia">(降价通知)</a>
@@ -247,8 +247,8 @@
 	</div><!--right end-->
 	
 	<div class="left">
-		<div id="miaozhen7886" class="m"><a href="http://c.nfa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=7853&amp;unit=69570&amp;advid=156740&amp;guv=&amp;url=http://sale.jd.com/act/IFkpQYSVnG1Jet.html" target="_blank"><img data-img="2" width="211" height="261" src="http://image.taotao.com/images/2014/10/23/2014102305423212301343.jpg" class="loading-style2"></a></div>
-		<div id="miaozhen7886" class="m"><a href="http://c.nfa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=7853&amp;unit=69570&amp;advid=156740&amp;guv=&amp;url=http://sale.jd.com/act/IFkpQYSVnG1Jet.html" target="_blank"><img data-img="2" width="211" height="261" src="http://image.taotao.com/images/2014/10/23/2014102305423212301343.jpg" class="loading-style2"></a></div>
+		<div id="miaozhen7886" class="m"><a href="http://c.nfa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=7853&amp;unit=69570&amp;advid=156740&amp;guv=&amp;url=http://sale.jd.com/act/IFkpQYSVnG1Jet.html" target="_blank"><img data-img="2" width="211" height="261" src="http://image.shopping.com/images/2014/10/23/2014102305423212301343.jpg" class="loading-style2"></a></div>
+		<div id="miaozhen7886" class="m"><a href="http://c.nfa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=7853&amp;unit=69570&amp;advid=156740&amp;guv=&amp;url=http://sale.jd.com/act/IFkpQYSVnG1Jet.html" target="_blank"><img data-img="2" width="211" height="261" src="http://image.shopping.com/images/2014/10/23/2014102305423212301343.jpg" class="loading-style2"></a></div>
 	</div><!--left end-->
 	<span class="clr"></span>
 </div>

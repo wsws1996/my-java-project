@@ -8,7 +8,12 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	<!-- 配置SolrServer对象 -->
 	<!-- 单机版 -->
-	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+	<!-- <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
 		<constructor-arg name="baseURL" value="${SOLR.SERVER.URL}"></constructor-arg>
+	</bean> -->
+	<bean id="cloudSolrServer" class="org.apache.solr.client.solrj.impl.CloudSolrServer">
+		<constructor-arg name="zkHost"
+			value="image.shopping.com:2181,image.shopping.com:2182,image.shopping.com:2183" />
+		<property name="defaultCollection" value="collection2"></property>
 	</bean>
 </beans>

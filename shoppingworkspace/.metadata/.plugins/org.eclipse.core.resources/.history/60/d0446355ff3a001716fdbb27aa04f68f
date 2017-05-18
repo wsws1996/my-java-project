@@ -1,0 +1,7 @@
+package com.shopping.test;
+
+public class FtpTest {
+	public void testFtp() {
+		
+	}
+}

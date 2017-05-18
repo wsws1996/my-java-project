@@ -1,0 +1,16 @@
+package com.shopping.test;
+
+import org.apache.solr.client.solrj.impl.CloudSolrServer;
+import org.junit.Test;
+
+import com.sun.xml.internal.rngom.dt.CachedDatatypeLibraryFactory;
+
+public class SolrCloudTest {
+
+	@Test
+	public void testAddDocument() throws Exception {
+		String zkHost = "192.168.22.10:2181,192.168.22.10:2182,192.168.22.10:2183";
+		CloudSolrServer solrServer = new CloudSolrServer(zkHost);
+	}
+
+}

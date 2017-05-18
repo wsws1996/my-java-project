@@ -48,6 +48,9 @@
 				<configuration>
 					<port>8080</port>
 					<path>/</path>
+					<url>http://localhost:8080/manager/text</url>
+					<username>tomcat</username>
+					<password>tomcat</password>
 				</configuration>
 			</plugin>
 		</plugins>

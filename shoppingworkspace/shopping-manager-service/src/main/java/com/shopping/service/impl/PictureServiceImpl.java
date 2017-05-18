@@ -41,12 +41,13 @@ public class PictureServiceImpl implements PictureService {
 		DateTime dateTime = new DateTime();
 		String filePath = dateTime.toString("/yyyy/MM/dd");
 		try {
-			FtpUtil.uploadFile(FTP_ADDRESS, FTP_PORT, FTP_USER_NAME, FTP_PASSWORD, FTP_BASE_PATH, filePath,
-					imageName + ext, uploadFile.getInputStream());
+			System.out.println("upload image result:"+FtpUtil.uploadFile(FTP_ADDRESS, FTP_PORT, FTP_USER_NAME, FTP_PASSWORD, FTP_BASE_PATH,
+					filePath, imageName + ext, uploadFile.getInputStream()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return PictureResult.error(ExceptionUtil.getStackTrace(e));
 		}
+		System.out.println("image url:"+IMAGE_BASE_URL + filePath + "/" + imageName + ext);
 		return PictureResult.ok(IMAGE_BASE_URL + filePath + "/" + imageName + ext);
 	}
 

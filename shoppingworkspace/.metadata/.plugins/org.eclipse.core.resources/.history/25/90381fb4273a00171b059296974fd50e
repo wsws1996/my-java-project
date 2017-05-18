@@ -1,0 +1,9 @@
+package com.shopping.test;
+
+public class SolrCloudTest {
+
+	public void testAddDocument() throws Exception {
+		
+	}
+	
+}

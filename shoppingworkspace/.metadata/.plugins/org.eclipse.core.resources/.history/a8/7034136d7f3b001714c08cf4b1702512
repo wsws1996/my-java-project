@@ -1,0 +1,15 @@
+package com.shopping.test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.junit.Test;
+
+import com.shopping.utils.FtpUtil;
+
+public class FtpTest {
+	@Test
+	public void testFtp() throws FileNotFoundException {
+		FtpUtil.uploadFile("192.168.191.3", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/05/17/", "133534657575725768865486.jpg", new FileInputStream("/home/wang/图片/壁纸/6630292610001292722.jpg"));
+	}
+}

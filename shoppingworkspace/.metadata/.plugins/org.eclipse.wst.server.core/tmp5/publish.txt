@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Mon May 15 16:26:23 CST 2017
+#Mon May 15 21:25:28 CST 2017
 org.eclipse.jst.jee.server\:/binary\:/E/developerpackage/taotaom2/taotaorepository/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar=WEB-INF/lib/spring-web-4.1.3.RELEASE.jar
 org.eclipse.jst.j2ee.server\:shopping-manager-pojo=WEB-INF/lib/shopping-manager-pojo-0.0.1-SNAPSHOT.jar
 org.eclipse.jst.j2ee.server\:shopping-manager-mapper=WEB-INF/lib/shopping-manager-mapper-0.0.1-SNAPSHOT.jar

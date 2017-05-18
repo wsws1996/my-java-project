@@ -53,7 +53,7 @@ public class HttpClientTest {
 	@Test
 	public void doPost() throws Exception {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
-		HttpPost post = new HttpPost("http://localhost:8082/httpclient/post.html");
+		HttpPost post = new HttpPost("http://rest.shopping.com/httpclient/post.html");
 		CloseableHttpResponse response = httpClient.execute(post);
 		int statusCode = response.getStatusLine().getStatusCode();
 		System.out.println(statusCode);
@@ -68,7 +68,7 @@ public class HttpClientTest {
 	@Test
 	public void doPostWithParam() throws Exception {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
-		HttpPost post = new HttpPost("http://localhost:8082/httpclient/post.html");
+		HttpPost post = new HttpPost("http://rest.shopping.com/httpclient/post.html");
 		ArrayList<NameValuePair> kvList = new ArrayList<>();
 		kvList.add(new BasicNameValuePair("username", "zhangsan"));
 		kvList.add(new BasicNameValuePair("password", "123"));

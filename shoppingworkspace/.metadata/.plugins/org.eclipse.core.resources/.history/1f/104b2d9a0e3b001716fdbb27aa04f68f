@@ -1,0 +1,10 @@
+package com.shopping.test;
+
+import org.junit.Test;
+
+public class FtpTest {
+	@Test
+	public void testFtp() {
+		
+	}
+}

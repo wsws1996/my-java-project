@@ -27,7 +27,7 @@
 <body id="mainframe">
 	<div class="w w1 header clearfix">
 		<div id="logo">
-			<a href="/"><img src="/images/taotao-logo.gif" alt="商城"></a>
+			<a href="/"><img src="/images/shopping-logo.gif" alt="商城"></a>
 		</div>
 	</div>
 

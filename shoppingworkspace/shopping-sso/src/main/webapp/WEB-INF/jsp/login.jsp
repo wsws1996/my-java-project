@@ -4,15 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>登录淘淘</title>
+    <title>登录商城</title>
     <link type="text/css" rel="stylesheet" href="/css/login.css"/>
     <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
 </head>
 <body>
 <div class="w">
     <div id="logo">
-    	<a href="http://localhost:8081" clstag="passport|keycount|login|01">
-    		<img src="/images/taotao-logo.gif" alt="淘淘" width="170" height="60"/>
+    	<a href="http://www.shopping.com" clstag="passport|keycount|login|01">
+    		<img src="/images/shopping-logo.gif" alt="商城" width="170" height="60"/>
     	</a><b></b>
    	</div>
 </div>
@@ -79,7 +79,7 @@
 					if (data.status == 200) {
 						alert("登录成功！");
 						if (redirectUrl == "") {
-							location.href = "http://localhost:8081";
+							location.href = "http://www.shopping.com";
 						} else {
 							location.href = redirectUrl;
 						}

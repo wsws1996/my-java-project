@@ -20,10 +20,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="/item/param" key="textPattern"/>
+			<item value="=REDIS_ITEM_KEY" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.java"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -32,10 +32,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="footer.jsp" key="textPattern"/>
+			<item value="191.2" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -44,10 +44,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="localhost" key="textPattern"/>
+			<item value="淘 淘" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.js*"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -56,10 +56,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="件商品" key="textPattern"/>
+			<item value="192.168.191.3" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -68,29 +68,31 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="入云龙" key="textPattern"/>
+			<item value="rest.shopping.com" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*"/>
+				<item value="*.js*"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
 		<section name="EXTENSIONS">
 			<item value="*" key="0"/>
-			<item value="*.jsp" key="1"/>
-			<item value="*.js*" key="2"/>
-			<item value="*.java" key="3"/>
-			<item value="" key="4"/>
+			<item value="*.js*" key="1"/>
+			<item value="*.pro*" key="2"/>
+			<item value="*.pro" key="3"/>
+			<item value="*.jsp" key="4"/>
+			<item value="*.java" key="5"/>
+			<item value="" key="6"/>
 		</section>
 		<section name="HISTORY11">
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="/user/show" key="textPattern"/>
+			<item value="192.168.33.10" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -99,10 +101,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="taotao.js" key="textPattern"/>
+			<item value="192." key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -111,7 +113,7 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="/user/token" key="textPattern"/>
+			<item value="taotao" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -123,10 +125,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="taotao" key="textPattern"/>
+			<item value="shopping-logo" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.js*"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -135,10 +137,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="127.0.0.1" key="textPattern"/>
+			<item value="淘" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.js*"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -147,7 +149,7 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="/token" key="textPattern"/>
+			<item value="image.shopping.com" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -159,10 +161,10 @@
 			<item value="false" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="taotao.com" key="textPattern"/>
+			<item value="192.168" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
-				<item value="*.js*"/>
+				<item value="*"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -170,6 +172,11 @@
 	</section>
 	<section name="org.eclipse.search.text.FileSearchResultPage">
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="DialogBounds_SearchHistorySelectionDialog">
+		<item value="618" key="DIALOG_WIDTH"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="557" key="DIALOG_HEIGHT"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -197,19 +204,24 @@
 	</section>
 	<section name="ReplaceDialog2">
 		<list key="replace_with">
-			<item value="商城"/>
-			<item value="SHOPPING"/>
+			<item value="REDIS_ITEM_KEY"/>
+			<item value="shopping"/>
+			<item value="image.shopping.com"/>
+			<item value="order.shopping.com"/>
+			<item value="sso.shopping.com"/>
+			<item value="search.shopping.com"/>
+			<item value="rest.shopping.com"/>
 		</list>
 	</section>
 	<section name="SearchDialog">
 		<item value="org.eclipse.search.internal.ui.text.TextSearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="1247" key="DIALOG_WIDTH"/>
+		<item value="1372" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="569" key="DIALOG_HEIGHT"/>
-		<item value="56" key="DIALOG_X_ORIGIN"/>
-		<item value="9" key="DIALOG_Y_ORIGIN"/>
+		<item value="690" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.wst.jsdt.ui.JavaSearchResultPage">
 		<item value="1000" key="org.eclipse.wst.jsdt.search.resultpage.limit"/>

@@ -1,0 +1,12 @@
+package com.shopping.test;
+
+import org.junit.Test;
+
+import com.shopping.utils.FtpUtil;
+
+public class FtpTest {
+	@Test
+	public void testFtp() {
+		FtpUtil.uploadFile("192.168.191.3", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/05/17/", filename, input)
+	}
+}

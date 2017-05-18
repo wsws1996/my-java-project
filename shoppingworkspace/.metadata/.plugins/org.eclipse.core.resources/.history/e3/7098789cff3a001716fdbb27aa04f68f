@@ -1,0 +1,11 @@
+package com.shopping.test;
+
+import java.io.FileInputStream;
+
+import com.shopping.utils.FtpUtil;
+
+public class FtpTest {
+	public void testFtp() {
+		FtpUtil.uploadFile("192.168.191.3", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/test/", "test.txt", new FileInputStream("/home/wang/桌面/作业"));
+	}
+}

@@ -1,0 +1,8 @@
+FTP_ADDRESS=image.shopping.com
+FTP_PORT=21
+FTP_USER_NAME=ftpuser
+FTP_PASSWORD=ftpuser
+FTP_BASE_PATH=/home/ftpuser/www/images
+IMAGE_BASE_URL=http://image.shopping.com/images
+REST_CONTENT_SYNC_URL=/cache/sync/content/
+REST_BASE_URL=http://localhost:8082/rest

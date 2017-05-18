@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;shopping-sso/src/main/webapp/WEB-INF/images/taotao-logo.gif&apos; to &apos;shopping-logo.gif&apos;" description="Rename resource &apos;taotao-logo.gif&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/images/taotao-logo.gif" name="shopping-logo.gif" stamp="1494853643664" updateReferences="true"/>
+</session>
